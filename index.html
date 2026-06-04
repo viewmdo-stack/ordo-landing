@@ -576,21 +576,23 @@
 
 // IntersectionObserver: s3-sq-img-wrap + s3-sq-text 화면 진입 시 애니메이션
 (function(){
+  // .s3-sq-wrap(컨테이너)을 observe - translateX 영향 없는 실제 위치
+  var container = document.querySelector('.s3-sq-wrap');
   var imgWrap = document.querySelector('.s3-sq-img-wrap');
   var txtWrap = document.querySelector('.s3-sq-text');
-  if(!imgWrap) return;
+  if(!container || !imgWrap) return;
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
         imgWrap.classList.add('in-view');
         if(txtWrap) txtWrap.classList.add('in-view');
-        obs.unobserve(imgWrap);
+        obs.unobserve(container);
       }
     });
   }, {
-    threshold: 0
+    threshold: 0.1
   });
-  obs.observe(imgWrap);
+  obs.observe(container);
 })();
 </script>
 </body>
