@@ -332,11 +332,10 @@
     }
     .s3-sq-wrap {
       padding: 28px 0 0;
+      position: relative;
     }
     .s3-sq-row {
-      display: flex;
-      align-items: center;
-      gap: 0;
+      display: block;
     }
     .s3-sq-img-wrap {
       flex-shrink: 0;
@@ -356,13 +355,17 @@
       background: #c8c4be;
     }
     .s3-sq-text {
-      flex: 1;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
       font-size: 13px;
       font-weight: 500;
       color: #333;
       line-height: 1.7;
-      padding: 0 16px 0 14px;
-      text-align: left;
+      text-align: center;
+      padding: 0 16px;
       opacity: 0;
       transition: opacity 0.75s ease 0.4s;
     }
