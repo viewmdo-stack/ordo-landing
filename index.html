@@ -1,369 +1,446 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ORDO LAYER BODY WASH</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-      background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-    }
-    .page-wrapper {
-      width: 100%;
-      max-width: 430px;
-      background: #fff;
-      margin: 0 auto;
-      overflow-x: hidden;
-    }
+    body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: #fff; color: #111; max-width: 430px; margin: 0 auto; }
 
-    /* ===== S1: 문제 제기 ===== */
+    /* ========== S1 ========== */
+    #s1 { background: #fff; }
+
     .s1-hero {
-      background: #fff;
-      text-align: center;
       padding: 60px 20px 40px;
+      text-align: center;
     }
     .s1-sub {
       font-size: 35px;
       font-weight: 400;
       color: #555;
-      line-height: 1.4;
       margin-bottom: 8px;
-      letter-spacing: -0.5px;
     }
     .s1-main {
       font-size: 60px;
       font-weight: 800;
       color: #111;
       line-height: 1.15;
-      letter-spacing: -2px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
     .s1-desc {
       font-size: 18px;
       font-weight: 700;
       color: #333;
       line-height: 1.6;
-      letter-spacing: -0.3px;
-      word-break: keep-all;
-    }
-
-    /* 공감 카드 */
-    .s1-cards { padding: 0; }
-    .s1-card {
-      position: relative;
-      width: 100%;
-      height: 210px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      background: #1a1a1a;
-      margin-bottom: 4px;
-    }
-    .s1-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 1;
-    }
-    .s1-card-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 24px;
-    }
-    .s1-card-line1 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.4;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-    }
-    .s1-card-line2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.4;
-      letter-spacing: -0.5px;
-      margin-bottom: 16px;
-    }
-    .s1-card-check {
-      width: 28px;
-      height: 28px;
-      margin: 0 auto;
     }
 
-    /* 인용구 */
+    /* Quotes */
     .s1-quotes {
-      padding: 32px 28px;
-      background: #fff;
-    }
-    .s1-quote {
+      padding: 40px 20px 50px;
       text-align: center;
-      font-size: 15px;
-      font-weight: 400;
-      color: #555;
-      line-height: 1.7;
-      padding: 14px 0;
-      border-bottom: 1px solid #f0f0f0;
     }
-    .s1-quote:last-child { border-bottom: none; }
+    .s1-quote-item {
+      font-size: 18px;
+      font-weight: 500;
+      color: #222;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .s1-quote-item.last {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+      margin-top: 10px;
+    }
+    .s1-dots {
+      font-size: 28px;
+      color: #aaa;
+      letter-spacing: 6px;
+      margin: 10px 0 30px;
+      display: block;
+    }
 
-    /* 마무리 */
+    /* Closing */
     .s1-closing {
       background: #111;
-      text-align: center;
-      padding: 48px 24px;
-    }
-    .s1-closing-q {
-      font-size: 26px;
-      font-weight: 800;
       color: #fff;
-      line-height: 1.4;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
-    }
-    .s1-closing-q span {
-      color: #4A90E2;
-      display: block;
-      font-size: 32px;
+      text-align: center;
+      padding: 50px 24px;
     }
     .s1-closing-sub {
       font-size: 14px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.6;
+      font-weight: 400;
+      color: #aaa;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .s1-closing-main {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .s1-closing-desc {
+      font-size: 14px;
+      font-weight: 400;
+      color: #bbb;
+      margin-top: 16px;
+      line-height: 1.7;
     }
 
-    /* ===== S2 이후 ===== */
-    .section {
+    /* ========== S2 ========== */
+    #s2 {
+      background: #f8f8f8;
       padding: 60px 24px;
-      border-bottom: 1px solid #eee;
+      text-align: center;
     }
-    .section-label {
+    .s2-label {
       font-size: 12px;
-      font-weight: 600;
-      color: #4A90E2;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-align: center;
+      letter-spacing: 3px;
+      color: #999;
       margin-bottom: 16px;
     }
-    .section-title {
-      font-size: 26px;
+    .s2-title {
+      font-size: 28px;
       font-weight: 800;
-      color: #111;
-      line-height: 1.35;
-      text-align: center;
-      letter-spacing: -0.5px;
-      margin-bottom: 16px;
+      line-height: 1.4;
+      margin-bottom: 20px;
     }
-    .section-body {
+    .s2-desc {
       font-size: 15px;
       color: #555;
       line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .s2-info-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin-bottom: 16px;
+      text-align: left;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .s2-info-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #1a6fff;
+      margin-bottom: 8px;
+    }
+    .s2-info-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    /* ========== S3 ========== */
+    #s3 {
+      background: #fff;
+      padding: 60px 24px;
       text-align: center;
     }
-    .img-placeholder {
+    .s3-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    .s3-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .s3-desc {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .s3-img-placeholder {
       width: 100%;
-      height: 220px;
-      background: #e8e8e8;
-      border-radius: 8px;
+      height: 320px;
+      background: #ddd;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #aaa;
-      font-size: 13px;
-      margin: 20px 0;
+      font-size: 14px;
     }
 
-    /* S9 4-LAYER */
-    .s9-layer {
+    /* ========== S4 ========== */
+    #s4 {
       background: #111;
       color: #fff;
       padding: 60px 24px;
+      text-align: center;
     }
-    .s9-layer .section-label { color: #4A90E2; }
-    .s9-layer .section-title { color: #fff; }
-    .s9-layer .section-body { color: rgba(255,255,255,0.7); }
-    .layer-item {
-      background: #1e1e1e;
+    .s4-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .s4-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .s4-desc {
+      font-size: 15px;
+      color: #aaa;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .s4-img-placeholder {
+      width: 100%;
+      height: 320px;
+      background: #333;
       border-radius: 12px;
-      padding: 20px;
-      margin-top: 16px;
-      border-left: 3px solid #4A90E2;
-      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 14px;
     }
-    .layer-item h3 {
-      font-size: 16px;
-      font-weight: 700;
+
+    /* ========== S5 ========== */
+    #s5 {
+      background: #fff;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .s5-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    .s5-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .s5-desc {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .s5-img-placeholder {
+      width: 100%;
+      height: 320px;
+      background: #ddd;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* ========== S6 ========== */
+    #s6 {
+      background: #f8f8f8;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .s6-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    .s6-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .s6-desc {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ========== S7 ========== */
+    #s7 {
+      background: #fff;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .s7-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    .s7-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .s7-desc {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ========== S8 ========== */
+    #s8 {
+      background: #111;
       color: #fff;
-      margin-bottom: 6px;
+      padding: 60px 24px;
+      text-align: center;
     }
-    .layer-item p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
+    .s8-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .s8-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .s8-desc {
+      font-size: 15px;
+      color: #aaa;
+      line-height: 1.8;
+    }
+
+    /* ========== S9 ========== */
+    #s9 {
+      background: #fff;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .s9-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    .s9-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .s9-desc {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+    }
+    .s9-cta-btn {
+      display: block;
+      background: #111;
+      color: #fff;
+      padding: 18px 0;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 32px;
     }
   </style>
 </head>
 <body>
-<div class="page-wrapper">
 
-  <!-- S1: 문제 제기 -->
-  <section>
-    <div class="s1-hero">
-      <p class="s1-sub">당신도 한 번쯤,</p>
-      <p class="s1-main"><strong>이런 순간이<br>있었나요?</strong></p>
-      <p class="s1-desc"><strong>남들은 먼저 느끼는데, 정작 나는 모르는 그 냄새.<br>꺼내기 조심스럽고, 모른 척하기도 어려운 그 경험.</strong></p>
+<!-- ========== S1: 후각 공감 ========== -->
+<section id="s1">
+
+  <div class="s1-hero">
+    <div class="s1-sub">당신도 한 번쯤,</div>
+    <div class="s1-main"><b>이런 순간이<br>있었나요?</b></div>
+    <div class="s1-desc">
+      남들은 먼저 느끼는데, 정작 나는 모르는 그 냄새.<br>
+      꺼내기 조심스럽고, 모른 척하기도 어려운 그 경험.
     </div>
+  </div>
 
-    <div class="s1-cards">
-      <div class="s1-card">
-        <div class="s1-card-content">
-          <p class="s1-card-line1">퇴근길 지하철에서</p>
-          <p class="s1-card-line2">불쾌한 옆 사람의 그 냄새</p>
-          <svg class="s1-card-check" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="13" stroke="#4A90E2" stroke-width="2"/>
-            <path d="M8 14l4 4 8-8" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
+  <div class="s1-quotes">
+    <div class="s1-quote-item">"향수를 뿌렸던..더 역한 냄새가 나요."</div>
+    <div class="s1-dots">· · ·</div>
+    <div class="s1-quote-item">"퇴근하고 벗어둔 옷에서 나둔 알 수 없는 빠지지 않는 특유의 체취?"</div>
+    <div class="s1-dots">· · ·</div>
+    <div class="s1-quote-item last">"나도 그런거 아닐까?"</div>
+  </div>
 
-      <div class="s1-card">
-        <div class="s1-card-content">
-          <p class="s1-card-line1">샤워하고 잠을 자도</p>
-          <p class="s1-card-line2">사라지지 않는 묵은 피지 냄새</p>
-          <svg class="s1-card-check" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="13" stroke="#4A90E2" stroke-width="2"/>
-            <path d="M8 14l4 4 8-8" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
+  <div class="s1-closing">
+    <div class="s1-closing-sub">ORDO LAYER BODY WASH</div>
+    <div class="s1-closing-main">냄새의 근원을 차단하는<br>새로운 방법</div>
+    <div class="s1-closing-desc">향으로 덮는 것이 아니라,<br>피부 속 원인부터 케어합니다.</div>
+  </div>
 
-      <div class="s1-card">
-        <div class="s1-card-content">
-          <p class="s1-card-line1">엘리베이터를 타자마자</p>
-          <p class="s1-card-line2">미간이 찌뿌려지는 아랫집 이웃</p>
-          <svg class="s1-card-check" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="13" stroke="#4A90E2" stroke-width="2"/>
-            <path d="M8 14l4 4 8-8" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
+</section>
 
-      <div class="s1-card">
-        <div class="s1-card-content">
-          <p class="s1-card-line1">내 방에만 들어오면</p>
-          <p class="s1-card-line2">자꾸 창문을 여는 아내</p>
-          <svg class="s1-card-check" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="13" stroke="#4A90E2" stroke-width="2"/>
-            <path d="M8 14l4 4 8-8" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </div>
+<!-- ========== S2 ========== -->
+<section id="s2">
+  <div class="s2-label">SECTION 02</div>
+  <div class="s2-title">S2 내용<br>준비 중</div>
+  <div class="s2-desc">S2 섹션 텍스트가 들어갑니다.</div>
+</section>
 
-    <div class="s1-quotes">
-      <p class="s1-quote">"향수를 뿌렸던...더 역한 냄새가 나요"</p>
-      <p class="s1-quote">"퇴근하고 벗어둔 옷에서 나둔 알 수 없는 빠지지 않는 특유의 체취?"</p>
-    </div>
+<!-- ========== S3 ========== -->
+<section id="s3">
+  <div class="s3-label">SECTION 03</div>
+  <div class="s3-title">S3 내용<br>준비 중</div>
+  <div class="s3-desc">S3 섹션 텍스트가 들어갑니다.</div>
+  <div class="s3-img-placeholder">이미지 플레이스홀더</div>
+</section>
 
-    <div class="s1-closing">
-      <p class="s1-closing-q">
-        혹시 나도 모르게<br>
-        <span>나도 그런거 아닐까?</span>
-      </p>
-      <p class="s1-closing-sub">내 몸의 냄새, 나만 모를 수 있습니다</p>
-    </div>
-  </section>
+<!-- ========== S4 ========== -->
+<section id="s4">
+  <div class="s4-label">SECTION 04</div>
+  <div class="s4-title">S4 내용<br>준비 중</div>
+  <div class="s4-desc">S4 섹션 텍스트가 들어갑니다.</div>
+  <div class="s4-img-placeholder">이미지 플레이스홀더</div>
+</section>
 
-  <!-- S2: 사회적 공감대 -->
-  <section class="section">
-    <p class="section-label">S2 · 사회적 공감대</p>
-    <h2 class="section-title">냄새는 본인이<br>가장 모른다</h2>
-    <p class="section-body">후각 피로 현상으로 인해 자신의 체취는 스스로 감지하기 어렵습니다. 주변 사람들이 먼저 느끼는 불편함, 이제는 근본부터 해결해야 합니다.</p>
-    <div class="img-placeholder">이미지 플레이스홀더</div>
-  </section>
+<!-- ========== S5 ========== -->
+<section id="s5">
+  <div class="s5-label">SECTION 05</div>
+  <div class="s5-title">S5 내용<br>준비 중</div>
+  <div class="s5-desc">S5 섹션 텍스트가 들어갑니다.</div>
+  <div class="s5-img-placeholder">이미지 플레이스홀더</div>
+</section>
 
-  <!-- S3: 제품 등장 -->
-  <section class="section">
-    <p class="section-label">S3 · 제품 등장</p>
-    <h2 class="section-title">ORDO LAYER<br>BODY WASH</h2>
-    <p class="section-body">단순한 바디워시가 아닙니다. 체취의 근본 원인을 4단계로 차단하는 전문 세정 시스템입니다.</p>
-    <div class="img-placeholder">제품 이미지 플레이스홀더</div>
-  </section>
+<!-- ========== S6 ========== -->
+<section id="s6">
+  <div class="s6-label">SECTION 06</div>
+  <div class="s6-title">S6 내용<br>준비 중</div>
+  <div class="s6-desc">S6 섹션 텍스트가 들어갑니다.</div>
+</section>
 
-  <!-- S4: 브랜드 스토리 -->
-  <section class="section">
-    <p class="section-label">S4 · 브랜드 스토리</p>
-    <h2 class="section-title">왜 ORDO가<br>만들었나</h2>
-    <p class="section-body">체취 문제로 일상의 자신감을 잃는 사람들을 위해, 피부과학과 향기 기술을 결합한 솔루션을 개발했습니다.</p>
-    <div class="img-placeholder">이미지 플레이스홀더</div>
-  </section>
+<!-- ========== S7 ========== -->
+<section id="s7">
+  <div class="s7-label">SECTION 07</div>
+  <div class="s7-title">S7 내용<br>준비 중</div>
+  <div class="s7-desc">S7 섹션 텍스트가 들어갑니다.</div>
+</section>
 
-  <!-- S5: 솔루션 -->
-  <section class="section">
-    <p class="section-label">S5 · 솔루션</p>
-    <h2 class="section-title">냄새의 원인부터<br>차단합니다</h2>
-    <p class="section-body">피부 위 세균 증식, 땀샘 분비, 산화 냄새까지 — 체취가 생기는 모든 단계에 개입합니다.</p>
-    <div class="img-placeholder">이미지 플레이스홀더</div>
-  </section>
+<!-- ========== S8 ========== -->
+<section id="s8">
+  <div class="s8-label">SECTION 08</div>
+  <div class="s8-title">S8 내용<br>준비 중</div>
+  <div class="s8-desc">S8 섹션 텍스트가 들어갑니다.</div>
+</section>
 
-  <!-- S6: 제품 소개 -->
-  <section class="section">
-    <p class="section-label">S6 · 제품 소개</p>
-    <h2 class="section-title">성분과 효능</h2>
-    <p class="section-body">피부 과학자들이 선별한 원료, 자극 없이 강력하게 작용하는 세정 포뮬러를 담았습니다.</p>
-    <div class="img-placeholder">성분 이미지 플레이스홀더</div>
-  </section>
+<!-- ========== S9 ========== -->
+<section id="s9">
+  <div class="s9-label">SECTION 09</div>
+  <div class="s9-title">S9 내용<br>준비 중</div>
+  <div class="s9-desc">S9 섹션 텍스트가 들어갑니다.</div>
+  <a href="#" class="s9-cta-btn">지금 바로 구매하기</a>
+</section>
 
-  <!-- S7: 원인 규명 -->
-  <section class="section">
-    <p class="section-label">S7 · 원인 규명</p>
-    <h2 class="section-title">체취는 왜<br>생기는가</h2>
-    <p class="section-body">아포크린선의 분비물이 피부 세균과 결합할 때 냄새가 생깁니다. 일반 세정제로는 이 과정을 막기 어렵습니다.</p>
-    <div class="img-placeholder">도식 이미지 플레이스홀더</div>
-  </section>
-
-  <!-- S8: 설계 의도 -->
-  <section class="section">
-    <p class="section-label">S8 · 설계 의도</p>
-    <h2 class="section-title">ORDO LAYER의<br>설계 철학</h2>
-    <p class="section-body">덮는 것이 아닌, 없애는 것. 향기로 가리는 대신 원인균을 제거하고 피부 환경을 정상화합니다.</p>
-    <div class="img-placeholder">이미지 플레이스홀더</div>
-  </section>
-
-  <!-- S9: 4-LAYER ODOR RESET SYSTEM -->
-  <section class="s9-layer">
-    <p class="section-label">S9 · SYSTEM</p>
-    <h2 class="section-title">4-LAYER<br>ODOR RESET SYSTEM</h2>
-    <p class="section-body">체취 발생의 4단계를 각각 차단하는 레이어 시스템</p>
-    <div class="layer-item">
-      <h3>LAYER 1 · CLEANSE</h3>
-      <p>피부 표면의 오염 물질과 땀 잔여물을 깨끗이 제거합니다</p>
-    </div>
-    <div class="layer-item">
-      <h3>LAYER 2 · CONTROL</h3>
-      <p>냄새 유발 세균의 증식을 억제하고 피부 pH를 조절합니다</p>
-    </div>
-    <div class="layer-item">
-      <h3>LAYER 3 · PROTECT</h3>
-      <p>피부 장벽을 강화해 외부 오염 물질 침투를 차단합니다</p>
-    </div>
-    <div class="layer-item">
-      <h3>LAYER 4 · RESET</h3>
-      <p>세정 후에도 지속되는 피부 컨디션으로 일상 속 냄새를 리셋합니다</p>
-    </div>
-  </section>
-
-</div>
 </body>
 </html>
