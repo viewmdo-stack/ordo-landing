@@ -517,7 +517,7 @@
       margin-top: 80px;
     }
     .s5-main-copy {
-      font-size: 30px;
+      font-size: 25px;
       font-weight: 800;
       color: #111;
       line-height: 1.35;
@@ -528,8 +528,10 @@
     }
     .s5-img-row {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       margin-bottom: 52px;
+      margin-left: -20px;
+      margin-right: -20px;
     }
     .s5-img-item {
       flex: 1;
@@ -553,7 +555,7 @@
       word-break: keep-all;
     }
     .s5-video-wrap {
-      width: 100%;
+      width: auto;
       aspect-ratio: 5 / 4;
       background: #1a1a1a;
       display: flex;
@@ -562,6 +564,8 @@
       font-size: 13px;
       color: #666;
       margin-bottom: 64px;
+      margin-left: -20px;
+      margin-right: -20px;
     }
     .s5-desc-wrap {
       text-align: center;
@@ -595,6 +599,11 @@
       border: 3px solid #111;
       padding: 4px 14px 6px;
       display: inline-block;
+      animation: nonenal-pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes nonenal-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.96); }
     }
     .s5-keyword-post {
       font-size: 16px;
@@ -602,9 +611,9 @@
       color: #555;
     }
     .s5-desc-post {
-      font-size: 16px;
-      font-weight: 400;
-      color: #555;
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
       line-height: 1.9;
       text-align: center;
       word-break: keep-all;
@@ -761,10 +770,10 @@
       <div class="s5-img-item">노폐물</div>
       <div class="s5-img-item">목에 노란 셔츠</div>
     </div>
-    <p class="s5-sub-copy">체취는 단순한 땀만의 문제는 아닙니다.<br>피지와 각질, 피부 표면에 남은 잔여물이 반복적으로 쌓이고,<br>이 지질 성분이 공기와 열, 마찰에 노출되면서<br>기름지고 묵직한 잔취로 이어질 수 있습니다.</p>
+    <p class="s5-sub-copy">체취는 단순한 땀만의 문제는 아닙니다.<br>피지와 각질, 피부 표면에 남은 잔여물이<br>반복적으로 쌓이고,<br>이 지질 성분이 공기와 열, 마찰에 노출되면서<br><strong>기름지고 묵직한 잔취로 이어질 수 있습니다.</strong></p>
     <div class="s5-video-wrap">3D 영상 플레이스홀더</div>
     <div class="s5-desc-wrap">
-      <p class="s5-desc-pre">이 과정에서 대표적으로 언급되는 체취 관련 성분이</p>
+      <p class="s5-desc-pre">이 과정에서 대표적으로<br>언급되는 체취 관련 성분이</p>
       <div class="s5-keyword-line">
         <span class="s5-keyword-pre">바로</span>
         <span class="s5-keyword">[노넨알]</span>
@@ -891,3 +900,4 @@
 </body>
 </html>
 
+수정메인카피폰트축소줄이미지영상서브카피줄바꿈볼드노넨알깜박이기설명카피볼드
