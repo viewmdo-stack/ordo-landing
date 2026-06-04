@@ -574,25 +574,25 @@
   requestAnimationFrame(tick);
 })();
 
-// scroll 기반 S3 정사각형 이미지 슬라이드인 애니메이션
+// S3 정사각형 이미지 슬라이드인 - rAF 폴링 방식
 (function(){
   var container = document.querySelector('.s3-sq-wrap');
   var imgWrap = document.querySelector('.s3-sq-img-wrap');
   var txtWrap = document.querySelector('.s3-sq-text');
   if(!container || !imgWrap) return;
-  function checkInView() {
+  var done = false;
+  function checkLoop() {
+    if(done) return;
     var rect = container.getBoundingClientRect();
-    var triggered = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
-    if(triggered) {
+    if(rect.top < window.innerHeight * 0.88 && rect.bottom > 0) {
       imgWrap.classList.add('in-view');
       if(txtWrap) txtWrap.classList.add('in-view');
-      window.removeEventListener('scroll', checkInView);
+      done = true;
+      return;
     }
+    requestAnimationFrame(checkLoop);
   }
-  // 초기 확인 (이미 뷰포트 안에 있는 경우)
-  checkInView();
-  // 스크롤 이벤트로 계속 확인
-  window.addEventListener('scroll', checkInView, {passive: true});
+  requestAnimationFrame(checkLoop);
 })();
 </script>
 </body>
