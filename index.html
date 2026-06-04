@@ -509,7 +509,107 @@
       line-height: 1.5;
       box-sizing: border-box;
     }
-  </style>
+
+    /* ===== S5 ===== */
+    .s5-section {
+      padding: 120px 28px 100px;
+      background: #fff;
+      margin-top: 80px;
+    }
+    .s5-main-copy {
+      font-size: 30px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.35;
+      letter-spacing: -0.5px;
+      text-align: center;
+      margin-bottom: 52px;
+      word-break: keep-all;
+    }
+    .s5-img-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 52px;
+    }
+    .s5-img-item {
+      flex: 1;
+      aspect-ratio: 4 / 5;
+      background: #d0ccc8;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 12px;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+    }
+    .s5-sub-copy {
+      font-size: 15px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.9;
+      text-align: center;
+      margin-bottom: 52px;
+      word-break: keep-all;
+    }
+    .s5-video-wrap {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 64px;
+    }
+    .s5-desc-wrap {
+      text-align: center;
+    }
+    .s5-desc-pre {
+      font-size: 16px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .s5-keyword-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .s5-keyword-pre {
+      font-size: 16px;
+      font-weight: 400;
+      color: #555;
+    }
+    .s5-keyword {
+      font-size: 40px;
+      font-weight: 900;
+      color: #111;
+      letter-spacing: -1px;
+      line-height: 1;
+      border: 3px solid #111;
+      padding: 4px 14px 6px;
+      display: inline-block;
+    }
+    .s5-keyword-post {
+      font-size: 16px;
+      font-weight: 400;
+      color: #555;
+    }
+    .s5-desc-post {
+      font-size: 16px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.9;
+      text-align: center;
+      word-break: keep-all;
+    }
+    </style>
 </head>
 <body>
 <div class="page-wrapper">
@@ -654,12 +754,24 @@
     </div>
   </section>
 
-  <!-- S5: 솔루션 -->
-  <section class="section">
-    <p class="section-label">S5 · 솔루션</p>
-    <h2 class="section-title">냄새의 원인부터<br>차단합니다</h2>
-    <p class="section-body">피부 위 세균 증식, 땀샘 분비, 산화 냄새까지 — 체취가 생기는 모든 단계에 개입합니다.</p>
-    <div class="img-placeholder">이미지 플레이스홀더</div>
+  <!-- S5: 원인 분석 -->
+  <section class="s5-section">
+    <p class="s5-main-copy">피지가 오래된 기름처럼 변할 때,<br>체취는 더 묵직하게 남습니다.</p>
+    <div class="s5-img-row">
+      <div class="s5-img-item">노폐물</div>
+      <div class="s5-img-item">목에 노란 셔츠</div>
+    </div>
+    <p class="s5-sub-copy">체취는 단순한 땀만의 문제는 아닙니다.<br>피지와 각질, 피부 표면에 남은 잔여물이 반복적으로 쌓이고,<br>이 지질 성분이 공기와 열, 마찰에 노출되면서<br>기름지고 묵직한 잔취로 이어질 수 있습니다.</p>
+    <div class="s5-video-wrap">3D 영상 플레이스홀더</div>
+    <div class="s5-desc-wrap">
+      <p class="s5-desc-pre">이 과정에서 대표적으로 언급되는 체취 관련 성분이</p>
+      <div class="s5-keyword-line">
+        <span class="s5-keyword-pre">바로</span>
+        <span class="s5-keyword">[노넨알]</span>
+        <span class="s5-keyword-post">입니다.</span>
+      </div>
+      <p class="s5-desc-post">특히 연령이 증가할수록<br>피부 표면의 지질 환경은 달라질 수 있고,<br>산화되기 쉬운 상태가 반복되면<br>체취는 더 쉽게 형성될 수 있습니다.</p>
+    </div>
   </section>
 
   <!-- S6: 제품 소개 -->
