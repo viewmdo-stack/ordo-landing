@@ -649,6 +649,7 @@
 // S3 두 번째 블록 (오른쪽→왼쪽) rAF 폴링
 (function(){
   var container2 = document.querySelector('.s3-sq-wrap2');
+      if(container2) container2.style.position = 'relative';
   var imgWrap2 = document.querySelector('.s3-sq-img-wrap2');
   var txtWrap2 = document.querySelector('.s3-sq-text2');
   if(!container2 || !imgWrap2) return;
