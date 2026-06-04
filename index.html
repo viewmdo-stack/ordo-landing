@@ -248,6 +248,41 @@
       color: #555;
       line-height: 1.9;
     }
+
+    /* ===== S2 슬라이더 ===== */
+    .s2-slider-wrap {
+      overflow: hidden;
+      width: 100%;
+      padding: 32px 0 40px;
+      background: #f5f2ef;
+    }
+    .s2-slider-track {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      animation: slideLeft 20s linear infinite;
+    }
+    .s2-slider-wrap:hover .s2-slider-track {
+      animation-play-state: paused;
+    }
+    .s2-slide {
+      width: 200px;
+      height: 340px;
+      background: #e0dbd6;
+      border-radius: 12px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #999;
+      font-weight: 500;
+      overflow: hidden;
+    }
+    @keyframes slideLeft {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 </head>
 <body>
@@ -327,6 +362,21 @@
       말하기 어렵지만, 모른 척하기도 어려운 이야기.
     </p>
   </section>
+  <!-- S2 슬라이더 -->
+  <div class="s2-slider-wrap">
+    <div class="s2-slider-track">
+      <div class="s2-slide">커뮤니티 캡처 1</div>
+      <div class="s2-slide">커뮤니티 캡처 2</div>
+      <div class="s2-slide">커뮤니티 캡처 3</div>
+      <div class="s2-slide">커뮤니티 캡처 4</div>
+      <div class="s2-slide">커뮤니티 캡처 5</div>
+      <div class="s2-slide">커뮤니티 캡처 1</div>
+      <div class="s2-slide">커뮤니티 캡처 2</div>
+      <div class="s2-slide">커뮤니티 캡처 3</div>
+      <div class="s2-slide">커뮤니티 캡처 4</div>
+      <div class="s2-slide">커뮤니티 캡처 5</div>
+    </div>
+  </div>
 
   <!-- S3: 제품 등장 -->
   <section class="section">
