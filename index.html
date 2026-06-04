@@ -571,17 +571,24 @@
 
 // IntersectionObserver: s3-sq-img-wrap 화면 진입 시 슬라이드인
 (function(){
-  var el = document.querySelector('.s3-sq-img-wrap');
-  if(!el) return;
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        el.classList.add('in-view');
-        obs.unobserve(el);
-      }
-    });
-  }, { threshold: 0.2 });
-  obs.observe(el);
+  function initSlideIn() {
+    var el = document.querySelector('.s3-sq-img-wrap');
+    if(!el) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          el.classList.add('in-view');
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    obs.observe(el);
+  }
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSlideIn);
+  } else {
+    initSlideIn();
+  }
 })();
 </script>
 </body>
