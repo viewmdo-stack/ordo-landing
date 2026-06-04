@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ORDO LAYER BODY WASH</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .page-wrapper {
+      width: 100%;
+      max-width: 430px;
+      background: #fff;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+
+    /* ===== S1: 문제 제기 ===== */
+    .s1-hero {
+      background: #fff;
+      text-align: center;
+      padding: 60px 24px 40px;
+    }
+    .s1-sub {
+      font-size: 35px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .s1-main {
+      font-size: 60px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.15;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
+    .s1-desc {
+      font-size: 25px;
+      font-weight: 400;
+      color: #888;
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+    }
+
+    /* 공감 카드 */
+    .s1-cards {
+      padding: 0;
+    }
+    .s1-card {
+      position: relative;
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .s1-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+    }
+    .s1-card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(60%);
+    }
+    .s1-card-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px;
+    }
+    .s1-card-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .s1-card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+    .s1-card-check {
+      width: 28px;
+      height: 28px;
+      margin: 0 auto;
+    }
+
+    /* 인용구 */
+    .s1-quotes {
+      padding: 32px 28px;
+      background: #fff;
+    }
+    .s1-quote {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.7;
+      padding: 14px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .s1-quote:last-child {
+      border-bottom: none;
+    }
+
+    /* 마무리 */
+    .s1-closing {
+      background: #111;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .s1-closing-q {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.4;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .s1-closing-q span {
+      color: #4A90E2;
+      display: block;
+      font-size: 32px;
+    }
+    .s1-closing-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    /* ===== S2 이후 (기본 구조 유지) ===== */
+    .section {
+      padding: 60px 24px;
+      border-bottom: 1px solid #eee;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #4A90E2;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.35;
+      text-align: center;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .section-body {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .img-placeholder {
+      width: 100%;
+      height: 220px;
+      background: #e8e8e8;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 13px;
+      margin: 20px 0;
+    }
+
+    /* S9 4-LAYER */
+    .s9-layer {
+      background: #111;
+      color: #fff;
+      padding: 60px 24px;
+    }
+    .s9-layer .section-label { color: #4A90E2; }
+    .s9-layer .section-title { color: #fff; }
+    .s9-layer .section-body { color: rgba(255,255,255,0.7); }
+    .layer-item {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 16px;
+      border-left: 3px solid #4A90E2;
+      text-align: left;
+    }
+    .layer-item h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .layer-item p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- S1: 문제 제기 -->
+  <section>
+    <div class="s1-hero">
+      <p class="s1-sub">당신도 한 번쯤,</p>
+      <p class="s1-main">이런 순간이<br>있었나요?</p>
+      <p class="s1-desc">남들은 먼저 느끼는데...</p>
+    </div>
+
+    <div class="s1-cards">
+      <div class="s1-card">
+        <div class="s1-card-content">
+          <p class="s1-card-label">욕실과 화장실에</p>
+          <p class="s1-card-title">물기와 습기가 남긴 곰팡이 냄새<br>옷감 깊숙이 스며든 옷장 내의 잔 냄새</p>
+          <svg class="s1-card-check" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="#4A90E2" stroke-width="2"/>
+            <path d="M8 14l4 4 8-8" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="s1-card">
+        <div class="s1-card-content">
+          <p class="s1-card-label">현관에 들어오자마자</p>
+          <p class="s1-card-title">느껴지는 신발 냄새,<br>반려동물 냄새가 섞인 공기</p>
+          <svg class="s1-card-check" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="#4A90E2" stroke-width="2"/>
+            <path d="M8 14l4 4 8-8" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="s1-card">
+        <div class="s1-card-content">
+          <p class="s1-card-label">운전을 하면서</p>
+          <p class="s1-card-title">공조기와 뿔로스트,<br>필터 때문에 발생하는 냄새</p>
+          <svg class="s1-card-check" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="#4A90E2" stroke-width="2"/>
+            <path d="M8 14l4 4 8-8" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="s1-card">
+        <div class="s1-card-content">
+          <p class="s1-card-label">몸을 씻고 나서도</p>
+          <p class="s1-card-title">사라지지 않는 체취,<br>옷에 배어든 알 수 없는 냄새</p>
+          <svg class="s1-card-check" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="#4A90E2" stroke-width="2"/>
+            <path d="M8 14l4 4 8-8" stroke="#4A90E2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="s1-quotes">
+      <p class="s1-quote">"향수를 뿌렸던... 더 역한 냄새가 나요"</p>
+      <p class="s1-quote">"퇴근하고 벗어둔 옷에서 나둔 알 수 없는 빠지지 않는 특유의 체취?"</p>
+    </div>
+
+    <div class="s1-closing">
+      <p class="s1-closing-q">
+        혹시 나도 모르게<br>
+        <span>나도 그런거 아닐까?</span>
+      </p>
+      <p class="s1-closing-sub">내 몸의 냄새, 나만 모를 수 있습니다</p>
+    </div>
+  </section>
+
+  <!-- S2: 사회적 공감대 -->
+  <section class="section">
+    <p class="section-label">S2 · 사회적 공감대</p>
+    <h2 class="section-title">냄새는 본인이<br>가장 모른다</h2>
+    <p class="section-body">후각 피로 현상으로 인해 자신의 체취는 스스로 감지하기 어렵습니다. 주변 사람들이 먼저 느끼는 불편함, 이제는 근본부터 해결해야 합니다.</p>
+    <div class="img-placeholder">이미지 플레이스홀더</div>
+  </section>
+
+  <!-- S3: 제품 등장 -->
+  <section class="section">
+    <p class="section-label">S3 · 제품 등장</p>
+    <h2 class="section-title">ORDO LAYER<br>BODY WASH</h2>
+    <p class="section-body">단순한 바디워시가 아닙니다. 체취의 근본 원인을 4단계로 차단하는 전문 세정 시스템입니다.</p>
+    <div class="img-placeholder">제품 이미지 플레이스홀더</div>
+  </section>
+
+  <!-- S4: 브랜드 스토리 -->
+  <section class="section">
+    <p class="section-label">S4 · 브랜드 스토리</p>
+    <h2 class="section-title">왜 ORDO가<br>만들었나</h2>
+    <p class="section-body">체취 문제로 일상의 자신감을 잃는 사람들을 위해, 피부과학과 향기 기술을 결합한 솔루션을 개발했습니다.</p>
+    <div class="img-placeholder">이미지 플레이스홀더</div>
+  </section>
+
+  <!-- S5: 솔루션 -->
+  <section class="section">
+    <p class="section-label">S5 · 솔루션</p>
+    <h2 class="section-title">냄새의 원인부터<br>차단합니다</h2>
+    <p class="section-body">피부 위 세균 증식, 땀샘 분비, 산화 냄새까지 — 체취가 생기는 모든 단계에 개입합니다.</p>
+    <div class="img-placeholder">이미지 플레이스홀더</div>
+  </section>
+
+  <!-- S6: 제품 소개 -->
+  <section class="section">
+    <p class="section-label">S6 · 제품 소개</p>
+    <h2 class="section-title">성분과 효능</h2>
+    <p class="section-body">피부 과학자들이 선별한 원료, 자극 없이 강력하게 작용하는 세정 포뮬러를 담았습니다.</p>
+    <div class="img-placeholder">성분 이미지 플레이스홀더</div>
+  </section>
+
+  <!-- S7: 원인 규명 -->
+  <section class="section">
+    <p class="section-label">S7 · 원인 규명</p>
+    <h2 class="section-title">체취는 왜<br>생기는가</h2>
+    <p class="section-body">아포크린선의 분비물이 피부 세균과 결합할 때 냄새가 생깁니다. 일반 세정제로는 이 과정을 막기 어렵습니다.</p>
+    <div class="img-placeholder">도식 이미지 플레이스홀더</div>
+  </section>
+
+  <!-- S8: 설계 의도 -->
+  <section class="section">
+    <p class="section-label">S8 · 설계 의도</p>
+    <h2 class="section-title">ORDO LAYER의<br>설계 철학</h2>
+    <p class="section-body">덮는 것이 아닌, 없애는 것. 향기로 가리는 대신 원인균을 제거하고 피부 환경을 정상화합니다.</p>
+    <div class="img-placeholder">이미지 플레이스홀더</div>
+  </section>
+
+  <!-- S9: 4-LAYER ODOR RESET SYSTEM -->
+  <section class="s9-layer">
+    <p class="section-label">S9 · SYSTEM</p>
+    <h2 class="section-title">4-LAYER<br>ODOR RESET SYSTEM</h2>
+    <p class="section-body">체취 발생의 4단계를 각각 차단하는 레이어 시스템</p>
+
+    <div class="layer-item">
+      <h3>LAYER 1 · CLEANSE</h3>
+      <p>피부 표면의 오염 물질과 땀 잔여물을 깨끗이 제거합니다</p>
+    </div>
+    <div class="layer-item">
+      <h3>LAYER 2 · CONTROL</h3>
+      <p>냄새 유발 세균의 증식을 억제하고 피부 pH를 조절합니다</p>
+    </div>
+    <div class="layer-item">
+      <h3>LAYER 3 · PROTECT</h3>
+      <p>피부 장벽을 강화해 외부 오염 물질 침투를 차단합니다</p>
+    </div>
+    <div class="layer-item">
+      <h3>LAYER 4 · RESET</h3>
+      <p>세정 후에도 지속되는 피부 컨디션으로 일상 속 냄새를 리셋합니다</p>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
