@@ -342,7 +342,7 @@
       flex-shrink: 0;
       width: 55%;
       aspect-ratio: 1 / 1;
-      transform: translateX(-110%);
+      transform: translateX(-100vw);
       opacity: 0;
       transition: transform 0.75s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.75s ease;
     }
@@ -363,6 +363,11 @@
       line-height: 1.7;
       padding: 0 16px 0 14px;
       text-align: left;
+      opacity: 0;
+      transition: opacity 0.75s ease 0.4s;
+    }
+    .s3-sq-text.in-view {
+      opacity: 1;
     }
       to   { transform: translateX(0);    opacity: 1; }
     }
@@ -569,26 +574,23 @@
   requestAnimationFrame(tick);
 })();
 
-// IntersectionObserver: s3-sq-img-wrap 화면 진입 시 슬라이드인
+// IntersectionObserver: s3-sq-img-wrap + s3-sq-text 화면 진입 시 애니메이션
 (function(){
-  function initSlideIn() {
-    var el = document.querySelector('.s3-sq-img-wrap');
-    if(!el) return;
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          el.classList.add('in-view');
-          obs.unobserve(el);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    obs.observe(el);
-  }
-  if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSlideIn);
-  } else {
-    initSlideIn();
-  }
+  var imgWrap = document.querySelector('.s3-sq-img-wrap');
+  var txtWrap = document.querySelector('.s3-sq-text');
+  if(!imgWrap) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        imgWrap.classList.add('in-view');
+        if(txtWrap) txtWrap.classList.add('in-view');
+        obs.unobserve(imgWrap);
+      }
+    });
+  }, {
+    threshold: 0
+  });
+  obs.observe(imgWrap);
 })();
 </script>
 </body>
