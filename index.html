@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ORDO LAYER BODY WASH</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+    
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
@@ -260,11 +262,8 @@
       display: flex;
       gap: 12px;
       width: max-content;
-      animation: slideLeft 20s linear infinite;
     }
-    .s2-slider-wrap:hover .s2-slider-track {
-      animation-play-state: paused;
-    }
+    
     .s2-slide {
       width: 300px;
       height: 510px;
@@ -279,9 +278,16 @@
       font-weight: 500;
       overflow: hidden;
     }
-    @keyframes slideLeft {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    
+  
+    .s2-caption {
+      font-size: 14px;
+      font-family: 'Nanum Myeongjo', serif;
+      color: #555;
+      text-align: center;
+      margin: 8px 0 0;
+      padding: 0 20px;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -376,6 +382,7 @@
       <div class="s2-slide">커뮤니티 캡처 4</div>
       <div class="s2-slide">커뮤니티 캡처 5</div>
     </div>
+  <p class="s2-caption">우리는 이 고민을 누군가의 상처로 만들고 싶지 않았습니다.</p>
   </div>
 
   <!-- S3: 제품 등장 -->
@@ -450,5 +457,29 @@
   </section>
 
 </div>
+
+<script>
+(function(){
+  var track = document.querySelector('.s2-slider-track');
+  if(!track) return;
+  var speed = 0.5; // px per frame
+  var offset = 0;
+  
+  // 트랙의 실제 너비의 절반(복제본이 있으므로)
+  function getHalfWidth() {
+    return track.scrollWidth / 2;
+  }
+  
+  function tick() {
+    offset += speed;
+    var half = getHalfWidth();
+    if(offset >= half) offset -= half;
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    requestAnimationFrame(tick);
+  }
+  
+  requestAnimationFrame(tick);
+})();
+</script>
 </body>
 </html>
