@@ -963,7 +963,7 @@
       color: #888;
       margin-bottom: 60px;
     }
-    /* 숯넛 파트 */
+    /* 솝넛 파트 */
     .s8-ingredient-wrap {
       text-align: center;
       padding: 0 20px;
@@ -976,14 +976,11 @@
       margin-bottom: 8px;
     }
     .s8-ingredient-title {
-      font-size: 19px;
+      font-size: 26px;
       font-weight: 900;
       color: #111;
       line-height: 1.4;
       word-break: keep-all;
-    }
-    .s8-ingredient-title u {
-      text-underline-offset: 3px;
     }
     .s8-img-row {
       display: flex;
@@ -1019,9 +1016,9 @@
     .s8-stats-tag {
       display: inline-block;
       border: 1.5px solid #888;
-      border-radius: 24px;
-      padding: 6px 20px;
-      font-size: 13px;
+      border-radius: 30px;
+      padding: 9px 28px;
+      font-size: 19px;
       font-weight: 600;
       color: #555;
       margin: 0 auto 48px;
@@ -1059,22 +1056,27 @@
     }
     .s8-bar-track {
       width: 100%;
-      height: 8px;
+      height: 24px;
       background: #e0e0e0;
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
+      position: relative;
     }
     .s8-bar-fill {
       height: 100%;
       background: #3a6b35;
-      border-radius: 4px;
+      border-radius: 6px;
       transition: width 1.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 10px;
     }
     .s8-bar-value {
-      font-size: 11px;
-      color: #555;
-      text-align: right;
-      margin-top: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
     }
 
     /* S8 비교 이미지 */
@@ -1085,9 +1087,13 @@
       position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 4px;
+      gap: 6px;
       margin-bottom: 12px;
+    }
+    .s8-compare-img-full {
+      aspect-ratio: 4 / 6;
+      background: #c8c8c8;
+      border-radius: 0;
     }
     .s8-compare-label-row {
       display: flex;
@@ -1177,9 +1183,13 @@
       font-size: 11px;
       font-weight: 400;
       color: #888;
-      line-height: 1.7;
-      text-align: right;
+      line-height: 1.8;
+      text-align: left;
       padding: 0 2px;
+    }
+    .s8-compare-note-right {
+      display: block;
+      text-align: right;
     }
     </style>
 </head>
@@ -1424,7 +1434,7 @@
     </div>
   </section>
 
-  <!-- S8: DEEP CLEAR + 숯넛 + 수치 -->
+  <!-- S8: DEEP CLEAR + 솝넛 + 수치 -->
   <section class="s8-section">
     <p class="s8-sys-label">ORDO 4-LAYER ODOR RESET SYSTEM</p>
     <div class="s8-step-wrap">
@@ -1434,16 +1444,15 @@
     <p class="s8-main-copy">피부 겉을 씻어냈다면,<br>이제 모공 주변의 묵은 산화피지를<br>비워낼 차례입니다.</p>
     <p class="s8-sub-copy">피부 표면의 피지와 각질을 걷어낸 뒤에도,<br>모공 입구와 주변에는<br>묵은 산화피지와 냄새 잔여물이 남기 쉽습니다.<br><br>이 잔여물은 다시 분비되는 피지와 겹치며<br>그 묵직한 기름 냄새가 납니다.</p>
     <div class="s8-hero-img">모공 이미지 플레이스홀더</div>
-    <!-- 숯넛 파트 -->
+    <!-- 솝넛 파트 -->
     <div class="s8-ingredient-wrap">
-      <p class="s8-ingredient-top">100% 순수 숯넛 분말 특허 성분!</p>
-      <p class="s8-ingredient-title"><u>강력한 소취기능과</u> 세정력을 가진<br>천연세정 활성물질</p>
+      <p class="s8-ingredient-title">강력한 소취기능과 세정력을 가진<br>솝넛 분말 특허 성분</p>
     </div>
     <div class="s8-img-row">
-      <div class="s8-img-item">숯넛 이미지 1</div>
-      <div class="s8-img-item">숯넛 이미지 2</div>
+      <div class="s8-img-item">솝넛 이미지 1</div>
+      <div class="s8-img-item">솝넛 이미지 2</div>
     </div>
-    <p class="s8-ingredient-desc">숯넛 껍질에 들어있는<br>풍부한 천연 사포닌과 활성 성분이<br>산화된 피지에서 나는 악취 원인인 <u>노네날을</u><br>분해하고 중화시킵니다.</p>
+    <p class="s8-ingredient-desc">솝넛 껍질에 들어있는<br>풍부한 천연 사포닌과 활성 성분이<br>산화된 피지에서 나는 악취 원인인 <u>노네날을</u><br>분해하고 중화시킵니다.</p>
     <!-- 수치 파트 -->
     <div class="s8-stats-wrap">
       <span class="s8-stats-tag">수치로 증명하는 강력한 효과</span>
@@ -1451,55 +1460,40 @@
         <p class="s8-stat-headline">노화 채취(노네날) 원인<br><span class="s8-stat-num">66.7%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">2-Nonenal (2-노네날)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:66.7%"></div></div>
-          <p class="s8-bar-value">66.7%</p>
+          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:66.7%"><span class="s8-bar-value">66.7%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">담배, 땀냄새<br><span class="s8-stat-num">51.9%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Ammonia (암모니아)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:51.9%"></div></div>
-          <p class="s8-bar-value">51.9%</p>
+          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:51.9%"><span class="s8-bar-value">51.9%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">발, 겨드랑이 냄새<br><span class="s8-stat-num">65.6%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Iso-valeric acid (이소발레르산)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:65.6%"></div></div>
-          <p class="s8-bar-value">65.6%</p>
+          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:65.6%"><span class="s8-bar-value">65.6%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">구취/부패취<br><span class="s8-stat-num">68.6%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Methylmercaptan (메틸메르캅탄)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:68.6%"></div></div>
-          <p class="s8-bar-value">68.6%</p>
+          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:68.6%"><span class="s8-bar-value">68.6%</span></div></div>
         </div>
       </div>
     <div class="s8-compare-wrap">
       <div class="s8-compare-label-row">
         <span class="s8-compare-label">일반 세정제</span>
-        <span class="s8-compare-label" style="text-align:right;">숯넛 추출파우더 1% 함유</span>
+        <span class="s8-compare-label" style="text-align:right;">솝넛 추출파우더 1% 함유</span>
       </div>
       <div class="s8-compare-grid">
-        <div class="s8-compare-img"><span class="s8-compare-badge">L</span></div>
-        <div class="s8-compare-img"><span class="s8-compare-badge">R</span></div>
-        <div class="s8-compare-img"><span class="s8-compare-badge">L</span></div>
-        <div class="s8-compare-img"><span class="s8-compare-badge">R</span></div>
-        <!-- 가운데 오버레이 -->
-        <div class="s8-compare-center">
-          <span class="s8-compare-arrow">&#8596;</span>
-          <div class="s8-compare-icon">
-            <span class="s8-compare-icon-l">L</span>
-            <span class="s8-compare-icon-r">R</span>
-          </div>
-          <span class="s8-compare-arrow">&#8596;</span>
-        </div>
+        <div class="s8-compare-img-full"></div>
+        <div class="s8-compare-img-full"></div>
       </div>
-      <p class="s8-compare-note">*원료적 특성에 한함.<br>특허 제6034118호 피부 외용 소취제, 항균제 및 이를 함유하는 외용 조성물.</p>
+      <p class="s8-compare-note"><span class="s8-compare-note-right">*원료적 특성에 한함.</span><br>특허 제6034118호&nbsp;&nbsp;피부 외용 소취제, 항균제 및 이를 함유하는 외용 조성물.</p>
     </div>
     </div>
   </section>
