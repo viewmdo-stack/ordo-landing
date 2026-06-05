@@ -1075,6 +1075,111 @@
       text-align: right;
       margin-top: 3px;
     }
+
+    /* S8 비교 이미지 */
+    .s8-compare-wrap {
+      padding: 48px 16px 0;
+    }
+    .s8-compare-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+    .s8-compare-label-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding: 0 2px;
+    }
+    .s8-compare-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #444;
+      line-height: 1.4;
+      text-align: center;
+      flex: 1;
+    }
+    .s8-compare-img {
+      aspect-ratio: 1 / 1;
+      background: #c8c8c8;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 6px;
+      position: relative;
+    }
+    .s8-compare-badge {
+      background: #003399;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+    }
+    .s8-compare-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .s8-compare-arrow {
+      font-size: 20px;
+      color: #333;
+      line-height: 1;
+    }
+    .s8-compare-icon {
+      width: 44px;
+      height: 28px;
+      background: #2a2a2a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .s8-compare-icon-l {
+      position: absolute;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: #1a5fa8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .s8-compare-icon-r {
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: #2d6e2d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .s8-compare-note {
+      font-size: 11px;
+      font-weight: 400;
+      color: #888;
+      line-height: 1.7;
+      text-align: right;
+      padding: 0 2px;
+    }
     </style>
 </head>
 <body>
@@ -1373,6 +1478,28 @@
           <p class="s8-bar-value">68.6%</p>
         </div>
       </div>
+    <div class="s8-compare-wrap">
+      <div class="s8-compare-label-row">
+        <span class="s8-compare-label">Control<br>Shampoo</span>
+        <span class="s8-compare-label" style="text-align:right;">Shampoo with<br>Soapnut Extract Powder 1%</span>
+      </div>
+      <div class="s8-compare-grid">
+        <div class="s8-compare-img"><span class="s8-compare-badge">L</span></div>
+        <div class="s8-compare-img"><span class="s8-compare-badge">R</span></div>
+        <div class="s8-compare-img"><span class="s8-compare-badge">L</span></div>
+        <div class="s8-compare-img"><span class="s8-compare-badge">R</span></div>
+        <!-- 가운데 오버레이 -->
+        <div class="s8-compare-center">
+          <span class="s8-compare-arrow">&#8596;</span>
+          <div class="s8-compare-icon">
+            <span class="s8-compare-icon-l">L</span>
+            <span class="s8-compare-icon-r">R</span>
+          </div>
+          <span class="s8-compare-arrow">&#8596;</span>
+        </div>
+      </div>
+      <p class="s8-compare-note">*원료적 특성에 한함.<br>특허 제6034118호 피부 외용 소취제, 항균제 및 이를 함유하는 외용 조성물.</p>
+    </div>
     </div>
   </section>
 
