@@ -882,6 +882,201 @@
       font-size: 11px;
       color: #888;
     }
+
+    /* ===== S8 섹션 ===== */
+    .s8-section {
+      padding: 100px 0 80px;
+      background: #fff;
+      margin-top: 80px;
+    }
+    .s8-sys-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #aaa;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 0 20px;
+    }
+    .s8-step-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .s8-step-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #1e1e1e;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .s8-step-tag {
+      display: inline-block;
+      border: 1.5px solid #555;
+      border-radius: 20px;
+      padding: 3px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #555;
+      letter-spacing: 1.5px;
+    }
+    .s8-main-copy {
+      font-size: 21px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.55;
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 0 20px;
+      word-break: keep-all;
+    }
+    .s8-main-copy u {
+      text-underline-offset: 3px;
+    }
+    .s8-sub-copy {
+      font-size: 15px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.85;
+      text-align: center;
+      margin-bottom: 36px;
+      padding: 0 20px;
+      word-break: keep-all;
+    }
+    .s8-sub-copy u {
+      text-underline-offset: 3px;
+    }
+    .s8-hero-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #d0ccc8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 60px;
+    }
+    /* 숯넛 파트 */
+    .s8-ingredient-wrap {
+      text-align: center;
+      padding: 0 20px;
+      margin-bottom: 28px;
+    }
+    .s8-ingredient-top {
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .s8-ingredient-title {
+      font-size: 19px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.4;
+      word-break: keep-all;
+    }
+    .s8-ingredient-title u {
+      text-underline-offset: 3px;
+    }
+    .s8-img-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 28px;
+      padding: 0 16px;
+    }
+    .s8-img-item {
+      flex: 1;
+      aspect-ratio: 4 / 5;
+      background: #2a2a2a;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 12px;
+      font-size: 11px;
+      color: #888;
+    }
+    .s8-ingredient-desc {
+      font-size: 15px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.9;
+      text-align: center;
+      padding: 0 20px;
+      margin-bottom: 60px;
+      word-break: keep-all;
+    }
+    /* 수치 파트 */
+    .s8-stats-wrap {
+      padding: 0 20px;
+    }
+    .s8-stats-tag {
+      display: inline-block;
+      border: 1.5px solid #888;
+      border-radius: 24px;
+      padding: 6px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      margin: 0 auto 48px;
+      display: block;
+      width: fit-content;
+    }
+    .s8-stat-item {
+      margin-bottom: 44px;
+    }
+    .s8-stat-headline {
+      font-size: 30px;
+      font-weight: 900;
+      color: #111;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+    .s8-stat-num {
+      display: inline-block;
+      animation: statBlink 0.4s step-start infinite;
+    }
+    @keyframes statBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.15; }
+    }
+    .s8-bar-wrap {
+      margin-bottom: 6px;
+    }
+    .s8-bar-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .s8-bar-track {
+      width: 100%;
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .s8-bar-fill {
+      height: 100%;
+      background: #3a6b35;
+      border-radius: 4px;
+      transition: width 1.2s ease;
+    }
+    .s8-bar-value {
+      font-size: 11px;
+      color: #555;
+      text-align: right;
+      margin-top: 3px;
+    }
     </style>
 </head>
 <body>
@@ -1125,12 +1320,62 @@
     </div>
   </section>
 
-  <!-- S8: 설계 의도 -->
-  <section class="section">
-    <p class="section-label">S8 · 설계 의도</p>
-    <h2 class="section-title">ORDO LAYER의<br>설계 철학</h2>
-    <p class="section-body">덮는 것이 아닌, 없애는 것. 향기로 가리는 대신 원인균을 제거하고 피부 환경을 정상화합니다.</p>
-    <div class="img-placeholder">이미지 플레이스홀더</div>
+  <!-- S8: DEEP CLEAR + 숯넛 + 수치 -->
+  <section class="s8-section">
+    <p class="s8-sys-label">ORDO 4-LAYER ODOR RESET SYSTEM</p>
+    <div class="s8-step-wrap">
+      <div class="s8-step-num">2</div>
+      <span class="s8-step-tag">DEEP CLEAR</span>
+    </div>
+    <p class="s8-main-copy">피부 겉을 씻어냈다면,<br>이제 모공 주변의 <u>묵은 산화피지</u>를<br>비워낼 차례입니다.</p>
+    <p class="s8-sub-copy">피부 표면의 피지와 각질을 걷어낸 뒤에도, 모공 입구와 주변에는<br>묵은 <u>산화피지와</u> 냄새 잔여물이 남기 쉽습니다.<br>이 잔여물은 다시 분비되는 피지와 겹치며 그 묵직한 기름 냄새가 납니다.</p>
+    <div class="s8-hero-img">모공 이미지 플레이스홀더</div>
+    <!-- 숯넛 파트 -->
+    <div class="s8-ingredient-wrap">
+      <p class="s8-ingredient-top">100% 순수 숯넛 분말 특허 성분!</p>
+      <p class="s8-ingredient-title"><u>강력한 소취기능과</u> 세정력을 가진<br>천연세정 활성물질</p>
+    </div>
+    <div class="s8-img-row">
+      <div class="s8-img-item">숯넛 이미지 1</div>
+      <div class="s8-img-item">숯넛 이미지 2</div>
+    </div>
+    <p class="s8-ingredient-desc">숯넛 껍질에 들어있는<br>풍부한 천연 사포닌과 활성 성분이<br>산화된 피지에서 나는 악취 원인인 <u>논네알을</u><br>분해하고 중화시킵니다.</p>
+    <!-- 수치 파트 -->
+    <div class="s8-stats-wrap">
+      <span class="s8-stats-tag">수치로 증명하는 강력한 효과</span>
+      <div class="s8-stat-item">
+        <p class="s8-stat-headline">노화 채취(노네날) 원인<br><span class="s8-stat-num">66.7%</span> 감소</p>
+        <div class="s8-bar-wrap">
+          <p class="s8-bar-label">2-Nonenal (2-노네날)</p>
+          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:66.7%"></div></div>
+          <p class="s8-bar-value">66.7%</p>
+        </div>
+      </div>
+      <div class="s8-stat-item">
+        <p class="s8-stat-headline">담배, 땀냄새<br><span class="s8-stat-num">51.9%</span> 감소</p>
+        <div class="s8-bar-wrap">
+          <p class="s8-bar-label">Ammonia (암모니아)</p>
+          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:51.9%"></div></div>
+          <p class="s8-bar-value">51.9%</p>
+        </div>
+      </div>
+      <div class="s8-stat-item">
+        <p class="s8-stat-headline">발, 겨드랑이 냄새<br><span class="s8-stat-num">65.6%</span> 감소</p>
+        <div class="s8-bar-wrap">
+          <p class="s8-bar-label">Iso-valeric acid (이소발레르산)</p>
+          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:65.6%"></div></div>
+          <p class="s8-bar-value">65.6%</p>
+        </div>
+      </div>
+      <div class="s8-stat-item">
+        <p class="s8-stat-headline">구취/부패취<br><span class="s8-stat-num">68.6%</span> 감소</p>
+        <div class="s8-bar-wrap">
+          <p class="s8-bar-label">Methylmercaptan (메틸메르캅탄)</p>
+          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:68.6%"></div></div>
+          <p class="s8-bar-value">68.6%</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- S9: 4-LAYER ODOR RESET SYSTEM -->
