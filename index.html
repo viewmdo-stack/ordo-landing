@@ -669,76 +669,63 @@
       margin-bottom: 48px;
       padding: 0 24px;
     }
-    .s6-diagram {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 0 auto 20px;
-    }
-    .s6-node {
-      position: absolute;
-      width: 108px;
-      height: 108px;
-      border-radius: 50%;
-      background: #1e1e1e;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8px;
+    .s6-diagram-wrap {
+      width: 100%;
+      padding: 0 8px;
       box-sizing: border-box;
+      margin-bottom: 48px;
     }
-    .s6-node-num {
-      font-size: 18px;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .s6-node-text {
-      font-size: 10px;
-      font-weight: 600;
-      color: #ddd;
-      line-height: 1.4;
-    }
-    .s6-node-label {
-      position: absolute;
-      font-size: 9px;
-      font-weight: 700;
-      color: #666;
-      letter-spacing: 1.5px;
-      text-align: center;
-      width: 108px;
-    }
-    .s6-node-1 { top: 0; left: 50%; transform: translateX(-50%); }
-    .s6-label-1 { top: 116px; left: 50%; transform: translateX(-50%); }
-    .s6-node-2 { top: 50%; right: 0; transform: translateY(-50%); }
-    .s6-label-2 { bottom: 74px; right: 0; width: 108px; text-align: center; }
-    .s6-node-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
-    .s6-label-3 { bottom: 116px; left: 50%; transform: translateX(-50%); }
-    .s6-node-4 { top: 50%; left: 0; transform: translateY(-50%); }
-    .s6-label-4 { bottom: 74px; left: 0; width: 108px; text-align: center; }
-    .s6-arrows {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
+    .s6-svg {
+      width: 100%;
+      height: auto;
+      display: block;
       overflow: visible;
     }
-    .s6-arrow-path {
+    .s6-circle {
+      fill: #1e1e1e;
+    }
+    .s6-num {
+      fill: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      font-family: inherit;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .s6-txt {
+      fill: #ccc;
+      font-size: 10px;
+      font-weight: 600;
+      font-family: inherit;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .s6-lbl {
+      fill: #666;
+      font-size: 9px;
+      font-weight: 700;
+      font-family: inherit;
+      text-anchor: middle;
+      letter-spacing: 1.5px;
+    }
+    .s6-arc {
       fill: none;
-      stroke: #999;
+      stroke: #888;
       stroke-width: 2;
       stroke-linecap: round;
-      stroke-dasharray: 150;
-      stroke-dashoffset: 150;
+      stroke-dasharray: 180 9999;
+      stroke-dashoffset: 180;
     }
-    .s6-arrow-path.a1 { animation: s6draw 0.5s ease forwards 0.4s; }
-    .s6-arrow-path.a2 { animation: s6draw 0.5s ease forwards 1.0s; }
-    .s6-arrow-path.a3 { animation: s6draw 0.5s ease forwards 1.6s; }
-    .s6-arrow-path.a4 { animation: s6draw 0.5s ease forwards 2.2s; }
-    @keyframes s6draw { to { stroke-dashoffset: 0; } }
+    .arc1 { animation: arcFlow 3.2s linear infinite 0s; }
+    .arc2 { animation: arcFlow 3.2s linear infinite 0.8s; }
+    .arc3 { animation: arcFlow 3.2s linear infinite 1.6s; }
+    .arc4 { animation: arcFlow 3.2s linear infinite 2.4s; }
+    @keyframes arcFlow {
+      0%   { stroke-dashoffset: 180; opacity: 1; }
+      55%  { stroke-dashoffset: 0;   opacity: 1; }
+      75%  { stroke-dashoffset: 0;   opacity: 0; }
+      100% { stroke-dashoffset: 0;   opacity: 0; }
+    }
     </style>
 </head>
 <body>
@@ -906,43 +893,50 @@
 
   <!-- S6: 4-LAYER ODOR RESET SYSTEM -->
   <section class="s6-section">
-    <p class="s6-main-copy">오르도레이어는 체취를 덮는 것이 아니라,<br>잔취가 반복되는 구조를<br>끊도록 설계되었습니다.</p>
-    <div class="s6-video-wrap">3D 영상 플레이스홀더</div>
-    <p class="s6-sub-copy">체취가 생기고, 남겨지고,<br><br>다시 올라오는 현상을 따라<br><strong>4단계로 설계하였습니다.</strong></p>
+    <p class="s6-main-copy">체취를 덮는 것이 아니라,<br>반복되어 다시 생성되는 구조를<br>끊도록 4단계로 설계되었습니다.</p>
     <p class="s6-system-title">ORDO 4-LAYER ODOR RESET SYSTEM</p>
-    <div class="s6-diagram">
-      <svg class="s6-arrows" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <div class="s6-diagram-wrap">
+      <svg class="s6-svg" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="ah" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
-            <polygon points="0 0, 7 2.5, 0 5" fill="#999"/>
+          <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#666"/>
           </marker>
         </defs>
-        <path class="s6-arrow-path a1" d="M 204 54 A 105 105 0 0 1 248 192" marker-end="url(#ah)"/>
-        <path class="s6-arrow-path a2" d="M 235 222 A 105 105 0 0 1 168 248" marker-end="url(#ah)"/>
-        <path class="s6-arrow-path a3" d="M 132 248 A 105 105 0 0 1 52 192" marker-end="url(#ah)"/>
-        <path class="s6-arrow-path a4" d="M 52 108 A 105 105 0 0 1 96 54" marker-end="url(#ah)"/>
+        <!-- 연결 호 (원과 원 사이, 시계방향) -->
+        <!-- 1→2: 상단→우측 -->
+        <path class="s6-arc arc1" d="M 222 98 A 120 120 0 0 1 282 222" marker-end="url(#arr)"/>
+        <!-- 2→3: 우측→하단 -->
+        <path class="s6-arc arc2" d="M 256 256 A 120 120 0 0 1 196 298" marker-end="url(#arr)"/>
+        <!-- 3→4: 하단→좌측 -->
+        <path class="s6-arc arc3" d="M 144 298 A 120 120 0 0 1 58 256" marker-end="url(#arr)"/>
+        <!-- 4→1: 좌측→상단 -->
+        <path class="s6-arc arc4" d="M 58 116 A 120 120 0 0 1 118 56" marker-end="url(#arr)"/>
+        <!-- 원 1: 상단 (cx=170 cy=80 r=64) -->
+        <circle class="s6-circle" cx="170" cy="80" r="62"/>
+        <text class="s6-num" x="170" y="68">1</text>
+        <text class="s6-txt" x="170" y="86">피부 표면의</text>
+        <text class="s6-txt" x="170" y="100">피지 제거</text>
+        <text class="s6-lbl" x="170" y="154">WASH OFF</text>
+        <!-- 원 2: 우측 (cx=280 cy=200 r=64) -->
+        <circle class="s6-circle" cx="280" cy="200" r="62"/>
+        <text class="s6-num" x="280" y="188">2</text>
+        <text class="s6-txt" x="280" y="206">모공 속 냄새</text>
+        <text class="s6-txt" x="280" y="220">원인 환경 케어</text>
+        <text class="s6-lbl s6-lbl-r" x="280" y="274">DEEP CLEAR</text>
+        <!-- 원 3: 하단 (cx=170 cy=280 r=64) -->
+        <circle class="s6-circle" cx="170" cy="300" r="62"/>
+        <text class="s6-num" x="170" y="288">3</text>
+        <text class="s6-txt" x="170" y="306">새로 분비되는</text>
+        <text class="s6-txt" x="170" y="320">피지 산화 지연</text>
+        <text class="s6-lbl s6-lbl-b" x="170" y="248">OXIDATION DELAY</text>
+        <!-- 원 4: 좌측 (cx=60 cy=200 r=64) -->
+        <circle class="s6-circle" cx="60" cy="200" r="62"/>
+        <text class="s6-num" x="60" y="188">4</text>
+        <text class="s6-txt" x="60" y="206">보습·진정·차단</text>
+        <text class="s6-lbl s6-lbl-l" x="60" y="274">COMFORT SHIELD</text>
       </svg>
-      <div class="s6-node s6-node-1">
-        <span class="s6-node-num">1</span>
-        <span class="s6-node-text">피부 표면의<br>피지 제거</span>
-      </div>
-      <span class="s6-node-label s6-label-1">WASH OFF</span>
-      <div class="s6-node s6-node-2">
-        <span class="s6-node-num">2</span>
-        <span class="s6-node-text">모공 속 냄새<br>원인 환경 케어</span>
-      </div>
-      <span class="s6-node-label s6-label-2">DEEP CLEAR</span>
-      <div class="s6-node s6-node-3">
-        <span class="s6-node-num">3</span>
-        <span class="s6-node-text">새로 분비되는<br>피지 산화 지연</span>
-      </div>
-      <span class="s6-node-label s6-label-3">OXIDATION DELAY</span>
-      <div class="s6-node s6-node-4">
-        <span class="s6-node-num">4</span>
-        <span class="s6-node-text">보습·진정·차단</span>
-      </div>
-      <span class="s6-node-label s6-label-4">COMFORT SHIELD</span>
     </div>
+    <div class="s6-video-wrap">3D 영상 플레이스홀더</div>
   </section>
 
   <!-- S7: 원인 규명 -->
