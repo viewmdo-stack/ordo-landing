@@ -975,11 +975,17 @@
       color: #666;
       margin-bottom: 8px;
     }
+    .s8-ingredient-sub {
+      font-size: 15px;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 6px;
+    }
     .s8-ingredient-title {
-      font-size: 26px;
+      font-size: 34px;
       font-weight: 900;
       color: #111;
-      line-height: 1.4;
+      line-height: 1.3;
       word-break: keep-all;
     }
     .s8-img-row {
@@ -1021,9 +1027,15 @@
       font-size: 19px;
       font-weight: 600;
       color: #555;
-      margin: 0 auto 48px;
+      margin: 0 auto 16px;
       display: block;
       width: fit-content;
+    }
+    .s8-stats-note {
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+      margin-bottom: 40px;
     }
     .s8-stat-item {
       margin-bottom: 44px;
@@ -1191,7 +1203,105 @@
       display: block;
       text-align: right;
     }
-    </style>
+  
+    /* ===== S9: 새싹귀리 특허 성분 ===== */
+    .s9-section {
+      background: #fff;
+      padding-bottom: 60px;
+    }
+    .s9-main-copy {
+      font-size: 17px;
+      font-weight: 500;
+      color: #444;
+      text-align: center;
+      padding: 48px 20px 0;
+      word-break: keep-all;
+    }
+    .s9-key-ingredient {
+      font-size: 30px;
+      font-weight: 900;
+      color: #111;
+      text-align: center;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      line-height: 1.3;
+      padding: 8px 20px 0;
+      word-break: keep-all;
+    }
+    .s9-img-row {
+      display: flex;
+      gap: 8px;
+      margin: 24px 0 0;
+      padding: 0;
+    }
+    .s9-img-patent {
+      flex: 1;
+      aspect-ratio: 3 / 4;
+      background: #d8d8d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #888;
+    }
+    .s9-img-berry {
+      flex: 1;
+      aspect-ratio: 1 / 1;
+      background: #2c2c2c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      border-radius: 50%;
+      align-self: center;
+    }
+    .s9-desc {
+      font-size: 14px;
+      font-weight: 400;
+      color: #555;
+      text-align: center;
+      line-height: 1.85;
+      padding: 28px 24px 0;
+      word-break: keep-all;
+    }
+    .s9-test-wrap {
+      padding: 40px 20px 0;
+      text-align: center;
+    }
+    .s9-test-sub {
+      font-size: 13px;
+      font-weight: 500;
+      color: #666;
+      margin-bottom: 6px;
+    }
+    .s9-test-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+    .s9-test-img-row {
+      display: flex;
+      gap: 4px;
+    }
+    .s9-test-img {
+      flex: 1;
+      aspect-ratio: 1 / 1;
+      background: #c0a080;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 6px;
+    }
+    .s9-test-placeholder {
+      font-size: 10px;
+      font-weight: 600;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 <div class="page-wrapper">
@@ -1446,7 +1556,8 @@
     <div class="s8-hero-img">모공 이미지 플레이스홀더</div>
     <!-- 솝넛 파트 -->
     <div class="s8-ingredient-wrap">
-      <p class="s8-ingredient-title">강력한 소취기능과 세정력을 가진<br>솝넛 분말 특허 성분</p>
+      <p class="s8-ingredient-sub">강력한 소취기능과 세정력을 가진</p>
+      <p class="s8-ingredient-title">솝넛 분말 특허 성분</p>
     </div>
     <div class="s8-img-row">
       <div class="s8-img-item">솝넛 이미지 1</div>
@@ -1456,6 +1567,7 @@
     <!-- 수치 파트 -->
     <div class="s8-stats-wrap">
       <span class="s8-stats-tag">수치로 증명하는 강력한 효과</span>
+      <p class="s8-stats-note">*원료적 특성에 한함.</p>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">노화 채취(노네날) 원인<br><span class="s8-stat-num">66.7%</span> 감소</p>
         <div class="s8-bar-wrap">
@@ -1487,37 +1599,51 @@
     <div class="s8-compare-wrap">
       <div class="s8-compare-label-row">
         <span class="s8-compare-label">일반 세정제</span>
-        <span class="s8-compare-label" style="text-align:right;">솝넛 추출파우더 1% 함유</span>
+        <span class="s8-compare-label">솝넛 추출파우더 1% 함유</span>
       </div>
       <div class="s8-compare-grid">
         <div class="s8-compare-img-full"></div>
         <div class="s8-compare-img-full"></div>
       </div>
-      <p class="s8-compare-note"><span class="s8-compare-note-right">*원료적 특성에 한함.</span><br>특허 제6034118호&nbsp;&nbsp;피부 외용 소취제, 항균제 및 이를 함유하는 외용 조성물.</p>
+
     </div>
     </div>
   </section>
 
   <!-- S9: 4-LAYER ODOR RESET SYSTEM -->
-  <section class="s9-layer">
-    <p class="section-label">S9 · SYSTEM</p>
-    <h2 class="section-title">4-LAYER<br>ODOR RESET SYSTEM</h2>
-    <p class="section-body">체취 발생의 4단계를 각각 차단하는 레이어 시스템</p>
-    <div class="layer-item">
-      <h3>LAYER 1 · CLEANSE</h3>
-      <p>피부 표면의 오염 물질과 땀 잔여물을 깨끗이 제거합니다</p>
-    </div>
-    <div class="layer-item">
-      <h3>LAYER 2 · CONTROL</h3>
-      <p>냄새 유발 세균의 증식을 억제하고 피부 pH를 조절합니다</p>
-    </div>
-    <div class="layer-item">
-      <h3>LAYER 3 · PROTECT</h3>
-      <p>피부 장벽을 강화해 외부 오염 물질 침투를 차단합니다</p>
-    </div>
-    <div class="layer-item">
-      <h3>LAYER 4 · RESET</h3>
-      <p>세정 후에도 지속되는 피부 컨디션으로 일상 속 냄새를 리셋합니다</p>
+  <section class="s9-section">
+    <div class="page-wrapper">
+
+      <!-- 타이틀 -->
+      <p class="s9-main-copy">모공 수축 및 피지 조절에 특화된</p>
+      <p class="s9-key-ingredient">새싹귀리 추출발효 특허 성분</p>
+
+      <!-- 특허증 + 열매 이미지 좌우 배치 -->
+      <div class="s9-img-row">
+        <div class="s9-img-patent">특허증 이미지</div>
+        <div class="s9-img-berry">열매 이미지</div>
+      </div>
+
+      <!-- 설명 카피 -->
+      <p class="s9-desc">과도한 피지 분비로 인해 넓어지고<br>깊어진 남성 모공을 위해 인체적용시험으로<br>모공의 수, 면적, 최대 깊이 감소를<br>입증한 특허 성분입니다.</p>
+
+      <!-- 지방분화 억제 테스트 -->
+      <div class="s9-test-wrap">
+        <p class="s9-test-sub">지방분화 억제 테스트 [ IN-VITRO TEST ]</p>
+        <p class="s9-test-title">농도별 세포 내 피지(지방) 축적 감소 효과</p>
+        <div class="s9-test-img-row">
+          <div class="s9-test-img">
+            <div class="s9-test-placeholder">100μg/ml</div>
+          </div>
+          <div class="s9-test-img">
+            <div class="s9-test-placeholder">500μg/ml</div>
+          </div>
+          <div class="s9-test-img">
+            <div class="s9-test-placeholder">1,000μg/ml</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
