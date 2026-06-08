@@ -794,11 +794,15 @@
       border-radius: 50%;
       background: #1e1e1e;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       font-size: 13px;
       font-weight: 700;
       color: #fff;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      position: relative;
     }
     .s7-scrub-wrap {
       text-align: center;
@@ -1984,9 +1988,12 @@
     </div>
     <p class="s7-main-copy">냄새를 없애기 전,<br>냄새가 붙는 표면부터 걷어내야 합니다.</p>
     <div class="s7-circles">
-      <div class="s7-circle">피지</div>
-      <div class="s7-circle">각질</div>
-      <div class="s7-circle">노폐물</div>
+      <div class="s7-circle" style="background-image:url('images/s7-sebum.jpg')">
+        <span style="display:block;width:100%;text-align:center;background:rgba(0,0,0,0.45);color:#fff;font-size:13px;font-weight:700;padding:6px 0;">피지</span>
+      </div>
+      <div class="s7-circle" style="background-image:url('images/s7-keratin.jpg')">
+        <span style="display:block;width:100%;text-align:center;background:rgba(0,0,0,0.45);color:#fff;font-size:13px;font-weight:700;padding:6px 0;">각질</span>
+      </div>
     </div>
     <div class="s7-scrub-wrap">
       <p class="s7-scrub-title">호두껍질 스크럽<br>셀룰로오스 스크럽</p>
