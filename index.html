@@ -428,27 +428,47 @@
     /* ===== S4 ===== */
     .s4-section {
       padding: 0;
-      background: #dbe2e9;
+      background: #000;
       margin-top: 0;
     }
+    .s4-dim-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 0;
+    }
     .s4-inner {
-      padding: 0 16px;
+      position: relative;
+      width: 100%;
+      min-height: 560px;
+      background: url('images/s4-bg.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0;
     }
     .s4-main-title {
       font-size: 18px;
       font-weight: 400;
       letter-spacing: 0.04em;
-      color: #666;
+      color: #fff;
       text-align: center;
+      padding-top: 80px;
       margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
     }
     .s4-numbered-list {
       list-style: none;
       padding: 0;
       margin: 0 0 16px;
+      position: relative;
+      z-index: 1;
     }
     .s4-numbered-list li {
       display: flex;
+      color: #fff;
       flex-direction: column;
       align-items: center;
       gap: 10px;
@@ -474,21 +494,18 @@
     .s4-closing {
       font-size: 18px;
       font-weight: 400;
-      color: #333;
+      color: #fff;
       text-align: center;
-      margin-bottom: 56px;
+      margin-bottom: 0;
+      padding-bottom: 56px;
       padding: 0 16px;
     }
     .s4-main-img-wrap {
       width: 100%;
       aspect-ratio: 4 / 5;
-      background: #c8c4be;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: #888;
-      margin-bottom: 16px;
+      background: url('images/s4-products.jpg') center/cover no-repeat;
+      display: block;
+      margin: 0;
     }
     .s4-products {
       display: flex;
@@ -1904,8 +1921,8 @@
 
   <!-- S4: 브랜드 스토리 -->
   <section class="s4-section">
-    <div class="s4-main-img-top-wrap" style="width:100%;aspect-ratio:4/5;background:#c8c4be;display:flex;align-items:center;justify-content:center;font-size:13px;color:#888;margin-bottom:0;"></div>
-    <div class="s4-inner" style="padding-top:80px;">
+    <div class="s4-inner">
+      <div class="s4-dim-overlay"></div>
       <p class="s4-main-title">오르도레이어는</p>
       <ul class="s4-numbered-list">
         <li><span class="s4-num">1</span><span>피부 위에 남은 피지와 땀,</span></li>
@@ -1914,7 +1931,7 @@
       </ul>
       <p class="s4-closing">하나하나 설계하였습니다.</p>
     </div>
-    <div class="s4-main-img-wrap" style="margin-top:0;">이미지 플레이스홀더</div>
+    <div class="s4-main-img-wrap"></div>
     <div class="s4-products">
       <div class="s4-product-item">
         <div class="s4-product-img">어반 스트레스 바디워시</div>
@@ -1924,8 +1941,7 @@
       </div>
     </div>
   </section>
-
-  <!-- S5: 원인 분석 -->
+    <!-- S5: 원인 분석 -->
   <section class="s5-section">
     <p class="s5-main-copy">피지가 오래된 기름처럼 변할 때,<br>체취는 더 묵직하게 남습니다.</p>
     <div class="s5-img-row">
