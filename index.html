@@ -76,6 +76,13 @@
       background: rgba(0,0,0,0);
       z-index: 1;
     }
+    .s1-card-elevator::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(20,30,90,0.45);
+      z-index: 1;
+    }
     .s1-card-content {
       position: relative;
       z-index: 2;
@@ -1801,7 +1808,7 @@
         </div>
       </div>
 
-      <div class="s1-card" style="background-image:url('images/s1-elevator.jpg'); background-size:cover; background-position:center;">
+      <div class="s1-card s1-card-elevator" style="position:relative; background-image:url('images/s1-elevator.jpg'); background-size:cover; background-position:center; filter:saturate(65%);">
         <div class="s1-card-overlay" style="background:rgba(0,0,0,0.30);"></div>
         <div class="s1-card-content">
           <p class="s1-card-line1">엘리베이터를 타자마자</p>
@@ -2334,4 +2341,4 @@
 })();
 </script>
 </body>
-</html>
+  </html>
