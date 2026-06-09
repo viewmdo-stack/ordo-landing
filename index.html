@@ -262,7 +262,7 @@
     .s2-slider-wrap {
       overflow: hidden;
       width: 100%;
-      padding: 8px 0 20px;
+      padding: 8px 0 0;
       background: #dbe2e9;
     }
     .s2-slider-track {
@@ -301,7 +301,7 @@
     .s3-section {
       background: #fff;
       padding: 0;
-      margin-top: 80px;
+      margin-top: 0;
     }
     .s3-img-wrap {
       position: relative;
@@ -312,6 +312,7 @@
       aspect-ratio: 3 / 5;
       background: #d0ccc8;
       display: block;
+      overflow: hidden;
     }
     .s3-copy-overlay {
       position: absolute;
@@ -324,7 +325,7 @@
     .s3-copy {
       font-size: 34px;
       font-weight: 800;
-      color: #fff;
+      color: #111;
       line-height: 1.3;
       letter-spacing: -0.02em;
     }
@@ -363,16 +364,16 @@
     }
     .s3-sq-text {
       position: absolute;
-      bottom: 10px;
+      bottom: 0;
       left: 0;
       right: 0;
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 700;
       color: #fff;
       background: #1e2a6e;
       line-height: 1.6;
       text-align: center;
-      padding: 0 20px;
+      padding: 14px 20px;
       opacity: 0;
       transition: opacity 0.75s ease 0.4s;
     }
@@ -426,9 +427,9 @@
 
     /* ===== S4 ===== */
     .s4-section {
-      padding: 100px 0 0;
+      padding: 0;
       background: #dbe2e9;
-      margin-top: 80px;
+      margin-top: 0;
     }
     .s4-inner {
       padding: 0 16px;
@@ -1877,7 +1878,7 @@
   <!-- S3: 제품 등장 -->
   <section class="s3-section">
     <div class="s3-img-wrap">
-      <div class="s3-img-placeholder" style="background:url('images/s3-hero.jpg') center/cover no-repeat;"></div>
+      <div class="s3-img-placeholder" style="background:url('images/s3-hero.jpg') center/115% auto no-repeat;"></div>
       <div class="s3-copy-overlay">
         <p class="s3-copy">말하지 못했던 그 한마디,<br>오르도레이어가<br>대신 합니다.</p>
       </div>
@@ -1903,7 +1904,8 @@
 
   <!-- S4: 브랜드 스토리 -->
   <section class="s4-section">
-    <div class="s4-inner">
+    <div class="s4-main-img-top-wrap" style="width:100%;aspect-ratio:4/5;background:#c8c4be;display:flex;align-items:center;justify-content:center;font-size:13px;color:#888;margin-bottom:0;"></div>
+    <div class="s4-inner" style="padding-top:80px;">
       <p class="s4-main-title">오르도레이어는</p>
       <ul class="s4-numbered-list">
         <li><span class="s4-num">1</span><span>피부 위에 남은 피지와 땀,</span></li>
@@ -1912,7 +1914,7 @@
       </ul>
       <p class="s4-closing">하나하나 설계하였습니다.</p>
     </div>
-    <div class="s4-main-img-wrap">이미지 플레이스홀더</div>
+    <div class="s4-main-img-wrap" style="margin-top:0;">이미지 플레이스홀더</div>
     <div class="s4-products">
       <div class="s4-product-item">
         <div class="s4-product-img">어반 스트레스 바디워시</div>
