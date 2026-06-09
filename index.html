@@ -428,7 +428,6 @@
     /* ===== S4 ===== */
     .s4-section {
       padding: 0;
-      background: #000;
       margin-top: 0;
     }
     .s4-dim-overlay {
@@ -440,7 +439,7 @@
     .s4-inner {
       position: relative;
       width: 100%;
-      min-height: 700px;
+      min-height: 900px;
       background: url('images/s4-main.jpg') center top/cover no-repeat;
       display: flex;
       flex-direction: column;
@@ -501,32 +500,29 @@
       padding: 0 16px;
     }
     .s4-products {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      padding: 0 28px;
-      margin-top: 0;
       position: relative;
+      width: 100%;
+      margin-top: -160px;
       z-index: 2;
+      overflow: hidden;
     }
-    .s4-product-item {
+    .s4-slide {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%;
-      margin-bottom: 12px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
     }
-    .s4-product-img {
+    .s4-slide.active {
+      position: relative;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .s4-slide img {
       width: 100%;
-      aspect-ratio: 4 / 5;
-      background: #d4d0cb;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 16px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #fff;
-      text-align: center;
-      line-height: 1.5;
-      box-sizing: border-box;
+      height: auto;
+      display: block;
     }
 
     /* ===== S5 ===== */
@@ -1924,12 +1920,12 @@
       </ul>
       <p class="s4-closing">하나하나 설계하였습니다.</p>
     </div>
-    <div class="s4-products">
-      <div class="s4-product-item">
-        <img src="images/s4-products1.jpg" alt="ORDO LAYER product" style="width:100%;display:block;" />
+    <div class="s4-products" id="s4Slideshow">
+      <div class="s4-slide active">
+        <img src="images/s4-products1.jpg" alt="ORDO LAYER Body Wash" />
       </div>
-      <div class="s4-product-item">
-        <img src="images/s4-products2.jpg" alt="ORDO LAYER product" style="width:100%;display:block;" />
+      <div class="s4-slide">
+        <img src="images/s4-products2.jpg" alt="ORDO LAYER Body Spray" />
       </div>
     </div>
   </section>
@@ -2376,5 +2372,19 @@
   requestAnimationFrame(checkLoop2);
 })();
 </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var slides = document.querySelectorAll('#s4Slideshow .s4-slide');
+    if (!slides || slides.length < 2) return;
+    var cur = 0;
+    function nextSlide() {
+      slides[cur].classList.remove('active');
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add('active');
+    }
+    setInterval(nextSlide, 2000);
+  });
+  </script>
 </body>
                                              </html>
