@@ -501,16 +501,22 @@
     }
     .s4-products {
       width: 100%;
-      margin-top: -200px;
+      margin-top: -150px;
       position: relative;
       z-index: 2;
     }
     .s4-product-block {
       width: 100%;
       overflow: hidden;
+      line-height: 0;
+      font-size: 0;
     }
-    .s4-product-block img,
     .s4-product-block video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .s4-product-block img {
       width: 100%;
       height: auto;
       display: block;
@@ -1913,13 +1919,13 @@
     </div>
     <div class="s4-products">
       <div class="s4-product-block" id="s4Block1">
-        <video autoplay loop muted playsinline style="width:100%;height:auto;display:block;">
+        <video id="s4Vid1" autoplay loop muted playsinline style="width:100%;height:auto;display:block;">
           <source src="images/s4-bodywash.mp4" type="video/mp4" />
           <img src="images/s4-products1.jpg" alt="ORDO LAYER Body Wash" style="width:100%;height:auto;display:block;" />
         </video>
       </div>
       <div class="s4-product-block" id="s4Block2">
-        <video autoplay loop muted playsinline style="width:100%;height:auto;display:block;">
+        <video id="s4Vid2" autoplay loop muted playsinline style="width:100%;height:auto;display:block;">
           <source src="images/s4-bodyspray.mp4" type="video/mp4" />
           <img src="images/s4-products2.jpg" alt="ORDO LAYER Body Spray" style="width:100%;height:auto;display:block;" />
         </video>
@@ -2370,5 +2376,21 @@
 })();
 </script>
 
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var vids = ['s4Vid1', 's4Vid2'];
+      vids.forEach(function(id) {
+        var v = document.getElementById(id);
+        if (!v) return;
+        v.addEventListener('timeupdate', function() {
+          if (v.currentTime >= 3) {
+            v.currentTime = 0;
+            v.play();
+          }
+        });
+      });
+    });
+  </script>
 </body>
                                              </html>
