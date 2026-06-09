@@ -2229,15 +2229,18 @@
 
     <div style="position:relative; margin-bottom:16px;">
   <img src="images/s10-graph2.jpg" style="width:100%; height:auto; display:block; border-radius:4px;" />
-  <div style="position:absolute; top:0; left:0; right:0; height:12%; background:#f9f9f9;"></div>
-  <div style="position:absolute; top:12%; left:0; width:10%; bottom:0; background:#f9f9f9;"></div>
-  <div style="position:absolute; top:5%; left:8%; right:0; height:9%; background:#f9f9f9;"></div>
-  <div style="position:absolute; bottom:7%; left:10%; right:0; height:9%; background:#f9f9f9; display:flex; align-items:center; justify-content:space-around;">
+  <!-- 상단 제목 + 1%~axilla 전체 가리기 -->
+  <div style="position:absolute; top:0; left:0; right:0; height:24%; background:#f9f9f9;"></div>
+  <!-- 한국어 텍스트 표시 -->
+  <div style="position:absolute; top:3%; left:8%; right:4%; height:20%; background:#f9f9f9; display:flex; align-items:center; justify-content:center;">
+    <span style="font-size:11px; font-weight:700; color:#333; text-align:center;">제품을 사용하지 않은 부위 대비</span>
+  </div>
+  <!-- 세로 영문 줄 가리기 -->
+  <div style="position:absolute; top:24%; left:0; width:9%; bottom:0; background:#f9f9f9;"></div>
+  <!-- after 24/48hours 가리기 + 한국어 교체 -->
+  <div style="position:absolute; bottom:3%; left:9%; right:0; height:10%; background:#f9f9f9; display:flex; align-items:center; justify-content:space-around;">
     <span style="font-size:12px; font-weight:600; color:#333;">24시간 후</span>
     <span style="font-size:12px; font-weight:600; color:#333;">48시간 후</span>
-  </div>
-  <div style="position:absolute; top:6%; left:10%; right:4%; height:7%; background:#f9f9f9; display:flex; align-items:center; justify-content:center;">
-    <span style="font-size:11px; font-weight:600; color:#333;">제품을 사용하지 않은 부위 대비</span>
   </div>
 </div>
 
