@@ -501,7 +501,7 @@
     }
     .s4-products {
       width: 100%;
-      margin-top: -150px;
+      margin-top: -300px;
       position: relative;
       z-index: 2;
     }
@@ -510,16 +510,17 @@
       overflow: hidden;
       line-height: 0;
       font-size: 0;
+      position: relative;
     }
     .s4-product-block video {
       width: 100%;
       height: auto;
       display: block;
     }
-    .s4-product-block img {
+    .s4-product-block .s4-fallback-img {
       width: 100%;
       height: auto;
-      display: block;
+      display: none;
     }
 
     /* ===== S5 ===== */
@@ -1919,16 +1920,16 @@
     </div>
     <div class="s4-products">
       <div class="s4-product-block" id="s4Block1">
-        <video id="s4Vid1" autoplay loop muted playsinline style="width:100%;height:auto;display:block;">
+        <video id="s4Vid1" autoplay loop muted playsinline poster="images/s4-products1.jpg" style="width:100%;height:auto;display:block;">
           <source src="images/s4-bodywash.mp4" type="video/mp4" />
-          <img src="images/s4-products1.jpg" alt="ORDO LAYER Body Wash" style="width:100%;height:auto;display:block;" />
         </video>
+        <img class="s4-fallback-img" id="s4Img1" src="images/s4-products1.jpg" alt="ORDO LAYER Body Wash" />
       </div>
       <div class="s4-product-block" id="s4Block2">
-        <video id="s4Vid2" autoplay loop muted playsinline style="width:100%;height:auto;display:block;">
+        <video id="s4Vid2" autoplay loop muted playsinline poster="images/s4-products2.jpg" style="width:100%;height:auto;display:block;">
           <source src="images/s4-bodyspray.mp4" type="video/mp4" />
-          <img src="images/s4-products2.jpg" alt="ORDO LAYER Body Spray" style="width:100%;height:auto;display:block;" />
         </video>
+        <img class="s4-fallback-img" id="s4Img2" src="images/s4-products2.jpg" alt="ORDO LAYER Body Spray" />
       </div>
     </div>
   </section>
@@ -2379,16 +2380,38 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var vids = ['s4Vid1', 's4Vid2'];
-      vids.forEach(function(id) {
-        var v = document.getElementById(id);
+      var pairs = [['s4Vid1','s4Img1'],['s4Vid2','s4Img2']];
+      pairs.forEach(function(pair) {
+        var v = document.getElementById(pair[0]);
+        var img = document.getElementById(pair[1]);
         if (!v) return;
+        // 3초 후 재시작
         v.addEventListener('timeupdate', function() {
           if (v.currentTime >= 3) {
             v.currentTime = 0;
             v.play();
           }
         });
+        // 로드 실패 시 fallback img 표시
+        v.addEventListener('error', function() {
+          v.style.display = 'none';
+          if (img) img.style.display = 'block';
+        });
+        // source error
+        var src = v.querySelector('source');
+        if (src) {
+          src.addEventListener('error', function() {
+            v.style.display = 'none';
+            if (img) img.style.display = 'block';
+          });
+        }
+        // 5초 후에도 재생 안 되면 fallback
+        setTimeout(function() {
+          if (v.readyState === 0 && v.networkState !== 2) {
+            v.style.display = 'none';
+            if (img) img.style.display = 'block';
+          }
+        }, 5000);
       });
     });
   </script>
