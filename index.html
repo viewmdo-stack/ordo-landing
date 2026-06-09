@@ -426,21 +426,21 @@
     }
 
     /* ===== S4 ===== */
-    .s4-section {
+        .s4-section {
       padding: 0;
       margin-top: 0;
     }
     .s4-dim-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.45);
+      background: rgba(0,0,0,0.35);
       z-index: 0;
     }
     .s4-inner {
       position: relative;
       width: 100%;
-      min-height: 900px;
-      background: url('images/s4-main.jpg') center top/cover no-repeat;
+      min-height: 960px;
+      background: url('images/s4-main.jpg') center 20%/cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -454,7 +454,7 @@
       color: #fff;
       text-align: center;
       padding-top: 20px;
-      margin-bottom: 32px;
+      margin-bottom: 20px;
       position: relative;
       z-index: 1;
     }
@@ -467,7 +467,6 @@
     }
     .s4-numbered-list li {
       display: flex;
-      color: #fff;
       flex-direction: column;
       align-items: center;
       gap: 10px;
@@ -496,30 +495,22 @@
       color: #fff;
       text-align: center;
       margin-bottom: 0;
-      padding-bottom: 56px;
-      padding: 0 16px;
+      padding: 0 16px 40px;
+      position: relative;
+      z-index: 1;
     }
     .s4-products {
-      position: relative;
       width: 100%;
-      margin-top: -160px;
+      margin-top: -200px;
+      position: relative;
       z-index: 2;
+    }
+    .s4-product-block {
+      width: 100%;
       overflow: hidden;
     }
-    .s4-slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-    .s4-slide.active {
-      position: relative;
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .s4-slide img {
+    .s4-product-block img,
+    .s4-product-block video {
       width: 100%;
       height: auto;
       display: block;
@@ -1920,12 +1911,12 @@
       </ul>
       <p class="s4-closing">하나하나 설계하였습니다.</p>
     </div>
-    <div class="s4-products" id="s4Slideshow">
-      <div class="s4-slide active">
-        <img src="images/s4-products1.jpg" alt="ORDO LAYER Body Wash" />
+    <div class="s4-products">
+      <div class="s4-product-block" id="s4Block1">
+        <img src="images/s4-products1.jpg" alt="ORDO LAYER Body Wash" id="s4Img1" />
       </div>
-      <div class="s4-slide">
-        <img src="images/s4-products2.jpg" alt="ORDO LAYER Body Spray" />
+      <div class="s4-product-block" id="s4Block2">
+        <img src="images/s4-products2.jpg" alt="ORDO LAYER Body Spray" id="s4Img2" />
       </div>
     </div>
   </section>
@@ -2373,18 +2364,5 @@
 })();
 </script>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var slides = document.querySelectorAll('#s4Slideshow .s4-slide');
-    if (!slides || slides.length < 2) return;
-    var cur = 0;
-    function nextSlide() {
-      slides[cur].classList.remove('active');
-      cur = (cur + 1) % slides.length;
-      slides[cur].classList.add('active');
-    }
-    setInterval(nextSlide, 2000);
-  });
-  </script>
 </body>
                                              </html>
