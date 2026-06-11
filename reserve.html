@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>사전예약 | ORDO LAYER</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: #f5f0eb;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .page-wrapper {
+      width: 100%;
+      max-width: 430px;
+      background: #f5f0eb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 브랜드 헤더 */
+    .reserve-header {
+      background: #1a3a6b;
+      padding: 18px 24px;
+      text-align: center;
+    }
+    .reserve-header-brand {
+      font-size: 14px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 0.2em;
+    }
+
+    /* 폼 영역 */
+    .form-wrap {
+      flex: 1;
+      padding-bottom: 8px;
+    }
+    .form-header {
+      padding: 48px 28px 32px;
+      text-align: center;
+    }
+    .form-eyebrow {
+      display: block;
+      font-style: italic;
+      font-size: 13px;
+      font-weight: 500;
+      color: #8a7560;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .form-title {
+      font-size: 36px;
+      font-weight: 900;
+      color: #111;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+    .form-desc {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+    .form-card {
+      background: #fff;
+      border-radius: 20px;
+      margin: 0 20px 16px;
+      padding: 28px 20px 8px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+    .form-field { margin-bottom: 24px; }
+    .form-field-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 10px;
+    }
+    .field-required { color: #e02020; margin-left: 2px; }
+    .field-optional {
+      font-size: 11px;
+      font-weight: 400;
+      color: #aaa;
+      margin-left: 4px;
+    }
+    .form-input {
+      width: 100%;
+      height: 48px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 0 14px;
+      font-size: 15px;
+      color: #111;
+      background: #fafafa;
+      outline: none;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .form-input:focus { border-color: #1a3a6b; background: #fff; }
+    .choice-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .choice-btn {
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      background: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .choice-btn.selected {
+      background: #1a3a6b;
+      color: #fff;
+      border-color: #1a3a6b;
+    }
+    .check-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .form-checkbox {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      accent-color: #1a3a6b;
+      cursor: pointer;
+    }
+    .check-text {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    .kakao-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FEE500;
+      border-radius: 12px;
+      height: 50px;
+      margin: 0 20px 10px;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .kakao-btn span {
+      font-size: 14px;
+      font-weight: 700;
+      color: #3C1E1E;
+    }
+    .submit-btn {
+      display: block;
+      width: calc(100% - 40px);
+      margin: 0 20px 16px;
+      background: #1a3a6b;
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      height: 56px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      cursor: pointer;
+      font-family: inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .form-notice {
+      padding: 0 28px 40px;
+      font-size: 11px;
+      color: #bbb;
+      line-height: 1.9;
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    /* 완료 화면 */
+    .done-wrap {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      min-height: 420px;
+      padding: 60px 20px;
+    }
+    .done-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 44px 28px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      width: 100%;
+    }
+    .done-icon {
+      width: 60px;
+      height: 60px;
+      background: #1a3a6b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 26px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .done-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #111;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .done-desc {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.8;
+      word-break: keep-all;
+    }
+
+    /* 푸터 */
+    .site-footer {
+      background: #1a3a6b;
+      padding: 40px 24px 36px;
+      text-align: center;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 0.25em;
+      margin-bottom: 20px;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .footer-disclaimer {
+      font-size: 10px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- 브랜드 헤더 -->
+  <header class="reserve-header">
+    <p class="reserve-header-brand">ORDO LAYER</p>
+  </header>
+
+  <!-- 폼 영역 -->
+  <div class="form-wrap" id="formWrap">
+
+    <div class="form-header">
+      <span class="form-eyebrow">reserve now</span>
+      <h1 class="form-title">사전예약</h1>
+      <p class="form-desc">출시 알림과 런칭 특가를 가장 먼저 받아보세요. 입력 정보는 사전예약 안내 목적 외 사용되지 않습니다.</p>
+    </div>
+
+    <div class="form-card">
+
+      <div class="form-field">
+        <label class="form-field-label" for="fieldName">성함 <span class="field-required">*</span></label>
+        <input type="text" class="form-input" id="fieldName" placeholder="홍길동" autocomplete="name">
+      </div>
+
+      <div class="form-field">
+        <label class="form-field-label" for="fieldPhone">연락처(휴대폰) <span class="field-required">*</span></label>
+        <input type="tel" class="form-input" id="fieldPhone" placeholder="010-0000-0000" maxlength="13" inputmode="numeric">
+      </div>
+
+      <div class="form-field">
+        <label class="form-field-label">출시되면 어떻게 하시겠어요? <span class="field-required">*</span></label>
+        <div class="choice-group" data-name="intent">
+          <button type="button" class="choice-btn" data-value="바로 구매할래요">바로 구매할래요</button>
+          <button type="button" class="choice-btn" data-value="가격 보고 결정">가격 보고 결정</button>
+          <button type="button" class="choice-btn" data-value="관심만 있어요">관심만 있어요</button>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field-label">누구를 위한 제품인가요? <span class="field-optional">선택</span></label>
+        <div class="choice-group" data-name="for">
+          <button type="button" class="choice-btn" data-value="본인용">본인용</button>
+          <button type="button" class="choice-btn" data-value="선물용">선물용</button>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field-label">생각하시는 세트 가격대는? <span class="field-optional">선택</span></label>
+        <div class="choice-group" data-name="price">
+          <button type="button" class="choice-btn" data-value="~5만원">~5만원</button>
+          <button type="button" class="choice-btn" data-value="5~8만원">5~8만원</button>
+          <button type="button" class="choice-btn" data-value="8만원+">8만원+</button>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="check-label">
+          <input type="checkbox" id="fieldAgree" class="form-checkbox">
+          <span class="check-text">(필수) 개인정보 수집·이용 동의. 수집항목: 연락처 외 응답 정보 / 목적: 사전예약·출시 안내 / 보유기간: 출시 후 6개월</span>
+        </label>
+      </div>
+
+    </div>
+
+    <a href="#" class="kakao-btn">
+      <span>카카오 채널 추가하고 출시 알림받기</span>
+    </a>
+
+    <button type="button" class="submit-btn" id="submitBtn">런칭 특가로 사전예약 완료하기</button>
+
+    <p class="form-notice">정식가·할인율은 출시 시점 확정 후 사전예약자에게 가장 먼저 안내드립니다.<br>사전예약은 무료이며 구매 의무가 없습니다.</p>
+
+  </div>
+
+  <!-- 완료 화면 -->
+  <div class="done-wrap" id="doneWrap">
+    <div class="done-card">
+      <div class="done-icon">✓</div>
+      <p class="done-title">사전예약이 접수되었습니다</p>
+      <p class="done-desc">출시 소식과 런칭 특가를 입력하신 연락처로 가장 먼저 안내드리겠습니다. 오르도레이어를 가장 먼저 만나주셔서 감사합니다.</p>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <p class="footer-brand">ORDO LAYER</p>
+    <p class="footer-copy">DEPTHLAB CO., LTD. · ORDO LAYER</p>
+    <p class="footer-disclaimer">본 제품은 화장품이며, 질병의 예방·치료를 위한 의약품이 아닙니다.</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  // 전화번호 자동 하이픈
+  var phoneInput = document.getElementById('fieldPhone');
+  if(phoneInput) {
+    phoneInput.addEventListener('input', function() {
+      var v = this.value.replace(/\D/g, '').slice(0, 11);
+      if(v.length <= 3) {
+        this.value = v;
+      } else if(v.length <= 7) {
+        this.value = v.slice(0,3) + '-' + v.slice(3);
+      } else {
+        this.value = v.slice(0,3) + '-' + v.slice(3,7) + '-' + v.slice(7);
+      }
+    });
+  }
+
+  // 선택 버튼 그룹 (단일 선택)
+  document.querySelectorAll('.choice-group').forEach(function(group) {
+    group.querySelectorAll('.choice-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        group.querySelectorAll('.choice-btn').forEach(function(b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+      });
+    });
+  });
+
+  // 제출
+  var submitBtn = document.getElementById('submitBtn');
+  var formWrap = document.getElementById('formWrap');
+  var doneWrap = document.getElementById('doneWrap');
+
+  if(submitBtn) {
+    submitBtn.addEventListener('click', function() {
+      var name = (document.getElementById('fieldName') || {}).value || '';
+      var phone = (document.getElementById('fieldPhone') || {}).value || '';
+      var intent = document.querySelector('.choice-group[data-name="intent"] .choice-btn.selected');
+      var agree = document.getElementById('fieldAgree');
+
+      if(!name.trim()) { alert('성함을 입력해주세요.'); return; }
+      if(phone.replace(/\D/g,'').length < 10) { alert('올바른 연락처를 입력해주세요.'); return; }
+      if(!intent) { alert('구매 의향을 선택해주세요.'); return; }
+      if(!agree || !agree.checked) { alert('개인정보 수집·이용에 동의해주세요.'); return; }
+
+      if(formWrap) formWrap.style.display = 'none';
+      if(doneWrap) {
+        doneWrap.style.display = 'flex';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

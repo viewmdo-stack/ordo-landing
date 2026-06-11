@@ -3006,7 +3006,7 @@
             <p class="s13-price-note">정식 출시 후 결제</p>
           </div>
         </div>
-        <button type="button" class="s13-cta-btn s13-open-form">지금 사전 예약 하기</button>
+        <a href="reserve.html" class="s13-cta-btn">지금 사전 예약 하기</a>
       </div>
     </div>
 
@@ -3026,7 +3026,7 @@
             <p class="s13-price-note">정식 출시 후 결제</p>
           </div>
         </div>
-        <button type="button" class="s13-cta-btn s13-open-form">지금 사전 예약 하기</button>
+        <a href="reserve.html" class="s13-cta-btn">지금 사전 예약 하기</a>
       </div>
     </div>
 
@@ -3046,7 +3046,7 @@
             <p class="s13-price-note">정식 출시 후 결제</p>
           </div>
         </div>
-        <button type="button" class="s13-cta-btn s13-open-form">지금 사전 예약 하기</button>
+        <a href="reserve.html" class="s13-cta-btn">지금 사전 예약 하기</a>
       </div>
     </div>
 
@@ -3054,98 +3054,6 @@
 
   <!-- 안내 문구 -->
   <p class="s13-notice">정식가·할인율은 출시 시점 확정 후 사전예약자에게 가장 먼저 안내드립니다.<br>사전예약은 무료이며 구매 의무가 없습니다.</p>
-
-</section>
-
-
-<!-- #reservation-form: 사전예약 폼 (초기 숨김) -->
-<section class="s13-section" id="reservation-form" style="display:none;">
-
-  <!-- 폼 영역 -->
-  <div class="s13-form-wrap" id="s13FormWrap">
-
-    <!-- 헤더 -->
-    <div class="s13-form-header">
-      <span class="s13-form-eyebrow">reserve now</span>
-      <h2 class="s13-form-title">사전예약</h2>
-      <p class="s13-form-desc">출시 알림과 런칭 특가를 가장 먼저 받아보세요. 입력 정보는 사전예약 안내 목적 외 사용되지 않습니다.</p>
-    </div>
-
-    <!-- 폼 카드 -->
-    <div class="s13-form-card">
-
-      <!-- 성함 -->
-      <div class="s13-field">
-        <label class="s13-field-label" for="fieldName">성함 <span class="s13-required">*</span></label>
-        <input type="text" class="s13-input" id="fieldName" placeholder="홍길동" autocomplete="name">
-      </div>
-
-      <!-- 연락처 -->
-      <div class="s13-field">
-        <label class="s13-field-label" for="fieldPhone">연락처(휴대폰) <span class="s13-required">*</span></label>
-        <input type="tel" class="s13-input" id="fieldPhone" placeholder="010-0000-0000" maxlength="13" inputmode="numeric">
-      </div>
-
-      <!-- 구매 의향 -->
-      <div class="s13-field">
-        <label class="s13-field-label">출시되면 어떻게 하시겠어요? <span class="s13-required">*</span></label>
-        <div class="s13-btn-group" data-name="intent">
-          <button type="button" class="s13-choice-btn" data-value="바로 구매할래요">바로 구매할래요</button>
-          <button type="button" class="s13-choice-btn" data-value="가격 보고 결정">가격 보고 결정</button>
-          <button type="button" class="s13-choice-btn" data-value="관심만 있어요">관심만 있어요</button>
-        </div>
-      </div>
-
-      <!-- 구매 대상 -->
-      <div class="s13-field">
-        <label class="s13-field-label">누구를 위한 제품인가요? <span class="s13-optional">선택</span></label>
-        <div class="s13-btn-group" data-name="for">
-          <button type="button" class="s13-choice-btn" data-value="본인용">본인용</button>
-          <button type="button" class="s13-choice-btn" data-value="선물용">선물용</button>
-        </div>
-      </div>
-
-      <!-- 가격대 -->
-      <div class="s13-field">
-        <label class="s13-field-label">생각하시는 세트 가격대는? <span class="s13-optional">선택</span></label>
-        <div class="s13-btn-group" data-name="price">
-          <button type="button" class="s13-choice-btn" data-value="~5만원">~5만원</button>
-          <button type="button" class="s13-choice-btn" data-value="5~8만원">5~8만원</button>
-          <button type="button" class="s13-choice-btn" data-value="8만원+">8만원+</button>
-        </div>
-      </div>
-
-      <!-- 개인정보 동의 -->
-      <div class="s13-field">
-        <label class="s13-check-label">
-          <input type="checkbox" id="fieldAgree" class="s13-checkbox">
-          <span class="s13-check-text">(필수) 개인정보 수집·이용 동의. 수집항목: 연락처 외 응답 정보 / 목적: 사전예약·출시 안내 / 보유기간: 출시 후 6개월</span>
-        </label>
-      </div>
-
-    </div>
-
-    <!-- 카카오 채널 버튼 -->
-    <a href="#" class="s13-kakao-btn">
-      <span>카카오 채널 추가하고 출시 알림받기</span>
-    </a>
-
-    <!-- 제출 버튼 -->
-    <button type="button" class="s13-submit-btn" id="s13SubmitBtn">런칭 특가로 사전예약 완료하기</button>
-
-    <!-- 안내 문구 -->
-    <p class="s13-notice">정식가·할인율은 출시 시점 확정 후 사전예약자에게 가장 먼저 안내드립니다.<br>사전예약은 무료이며 구매 의무가 없습니다.</p>
-
-  </div>
-
-  <!-- 완료 화면 -->
-  <div class="s13-done-wrap" id="s13DoneWrap">
-    <div class="s13-done-card">
-      <div class="s13-done-icon">✓</div>
-      <p class="s13-done-title">사전예약이 접수되었습니다</p>
-      <p class="s13-done-desc">출시 소식과 런칭 특가를 입력하신 연락처로 가장 먼저 안내드리겠습니다. 오르도레이어를 가장 먼저 만나주셔서 감사합니다.</p>
-    </div>
-  </div>
 
 </section>
 
@@ -3160,7 +3068,7 @@
 </div>
 
 <!-- 하단 고정 사전예약 버튼 -->
-<a href="#preorder" class="fixed-preorder-btn" id="fixedPreorderBtn">
+<a href="reserve.html" class="fixed-preorder-btn" id="fixedPreorderBtn">
   <span>0원으로 사전 예약하기</span>
 </a>
 
@@ -3527,76 +3435,5 @@
 
   window.addEventListener('scroll', update, { passive: true });
   update();
-
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    btn.classList.add('hidden');
-    section.scrollIntoView({ behavior: 'smooth' });
-  });
-})();
-
-
-// S13 폼 인터랙션
-(function(){
-  var reservationForm = document.getElementById('reservation-form');
-  var fixedBtn = document.getElementById('fixedPreorderBtn');
-
-  // CTA 버튼 클릭 → 폼 섹션 표시 + 스크롤
-  document.querySelectorAll('.s13-open-form').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      if(reservationForm) {
-        reservationForm.style.display = 'block';
-        reservationForm.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  // 전화번호 자동 하이픈
-  var phoneInput = document.getElementById('fieldPhone');
-  if(phoneInput) {
-    phoneInput.addEventListener('input', function() {
-      var v = this.value.replace(/\D/g, '').slice(0, 11);
-      if(v.length <= 3) {
-        this.value = v;
-      } else if(v.length <= 7) {
-        this.value = v.slice(0,3) + '-' + v.slice(3);
-      } else {
-        this.value = v.slice(0,3) + '-' + v.slice(3,7) + '-' + v.slice(7);
-      }
-    });
-  }
-
-  // 선택 버튼 그룹 (그룹 내 단일 선택)
-  document.querySelectorAll('.s13-btn-group').forEach(function(group) {
-    group.querySelectorAll('.s13-choice-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        group.querySelectorAll('.s13-choice-btn').forEach(function(b) { b.classList.remove('selected'); });
-        btn.classList.add('selected');
-      });
-    });
-  });
-
-  // 제출
-  var submitBtn = document.getElementById('s13SubmitBtn');
-  var formWrap = document.getElementById('s13FormWrap');
-  var doneWrap = document.getElementById('s13DoneWrap');
-
-  if(submitBtn) {
-    submitBtn.addEventListener('click', function() {
-      var name = (document.getElementById('fieldName') || {}).value || '';
-      var phone = (document.getElementById('fieldPhone') || {}).value || '';
-      var intent = document.querySelector('.s13-btn-group[data-name="intent"] .s13-choice-btn.selected');
-      var agree = document.getElementById('fieldAgree');
-
-      if(!name.trim()) { alert('성함을 입력해주세요.'); return; }
-      if(phone.replace(/\D/g,'').length < 10) { alert('올바른 연락처를 입력해주세요.'); return; }
-      if(!intent) { alert('구매 의향을 선택해주세요.'); return; }
-      if(!agree || !agree.checked) { alert('개인정보 수집·이용에 동의해주세요.'); return; }
-
-      if(formWrap) formWrap.style.display = 'none';
-      if(doneWrap) { doneWrap.style.display = 'flex'; doneWrap.scrollIntoView({ behavior: 'smooth' }); }
-      if(fixedBtn) fixedBtn.classList.add('hidden');
-    });
-  }
 })();
 </script>
