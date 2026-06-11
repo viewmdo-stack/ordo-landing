@@ -2082,6 +2082,12 @@
   text-decoration: none;
   box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
   -webkit-tap-highlight-color: transparent;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.fixed-preorder-btn.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
 }
 .fixed-preorder-btn span {
   font-size: 18px;
@@ -2838,7 +2844,7 @@
 </div>
 
 <!-- 하단 고정 사전예약 버튼 -->
-<a href="#preorder" class="fixed-preorder-btn">
+<a href="#preorder" class="fixed-preorder-btn" id="fixedPreorderBtn">
   <span>0원으로 사전 예약하기</span>
 </a>
 
@@ -3185,5 +3191,31 @@
   } else {
     observeVideos();
   }
+})();
+
+
+// 하단 고정 버튼 — #preorder 뷰포트 진입 시 숨김
+(function(){
+  var btn = document.getElementById('fixedPreorderBtn');
+  var section = document.getElementById('preorder');
+  if(!btn || !section) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if(entry.isIntersecting) {
+        btn.classList.add('hidden');
+      } else {
+        btn.classList.remove('hidden');
+      }
+    });
+  }, { threshold: 0 });
+
+  observer.observe(section);
+
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    btn.classList.add('hidden');
+    section.scrollIntoView({ behavior: 'smooth' });
+  });
 })();
 </script>
