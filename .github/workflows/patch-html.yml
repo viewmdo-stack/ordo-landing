@@ -1,0 +1,55 @@
+name: Patch index.html
+
+on:
+  workflow_dispatch:
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Patch index.html
+        run: |
+          python3 - << 'EOF'
+          with open('index.html', 'r', encoding='utf-8') as f:
+              html = f.read()
+
+          # 1. S3: replace s3-4step-video with s3-hero.jpg image
+          import re
+          html = re.sub(
+              r'<video[^>]+class="s3-4step-video"[^>]*>',
+              '<img src="images/s3-hero.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">',
+              html
+          )
+
+          # 2. S8: replace s3-4step.mp4 with 4step.mp4 in s8-hero-video
+          s8_start = html.find('class="s8-hero-video"')
+          if s8_start != -1:
+              section = html[s8_start:s8_start+300]
+              new_section = section.replace('s3-4step.mp4', '4step.mp4', 1)
+              html = html[:s8_start] + new_section + html[s8_start+300:]
+
+          with open('index.html', 'w', encoding='utf-8') as f:
+              f.write(html)
+
+          # Verify
+          assert 's3-4step-video' not in html, 'ERROR: s3-4step-video still exists'
+          assert 's3-hero.jpg' in html, 'ERROR: s3-hero.jpg not found'
+          assert 'class="s8-hero-video"' in html, 'ERROR: s8-hero-video not found'
+          s8_idx = html.find('class="s8-hero-video"')
+          assert '4step.mp4' in html[s8_idx:s8_idx+300], 'ERROR: 4step.mp4 not in s8'
+          assert 's3-4step.mp4' not in html[s8_idx:s8_idx+300], 'ERROR: s3-4step.mp4 still in s8'
+          print('All checks passed!')
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add index.html
+          git commit -m "Fix: S3 restore s3-hero.jpg, S8 use 4step.mp4"
+          git push
