@@ -30,14 +30,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      background-color: #fff;
-      background-image: repeating-linear-gradient(
-        90deg,
-        rgba(40,103,168,0.18) 0px,
-        rgba(40,103,168,0.18) 3px,
-        transparent 3px,
-        transparent 16px
-      );
+      background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 10px, #87CEEB 10px, #87CEEB 20px);
       height: 52px;
       display: flex;
       align-items: center;
@@ -47,75 +40,6 @@
       transition: transform 0.3s ease;
     }
     .res-fixed-header.show { transform: translateY(0); }
-
-    /* 썸네일 히어로 섹션 */
-    .res-hero {
-      position: relative;
-      width: 100%;
-      height: 70vw;
-      max-height: 300px;
-      background: #e0e0e0;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .res-hero-text {
-      text-align: center;
-      z-index: 2;
-      padding-bottom: 48px;
-    }
-    .res-hero-sub {
-      font-size: 18px;
-      color: #555;
-      font-weight: 400;
-      margin-bottom: 6px;
-    }
-    .res-hero-title {
-      font-size: 24px;
-      font-weight: 900;
-      color: #111;
-    }
-    .res-hero-title u { text-underline-offset: 4px; }
-
-    /* 제품 선택 칩 오버레이 */
-    .res-product-chip {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border-radius: 999px;
-      padding: 12px 24px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #111;
-      white-space: nowrap;
-      z-index: 2;
-    }
-
-    /* 공유 버튼 */
-    .res-share-btn {
-      position: absolute;
-      bottom: 20px;
-      right: 16px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #111;
-      z-index: 2;
-      -webkit-tap-highlight-color: transparent;
-    }
 
     /* 하단 고정 2버튼 바 */
     .res-fixed-bar {
@@ -375,18 +299,6 @@
 
 <div class="page-wrapper">
 
-  <!-- 상단 썸네일 섹션 -->
-  <div class="res-hero">
-    <div class="res-hero-text">
-      <p class="res-hero-sub">남성 체취 케어</p>
-      <p class="res-hero-title"><u>오르도레이어</u></p>
-    </div>
-    <div class="res-product-chip">오르도레이어 바디워시 &amp; 바디스프레이 사전 예약</div>
-    <button class="res-share-btn" id="resShareBtn" type="button" aria-label="공유">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-    </button>
-  </div>
-
   <!-- 폼 영역 -->
   <div class="form-wrap" id="formWrap">
 
@@ -543,19 +455,6 @@
     else if(y < lastY) { header.classList.remove('show'); }
     lastY = y;
   }, { passive: true });
-})();
-
-// 공유 버튼
-(function(){
-  var btn = document.getElementById('resShareBtn');
-  if(!btn) return;
-  btn.addEventListener('click', function() {
-    if(navigator.share) {
-      navigator.share({ title: 'ORDO LAYER 사전예약', url: location.href });
-    } else if(navigator.clipboard) {
-      navigator.clipboard.writeText(location.href).then(function() { alert('링크가 복사되었습니다.'); });
-    }
-  });
 })();
 
 // 하단 오른쪽 버튼 → 폼으로 스크롤

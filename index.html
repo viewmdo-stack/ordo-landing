@@ -2283,6 +2283,87 @@
   line-height: 1.7;
 }
 
+/* ===== 상단 고정 헤더 ===== */
+.idx-fixed-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 10px, #87CEEB 10px, #87CEEB 20px);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+.idx-fixed-header.show { transform: translateY(0); }
+
+/* ===== 상단 썸네일 섹션 ===== */
+.idx-hero {
+  position: relative;
+  width: 100%;
+  height: 70vw;
+  max-height: 300px;
+  background: #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.idx-hero-text {
+  text-align: center;
+  z-index: 2;
+  padding-bottom: 48px;
+}
+.idx-hero-sub {
+  font-size: 18px;
+  color: #555;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.idx-hero-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #111;
+}
+.idx-hero-title u { text-underline-offset: 4px; }
+.idx-product-chip {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+  z-index: 2;
+}
+.idx-share-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  z-index: 2;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* ===== 하단 고정 2버튼 바 ===== */
 .fixed-bottom-bar {
   position: fixed;
@@ -2321,7 +2402,25 @@
 </style>
 </head>
 <body>
+
+<!-- 스크롤 고정 헤더 -->
+<header class="idx-fixed-header" id="idxFixedHeader">
+  <img src="images/logo.png" alt="ORDO LAYER" style="height:32px;">
+</header>
+
 <div class="page-wrapper">
+
+  <!-- 상단 썸네일 섹션 -->
+  <div class="idx-hero">
+    <div class="idx-hero-text">
+      <p class="idx-hero-sub">남성 체취 케어</p>
+      <p class="idx-hero-title"><u>오르도레이어</u></p>
+    </div>
+    <div class="idx-product-chip">오르도레이어 바디워시 &amp; 바디스프레이 사전 예약</div>
+    <button class="idx-share-btn" id="idxShareBtn" type="button" aria-label="공유">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+    </button>
+  </div>
 
   <!-- S1: 문제 제기 -->
   <section>
@@ -3465,6 +3564,32 @@
       e.preventDefault();
       location.href = 'reserve.html';
     });
+  });
+})();
+
+// 상단 고정 헤더 (스크롤 내릴 때 표시, 올릴 때 숨김)
+(function(){
+  var header = document.getElementById('idxFixedHeader');
+  if(!header) return;
+  var lastY = 0;
+  window.addEventListener('scroll', function() {
+    var y = window.pageYOffset;
+    if(y > lastY && y > 30) { header.classList.add('show'); }
+    else if(y < lastY) { header.classList.remove('show'); }
+    lastY = y;
+  }, { passive: true });
+})();
+
+// 썸네일 공유 버튼
+(function(){
+  var btn = document.getElementById('idxShareBtn');
+  if(!btn) return;
+  btn.addEventListener('click', function() {
+    if(navigator.share) {
+      navigator.share({ title: 'ORDO LAYER', url: location.href });
+    } else if(navigator.clipboard) {
+      navigator.clipboard.writeText(location.href).then(function() { alert('링크가 복사되었습니다.'); });
+    }
   });
 })();
 </script>
