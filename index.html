@@ -2497,10 +2497,11 @@
 
   <!-- S4: 브랜드 스토리 -->
   <section class="s4-section">
-    <div style="position:relative; width:100%;">
+    <!-- 1. 배경+제품 겹침 블록 -->
+    <div style="position:relative; width:100%; overflow:hidden;">
       <img src="images/s4-main.jpg" style="width:100%; display:block;">
       <div style="position:absolute; inset:0; background:rgba(0,0,0,0.35); z-index:0;"></div>
-      <div id="s4Overlay" style="position:absolute; top:0; left:0; right:0; bottom:0; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; z-index:1; padding-top:40px;">
+      <div id="s4Overlay" style="position:absolute; top:0; left:0; right:0; bottom:0; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; z-index:1; padding:40px 24px;">
         <p class="s4-main-title s4-fade-item">오르도레이어는</p>
         <ul class="s4-numbered-list">
           <li class="s4-fade-item"><span class="s4-num">1</span><span>피부 위에 남은 피지와 땀,</span></li>
@@ -2509,10 +2510,18 @@
         </ul>
         <p class="s4-closing s4-fade-item">하나하나 설계하였습니다.</p>
       </div>
+      <div style="position:absolute; bottom:0; left:0; right:0; display:flex; align-items:flex-end; z-index:2;">
+        <img src="images/s4-products1.jpg" style="width:50%; display:block;">
+        <img src="images/s4-products2.jpg" style="width:50%; display:block;">
+      </div>
     </div>
-    <div style="display:flex; gap:4px; margin-top:0;">
-      <img src="images/s4-products1.jpg" style="width:50%; display:block;">
-      <img src="images/s4-products2.jpg" style="width:50%; display:block;">
+    <!-- 2. 바디워시 단독 -->
+    <div style="width:100%; margin-top:0;">
+      <img src="images/s4-products1.jpg" style="width:100%; display:block;">
+    </div>
+    <!-- 3. 바디스프레이 단독 -->
+    <div style="width:100%; margin-top:4px;">
+      <img src="images/s4-products2.jpg" style="width:100%; display:block;">
     </div>
   </section>
     <!-- S5: 원인 분석 -->
