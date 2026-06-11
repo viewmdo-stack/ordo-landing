@@ -3436,10 +3436,14 @@
   window.addEventListener('scroll', update, { passive: true });
   update();
 
-  btn.addEventListener('click', function(e) {
+  function scrollToPreorder(e) {
     e.preventDefault();
-    section.scrollIntoView({ behavior: 'smooth' });
-  });
+    var top = section.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+
+  btn.addEventListener('click', scrollToPreorder);
+  btn.addEventListener('touchend', scrollToPreorder);
 })();
 
 
