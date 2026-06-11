@@ -1858,6 +1858,214 @@
   font-weight: 600;
 }
 
+/* ===== S13: PRE-ORDER ===== */
+.s13-section {
+  background: #fff;
+  padding: 0;
+}
+.s13-hook {
+  padding: 64px 28px 48px;
+  text-align: center;
+}
+.s13-hook-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #e02020;
+  border: 1.5px solid #e02020;
+  border-radius: 999px;
+  padding: 5px 18px;
+  margin-bottom: 28px;
+}
+.s13-hook-headline {
+  font-size: 36px;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+  word-break: keep-all;
+}
+.s13-hook-sub {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e02020;
+  line-height: 1.7;
+  margin-bottom: 44px;
+  word-break: keep-all;
+}
+.s13-reward-label {
+  font-size: 13px;
+  color: #999;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.s13-reward-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -0.5px;
+  margin-bottom: 0;
+}
+.s13-rewards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px 24px 52px;
+}
+.s13-reward-item {
+  background: #1a3a6b;
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.s13-reward-badge {
+  font-size: 10px;
+  font-weight: 900;
+  color: #1a3a6b;
+  background: #fff;
+  border-radius: 6px;
+  padding: 3px 9px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.s13-reward-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+.s13-products {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 44px;
+}
+.s13-product-card {
+  border: 1.5px solid #ebebeb;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.s13-product-imgs {
+  display: flex;
+}
+.s13-product-img {
+  flex: 1;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  width: 50%;
+}
+.s13-product-img-single {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.s13-product-body {
+  padding: 22px 20px 24px;
+}
+.s13-product-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  color: #2867a8;
+  background: #e8f1f9;
+  border-radius: 6px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  letter-spacing: 0.08em;
+}
+.s13-product-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+.s13-product-desc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.s13-product-desc-item {
+  background: #1a3a6b;
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.7;
+  word-break: keep-all;
+}
+.s13-product-desc-item strong {
+  color: #fff;
+  font-weight: 700;
+}
+.s13-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 0;
+  border-top: 1px solid #f0f0f0;
+}
+.s13-price-label {
+  font-size: 13px;
+  color: #999;
+  font-weight: 500;
+}
+.s13-price-value {
+  font-size: 24px;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  text-align: right;
+}
+.s13-price-note {
+  font-size: 10px;
+  color: #bbb;
+  text-align: right;
+  margin-top: 2px;
+}
+.s13-cta-btn {
+  display: block;
+  width: 100%;
+  background: #e02020;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 19px 0;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 18px;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+.s13-notice {
+  padding: 0 28px 64px;
+  font-size: 11px;
+  color: #bbb;
+  line-height: 1.9;
+  text-align: center;
+  word-break: keep-all;
+}
+
 </style>
 </head>
 <body>
@@ -2490,7 +2698,7 @@
 <!-- S12: THE SIGNATURE SCENT -->
 <section class="s12-section">
   <span class="s12-tag">THE SIGNATURE SCENT</span>
-  <p class="s12-main-title">체취를 지운 자리,<br>인상만 남도록</p>
+  <p class="s12-main-title">체취를 지운 자리,<br>여운만 남도록</p>
   <ul class="s12-scent-list">
     <li class="s12-scent-item">카다멈의 은근한 스파이스,</li>
     <li class="s12-scent-item">샌달우드의 드라이한 부드러움,</li>
@@ -2498,6 +2706,109 @@
   </ul>
   
   <p class="s12-closing">오르도레이어의 특별한 조향은<br>당신의 하루에 고마움을 남기는<br>마지막 레이어입니다.</p>
+</section>
+
+
+<!-- S13: PRE-ORDER -->
+<section class="s13-section">
+
+  <!-- 상단 후킹 블록 -->
+  <div class="s13-hook">
+    <span class="s13-hook-eyebrow">PRE-ORDER</span>
+    <p class="s13-hook-headline">지금 결제는<br>필요 없습니다.</p>
+    <p class="s13-hook-sub">출시 후 사전 예약자에 한해<br>40% 한정할인 결제창을 보내드립니다.</p>
+    <p class="s13-reward-label">오직 론칭 크루에게만 허락된</p>
+    <p class="s13-reward-title">3가지 프리오더 리워드</p>
+  </div>
+
+  <!-- 리워드 3개 블록 -->
+  <div class="s13-rewards">
+    <div class="s13-reward-item">
+      <span class="s13-reward-badge">PRICE</span>
+      <span class="s13-reward-text">공식 출시가 대비 최대 40% 한정 할인가 적용!</span>
+    </div>
+    <div class="s13-reward-item">
+      <span class="s13-reward-badge">FREE</span>
+      <span class="s13-reward-text">배송비 0원, 사전예약자 전원 무조건 무료 배송!</span>
+    </div>
+    <div class="s13-reward-item">
+      <span class="s13-reward-badge">REWARD</span>
+      <span class="s13-reward-text">최종 구매가 리워드 10,000 포인트 지급!</span>
+    </div>
+  </div>
+
+  <!-- 제품 선택 블록들 -->
+  <div class="s13-products">
+
+    <!-- 풀케어 세트 -->
+    <div class="s13-product-card">
+      <div class="s13-product-imgs">
+        <img src="images/s4-products1.jpg" class="s13-product-img" alt="바디워시">
+        <img src="images/s4-products2.jpg" class="s13-product-img" alt="바디스프레이">
+      </div>
+      <div class="s13-product-body">
+        <span class="s13-product-tag">FULL CARE SET</span>
+        <p class="s13-product-name">오르도레이어 어반 스트레스 쉴드<br>바디워시 &amp; 바디스프레이 풀케어 세트</p>
+        <div class="s13-product-desc-list">
+          <div class="s13-product-desc-item"><strong>바디워시 (500ml)</strong><br>씻어내는 순간, 표면의 피지·산화피지·냄새 원인을 정돈하는 4단계 설계의 시작.</div>
+          <div class="s13-product-desc-item"><strong>바디스프레이 (250ml)</strong><br>외출 전·후 어디서든, 피부 속 냄새 원인과 건강한 피부 컨디션을 유지시켜주는 올인원 제품.</div>
+        </div>
+        <div class="s13-price-row">
+          <span class="s13-price-label">사전 예약금</span>
+          <div>
+            <p class="s13-price-value">0원</p>
+            <p class="s13-price-note">정식 출시 후 결제</p>
+          </div>
+        </div>
+        <a href="#preorder" class="s13-cta-btn">지금 사전 예약 하기</a>
+      </div>
+    </div>
+
+    <!-- 바디워시 단품 -->
+    <div class="s13-product-card">
+      <img src="images/s4-products1.jpg" class="s13-product-img-single" alt="바디워시">
+      <div class="s13-product-body">
+        <span class="s13-product-tag">BODY WASH</span>
+        <p class="s13-product-name">오르도레이어 어반 스트레스 쉴드<br>바디워시 500ml</p>
+        <div class="s13-product-desc-list">
+          <div class="s13-product-desc-item"><strong>바디워시 (500ml)</strong><br>씻어내는 순간, 표면의 피지·산화피지·냄새 원인을 정돈하는 4단계 설계의 시작.</div>
+        </div>
+        <div class="s13-price-row">
+          <span class="s13-price-label">사전 예약금</span>
+          <div>
+            <p class="s13-price-value">0원</p>
+            <p class="s13-price-note">정식 출시 후 결제</p>
+          </div>
+        </div>
+        <a href="#preorder" class="s13-cta-btn">지금 사전 예약 하기</a>
+      </div>
+    </div>
+
+    <!-- 바디스프레이 단품 -->
+    <div class="s13-product-card">
+      <img src="images/s4-products2.jpg" class="s13-product-img-single" alt="바디스프레이">
+      <div class="s13-product-body">
+        <span class="s13-product-tag">BODY SPRAY</span>
+        <p class="s13-product-name">오르도레이어 어반 스트레스 쉴드<br>바디스프레이 풀케어 세트</p>
+        <div class="s13-product-desc-list">
+          <div class="s13-product-desc-item"><strong>바디스프레이 (250ml)</strong><br>외출 전·후 어디서든, 피부 속 냄새 원인과 건강한 피부 컨디션을 유지시켜주는 올인원 제품.</div>
+        </div>
+        <div class="s13-price-row">
+          <span class="s13-price-label">사전 예약금</span>
+          <div>
+            <p class="s13-price-value">0원</p>
+            <p class="s13-price-note">정식 출시 후 결제</p>
+          </div>
+        </div>
+        <a href="#preorder" class="s13-cta-btn">지금 사전 예약 하기</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 안내 문구 -->
+  <p class="s13-notice">정식가·할인율은 출시 시점 확정 후 사전예약자에게 가장 먼저 안내드립니다.<br>사전예약은 무료이며 구매 의무가 없습니다.</p>
+
 </section>
 
 </div>
