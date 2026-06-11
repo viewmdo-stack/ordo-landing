@@ -89,7 +89,7 @@
       padding: 0 24px;
     }
     .s1-card-line1 {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 700;
       color: #fff;
       line-height: 1.4;
@@ -97,7 +97,7 @@
       margin-bottom: 8px;
     }
     .s1-card-line2 {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 700;
       color: #fff;
       line-height: 1.4;
@@ -122,9 +122,8 @@
       color: #555;
       line-height: 1.7;
       padding: 14px 0;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: none;
     }
-    .s1-quote:last-child { border-bottom: none; }
     .s1-divider {
       width: 1px;
       height: 60px;
@@ -240,7 +239,7 @@
     .s2-section {
       background: #dbe2e9;
       text-align: center;
-      padding: 72px 28px 0;
+      padding: 108px 28px 0;
     }
     .s2-main {
       font-size: 46px;
@@ -249,7 +248,7 @@
       line-height: 1.25;
       letter-spacing: -0.5px;
       word-break: keep-all;
-      margin-bottom: 32px;
+      margin-bottom: 96px;
     }
     .s2-sub {
       font-size: 16px;
@@ -309,14 +308,15 @@
     }
     .s3-img-placeholder {
       width: 100%;
-      aspect-ratio: 3 / 5;
+      aspect-ratio: 3 / 15;
       background: #d0ccc8;
       display: block;
       overflow: hidden;
     }
     .s3-copy-overlay {
       position: absolute;
-      top: 40px;
+      top: 50%;
+      transform: translateY(-50%);
       left: 0;
       right: 0;
       padding: 0 28px;
@@ -604,16 +604,16 @@
       color: #555;
     }
     .s5-keyword {
-      font-size: 40px;
+      font-size: 60px;
       font-weight: 900;
       color: #fff;
       letter-spacing: -1px;
       line-height: 1;
       background: #1e2a6e;
       border: none;
-      padding: 8px 18px 10px;
+      padding: 10px 24px 14px;
       display: inline-block;
-      animation: nonenal-pulse 1.8s ease-in-out infinite;
+      animation: nonenal-pulse 0.9s ease-in-out infinite;
     }
     @keyframes nonenal-pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -652,12 +652,12 @@
     }
     .s6-video-wrap {
       aspect-ratio: 5 / 4;
-      background: #1a1a1a;
+      background: #0d2459;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 13px;
-      color: #666;
+      color: #fff;
       margin: 0 12px 52px;
     }
     .s6-sub-copy {
@@ -680,14 +680,14 @@
       color: #111;
       text-align: center;
       letter-spacing: 1.5px;
-      margin-bottom: 48px;
+      margin-bottom: 24px;
       padding: 0 24px;
     }
     .s6-diagram-wrap {
       width: 100%;
       padding: 0 8px;
       box-sizing: border-box;
-      margin-bottom: 48px;
+      margin-bottom: 144px;
     }
     .s6-svg {
       width: 100%;
@@ -743,9 +743,9 @@
 
     /* ===== S7 섹션 ===== */
     .s7-section {
-      padding: 100px 0 80px;
+      padding: 100px 0 40px;
       background: #fff;
-      margin-top: 80px;
+      margin-top: 40px;
     }
     .s7-sys-label {
       font-size: 11px;
@@ -800,7 +800,7 @@
       gap: 10px;
       justify-content: center;
       margin-bottom: 44px;
-      padding: 0 16px;
+      padding: 0;
     }
     .s7-circle {
       flex: 1;
@@ -818,9 +818,26 @@
       background-position: center;
       position: relative;
     }
+    .s7-scrub-anim-wrap {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 900;
+      color: #2867a8;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .s7-scrub-word {
+      display: inline-block;
+      padding: 2px 10px;
+      border: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .s7-scrub-word.active {
+      border-color: #2867a8;
+    }
     .s7-scrub-wrap {
       text-align: center;
-      margin-top: 44px;
+      margin-top: 22px;
       margin-bottom: 12px;
       padding: 0 20px;
     }
@@ -839,7 +856,7 @@
       word-break: keep-all;
     }
     .s7-scrub-body {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       color: #555;
       line-height: 1.85;
@@ -1059,7 +1076,7 @@
       margin-bottom: 40px;
     }
     .s8-stat-item {
-      margin-bottom: 44px;
+      margin-bottom: 88px;
     }
     .s8-stat-headline {
       font-size: 30px;
@@ -1072,6 +1089,7 @@
     }
     .s8-stat-num {
       display: inline-block;
+      color: #1a5fc8;
       animation: statBlink 0.4s step-start infinite;
     }
     @keyframes statBlink {
@@ -1114,7 +1132,7 @@
 
     /* S8 비교 이미지 */
     .s8-compare-wrap {
-      padding: 48px 16px 0;
+      padding: 16px 16px 0;
     }
     .s8-compare-grid {
       position: relative;
@@ -1135,7 +1153,7 @@
       padding: 0 2px;
     }
     .s8-compare-label {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 600;
       color: #444;
       line-height: 1.4;
@@ -1236,7 +1254,7 @@
       font-weight: 900;
       color: #2867a8;
       text-align: center;
-      padding: 48px 20px 0;
+      padding: 16px 20px 0;
       word-break: keep-all;
       line-height: 1.3;
     }
@@ -1538,21 +1556,21 @@
     border-radius: 4px;
   }
   .s10-origin {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     color: #2867a8;
     margin-bottom: 4px;
     letter-spacing: 0.02em;
   }
   .s10-ingredient {
-    font-size: 28px;
+    font-size: 31px;
     font-weight: 700;
     color: #2867a8;
     letter-spacing: 0.02em;
     margin-bottom: 28px;
   }
   .s10-copy {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: #333;
     line-height: 1.9;
@@ -1674,7 +1692,7 @@
     word-break: keep-all;
   }
   .s11-block {
-    margin-bottom: 48px;
+    margin-bottom: 16px;
     text-align: center;
   }
   .s11-ing-box {
@@ -1716,6 +1734,7 @@
     font-size: 13px;
     color: #ccc;
     border-radius: 4px;
+    margin-bottom: 24px;
   }
 
 
@@ -1789,7 +1808,7 @@
     <div class="s1-hero">
       <p class="s1-sub">당신도 한 번쯤,</p>
       <p class="s1-main"><strong>이런 순간이<br>있었나요?</strong></p>
-      <p class="s1-desc"><strong>남들은 먼저 느끼는데, 정작 나는 모르는 그 냄새.<br>꺼내기 조심스럽고, 모른 척하기도 어려운 그 경험.</strong></p>
+      <p class="s1-desc"><strong>남들은 먼저 느끼는데,<br>정작 나는 모르는 그 냄새.<br>꺼내기 조심스럽고,<br>모른 척하기도 어려운 그 경험.</strong></p>
     </div>
 
     <div class="s1-cards">
@@ -2018,8 +2037,11 @@
       </div>
     </div>
     <div class="s7-scrub-wrap">
-      <p class="s7-scrub-title">호두껍질 스크럽<br>셀룰로오스 스크럽</p>
-      <p class="s7-scrub-sub">2종 스크럽</p>
+      <div class="s7-scrub-anim-wrap">
+        <span class="s7-scrub-word s7-sw1">호두껍질 스크럽</span><br>
+        <span class="s7-scrub-word s7-sw2">셀룰로오스 스크럽</span><br>
+        <span class="s7-scrub-word s7-sw3">2종 스크럽</span>
+      </div>
     </div>
     <div class="s7-video-wrap">4:5 영상 플레이스홀더</div>
     <div class="s7-wide-img">5:3 이미지 플레이스홀더</div>
@@ -2028,9 +2050,19 @@
       <p class="s7-desc-p">서로 다른 입자가 피부에 다르게 닿아<br>부드럽게 탈착하고, 개운하게 마무리하는<br>저자극 스크럽 설계했습니다.</p>
       <p class="s7-desc-p">&nbsp;</p>
     </div>
-    <div class="s7-img-row">
-      <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s7-walnut.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s7-microscope.jpg" style="width:100%;height:130%;object-fit:cover;object-position:top;display:block;align-self:flex-start;"></div>
+    <style>
+  .s7-img-cap { font-size:12px; font-weight:600; color:#555; text-align:center; padding-top:6px; }
+  .s7-img-col { flex:1; display:flex; flex-direction:column; }
+</style>
+<div class="s7-img-row">
+      <div class="s7-img-col">
+        <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s7-walnut.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <p class="s7-img-cap">호두 껍질 파우더</p>
+      </div>
+      <div class="s7-img-col">
+        <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s7-microscope.jpg" style="width:100%;height:130%;object-fit:cover;object-position:top;display:block;align-self:flex-start;"></div>
+        <p class="s7-img-cap">셀룰로오스 확대</p>
+      </div>
     </div>
   </section>
 
@@ -2046,8 +2078,11 @@
     <div class="s8-hero-img">모공 이미지 플레이스홀더</div>
     <!-- 솝넛 파트 -->
     <div class="s8-ingredient-wrap">
-      <p class="s8-ingredient-sub">강력한 소취기능과 세정력을 가진</p>
-      <p class="s8-ingredient-title">솝넛 분말 특허 성분</p>
+      <div class="s7-scrub-anim-wrap" style="font-size:28px; color:#111; margin-bottom:8px;">
+        <span class="s7-scrub-word s7-sw1">강력한 소취기능과</span><br>
+        <span class="s7-scrub-word s7-sw2">세정력을 가진</span><br>
+        <span class="s7-scrub-word s7-sw3">솝넛 분말 특허 성분</span>
+      </div>
     </div>
     <div class="s8-img-row">
       <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px;"><img src="images/s9-patent-jp.jpg" style="width:100%; height:auto; object-fit:contain;" /></div>
@@ -2227,7 +2262,7 @@
 
     <div class="s10-effect-box">
       <p class="s10-effect-title">체취 관련 미생물 감소 효과</p>
-      <p class="s10-effect-sub"><em>(Corynebacterium xerosis)</em></p>
+      
     </div>
 
     <div style="margin-bottom:12px;"><img src="images/s10-graph1.jpg" style="width:100%; height:auto; display:block; border-radius:4px;" /></div>
@@ -2315,7 +2350,7 @@
 (function(){
   var track = document.querySelector('.s2-slider-track');
   if(!track) return;
-  var speed = 1.0; // px per frame
+  var speed = 1.5; // px per frame
   var offset = 0;
   
   // 트랙의 실제 너비의 절반(복제본이 있으므로)
@@ -2414,6 +2449,37 @@
         }, 5000);
       });
     });
-  </script>
-</body>
-                                             </html>
+  // S7/S8 순차 박스 강조 애니메이션
+(function(){
+  function animateScrubWords(words) {
+    if (!words || words.length === 0) return;
+    let idx = 0;
+    function next() {
+      words.forEach(w => w.classList.remove('active'));
+      words[idx].classList.add('active');
+      idx = (idx + 1) % words.length;
+      setTimeout(next, 800);
+    }
+    next();
+  }
+  
+  // S7 scrub words
+  var sw = document.querySelectorAll('.s7-sw1, .s7-sw2, .s7-sw3');
+  if (sw.length > 0) {
+    var groups = {};
+    sw.forEach(function(w) {
+      var p = w.parentElement;
+      if (!groups.has) {
+        groups = [];
+      }
+      // 같은 부모 그룹별로 처리
+    });
+    // 모든 s7-scrub-word 그룹 찾기
+    var wraps = document.querySelectorAll('.s7-scrub-anim-wrap');
+    wraps.forEach(function(wrap) {
+      var words = wrap.querySelectorAll('.s7-scrub-word');
+      if (words.length > 0) animateScrubWords(Array.from(words));
+    });
+  }
+})();
+            </script>
