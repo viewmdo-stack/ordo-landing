@@ -542,7 +542,7 @@
     }
     .s5-img-row {
       display: flex;
-      gap: 6px;
+      gap: 16px;
       margin-bottom: 52px;
       padding: 0 4px;
     }
@@ -577,6 +577,7 @@
       justify-content: center;
       font-size: 13px;
       color: #666;
+      margin-top: 20px;
       margin-bottom: 64px;
     }
     .s5-desc-wrap {
@@ -675,13 +676,16 @@
       color: #111;
     }
     .s6-system-title {
-      font-size: 14px;
-      font-weight: 900;
+      display: inline-block;
+      border: 2px solid #111;
+      border-radius: 999px;
+      padding: 8px 22px;
+      font-size: 11px;
+      font-weight: 800;
       color: #111;
       text-align: center;
       letter-spacing: 1.5px;
       margin-bottom: 24px;
-      padding: 0 24px;
     }
     .s6-diagram-wrap {
       width: 100%;
@@ -743,7 +747,7 @@
 
     /* ===== S7 섹션 ===== */
     .s7-section {
-      padding: 100px 0 40px;
+      padding: 50px 0 40px;
       background: #fff;
       margin-top: 40px;
     }
@@ -837,7 +841,7 @@
     }
     .s7-scrub-wrap {
       text-align: center;
-      margin-top: 22px;
+      margin-top: 7px;
       margin-bottom: 12px;
       padding: 0 20px;
     }
@@ -997,7 +1001,7 @@
       justify-content: center;
       font-size: 13px;
       color: #888;
-      margin-bottom: 60px;
+      margin-bottom: 20px;
     }
     /* 솝넛 파트 */
     .s8-ingredient-wrap {
@@ -1054,6 +1058,15 @@
       word-break: keep-all;
     }
     /* 수치 파트 */
+    .s8-tag-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+    .s8-tag-row .s8-stats-tag {
+      margin-bottom: 0;
+    }
     .s8-stats-wrap {
       padding: 0 20px;
     }
@@ -1117,7 +1130,8 @@
       height: 100%;
       background: #2867a8;
       border-radius: 6px;
-      transition: width 1.2s ease;
+      width: 0 !important;
+      transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -1353,7 +1367,7 @@
       text-align: center;
     }
     .s9-stats-tag {
-      display: block;
+      display: inline-block;
       border: 1.5px solid #888;
       border-radius: 30px;
       padding: 9px 28px;
@@ -1370,7 +1384,7 @@
       margin-bottom: 40px;
     }
     .s9-stat-item {
-      margin-bottom: 40px;
+      margin-bottom: 80px;
       text-align: center;
     }
     .s9-stat-headline {
@@ -1384,6 +1398,7 @@
     }
     .s9-stat-num {
       display: inline-block;
+      color: #1a5fc8;
       animation: statBlink 0.4s step-start infinite;
     }
     .s9-bar-group {
@@ -1412,6 +1427,7 @@
       overflow: hidden;
       position: relative;
     }
+    .s9-bar-fill-init { width: 0 !important; }
     .s9-bar-fill {
       height: 100%;
       background: #2867a8;
@@ -1479,7 +1495,7 @@
   /* ===== S10: OXIDATION DELAY ===== */
   .s10-section {
     background: #fff;
-    padding: 100px 24px 80px;
+    padding: 50px 24px 40px;
     text-align: center;
   }
   .s10-sys-label {
@@ -1556,21 +1572,21 @@
     border-radius: 4px;
   }
   .s10-origin {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
     color: #2867a8;
     margin-bottom: 4px;
     letter-spacing: 0.02em;
   }
   .s10-ingredient {
-    font-size: 31px;
+    font-size: 34px;
     font-weight: 700;
     color: #2867a8;
     letter-spacing: 0.02em;
     margin-bottom: 28px;
   }
   .s10-copy {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #333;
     line-height: 1.9;
@@ -1734,7 +1750,7 @@
     font-size: 13px;
     color: #ccc;
     border-radius: 4px;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
   }
 
 
@@ -1975,7 +1991,9 @@
   <!-- S6: 4-LAYER ODOR RESET SYSTEM -->
   <section class="s6-section">
     <p class="s6-main-copy">체취를 덮는 것이 아니라,<br>반복되어 다시 생성되는 구조를<br>끊도록 4단계로 설계되었습니다.</p>
+    <div style="text-align:center;width:100%;margin-bottom:0;">
     <p class="s6-system-title">ORDO 4-LAYER ODOR RESET SYSTEM</p>
+    </div>
     <div class="s6-diagram-wrap">
       <svg class="s6-svg" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -2091,34 +2109,37 @@
     <p class="s8-ingredient-desc">솝넛 껍질에 들어있는<br>풍부한 천연 사포닌과 활성 성분이<br>산화된 피지에서 나는 악취 원인인 <u>노네날을</u><br>분해하고 중화시킵니다.</p>
     <!-- 수치 파트 -->
     <div class="s8-stats-wrap">
-      <span class="s8-stats-tag">수치로 증명하는 강력한 효과</span>
+      <div class="s8-tag-row">
+        <span class="s8-stats-tag">수치로 증명하는 강력한 효과</span>
+        <span class="s8-stats-tag">48시간 체취 감소 효과</span>
+      </div>
       <p class="s8-stats-note">*원료적 특성에 한함.</p>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">노화 채취(노네날) 원인<br><span class="s8-stat-num">66.7%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">2-Nonenal (2-노네날)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:66.7%"><span class="s8-bar-value">66.7%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="66.7%"><span class="s8-bar-value">66.7%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">담배, 땀냄새<br><span class="s8-stat-num">51.9%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Ammonia (암모니아)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:51.9%"><span class="s8-bar-value">51.9%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="51.9%"><span class="s8-bar-value">51.9%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">발, 겨드랑이 냄새<br><span class="s8-stat-num">65.6%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Iso-valeric acid (이소발레르산)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:65.6%"><span class="s8-bar-value">65.6%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="65.6%"><span class="s8-bar-value">65.6%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">구취/부패취<br><span class="s8-stat-num">68.6%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Methylmercaptan (메틸메르캅탄)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" style="width:68.6%"><span class="s8-bar-value">68.6%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="68.6%"><span class="s8-bar-value">68.6%</span></div></div>
         </div>
       </div>
     <div class="s8-compare-wrap">
@@ -2175,7 +2196,10 @@
 
       <!-- 모공 수치 그래프 -->
       <div class="s9-stats-wrap">
-        <span class="s9-stats-tag">수치로 증명하는 강력한 효과</span>
+        <div class="s8-tag-row">
+          <span class="s9-stats-tag">수치로 증명하는 강력한 효과</span>
+          <span class="s9-stats-tag">모공 개선 효과</span>
+        </div>
         <p class="s9-stats-note">*원료적 특성에 한함.</p>
 
         <!-- 모공 수 -->
@@ -2184,12 +2208,12 @@
           <div class="s9-bar-group">
             <div class="s9-bar-row">
               <span class="s9-bar-label">2주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" style="width:94.9%"><span class="s9-bar-val">191,500개</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="94.9%" style="width:0"><span class="s9-bar-val">191,500개</span></div></div>
               <span class="s9-bar-max">201,800개</span>
             </div>
             <div class="s9-bar-row">
               <span class="s9-bar-label">4주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" style="width:83.3%"><span class="s9-bar-val">168,100개</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="83.3%" style="width:0"><span class="s9-bar-val">168,100개</span></div></div>
               <span class="s9-bar-max">201,800개</span>
             </div>
           </div>
@@ -2201,12 +2225,12 @@
           <div class="s9-bar-group">
             <div class="s9-bar-row">
               <span class="s9-bar-label">2주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" style="width:92.3%"><span class="s9-bar-val">38.985mm²</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="92.3%" style="width:0"><span class="s9-bar-val">38.985mm²</span></div></div>
               <span class="s9-bar-max">42.254mm²</span>
             </div>
             <div class="s9-bar-row">
               <span class="s9-bar-label">4주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" style="width:73.4%"><span class="s9-bar-val">32.994mm²</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="73.4%" style="width:0"><span class="s9-bar-val">32.994mm²</span></div></div>
               <span class="s9-bar-max">201.800mm²</span>
             </div>
           </div>
@@ -2218,12 +2242,12 @@
           <div class="s9-bar-group">
             <div class="s9-bar-row">
               <span class="s9-bar-label">2주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" style="width:97.1%"><span class="s9-bar-val">0.034mm</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="97.1%" style="width:0"><span class="s9-bar-val">0.034mm</span></div></div>
               <span class="s9-bar-max">0.035mm</span>
             </div>
             <div class="s9-bar-row">
               <span class="s9-bar-label">4주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" style="width:85.7%"><span class="s9-bar-val">0.030mm</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="85.7%" style="width:0"><span class="s9-bar-val">0.030mm</span></div></div>
               <span class="s9-bar-max">0.035mm</span>
             </div>
           </div>
@@ -2265,10 +2289,40 @@
       
     </div>
 
-    <div style="margin-bottom:12px;"><img src="images/s10-graph1.jpg" style="width:100%; height:auto; display:block; border-radius:4px;" /></div>
+<div class="s10-svg-chart1" style="width:100%;margin-bottom:12px;">
+      <svg viewBox="0 0 320 160" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Y축 레이블 -->
+        <text x="32" y="12" font-size="9" fill="#666" text-anchor="end">1.0E+07</text>
+        <text x="32" y="40" font-size="9" fill="#666" text-anchor="end">1.0E+06</text>
+        <text x="32" y="68" font-size="9" fill="#666" text-anchor="end">1.0E+05</text>
+        <text x="32" y="96" font-size="9" fill="#666" text-anchor="end">1.0E+04</text>
+        <text x="32" y="124" font-size="9" fill="#666" text-anchor="end">1.0E+03</text>
+        <!-- X축 레이블 -->
+        <text x="45" y="148" font-size="9" fill="#666" text-anchor="middle">0</text>
+        <text x="90" y="148" font-size="9" fill="#666" text-anchor="middle">5</text>
+        <text x="135" y="148" font-size="9" fill="#666" text-anchor="middle">10</text>
+        <text x="180" y="148" font-size="9" fill="#666" text-anchor="middle">30</text>
+        <text x="225" y="148" font-size="9" fill="#666" text-anchor="middle">60</text>
+        <text x="270" y="148" font-size="9" fill="#666" text-anchor="middle">100</text>
+        <!-- X축 레이블 제목 -->
+        <text x="162" y="160" font-size="8" fill="#888" text-anchor="middle">Time (min)</text>
+        <!-- 격자선 -->
+        <line x1="40" y1="10" x2="40" y2="135" stroke="#ddd" stroke-width="1"/>
+        <line x1="40" y1="135" x2="285" y2="135" stroke="#ddd" stroke-width="1"/>
+        <!-- 수평 격자 -->
+        <line x1="40" y1="38" x2="285" y2="38" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="40" y1="66" x2="285" y2="66" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="40" y1="94" x2="285" y2="94" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="40" y1="122" x2="285" y2="122" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <!-- 일반 세정제 라인 (회색) -->
+        <polyline class="s10-line-control" points="45,20 90,22 135,24 180,28 225,30 270,32" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- dermosoft 라인 (블루, 좌→우 드로우 애니메이션) -->
+        <polyline class="s10-line-dermosoft" points="45,20 90,42 135,65 180,90 225,108 270,126" fill="none" stroke="#1a5fc8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+      </svg>
+    </div>
     <p class="s10-graph-legend" style="font-size:11px; color:#555; line-height:1.8; margin-bottom:4px;">
       <span style="display:inline-block; width:24px; height:2px; background:#888; vertical-align:middle; margin-right:4px;"></span>일반 세정제<br>
-      <span style="display:inline-block; width:24px; height:2px; background:#8B0057; vertical-align:middle; margin-right:4px;"></span>0.3% dermosoft<sup>®</sup> G 3 CY MB 함유 세정제
+      <span style="display:inline-block; width:24px; height:2px; background:#1a5fc8; vertical-align:middle; margin-right:4px;"></span>0.3% dermosoft<sup>®</sup> G 3 CY MB 함유 세정제
     </p>
     <p class="s10-note">시험관 내 코리네박테리아 감소 평가 &#91; IN_VITRO TEST&#93;</p>
 
@@ -2276,22 +2330,36 @@
       <p class="s10-effect-title">48시간 체취 감소 효과</p>
     </div>
 
-    <div style="position:relative; margin-bottom:16px;">
-  <img src="images/s10-graph2.jpg" style="width:100%; height:auto; display:block; border-radius:4px;" />
-  <!-- 상단 제목 + 1%~axilla 전체 가리기 -->
-  <div style="position:absolute; top:0; left:0; right:0; height:24%; background:#f9f9f9;"></div>
-  <!-- 한국어 텍스트 표시 -->
-  <div style="position:absolute; top:3%; left:8%; right:4%; height:20%; background:#f9f9f9; display:flex; align-items:center; justify-content:center;">
-    <span style="font-size:11px; font-weight:700; color:#333; text-align:center;">제품을 사용하지 않은 부위 대비</span>
-  </div>
-  <!-- 세로 영문 줄 가리기 -->
-  <div style="position:absolute; top:24%; left:0; width:9%; bottom:0; background:#f9f9f9;"></div>
-  <!-- after 24/48hours 가리기 + 한국어 교체 -->
-  <div style="position:absolute; bottom:3%; left:9%; right:0; height:10%; background:#f9f9f9; display:flex; align-items:center; justify-content:space-around;">
-    <span style="font-size:12px; font-weight:600; color:#333;">24시간 후</span>
-    <span style="font-size:12px; font-weight:600; color:#333;">48시간 후</span>
-  </div>
-</div>
+    <div class="s10-svg-chart2" style="width:100%;margin-bottom:16px;">
+      <p style="font-size:11px;font-weight:700;color:#333;text-align:center;margin-bottom:8px;">제품을 사용하지 않은 부위 대비</p>
+      <svg viewBox="0 0 220 160" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Y축 -->
+        <text x="22" y="20" font-size="9" fill="#666" text-anchor="middle">0%</text>
+        <text x="22" y="55" font-size="9" fill="#666" text-anchor="middle">-4%</text>
+        <text x="22" y="90" font-size="9" fill="#666" text-anchor="middle">-8%</text>
+        <text x="22" y="125" font-size="9" fill="#666" text-anchor="middle">-12%</text>
+        <!-- Y축 선 -->
+        <line x1="40" y1="12" x2="40" y2="138" stroke="#ccc" stroke-width="1"/>
+        <!-- 격자 -->
+        <line x1="40" y1="18" x2="200" y2="18" stroke="#eee" stroke-width="0.5"/>
+        <line x1="40" y1="53" x2="200" y2="53" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="40" y1="88" x2="200" y2="88" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="40" y1="123" x2="200" y2="123" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="40" y1="138" x2="200" y2="138" stroke="#ccc" stroke-width="1"/>
+        <!-- 24시간 막대 (짙은 파랑, 위→아래 애니메이션) -->
+        <rect class="s10-bar2-a" x="65" y="18" width="45" data-y2="71" data-h2="53" height="0" fill="#1a5fc8" rx="2"/>
+        <text class="s10-bar2-label-a" x="87" y="13" font-size="9" fill="#1a5fc8" font-weight="700" text-anchor="middle">-4%</text>
+        <!-- 48시간 막대 (연한 파랑, 위→아래 애니메이션 지연) -->
+        <rect class="s10-bar2-b" x="130" y="18" width="45" data-y2="88" data-h2="120" height="0" fill="#4a8fe0" rx="2"/>
+        <text class="s10-bar2-label-b" x="152" y="13" font-size="9" fill="#4a8fe0" font-weight="700" text-anchor="middle">-12%</text>
+        <!-- X축 레이블 -->
+        <text x="87" y="150" font-size="10" fill="#333" font-weight="600" text-anchor="middle">24시간 후</text>
+        <text x="152" y="150" font-size="10" fill="#333" font-weight="600" text-anchor="middle">48시간 후</text>
+        <!-- 통계 기호 -->
+        <text x="87" y="9" font-size="7" fill="#666" text-anchor="middle">*</text>
+        <text x="152" y="9" font-size="7" fill="#666" text-anchor="middle">**</text>
+      </svg>
+    </div>
 
     <p class="s10-note2">*원료사 자료 기준. 1% dermosoft<sup>®</sup> G 3 CY MB를 적용한 Natural Gel Deo 제형 인체 스니프<br>테스트 결과.<br>시험 대상: 성인 피험자 24명. 원료적 특성에 한함.</p>
   </section>
@@ -2316,14 +2384,14 @@
     </div>
 
     <!-- 블록2: 12중 히알루론산 -->
-    <div class="s11-block">
+    <div class="s11-block" style="margin-top:32px;">
       <div class="s11-ing-box">
         <p class="s11-ing-name">12중 철통 수분 레이어링</p>
       </div>
       <p class="s11-ing-label">HYAL 12(T) (12중 복합 히알루론산)</p>
       <p class="s11-ing-desc">초저분자부터 고분자까지 12가지 크기의히알루론산이<br>피부 층층이 틈새 없는<br>철통 수분 보호막을 형성합니다.</p>
       <div class="s11-img-placeholder" style="background:none;padding:0;overflow:hidden;"><img src="images/s11-hyaluronic-new.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div style="height:20px;"></div>
+      <div style="height:28px;"></div>
       <div class="s11-ing-box"><p class="s11-ing-name">판테놀 &amp; 트레할로오스</p></div>
       <p class="s11-ing-desc">공기 중의 수분까지 끌어당기는 수분 자석 판테놀과<br>가혹한 건조함 속에서도 살아남는 부활초의 수분 저장<br>트레할로오스가 만났습니다.</p>
       <div class="s11-img-placeholder" style="background:none;padding:0;overflow:hidden;"><img src="images/s11-trehalose.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
@@ -2482,4 +2550,156 @@
     });
   }
 })();
+
+// S8 bar chart 스크롤 애니메이션
+(function(){
+  var bars = document.querySelectorAll('.s8-bar-fill[data-width]');
+  if(!bars.length) return;
+  var animated = false;
+  function checkBars() {
+    if(animated) return;
+    var section = document.querySelector('.s8-stats-wrap');
+    if(!section) return;
+    var rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.9) {
+      animated = true;
+      bars.forEach(function(bar, i) {
+        setTimeout(function() {
+          bar.style.width = bar.getAttribute('data-width');
+        }, i * 200);
+      });
+    }
+  }
+  window.addEventListener('scroll', checkBars, {passive:true});
+  checkBars();
+})();
+
+
+// S10 SVG 차트 애니메이션
+(function(){
+  // 라인 차트 (좌→우 드로우)
+  function initLineChart() {
+    var line = document.querySelector('.s10-line-dermosoft');
+    if(!line) return;
+    var len = line.getTotalLength ? line.getTotalLength() : 200;
+    line.style.strokeDasharray = len;
+    line.style.strokeDashoffset = len;
+    line.style.transition = 'none';
+    var done = false;
+    function check() {
+      if(done) return;
+      var el = line.closest('.s10-svg-chart1') || line;
+      var rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight * 0.9) {
+        done = true;
+        line.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1)';
+        line.style.strokeDashoffset = '0';
+      }
+    }
+    window.addEventListener('scroll', check, {passive:true});
+    check();
+  }
+  
+  // 막대 차트 (위→아래 성장)
+  function initBarChart() {
+    var barA = document.querySelector('.s10-bar2-a');
+    var barB = document.querySelector('.s10-bar2-b');
+    if(!barA || !barB) return;
+    var done = false;
+    function check() {
+      if(done) return;
+      var el = barA.closest('.s10-svg-chart2') || barA;
+      var rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight * 0.9) {
+        done = true;
+        // barA: y=18→71, h=53 (위→아래)
+        barA.style.transition = 'height 1.2s ease, y 1.2s ease';
+        barA.setAttribute('y', '71');
+        barA.setAttribute('height', '53');
+        // barB: 지연 후
+        setTimeout(function() {
+          barB.setAttribute('y', '18');
+          barB.setAttribute('height', '120');
+        }, 300);
+      }
+    }
+    window.addEventListener('scroll', check, {passive:true});
+    check();
+  }
+  
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { initLineChart(); initBarChart(); });
+  } else {
+    initLineChart();
+    initBarChart();
+  }
+})();
+
+
+// S9 막대 그래프 스크롤 애니메이션
+(function(){
+  var bars9 = document.querySelectorAll('.s9-bar-fill[data-width]');
+  if(!bars9.length) return;
+  var animated9 = false;
+  function checkBars9() {
+    if(animated9) return;
+    var section = document.querySelector('.s9-stats-wrap');
+    if(!section) return;
+    var rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.9) {
+      animated9 = true;
+      bars9.forEach(function(bar, i) {
+        setTimeout(function() {
+          bar.style.transition = 'width 1.2s ease';
+          bar.style.width = bar.getAttribute('data-width');
+        }, i * 150);
+      });
+    }
+  }
+  window.addEventListener('scroll', checkBars9, {passive:true});
+  checkBars9();
+})();
+
+
+// S1 카드 깜빡 애니메이션 (순차 재생)
+(function(){
+  var cards = document.querySelectorAll('.s1-card');
+  if(!cards.length) return;
+  
+  function blinkCard(card, callback) {
+    var times = 3; // 3번 깜빡
+    var count = 0;
+    var interval = setInterval(function() {
+      card.style.opacity = card.style.opacity === '0.2' ? '1' : '0.2';
+      count++;
+      if(count >= times * 2) {
+        clearInterval(interval);
+        card.style.opacity = '1';
+        if(callback) callback();
+      }
+    }, 80);
+  }
+  
+  var animated = false;
+  function checkCards() {
+    if(animated) return;
+    var firstCard = cards[0];
+    var rect = firstCard.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.9) {
+      animated = true;
+      var i = 0;
+      function next() {
+        if(i >= cards.length) return;
+        blinkCard(cards[i], function() {
+          i++;
+          setTimeout(next, 150);
+        });
+      }
+      next();
+    }
+  }
+  window.addEventListener('scroll', checkCards, {passive:true});
+  checkCards();
+})();
+
             </script>
