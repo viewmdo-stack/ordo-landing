@@ -241,6 +241,15 @@
       text-align: center;
       padding: 108px 28px 0;
     }
+    .s2-caption-top {
+      font-size: 14px;
+      font-family: 'Nanum Myeongjo', serif;
+      color: #555;
+      text-align: center;
+      margin: 0 0 24px;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
     .s2-main {
       font-size: 46px;
       font-weight: 900;
@@ -261,7 +270,7 @@
     .s2-slider-wrap {
       overflow: hidden;
       width: 100%;
-      padding: 8px 0 0;
+      padding: 24px 0 72px;
       background: #dbe2e9;
     }
     .s2-slider-track {
@@ -370,7 +379,7 @@
       font-size: 18px;
       font-weight: 700;
       color: #fff;
-      background: #1e2a6e;
+      background: #1a3a6b;
       line-height: 1.6;
       text-align: center;
       padding: 14px 20px;
@@ -409,15 +418,16 @@
     }
     .s3-sq-text2 {
       position: absolute;
-      bottom: 10px;
+      bottom: 0;
       left: 0;
       right: 0;
       font-size: 18px;
-      font-weight: 500;
-      color: #222;
+      font-weight: 700;
+      color: #fff;
+      background: #1a3a6b;
       line-height: 1.6;
       text-align: center;
-      padding: 0 20px;
+      padding: 14px 20px;
       opacity: 0;
       transition: opacity 1.25s ease 0.4s;
     }
@@ -426,9 +436,9 @@
     }
 
     /* ===== S4 ===== */
-        .s4-section {
+    .s4-section {
       padding: 0;
-      margin-top: 0;
+      margin-top: 50px;
     }
     .s4-dim-overlay {
       position: absolute;
@@ -439,7 +449,7 @@
     .s4-inner {
       position: relative;
       width: 100%;
-      min-height: 960px;
+      min-height: 1200px;
       background: url('images/s4-main.jpg') center 20%/cover no-repeat;
       display: flex;
       flex-direction: column;
@@ -453,10 +463,20 @@
       letter-spacing: 0.04em;
       color: #fff;
       text-align: center;
-      padding-top: 20px;
+      padding-top: 40px;
       margin-bottom: 20px;
       position: relative;
       z-index: 1;
+    }
+    /* S4 텍스트 순차 페이드인 */
+    .s4-fade-item {
+      opacity: 0;
+      transform: translateY(-24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .s4-fade-item.s4-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .s4-numbered-list {
       list-style: none;
@@ -525,7 +545,7 @@
 
     /* ===== S5 ===== */
     .s5-section {
-      padding: 120px 0 100px;
+      padding: 120px 0 50px;
       background: #fff;
       margin-top: 80px;
     }
@@ -549,11 +569,10 @@
     .s5-img-item {
       flex: 1;
       aspect-ratio: 4 / 5;
-      background: #d0ccc8;
+      overflow: hidden;
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 12px;
       font-size: 11px;
       color: #888;
       text-align: center;
@@ -585,9 +604,9 @@
       padding: 0 20px;
     }
     .s5-desc-pre {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 400;
-      color: #555;
+      color: #1e2a6e;
       line-height: 1.8;
       margin-bottom: 20px;
     }
@@ -600,9 +619,9 @@
       flex-wrap: wrap;
     }
     .s5-keyword-pre {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 400;
-      color: #555;
+      color: #1e2a6e;
     }
     .s5-keyword {
       font-size: 60px;
@@ -621,9 +640,9 @@
       50% { opacity: 0.35; transform: scale(0.96); }
     }
     .s5-keyword-post {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 400;
-      color: #555;
+      color: #1e2a6e;
     }
     .s5-desc-post {
       font-size: 18px;
@@ -638,7 +657,7 @@
     .s6-section {
       padding: 100px 0 100px;
       background: #dbe2e9;
-      margin-top: 80px;
+      margin-top: 40px;
     }
     .s6-main-copy {
       font-size: 22px;
@@ -747,7 +766,7 @@
 
     /* ===== S7 섹션 ===== */
     .s7-section {
-      padding: 50px 0 40px;
+      padding: 50px 0 0;
       background: #fff;
       margin-top: 40px;
     }
@@ -833,7 +852,8 @@
     .s7-scrub-word {
       display: inline-block;
       padding: 2px 10px;
-      border: 3px solid transparent;
+      border: 6px solid transparent;
+      color: #2867a8;
       transition: border-color 0.2s;
     }
     .s7-scrub-word.active {
@@ -892,10 +912,10 @@
     }
     .s7-desc-wrap {
       padding: 0 20px;
-      margin-bottom: 44px;
+      margin-bottom: 22px;
     }
     .s7-desc-p {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       color: #444;
       line-height: 1.9;
@@ -924,9 +944,9 @@
 
     /* ===== S8 섹션 ===== */
     .s8-section {
-      padding: 50px 0 80px;
+      padding: 43px 0 80px;
       background: #fff;
-      margin-top: 40px;
+      margin-top: 0;
     }
     .s8-sys-label {
       font-size: 11px;
@@ -1071,15 +1091,15 @@
       padding: 0 20px;
     }
     .s8-stats-tag {
-      display: inline-block;
-      border: 1.5px solid #888;
+      display: block;
+      background: #1a3a6b;
+      border: none;
       border-radius: 30px;
       padding: 9px 28px;
       font-size: 19px;
       font-weight: 600;
-      color: #555;
+      color: #fff;
       margin: 0 auto 16px;
-      display: block;
       width: fit-content;
     }
     .s8-stats-note {
@@ -1122,14 +1142,14 @@
       width: 100%;
       height: 24px;
       background: #dbe2e9;
-      border-radius: 6px;
+      border-radius: 999px;
       overflow: hidden;
       position: relative;
     }
     .s8-bar-fill {
       height: 100%;
       background: #2867a8;
-      border-radius: 6px;
+      border-radius: 999px;
       width: 0 !important;
       transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
@@ -1146,7 +1166,27 @@
 
     /* S8 비교 이미지 */
     .s8-compare-wrap {
-      padding: 16px 16px 0;
+      padding: 8px 16px 0;
+    }
+    .s8-세정력-badge {
+      display: block;
+      background: #1a3a6b;
+      border: none;
+      border-radius: 30px;
+      padding: 9px 28px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 auto 12px;
+      width: fit-content;
+      text-align: center;
+    }
+    @keyframes labelBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .s8-stats-wrap .s8-stat-item:last-child {
+      margin-bottom: 28px;
     }
     .s8-compare-grid {
       position: relative;
@@ -1167,12 +1207,13 @@
       padding: 0 2px;
     }
     .s8-compare-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #444;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a3a6b;
       line-height: 1.4;
       text-align: center;
       flex: 1;
+      animation: labelBlink 1.2s ease-in-out infinite;
     }
     .s8-compare-img {
       aspect-ratio: 4 / 6;
@@ -1260,7 +1301,7 @@
     /* ===== S9: 새싹귀리 특허 성분 ===== */
     .s9-section {
       background: #fff;
-      padding: 100px 0 80px;
+      padding: 100px 0 40px;
       margin-top: 80px;
     }
     .s9-main-copy {
@@ -1332,12 +1373,13 @@
     }
     .s9-test-title {
       display: block;
-      border: 1.5px solid #888;
+      background: #1a3a6b;
+      border: none;
       border-radius: 30px;
       padding: 9px 20px;
       font-size: 19px;
       font-weight: 600;
-      color: #555;
+      color: #fff;
       margin: 0 auto 24px;
       width: fit-content;
       word-break: keep-all;
@@ -1367,13 +1409,14 @@
       text-align: center;
     }
     .s9-stats-tag {
-      display: inline-block;
-      border: 1.5px solid #888;
+      display: block;
+      background: #1a3a6b;
+      border: none;
       border-radius: 30px;
       padding: 9px 28px;
       font-size: 19px;
       font-weight: 600;
-      color: #555;
+      color: #fff;
       margin: 0 auto 12px;
       width: fit-content;
     }
@@ -1423,7 +1466,7 @@
       flex: 1;
       height: 24px;
       background: #dbe2e9;
-      border-radius: 6px;
+      border-radius: 999px;
       overflow: hidden;
       position: relative;
     }
@@ -1431,7 +1474,7 @@
     .s9-bar-fill {
       height: 100%;
       background: #2867a8;
-      border-radius: 6px;
+      border-radius: 999px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -1460,12 +1503,13 @@
     }
     .s9-antera-tag {
       display: inline-block;
-      border: 1.5px solid #555;
+      background: #1a3a6b;
+      border: none;
       border-radius: 24px;
       padding: 6px 18px;
       font-size: 13px;
       font-weight: 600;
-      color: #444;
+      color: #fff;
       margin-bottom: 16px;
     }
     .s9-antera-imgs {
@@ -1495,7 +1539,7 @@
   /* ===== S10: OXIDATION DELAY ===== */
   .s10-section {
     background: #fff;
-    padding: 50px 24px 40px;
+    padding: 25px 24px 40px;
     text-align: center;
   }
   .s10-sys-label {
@@ -1594,7 +1638,8 @@
     word-break: keep-all;
   }
   .s10-effect-box {
-    border: 1.5px solid #3a5a9f;
+    background: #1a3a6b;
+    border: none;
     border-radius: 999px;
     padding: 14px 28px;
     display: inline-block;
@@ -1607,13 +1652,13 @@
   .s10-effect-title {
     font-size: 16px;
     font-weight: 700;
-    color: #2a4a9a;
+    color: #fff;
     margin-bottom: 4px;
   }
   .s10-effect-sub {
     font-size: 13px;
     font-weight: 400;
-    color: #2a4a9a;
+    color: #fff;
     font-style: italic;
   }
   .s10-graph-placeholder {
@@ -1899,6 +1944,7 @@
   </section>
   <!-- S2 슬라이더 -->
   <div class="s2-slider-wrap">
+    <p class="s2-caption-top">우리는 이 고민들로<br>누군가의 상처로 만들고 싶지 않았습니다.</p>
     <div class="s2-slider-track">
       <div class="s2-slide"><img src="images/community1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;"></div>
       <div class="s2-slide"><img src="images/community2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;"></div>
@@ -1911,7 +1957,6 @@
       <div class="s2-slide"><img src="images/community4.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;"></div>
       <div class="s2-slide"><img src="images/community5.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;"></div>
     </div>
-  <p class="s2-caption">우리는 이 고민들로<br>누군가의 상처로 만들고 싶지 않았습니다.</p>
   </div>
 
   <!-- S3: 제품 등장 -->
@@ -1947,13 +1992,13 @@
   <section class="s4-section">
     <div class="s4-inner">
       <div class="s4-dim-overlay"></div>
-      <p class="s4-main-title">오르도레이어는</p>
+      <p class="s4-main-title s4-fade-item">오르도레이어는</p>
       <ul class="s4-numbered-list">
-        <li><span class="s4-num">1</span><span>피부 위에 남은 피지와 땀,</span></li>
-        <li><span class="s4-num">2</span><span>산화되어 무거워진 잔여감,</span></li>
-        <li><span class="s4-num">3</span><span>다시 올라오는 잔취까지</span></li>
+        <li class="s4-fade-item"><span class="s4-num">1</span><span>피부 위에 남은 피지와 땀,</span></li>
+        <li class="s4-fade-item"><span class="s4-num">2</span><span>산화되어 무거워진 잔여감,</span></li>
+        <li class="s4-fade-item"><span class="s4-num">3</span><span>다시 올라오는 잔취까지</span></li>
       </ul>
-      <p class="s4-closing">하나하나 설계하였습니다.</p>
+      <p class="s4-closing s4-fade-item">하나하나 설계하였습니다.</p>
     </div>
     <div class="s4-products">
       <div class="s4-product-block" id="s4Block1">
@@ -2104,14 +2149,17 @@
     </div>
     <!-- 솝넛 파트 -->
     <div class="s8-ingredient-wrap">
-      <div class="s7-scrub-anim-wrap" style="font-size:28px; color:#111; margin-bottom:8px;">
+      <div class="s7-scrub-anim-wrap" style="font-size:40px; margin-bottom:8px;">
         <span class="s7-scrub-word s7-sw1">강력한 소취기능과</span><br>
         <span class="s7-scrub-word s7-sw2">세정력을 가진</span><br>
         <span class="s7-scrub-word s7-sw3">솝넛 분말 특허 성분</span>
       </div>
     </div>
     <div class="s8-img-row">
-      <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px;"><img src="images/s9-patent-kr.jpg" style="width:100%; height:auto; object-fit:contain;" /></div>
+      <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px; display:flex; flex-direction:column; align-items:center;">
+        <img src="images/s9-patent-jp.jpg" style="width:100%; height:auto; object-fit:contain;" />
+        <p style="font-size:11px;font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;">JP Patent No. 6034118</p>
+      </div>
       <div class="s8-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s8-soapnut.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     </div>
     <p class="s8-ingredient-desc">솝넛 껍질에 들어있는<br>풍부한 천연 사포닌과 활성 성분이<br>산화된 피지에서 나는 악취 원인인 <u>노네날을</u><br>분해하고 중화시킵니다.</p>
@@ -2119,7 +2167,6 @@
     <div class="s8-stats-wrap">
       <div class="s8-tag-row">
         <span class="s8-stats-tag">수치로 증명하는 강력한 효과</span>
-        <span class="s8-stats-tag">48시간 체취 감소 효과</span>
       </div>
       <p class="s8-stats-note">*원료적 특성에 한함.</p>
       <div class="s8-stat-item">
@@ -2151,6 +2198,7 @@
         </div>
       </div>
     <div class="s8-compare-wrap">
+      <p class="s8-세정력-badge">세정력 비교</p>
       <div class="s8-compare-label-row">
         <span class="s8-compare-label">일반 세정제</span>
         <span class="s8-compare-label">솝넛 추출파우더 1% 함유</span>
@@ -2169,15 +2217,17 @@
     <div class="page-wrapper">
 
       <!-- 타이틀 -->
-      <p class="s9-main-copy">모공 수축 및 피지 조절에 특화된</p>
-      <p class="s9-key-ingredient">새싹귀리 추출발효 특허 성분</p>
+      <div class="s7-scrub-anim-wrap" style="font-size:40px; margin-bottom:16px;">
+        <span class="s7-scrub-word s7-sw1">모공 수축 및 피지 조절에 특화된</span><br>
+        <span class="s7-scrub-word s7-sw2">새싹귀리 추출발효 특허 성분</span>
+      </div>
 
       <!-- 특허증 + 열매 이미지 좌우 배치 -->
       <div class="s8-img-row">
-        <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px; position:relative;">
-  <img src="images/s9-patent-kr.jpg" style="width:100%; height:auto; object-fit:contain; display:block;" />
-  <div style="position:absolute; left:4px; right:4px; top:34%; height:19%; background:rgba(200,200,200,0.97); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);"></div>
-</div>
+        <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px; display:flex; flex-direction:column; align-items:center;">
+          <img src="images/s9-patent-kr.jpg" style="width:100%; height:auto; object-fit:contain; display:block;" />
+          <p style="font-size:11px;font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">특허 제 10-2731126호&nbsp;&nbsp;7일차 새싹귀리</p>
+        </div>
         <div class="s8-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s9-oat-sprout.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       </div>
 
@@ -2205,8 +2255,7 @@
       <!-- 모공 수치 그래프 -->
       <div class="s9-stats-wrap">
         <div class="s8-tag-row">
-          <span class="s9-stats-tag">수치로 증명하는 강력한 효과</span>
-          <span class="s9-stats-tag">모공 개선 효과</span>
+          <span class="s9-stats-tag">수치로 증명하는 모공 개선 효과</span>
         </div>
         <p class="s9-stats-note">*원료적 특성에 한함.</p>
 
@@ -2287,8 +2336,10 @@
 
     <div class="s10-ing-img-placeholder">이미지 플레이스홀더</div>
 
-    <p class="s10-origin">100% 식물 유래 물질</p>
-    <p class="s10-ingredient">dermosoft<sup>®</sup> G 3 CY MB</p>
+    <div class="s7-scrub-anim-wrap" style="font-size:32px; margin-bottom:16px;">
+      <span class="s7-scrub-word s7-sw1">100% 식물 유래 물질</span><br>
+      <span class="s7-scrub-word s7-sw2">dermosoft<sup>®</sup> G 3 CY MB</span>
+    </div>
 
     <p class="s10-copy">냄새가 다시 시작되는 그 순간에 반응하는<br>온디맨드 데오 성분</p>
 
@@ -2669,45 +2720,61 @@
 })();
 
 
-// S1 카드 깜빡 애니메이션 (순차 재생)
+// S1 카드 텍스트 깜빡 애니메이션 (IntersectionObserver, 2번, 텍스트만)
 (function(){
   var cards = document.querySelectorAll('.s1-card');
   if(!cards.length) return;
-  
-  function blinkCard(card, callback) {
-    var times = 3; // 3번 깜빡
+
+  function blinkCardText(card) {
+    var content = card.querySelector('.s1-card-content');
+    if(!content) return;
     var count = 0;
+    var total = 4; // 2번 깜빡 = on/off × 2
     var interval = setInterval(function() {
-      card.style.opacity = card.style.opacity === '0.2' ? '1' : '0.2';
+      content.style.opacity = (count % 2 === 0) ? '0.1' : '1';
       count++;
-      if(count >= times * 2) {
+      if(count >= total) {
         clearInterval(interval);
-        card.style.opacity = '1';
-        if(callback) callback();
+        content.style.opacity = '1';
       }
-    }, 80);
+    }, 120);
   }
-  
-  var animated = false;
-  function checkCards() {
-    if(animated) return;
-    var firstCard = cards[0];
-    var rect = firstCard.getBoundingClientRect();
-    if(rect.top < window.innerHeight * 0.9) {
-      animated = true;
-      var i = 0;
-      function next() {
-        if(i >= cards.length) return;
-        blinkCard(cards[i], function() {
-          i++;
-          setTimeout(next, 150);
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if(entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        blinkCardText(entry.target);
+      }
+    });
+  }, {threshold: 0.5});
+
+  cards.forEach(function(card) {
+    observer.observe(card);
+  });
+})();
+
+// S4 텍스트 순차 페이드인 (IntersectionObserver)
+(function(){
+  var s4inner = document.querySelector('.s4-inner');
+  if(!s4inner) return;
+  var fadeItems = s4inner.querySelectorAll('.s4-fade-item');
+  if(!fadeItems.length) return;
+  var triggered = false;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if(entry.isIntersecting && !triggered) {
+        triggered = true;
+        observer.disconnect();
+        fadeItems.forEach(function(item, i) {
+          setTimeout(function() {
+            item.classList.add('s4-visible');
+          }, i * 320);
         });
       }
-      next();
-    }
-  }
-  window.addEventListener('scroll', checkCards, {passive:true});
-  checkCards();
+    });
+  }, {threshold: 0.25});
+  observer.observe(s4inner);
 })();
 
             
