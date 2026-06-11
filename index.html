@@ -7,7 +7,11 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
     
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --base-width: 393px;
+      --max-width: 430px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; word-break: keep-all; }
     body {
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
       background: #dbe2e9;
@@ -18,7 +22,7 @@
     }
     .page-wrapper {
       width: 100%;
-      max-width: 430px;
+      max-width: var(--max-width);
       background: #fff;
       margin: 0 auto;
       overflow-x: hidden;
@@ -31,7 +35,7 @@
       padding: 60px 20px 40px;
     }
     .s1-sub {
-      font-size: 35px;
+      font-size: clamp(26px, 8.5vw, 35px);
       font-weight: 400;
       color: #555;
       line-height: 1.4;
@@ -39,7 +43,7 @@
       letter-spacing: -0.5px;
     }
     .s1-main {
-      font-size: 60px;
+      font-size: clamp(44px, 14vw, 60px);
       font-weight: 800;
       color: #111;
       line-height: 1.15;
@@ -47,7 +51,7 @@
       margin-bottom: 60px;
     }
     .s1-desc {
-      font-size: 18px;
+      font-size: clamp(14px, 4.5vw, 18px);
       font-weight: 700;
       color: #333;
       line-height: 1.6;
@@ -90,7 +94,7 @@
       padding: 0 24px;
     }
     .s1-card-line1 {
-      font-size: 21px;
+      font-size: clamp(17px, 5.2vw, 21px);
       font-weight: 700;
       color: #fff;
       line-height: 1.4;
@@ -98,7 +102,7 @@
       margin-bottom: 8px;
     }
     .s1-card-line2 {
-      font-size: 21px;
+      font-size: clamp(17px, 5.2vw, 21px);
       font-weight: 700;
       color: #fff;
       line-height: 1.4;
@@ -118,7 +122,7 @@
     }
     .s1-quote {
       text-align: center;
-      font-size: 15px;
+      font-size: clamp(13px, 3.8vw, 15px);
       font-weight: 400;
       color: #555;
       line-height: 1.7;
@@ -133,7 +137,7 @@
       display: block;
     }
     .s1-quote-last {
-      font-size: 24px !important;
+      font-size: clamp(18px, 6vw, 24px) !important;
       font-weight: 800 !important;
       color: #111 !important;
       border-bottom: none !important;
@@ -146,7 +150,7 @@
       padding: 48px 24px;
     }
     .s1-closing-q {
-      font-size: 26px;
+      font-size: clamp(20px, 6.5vw, 26px);
       font-weight: 800;
       color: #fff;
       line-height: 1.4;
@@ -156,10 +160,10 @@
     .s1-closing-q span {
       color: #4A90E2;
       display: block;
-      font-size: 32px;
+      font-size: clamp(24px, 7vw, 32px);
     }
     .s1-closing-sub {
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       color: rgba(255,255,255,0.5);
       line-height: 1.6;
     }
@@ -170,7 +174,7 @@
       border-bottom: 1px solid #eee;
     }
     .section-label {
-      font-size: 12px;
+      font-size: clamp(11px, 3vw, 12px);
       font-weight: 600;
       color: #4A90E2;
       letter-spacing: 2px;
@@ -179,7 +183,7 @@
       margin-bottom: 16px;
     }
     .section-title {
-      font-size: 26px;
+      font-size: clamp(20px, 6.5vw, 26px);
       font-weight: 800;
       color: #111;
       line-height: 1.35;
@@ -188,7 +192,7 @@
       margin-bottom: 16px;
     }
     .section-body {
-      font-size: 15px;
+      font-size: clamp(13px, 3.8vw, 15px);
       color: #555;
       line-height: 1.8;
       text-align: center;
@@ -202,7 +206,7 @@
       align-items: center;
       justify-content: center;
       color: #aaa;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       margin: 20px 0;
     }
 
@@ -224,13 +228,13 @@
       text-align: left;
     }
     .layer-item h3 {
-      font-size: 16px;
+      font-size: clamp(13px, 4vw, 16px);
       font-weight: 700;
       color: #fff;
       margin-bottom: 6px;
     }
     .layer-item p {
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       color: rgba(255,255,255,0.6);
       line-height: 1.6;
     }
@@ -243,7 +247,7 @@
       padding: 108px 28px 0;
     }
     .s2-caption-top {
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       font-family: 'Nanum Myeongjo', serif;
       color: #555;
       text-align: center;
@@ -252,7 +256,7 @@
       line-height: 1.6;
     }
     .s2-main {
-      font-size: 46px;
+      font-size: clamp(34px, 11vw, 46px);
       font-weight: 900;
       color: #2867a8;
       line-height: 1.25;
@@ -261,7 +265,7 @@
       margin-bottom: 48px;
     }
     .s2-sub {
-      font-size: 16px;
+      font-size: clamp(13px, 4vw, 16px);
       font-weight: 700;
       color: #555;
       line-height: 1.9;
@@ -289,7 +293,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       color: #999;
       font-weight: 500;
       overflow: hidden;
@@ -297,7 +301,7 @@
     
   
     .s2-caption {
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       font-family: 'Nanum Myeongjo', serif;
       color: #555;
       text-align: center;
@@ -332,7 +336,7 @@
       text-align: center;
     }
     .s3-copy {
-      font-size: 34px;
+      font-size: clamp(26px, 8vw, 34px);
       font-weight: 800;
       color: #111;
       line-height: 1.3;
@@ -340,7 +344,7 @@
     }
 
     .s3-sub {
-      font-size: 26px;
+      font-size: clamp(20px, 6.5vw, 26px);
       font-weight: 700;
       color: #111;
       line-height: 1.45;
@@ -376,7 +380,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      font-size: 18px;
+      font-size: clamp(14px, 4.5vw, 18px);
       font-weight: 700;
       color: #fff;
       background: #1a3a6b;
@@ -421,7 +425,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      font-size: 18px;
+      font-size: clamp(14px, 4.5vw, 18px);
       font-weight: 700;
       color: #fff;
       background: #1a3a6b;
@@ -458,7 +462,7 @@
       padding: 0;
     }
     .s4-main-title {
-      font-size: 18px;
+      font-size: clamp(14px, 4.5vw, 18px);
       font-weight: 400;
       letter-spacing: 0.04em;
       color: #fff;
@@ -491,7 +495,7 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 16px;
-      font-size: 22px;
+      font-size: clamp(17px, 5.5vw, 22px);
       font-weight: 700;
       line-height: 1.4;
       color: #fff;
@@ -503,14 +507,14 @@
       border-radius: 50%;
       background: rgba(255,255,255,0.2);
       color: #fff;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .s4-closing {
-      font-size: 18px;
+      font-size: clamp(14px, 4.5vw, 18px);
       font-weight: 400;
       color: #fff;
       text-align: center;
@@ -551,7 +555,7 @@
     }
     .s5-main-copy {
       padding: 0 20px;
-      font-size: 25px;
+      font-size: clamp(19px, 6.2vw, 25px);
       font-weight: 800;
       color: #2867a8;
       line-height: 1.35;
@@ -573,13 +577,13 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       color: #888;
       text-align: center;
     }
     .s5-sub-copy {
       padding: 0 20px;
-      font-size: 15px;
+      font-size: clamp(13px, 3.8vw, 15px);
       font-weight: 400;
       color: #444;
       line-height: 1.9;
@@ -594,7 +598,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       color: #666;
       margin-top: 20px;
       margin-bottom: 64px;
@@ -604,7 +608,7 @@
       padding: 0 20px;
     }
     .s5-desc-pre {
-      font-size: 17px;
+      font-size: clamp(14px, 4.3vw, 17px);
       font-weight: 400;
       color: #1e2a6e;
       line-height: 1.8;
@@ -619,12 +623,12 @@
       flex-wrap: wrap;
     }
     .s5-keyword-pre {
-      font-size: 17px;
+      font-size: clamp(14px, 4.3vw, 17px);
       font-weight: 400;
       color: #1e2a6e;
     }
     .s5-keyword {
-      font-size: 60px;
+      font-size: clamp(44px, 14vw, 60px);
       font-weight: 900;
       color: #fff;
       letter-spacing: -1px;
@@ -640,12 +644,12 @@
       50% { opacity: 0.35; transform: scale(0.96); }
     }
     .s5-keyword-post {
-      font-size: 17px;
+      font-size: clamp(14px, 4.3vw, 17px);
       font-weight: 400;
       color: #1e2a6e;
     }
     .s5-desc-post {
-      font-size: 18px;
+      font-size: clamp(14px, 4.5vw, 18px);
       font-weight: 700;
       color: #333;
       line-height: 1.9;
@@ -660,7 +664,7 @@
       margin-top: 40px;
     }
     .s6-main-copy {
-      font-size: 22px;
+      font-size: clamp(17px, 5.5vw, 22px);
       font-weight: 800;
       color: #111;
       line-height: 1.55;
@@ -676,12 +680,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       color: #fff;
       margin: 0 12px 52px;
     }
     .s6-sub-copy {
-      font-size: 17px;
+      font-size: clamp(14px, 4.3vw, 17px);
       font-weight: 400;
       color: #444;
       line-height: 1.9;
@@ -699,7 +703,7 @@
       border: 2px solid #111;
       border-radius: 999px;
       padding: 8px 22px;
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 800;
       color: #111;
       text-align: center;
@@ -723,7 +727,7 @@
     }
     .s6-num {
       fill: #fff;
-      font-size: 20px;
+      font-size: clamp(16px, 5vw, 20px);
       font-weight: 900;
       font-family: inherit;
       text-anchor: middle;
@@ -731,7 +735,7 @@
     }
     .s6-txt {
       fill: #ccc;
-      font-size: 10px;
+      font-size: clamp(9px, 2.5vw, 10px);
       font-weight: 600;
       font-family: inherit;
       text-anchor: middle;
@@ -739,7 +743,7 @@
     }
     .s6-lbl {
       fill: #666;
-      font-size: 9px;
+      font-size: clamp(8px, 2.3vw, 9px);
       font-weight: 700;
       font-family: inherit;
       text-anchor: middle;
@@ -771,7 +775,7 @@
       margin-top: 40px;
     }
     .s7-sys-label {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 700;
       color: #aaa;
       letter-spacing: 2px;
@@ -791,7 +795,7 @@
       border-radius: 50%;
       background: #1e1e1e;
       color: #fff;
-      font-size: 22px;
+      font-size: clamp(17px, 5.5vw, 22px);
       font-weight: 900;
       display: flex;
       align-items: center;
@@ -803,13 +807,13 @@
       border: 1.5px solid #555;
       border-radius: 20px;
       padding: 3px 14px;
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 700;
       color: #555;
       letter-spacing: 1.5px;
     }
     .s7-main-copy {
-      font-size: 21px;
+      font-size: clamp(17px, 5.2vw, 21px);
       font-weight: 800;
       color: #111;
       line-height: 1.5;
@@ -833,7 +837,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       font-weight: 700;
       color: #fff;
       overflow: hidden;
@@ -843,7 +847,7 @@
     }
     .s7-scrub-anim-wrap {
       text-align: center;
-      font-size: 40px;
+      font-size: clamp(30px, 9.5vw, 40px);
       font-weight: 900;
       color: #2867a8;
       line-height: 1.6;
@@ -866,21 +870,21 @@
       padding: 0 20px;
     }
     .s7-scrub-sub {
-      font-size: 40px;
+      font-size: clamp(30px, 9.5vw, 40px);
       font-weight: 900;
       color: #2867a8;
       margin-bottom: 10px;
       line-height: 1.3;
     }
     .s7-scrub-title {
-      font-size: 40px;
+      font-size: clamp(30px, 9.5vw, 40px);
       font-weight: 900;
       color: #2867a8;
       line-height: 1.5;
       word-break: keep-all;
     }
     .s7-scrub-body {
-      font-size: 16px;
+      font-size: clamp(13px, 4vw, 16px);
       font-weight: 400;
       color: #555;
       line-height: 1.85;
@@ -896,7 +900,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       color: #666;
     }
     .s7-wide-img {
@@ -906,7 +910,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       color: #888;
       margin-bottom: 44px;
     }
@@ -915,7 +919,7 @@
       margin-bottom: 22px;
     }
     .s7-desc-p {
-      font-size: 16px;
+      font-size: clamp(13px, 4vw, 16px);
       font-weight: 400;
       color: #444;
       line-height: 1.9;
@@ -938,7 +942,7 @@
       align-items: flex-end;
       justify-content: center;
       padding-bottom: 12px;
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       color: #888;
     }
 
@@ -949,7 +953,7 @@
       margin-top: 0;
     }
     .s8-sys-label {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 700;
       color: #aaa;
       letter-spacing: 2px;
@@ -969,7 +973,7 @@
       border-radius: 50%;
       background: #1e1e1e;
       color: #fff;
-      font-size: 22px;
+      font-size: clamp(17px, 5.5vw, 22px);
       font-weight: 900;
       display: flex;
       align-items: center;
@@ -981,13 +985,13 @@
       border: 1.5px solid #555;
       border-radius: 20px;
       padding: 3px 14px;
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 700;
       color: #555;
       letter-spacing: 1.5px;
     }
     .s8-main-copy {
-      font-size: 21px;
+      font-size: clamp(17px, 5.2vw, 21px);
       font-weight: 800;
       color: #111;
       line-height: 1.55;
@@ -1000,7 +1004,7 @@
       text-underline-offset: 3px;
     }
     .s8-sub-copy {
-      font-size: 15px;
+      font-size: clamp(13px, 3.8vw, 15px);
       font-weight: 400;
       color: #555;
       line-height: 1.85;
@@ -1019,7 +1023,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       color: #888;
       margin-bottom: 20px;
     }
@@ -1030,13 +1034,13 @@
       margin-bottom: 28px;
     }
     .s8-ingredient-top {
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       font-weight: 500;
       color: #666;
       margin-bottom: 8px;
     }
     .s8-ingredient-sub {
-      font-size: 34px;
+      font-size: clamp(26px, 8vw, 34px);
       font-weight: 900;
       color: #2867a8;
       margin-bottom: 0;
@@ -1044,7 +1048,7 @@
       word-break: keep-all;
     }
     .s8-ingredient-title {
-      font-size: 34px;
+      font-size: clamp(26px, 8vw, 34px);
       font-weight: 900;
       color: #2867a8;
       line-height: 1.3;
@@ -1064,11 +1068,11 @@
       align-items: flex-end;
       justify-content: center;
       padding-bottom: 12px;
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       color: #888;
     }
     .s8-ingredient-desc {
-      font-size: 15px;
+      font-size: clamp(13px, 3.8vw, 15px);
       font-weight: 400;
       color: #444;
       line-height: 1.9;
@@ -1096,14 +1100,14 @@
       border: none;
       border-radius: 30px;
       padding: 9px 28px;
-      font-size: 19px;
+      font-size: clamp(15px, 4.8vw, 19px);
       font-weight: 600;
       color: #fff;
       margin: 0 auto 16px;
       width: fit-content;
     }
     .s8-stats-note {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       color: #888;
       text-align: center;
       margin-bottom: 40px;
@@ -1112,7 +1116,7 @@
       margin-bottom: 88px;
     }
     .s8-stat-headline {
-      font-size: 30px;
+      font-size: clamp(22px, 7.5vw, 30px);
       font-weight: 900;
       color: #111;
       text-align: center;
@@ -1133,7 +1137,7 @@
       margin-bottom: 6px;
     }
     .s8-bar-label {
-      font-size: 10px;
+      font-size: clamp(9px, 2.5vw, 10px);
       font-weight: 600;
       color: #888;
       margin-bottom: 4px;
@@ -1158,7 +1162,7 @@
       padding-right: 10px;
     }
     .s8-bar-value {
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       font-weight: 700;
       color: #fff;
       line-height: 1;
@@ -1174,7 +1178,7 @@
       border: none;
       border-radius: 30px;
       padding: 9px 28px;
-      font-size: 17px;
+      font-size: clamp(14px, 4.3vw, 17px);
       font-weight: 700;
       color: #fff;
       margin: 0 auto 12px;
@@ -1207,7 +1211,7 @@
       padding: 0 2px;
     }
     .s8-compare-label {
-      font-size: 15px;
+      font-size: clamp(13px, 3.8vw, 15px);
       font-weight: 700;
       color: #1a3a6b;
       line-height: 1.4;
@@ -1227,7 +1231,7 @@
     .s8-compare-badge {
       background: #003399;
       color: #fff;
-      font-size: 10px;
+      font-size: clamp(9px, 2.5vw, 10px);
       font-weight: 700;
       padding: 2px 6px;
     }
@@ -1244,7 +1248,7 @@
       z-index: 2;
     }
     .s8-compare-arrow {
-      font-size: 20px;
+      font-size: clamp(16px, 5vw, 20px);
       color: #333;
       line-height: 1;
     }
@@ -1268,7 +1272,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 9px;
+      font-size: clamp(8px, 2.3vw, 9px);
       font-weight: 900;
       color: #fff;
     }
@@ -1281,12 +1285,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 9px;
+      font-size: clamp(8px, 2.3vw, 9px);
       font-weight: 900;
       color: #fff;
     }
     .s8-compare-note {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 400;
       color: #888;
       line-height: 1.8;
@@ -1305,7 +1309,7 @@
       margin-top: 80px;
     }
     .s9-main-copy {
-      font-size: 30px;
+      font-size: clamp(22px, 7.5vw, 30px);
       font-weight: 900;
       color: #2867a8;
       text-align: center;
@@ -1314,7 +1318,7 @@
       line-height: 1.3;
     }
     .s9-key-ingredient {
-      font-size: 30px;
+      font-size: clamp(22px, 7.5vw, 30px);
       font-weight: 900;
       color: #2867a8;
       text-align: center;
@@ -1335,7 +1339,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
+      font-size: clamp(11px, 3vw, 12px);
       color: #888;
     }
     .s9-img-berry {
@@ -1345,14 +1349,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       font-weight: 700;
       color: #fff;
       border-radius: 50%;
       align-self: center;
     }
     .s9-desc {
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       font-weight: 400;
       color: #555;
       text-align: center;
@@ -1365,7 +1369,7 @@
       text-align: center;
     }
     .s9-test-sub {
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       font-weight: 500;
       color: #666;
       margin-top: 10px;
@@ -1377,7 +1381,7 @@
       border: none;
       border-radius: 30px;
       padding: 9px 20px;
-      font-size: 19px;
+      font-size: clamp(15px, 4.8vw, 19px);
       font-weight: 600;
       color: #fff;
       margin: 0 auto 24px;
@@ -1398,7 +1402,7 @@
       padding-bottom: 6px;
     }
     .s9-test-placeholder {
-      font-size: 10px;
+      font-size: clamp(9px, 2.5vw, 10px);
       font-weight: 600;
       color: #fff;
     }
@@ -1414,14 +1418,14 @@
       border: none;
       border-radius: 30px;
       padding: 9px 28px;
-      font-size: 19px;
+      font-size: clamp(15px, 4.8vw, 19px);
       font-weight: 600;
       color: #fff;
       margin: 0 auto 12px;
       width: fit-content;
     }
     .s9-stats-note {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       color: #888;
       text-align: center;
       margin-bottom: 40px;
@@ -1431,7 +1435,7 @@
       text-align: center;
     }
     .s9-stat-headline {
-      font-size: 26px;
+      font-size: clamp(20px, 6.5vw, 26px);
       font-weight: 900;
       color: #111;
       text-align: center;
@@ -1455,7 +1459,7 @@
       gap: 6px;
     }
     .s9-bar-label {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 700;
       color: #e55;
       min-width: 30px;
@@ -1482,13 +1486,13 @@
       transition: width 1.2s ease;
     }
     .s9-bar-val {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 700;
       color: #fff;
       white-space: nowrap;
     }
     .s9-bar-max {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 600;
       color: #555;
       min-width: 48px;
@@ -1507,7 +1511,7 @@
       border: none;
       border-radius: 24px;
       padding: 6px 18px;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       font-weight: 600;
       color: #fff;
       margin-bottom: 16px;
@@ -1524,11 +1528,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       color: #555;
     }
     .s9-antera-note {
-      font-size: 10px;
+      font-size: clamp(9px, 2.5vw, 10px);
       font-weight: 400;
       color: #888;
       text-align: left;
@@ -1543,7 +1547,7 @@
     text-align: center;
   }
   .s10-sys-label {
-    font-size: 11px;
+    font-size: clamp(10px, 2.8vw, 11px);
     font-weight: 600;
     letter-spacing: 0.08em;
     color: #999;
@@ -1563,7 +1567,7 @@
     border-radius: 50%;
     background: #2d2d2d;
     color: #fff;
-    font-size: 22px;
+    font-size: clamp(17px, 5.5vw, 22px);
     font-weight: 900;
     display: flex;
     align-items: center;
@@ -1574,13 +1578,13 @@
     border: 1.5px solid #2d2d2d;
     border-radius: 20px;
     padding: 5px 18px;
-    font-size: 12px;
+    font-size: clamp(11px, 3vw, 12px);
     font-weight: 700;
     letter-spacing: 0.1em;
     color: #2d2d2d;
   }
   .s10-main {
-    font-size: 26px;
+    font-size: clamp(20px, 6.5vw, 26px);
     font-weight: 900;
     color: #1a1a1a;
     line-height: 1.4;
@@ -1588,7 +1592,7 @@
     word-break: keep-all;
   }
   .s10-sub {
-    font-size: 14px;
+    font-size: clamp(12px, 3.5vw, 14px);
     font-weight: 500;
     color: #444;
     line-height: 1.7;
@@ -1596,7 +1600,7 @@
     word-break: keep-all;
   }
   .s10-desc {
-    font-size: 13px;
+    font-size: clamp(11px, 3.3vw, 13px);
     font-weight: 400;
     color: #666;
     line-height: 1.8;
@@ -1610,27 +1614,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: clamp(11px, 3.3vw, 13px);
     color: #999;
     margin-bottom: 24px;
     border-radius: 4px;
   }
   .s10-origin {
-    font-size: 30px;
+    font-size: clamp(22px, 7.5vw, 30px);
     font-weight: 700;
     color: #2867a8;
     margin-bottom: 4px;
     letter-spacing: 0.02em;
   }
   .s10-ingredient {
-    font-size: 34px;
+    font-size: clamp(26px, 8vw, 34px);
     font-weight: 700;
     color: #2867a8;
     letter-spacing: 0.02em;
     margin-bottom: 28px;
   }
   .s10-copy {
-    font-size: 20px;
+    font-size: clamp(16px, 5vw, 20px);
     font-weight: 500;
     color: #333;
     line-height: 1.9;
@@ -1650,13 +1654,13 @@
     margin-top: 40px;
   }
   .s10-effect-title {
-    font-size: 16px;
+    font-size: clamp(13px, 4vw, 16px);
     font-weight: 700;
     color: #fff;
     margin-bottom: 4px;
   }
   .s10-effect-sub {
-    font-size: 13px;
+    font-size: clamp(11px, 3.3vw, 13px);
     font-weight: 400;
     color: #fff;
     font-style: italic;
@@ -1668,7 +1672,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: clamp(11px, 3.3vw, 13px);
     color: #999;
     margin-bottom: 12px;
     border-radius: 4px;
@@ -1680,20 +1684,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: clamp(11px, 3.3vw, 13px);
     color: #999;
     margin-bottom: 16px;
     border-radius: 4px;
   }
   .s10-note {
-    font-size: 11px;
+    font-size: clamp(10px, 2.8vw, 11px);
     color: #777;
     text-align: center;
     line-height: 1.6;
     margin-bottom: 8px;
   }
   .s10-note2 {
-    font-size: 11px;
+    font-size: clamp(10px, 2.8vw, 11px);
     color: #555;
     text-align: left;
     line-height: 1.8;
@@ -1708,7 +1712,7 @@
     text-align: center;
   }
   .s11-sys-label {
-    font-size: 11px;
+    font-size: clamp(10px, 2.8vw, 11px);
     font-weight: 600;
     letter-spacing: 0.08em;
     color: #999;
@@ -1728,7 +1732,7 @@
     border-radius: 50%;
     background: #2d2d2d;
     color: #fff;
-    font-size: 22px;
+    font-size: clamp(17px, 5.5vw, 22px);
     font-weight: 900;
     display: flex;
     align-items: center;
@@ -1739,13 +1743,13 @@
     border: 1.5px solid #2d2d2d;
     border-radius: 20px;
     padding: 5px 18px;
-    font-size: 12px;
+    font-size: clamp(11px, 3vw, 12px);
     font-weight: 700;
     letter-spacing: 0.1em;
     color: #2d2d2d;
   }
   .s11-main {
-    font-size: 24px;
+    font-size: clamp(18px, 6vw, 24px);
     font-weight: 900;
     color: #1a1a1a;
     line-height: 1.45;
@@ -1765,19 +1769,19 @@
     min-width: 75%;
   }
   .s11-ing-name {
-    font-size: 18px;
+    font-size: clamp(14px, 4.5vw, 18px);
     font-weight: 700;
     color: #1a1a1a;
   }
   .s11-ing-label {
-    font-size: 14px;
+    font-size: clamp(12px, 3.5vw, 14px);
     font-weight: 600;
     color: #333;
     text-decoration: underline;
     margin-bottom: 16px;
   }
   .s11-ing-desc {
-    font-size: 14px;
+    font-size: clamp(12px, 3.5vw, 14px);
     font-weight: 400;
     color: #444;
     line-height: 1.8;
@@ -1792,7 +1796,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: clamp(11px, 3.3vw, 13px);
     color: #ccc;
     border-radius: 4px;
     margin-bottom: 8px;
@@ -1812,14 +1816,14 @@
   border: 1.5px solid #fff;
   border-radius: 999px;
   padding: 8px 24px;
-  font-size: 12px;
+  font-size: clamp(11px, 3vw, 12px);
   font-weight: 700;
   letter-spacing: 0.12em;
   color: #fff;
   margin-bottom: 36px;
 }
 .s12-main-title {
-  font-size: 32px;
+  font-size: clamp(24px, 7vw, 32px);
   font-weight: 900;
   color: #fff;
   line-height: 1.35;
@@ -1834,7 +1838,7 @@
   text-align: center;
 }
 .s12-scent-item {
-  font-size: 16px;
+  font-size: clamp(13px, 4vw, 16px);
   font-weight: 400;
   color: rgba(255,255,255,0.85);
   line-height: 2.8;
@@ -1847,7 +1851,7 @@
   font-weight: 600;
 }
 .s12-closing {
-  font-size: 16px;
+  font-size: clamp(13px, 4vw, 16px);
   font-weight: 400;
   color: rgba(255,255,255,0.75);
   line-height: 1.9;
@@ -1870,7 +1874,7 @@
 }
 .s13-hook-eyebrow {
   display: inline-block;
-  font-size: 11px;
+  font-size: clamp(10px, 2.8vw, 11px);
   font-weight: 800;
   letter-spacing: 0.15em;
   color: #e02020;
@@ -1880,7 +1884,7 @@
   margin-bottom: 28px;
 }
 .s13-hook-headline {
-  font-size: 36px;
+  font-size: clamp(28px, 8.5vw, 36px);
   font-weight: 900;
   color: #111;
   line-height: 1.2;
@@ -1889,7 +1893,7 @@
   word-break: keep-all;
 }
 .s13-hook-sub {
-  font-size: 14px;
+  font-size: clamp(12px, 3.5vw, 14px);
   font-weight: 600;
   color: #e02020;
   line-height: 1.7;
@@ -1897,13 +1901,13 @@
   word-break: keep-all;
 }
 .s13-reward-label {
-  font-size: 13px;
+  font-size: clamp(11px, 3.3vw, 13px);
   color: #999;
   font-weight: 400;
   margin-bottom: 8px;
 }
 .s13-reward-title {
-  font-size: 26px;
+  font-size: clamp(20px, 6.5vw, 26px);
   font-weight: 900;
   color: #111;
   letter-spacing: -0.5px;
@@ -1924,7 +1928,7 @@
   gap: 14px;
 }
 .s13-reward-badge {
-  font-size: 10px;
+  font-size: clamp(9px, 2.5vw, 10px);
   font-weight: 900;
   color: #1a3a6b;
   background: #fff;
@@ -1936,7 +1940,7 @@
   margin-top: 1px;
 }
 .s13-reward-text {
-  font-size: 14px;
+  font-size: clamp(12px, 3.5vw, 14px);
   font-weight: 600;
   color: #fff;
   line-height: 1.55;
@@ -1977,7 +1981,7 @@
 }
 .s13-product-tag {
   display: inline-block;
-  font-size: 10px;
+  font-size: clamp(9px, 2.5vw, 10px);
   font-weight: 800;
   color: #2867a8;
   background: #e8f1f9;
@@ -1987,7 +1991,7 @@
   letter-spacing: 0.08em;
 }
 .s13-product-name {
-  font-size: 15px;
+  font-size: clamp(13px, 3.8vw, 15px);
   font-weight: 700;
   color: #111;
   line-height: 1.55;
@@ -2004,7 +2008,7 @@
   background: #1a3a6b;
   border-radius: 12px;
   padding: 13px 16px;
-  font-size: 12px;
+  font-size: clamp(11px, 3vw, 12px);
   font-weight: 400;
   color: rgba(255,255,255,0.88);
   line-height: 1.7;
@@ -2022,12 +2026,12 @@
   border-top: 1px solid #f0f0f0;
 }
 .s13-price-label {
-  font-size: 13px;
+  font-size: clamp(11px, 3.3vw, 13px);
   color: #999;
   font-weight: 500;
 }
 .s13-price-value {
-  font-size: 24px;
+  font-size: clamp(18px, 6vw, 24px);
   font-weight: 900;
   color: #111;
   letter-spacing: -0.5px;
@@ -2035,7 +2039,7 @@
   text-align: right;
 }
 .s13-price-note {
-  font-size: 10px;
+  font-size: clamp(9px, 2.5vw, 10px);
   color: #bbb;
   text-align: right;
   margin-top: 2px;
@@ -2048,7 +2052,7 @@
   border: none;
   border-radius: 14px;
   padding: 19px 0;
-  font-size: 17px;
+  font-size: clamp(14px, 4.3vw, 17px);
   font-weight: 800;
   letter-spacing: -0.3px;
   text-align: center;
@@ -2060,7 +2064,7 @@
 }
 .s13-notice {
   padding: 0 28px 64px;
-  font-size: 11px;
+  font-size: clamp(10px, 2.8vw, 11px);
   color: #bbb;
   line-height: 1.9;
   text-align: center;
@@ -2076,21 +2080,21 @@
 .s13-form-eyebrow {
   display: block;
   font-style: italic;
-  font-size: 13px;
+  font-size: clamp(11px, 3.3vw, 13px);
   font-weight: 500;
   color: #8a7560;
   letter-spacing: 0.04em;
   margin-bottom: 12px;
 }
 .s13-form-title {
-  font-size: 36px;
+  font-size: clamp(28px, 8.5vw, 36px);
   font-weight: 900;
   color: #111;
   letter-spacing: -1px;
   margin-bottom: 14px;
 }
 .s13-form-desc {
-  font-size: 13px;
+  font-size: clamp(11px, 3.3vw, 13px);
   color: #888;
   line-height: 1.75;
   word-break: keep-all;
@@ -2107,14 +2111,14 @@
 }
 .s13-field-label {
   display: block;
-  font-size: 14px;
+  font-size: clamp(12px, 3.5vw, 14px);
   font-weight: 700;
   color: #111;
   margin-bottom: 10px;
 }
 .s13-required { color: #e02020; margin-left: 2px; }
 .s13-optional {
-  font-size: 11px;
+  font-size: clamp(10px, 2.8vw, 11px);
   font-weight: 400;
   color: #aaa;
   margin-left: 4px;
@@ -2125,7 +2129,7 @@
   border: 1.5px solid #e0e0e0;
   border-radius: 10px;
   padding: 0 14px;
-  font-size: 15px;
+  font-size: clamp(13px, 3.8vw, 15px);
   color: #111;
   background: #fafafa;
   outline: none;
@@ -2142,7 +2146,7 @@
   border: 1.5px solid #ddd;
   border-radius: 8px;
   padding: 10px 16px;
-  font-size: 13px;
+  font-size: clamp(11px, 3.3vw, 13px);
   font-weight: 600;
   color: #555;
   background: #fff;
@@ -2171,7 +2175,7 @@
   cursor: pointer;
 }
 .s13-check-text {
-  font-size: 12px;
+  font-size: clamp(11px, 3vw, 12px);
   color: #888;
   line-height: 1.65;
   word-break: keep-all;
@@ -2189,7 +2193,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 .s13-kakao-btn span {
-  font-size: 14px;
+  font-size: clamp(12px, 3.5vw, 14px);
   font-weight: 700;
   color: #3C1E1E;
 }
@@ -2202,7 +2206,7 @@
   border: none;
   border-radius: 14px;
   height: 56px;
-  font-size: 16px;
+  font-size: clamp(13px, 4vw, 16px);
   font-weight: 800;
   letter-spacing: -0.3px;
   cursor: pointer;
@@ -2234,19 +2238,19 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 24px;
-  font-size: 26px;
+  font-size: clamp(20px, 6.5vw, 26px);
   color: #fff;
   font-weight: 700;
 }
 .s13-done-title {
-  font-size: 22px;
+  font-size: clamp(17px, 5.5vw, 22px);
   font-weight: 900;
   color: #111;
   letter-spacing: -0.5px;
   margin-bottom: 16px;
 }
 .s13-done-desc {
-  font-size: 14px;
+  font-size: clamp(12px, 3.5vw, 14px);
   color: #888;
   line-height: 1.8;
   word-break: keep-all;
@@ -2258,27 +2262,27 @@
   text-align: center;
 }
 .footer-brand {
-  font-size: 15px;
+  font-size: clamp(13px, 3.8vw, 15px);
   font-weight: 900;
   color: #fff;
   letter-spacing: 0.25em;
   margin-bottom: 20px;
 }
 .footer-legal {
-  font-size: 10px;
+  font-size: clamp(9px, 2.5vw, 10px);
   color: rgba(255,255,255,0.5);
   line-height: 1.9;
   word-break: keep-all;
   margin-bottom: 16px;
 }
 .footer-copy {
-  font-size: 11px;
+  font-size: clamp(10px, 2.8vw, 11px);
   color: rgba(255,255,255,0.6);
   margin-bottom: 6px;
   font-weight: 600;
 }
 .footer-disclaimer {
-  font-size: 10px;
+  font-size: clamp(9px, 2.5vw, 10px);
   color: rgba(255,255,255,0.45);
   line-height: 1.7;
 }
@@ -2319,13 +2323,13 @@
   padding-bottom: 48px;
 }
 .idx-hero-sub {
-  font-size: 18px;
+  font-size: clamp(14px, 4.5vw, 18px);
   color: #555;
   font-weight: 400;
   margin-bottom: 6px;
 }
 .idx-hero-title {
-  font-size: 24px;
+  font-size: clamp(18px, 6vw, 24px);
   font-weight: 900;
   color: #111;
 }
@@ -2340,7 +2344,7 @@
   -webkit-backdrop-filter: blur(6px);
   border-radius: 999px;
   padding: 12px 24px;
-  font-size: 13px;
+  font-size: clamp(11px, 3.3vw, 13px);
   font-weight: 600;
   color: #111;
   white-space: nowrap;
@@ -2389,7 +2393,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: clamp(14px, 4.3vw, 17px);
   font-weight: 700;
   font-family: inherit;
   border: none;
@@ -2657,10 +2661,10 @@
     <p class="s7-main-copy">냄새를 없애기 전,<br>냄새가 붙는 표면부터 걷어내야 합니다.</p>
     <div class="s7-circles">
       <div class="s7-circle" style="background-image:url('images/s7-sebum.jpg')">
-        <span style="display:block;width:100%;text-align:center;background:rgba(0,0,0,0.45);color:#fff;font-size:13px;font-weight:700;padding:6px 0;">피지</span>
+        <span style="display:block;width:100%;text-align:center;background:rgba(0,0,0,0.45);color:#fff;font-size: clamp(11px, 3.3vw, 13px);font-weight:700;padding:6px 0;">피지</span>
       </div>
       <div class="s7-circle" style="background-image:url('images/s7-keratin.jpg')">
-        <span style="display:block;width:100%;text-align:center;background:rgba(0,0,0,0.45);color:#fff;font-size:13px;font-weight:700;padding:6px 0;">각질</span>
+        <span style="display:block;width:100%;text-align:center;background:rgba(0,0,0,0.45);color:#fff;font-size: clamp(11px, 3.3vw, 13px);font-weight:700;padding:6px 0;">각질</span>
       </div>
     </div>
     <div class="s7-scrub-wrap">
@@ -2680,7 +2684,7 @@
       <p class="s7-desc-p">&nbsp;</p>
     </div>
     <style>
-  .s7-img-cap { font-size:12px; font-weight:600; color:#555; text-align:center; padding-top:6px; }
+  .s7-img-cap { font-size: clamp(11px, 3vw, 12px); font-weight:600; color:#555; text-align:center; padding-top:6px; }
   .s7-img-col { flex:1; display:flex; flex-direction:column; }
 </style>
 <div class="s7-img-row">
@@ -2709,7 +2713,7 @@
     </div>
     <!-- 솝넛 파트 -->
     <div class="s8-ingredient-wrap">
-      <div class="s7-scrub-anim-wrap" style="font-size:40px; margin-bottom:8px;">
+      <div class="s7-scrub-anim-wrap" style="font-size: clamp(30px, 9.5vw, 40px); margin-bottom:8px;">
         <span class="s7-scrub-word s7-sw1">강력한 소취기능과</span><br>
         <span class="s7-scrub-word s7-sw2">세정력을 가진</span><br>
         <span class="s7-scrub-word s7-sw3">솝넛 분말 특허 성분</span>
@@ -2718,7 +2722,7 @@
     <div class="s8-img-row">
       <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px; display:flex; flex-direction:column; align-items:center;">
         <img src="images/s9-patent-jp.jpg" style="width:100%; height:auto; object-fit:contain;" />
-        <p style="font-size:11px;font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;">JP Patent No. 6034118</p>
+        <p style="font-size: clamp(10px, 2.8vw, 11px);font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;">JP Patent No. 6034118</p>
       </div>
       <div class="s8-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s8-soapnut.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     </div>
@@ -2777,7 +2781,7 @@
     <div class="page-wrapper">
 
       <!-- 타이틀 -->
-      <div class="s7-scrub-anim-wrap" style="font-size:40px; margin-bottom:16px;">
+      <div class="s7-scrub-anim-wrap" style="font-size: clamp(30px, 9.5vw, 40px); margin-bottom:16px;">
         <span class="s7-scrub-word s7-sw1">모공 수축 및 피지 조절에 특화된</span><br>
         <span class="s7-scrub-word s7-sw2">새싹귀리 추출발효 특허 성분</span>
       </div>
@@ -2786,7 +2790,7 @@
       <div class="s8-img-row">
         <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px; display:flex; flex-direction:column; align-items:center;">
           <img src="images/s9-patent-kr.jpg" style="width:100%; height:auto; object-fit:contain; display:block;" />
-          <p style="font-size:11px;font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">특허 제 10-2731126호&nbsp;&nbsp;7일차 새싹귀리</p>
+          <p style="font-size: clamp(10px, 2.8vw, 11px);font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">특허 제 10-2731126호&nbsp;&nbsp;7일차 새싹귀리</p>
         </div>
         <div class="s8-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s9-oat-sprout.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       </div>
@@ -2799,13 +2803,13 @@
         <p class="s9-test-title">농도별 세포 내 피지(지방) 축적 감소 효과</p>
         <div class="s9-test-img-row">
           <div class="s9-test-img">
-            <div class="s9-test-placeholder" style="background:none;padding:0;overflow:hidden;"><img src="images/s10-cell100.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"><p style="text-align:center;color:#555;font-size:12px;margin:4px 0 0;">100μg/ml</p></div>
+            <div class="s9-test-placeholder" style="background:none;padding:0;overflow:hidden;"><img src="images/s10-cell100.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"><p style="text-align:center;color:#555;font-size: clamp(11px, 3vw, 12px);margin:4px 0 0;">100μg/ml</p></div>
           </div>
           <div class="s9-test-img">
-            <div class="s9-test-placeholder" style="background:none;padding:0;overflow:hidden;"><img src="images/s10-cell500.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"><p style="text-align:center;color:#555;font-size:12px;margin:4px 0 0;">500μg/ml</p></div>
+            <div class="s9-test-placeholder" style="background:none;padding:0;overflow:hidden;"><img src="images/s10-cell500.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"><p style="text-align:center;color:#555;font-size: clamp(11px, 3vw, 12px);margin:4px 0 0;">500μg/ml</p></div>
           </div>
           <div class="s9-test-img">
-            <div class="s9-test-placeholder" style="background:none;padding:0;overflow:hidden;"><img src="images/s10-cell1000.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"><p style="text-align:center;color:#555;font-size:12px;margin:4px 0 0;">1,000μg/ml</p></div>
+            <div class="s9-test-placeholder" style="background:none;padding:0;overflow:hidden;"><img src="images/s10-cell1000.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"><p style="text-align:center;color:#555;font-size: clamp(11px, 3vw, 12px);margin:4px 0 0;">1,000μg/ml</p></div>
           </div>
         </div>
         <p class="s9-test-sub">지방분화 억제 테스트 [ IN-VITRO TEST ]</p>
@@ -2896,7 +2900,7 @@
 
     <div class="s10-ing-img-placeholder">이미지 플레이스홀더</div>
 
-    <div class="s7-scrub-anim-wrap" style="font-size:32px; margin-bottom:16px;">
+    <div class="s7-scrub-anim-wrap" style="font-size: clamp(24px, 7vw, 32px); margin-bottom:16px;">
       <span class="s7-scrub-word s7-sw1">100% 식물 유래 물질</span><br>
       <span class="s7-scrub-word s7-sw2">dermosoft<sup>®</sup> G 3 CY MB</span>
     </div>
@@ -2966,7 +2970,7 @@
         <circle cx="300" cy="148" r="3.5" fill="#2867a8"/>
       </svg>
     </div>
-    <p class="s10-graph-legend" style="font-size:11px; color:#555; line-height:1.8; margin-bottom:4px;">
+    <p class="s10-graph-legend" style="font-size: clamp(10px, 2.8vw, 11px); color:#555; line-height:1.8; margin-bottom:4px;">
       <span style="display:inline-block; width:24px; height:2px; background:#888; vertical-align:middle; margin-right:4px;"></span>일반 세정제<br>
       <span style="display:inline-block; width:24px; height:2px; background:#2867a8; vertical-align:middle; margin-right:4px;"></span>0.3% dermosoft<sup>®</sup> G 3 CY MB 함유 세정제
     </p>
@@ -2977,7 +2981,7 @@
     </div>
 
     <div class="s10-svg-chart2" style="width:100%;margin-bottom:16px;">
-      <p style="font-size:11px;font-weight:700;color:#333;text-align:center;margin-bottom:8px;">제품을 사용하지 않은 부위 대비</p>
+      <p style="font-size: clamp(10px, 2.8vw, 11px);font-weight:700;color:#333;text-align:center;margin-bottom:8px;">제품을 사용하지 않은 부위 대비</p>
       <svg viewBox="0 0 240 180" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg">
         <!-- Y축 레이블 (5% ~ -15%) -->
         <text x="36" y="19" font-size="8" fill="#666" text-anchor="end">5%</text>

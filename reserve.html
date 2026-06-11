@@ -7,7 +7,11 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --base-width: 393px;
+      --max-width: 430px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; word-break: keep-all; }
     body {
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
       background: #f5f0eb;
@@ -18,7 +22,7 @@
     }
     .page-wrapper {
       width: 100%;
-      max-width: 430px;
+      max-width: var(--max-width);
       background: #f5f0eb;
       min-height: 100vh;
       display: flex;
@@ -57,7 +61,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       font-weight: 700;
       font-family: inherit;
       border: none;
@@ -81,21 +85,21 @@
     .form-eyebrow {
       display: block;
       font-style: italic;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       font-weight: 500;
       color: #8a7560;
       letter-spacing: 0.04em;
       margin-bottom: 12px;
     }
     .form-title {
-      font-size: 36px;
+      font-size: clamp(28px, 8.5vw, 36px);
       font-weight: 900;
       color: #111;
       letter-spacing: -1px;
       margin-bottom: 14px;
     }
     .form-desc {
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       color: #888;
       line-height: 1.75;
       word-break: keep-all;
@@ -110,14 +114,14 @@
     .form-field { margin-bottom: 24px; }
     .form-field-label {
       display: block;
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       font-weight: 700;
       color: #111;
       margin-bottom: 10px;
     }
     .field-required { color: #e02020; margin-left: 2px; }
     .field-optional {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       font-weight: 400;
       color: #aaa;
       margin-left: 4px;
@@ -128,7 +132,7 @@
       border: 1.5px solid #e0e0e0;
       border-radius: 10px;
       padding: 0 14px;
-      font-size: 15px;
+      font-size: clamp(13px, 3.8vw, 15px);
       color: #111;
       background: #fafafa;
       outline: none;
@@ -145,7 +149,7 @@
       border: 1.5px solid #ddd;
       border-radius: 8px;
       padding: 10px 16px;
-      font-size: 13px;
+      font-size: clamp(11px, 3.3vw, 13px);
       font-weight: 600;
       color: #555;
       background: #fff;
@@ -174,7 +178,7 @@
       cursor: pointer;
     }
     .check-text {
-      font-size: 12px;
+      font-size: clamp(11px, 3vw, 12px);
       color: #888;
       line-height: 1.65;
       word-break: keep-all;
@@ -191,7 +195,7 @@
       -webkit-tap-highlight-color: transparent;
     }
     .kakao-btn span {
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       font-weight: 700;
       color: #3C1E1E;
     }
@@ -204,7 +208,7 @@
       border: none;
       border-radius: 14px;
       height: 56px;
-      font-size: 16px;
+      font-size: clamp(13px, 4vw, 16px);
       font-weight: 800;
       letter-spacing: -0.3px;
       cursor: pointer;
@@ -213,7 +217,7 @@
     }
     .form-notice {
       padding: 0 28px 40px;
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       color: #bbb;
       line-height: 1.9;
       text-align: center;
@@ -246,19 +250,19 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto 24px;
-      font-size: 26px;
+      font-size: clamp(20px, 6.5vw, 26px);
       color: #fff;
       font-weight: 700;
     }
     .done-title {
-      font-size: 22px;
+      font-size: clamp(17px, 5.5vw, 22px);
       font-weight: 900;
       color: #111;
       letter-spacing: -0.5px;
       margin-bottom: 16px;
     }
     .done-desc {
-      font-size: 14px;
+      font-size: clamp(12px, 3.5vw, 14px);
       color: #888;
       line-height: 1.8;
       word-break: keep-all;
@@ -271,20 +275,20 @@
       text-align: center;
     }
     .footer-brand {
-      font-size: 15px;
+      font-size: clamp(13px, 3.8vw, 15px);
       font-weight: 900;
       color: #fff;
       letter-spacing: 0.25em;
       margin-bottom: 20px;
     }
     .footer-copy {
-      font-size: 11px;
+      font-size: clamp(10px, 2.8vw, 11px);
       color: rgba(255,255,255,0.6);
       margin-bottom: 6px;
       font-weight: 600;
     }
     .footer-disclaimer {
-      font-size: 10px;
+      font-size: clamp(9px, 2.5vw, 10px);
       color: rgba(255,255,255,0.45);
       line-height: 1.7;
     }
