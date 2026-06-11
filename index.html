@@ -354,7 +354,6 @@
     }
     .s3-sq-wrap {
       padding: 60px 0 0;
-      position: relative;
     }
     .s3-sq-row {
       display: block;
@@ -377,17 +376,11 @@
       background: #c8c4be;
     }
     .s3-sq-text {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      font-size: clamp(14px, 4.5vw, 18px);
-      font-weight: 700;
-      color: #fff;
-      background: #1a3a6b;
-      line-height: 1.6;
-      text-align: center;
-      padding: 14px 20px;
+      line-height: 2;
+      text-align: left;
+      padding: 8px 12px;
+      margin: 0;
+      background: transparent;
       opacity: 0;
       transition: opacity 0.75s ease 0.4s;
     }
@@ -397,7 +390,6 @@
     .s3-sq-wrap2 {
       margin-top: 10px;
       padding: 28px 0 0;
-      position: relative !important;
     }
     .s3-sq-row2 {
       display: block;
@@ -422,17 +414,11 @@
       background: #c8c4be;
     }
     .s3-sq-text2 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      font-size: clamp(14px, 4.5vw, 18px);
-      font-weight: 700;
-      color: #fff;
-      background: #1a3a6b;
-      line-height: 1.6;
-      text-align: center;
-      padding: 14px 20px;
+      line-height: 2;
+      text-align: left;
+      padding: 8px 12px;
+      margin: 0;
+      background: transparent;
       opacity: 0;
       transition: opacity 1.25s ease 0.4s;
     }
@@ -444,23 +430,6 @@
     .s4-section {
       padding: 0;
       margin-top: 50px;
-    }
-    .s4-dim-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      z-index: 0;
-    }
-    .s4-inner {
-      position: relative;
-      width: 100%;
-      min-height: 1200px;
-      background: url('images/s4-main.jpg') center 20%/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 0;
     }
     .s4-main-title {
       font-size: clamp(14px, 4.5vw, 18px);
@@ -523,29 +492,6 @@
       padding: 0 16px 40px;
       position: relative;
       z-index: 1;
-    }
-    .s4-products {
-      width: 100%;
-      margin-top: -300px;
-      position: relative;
-      z-index: 2;
-    }
-    .s4-product-block {
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-      font-size: 0;
-      position: relative;
-    }
-    .s4-product-block video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .s4-product-block .s4-fallback-img {
-      width: 100%;
-      height: auto;
-      display: none;
     }
 
     /* ===== S5 ===== */
@@ -2528,7 +2474,7 @@
         <div class="s3-sq-img-wrap">
           <img src="images/s3-left.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
-        <p class="s3-sq-text">체취는 단순한 냄새가 아니라,<br>하루가 피부 위에 남긴 흔적일 수 있습니다.</p>
+        <p class="s3-sq-text"><span style="background:#1a3a6b; color:white; padding:3px 8px; box-decoration-break:clone; -webkit-box-decoration-break:clone; display:inline; font-weight:bold; font-size:clamp(14px,4vw,17px);">체취는 단순한 냄새가 아니라,</span><br><span style="background:#1a3a6b; color:white; padding:3px 8px; box-decoration-break:clone; -webkit-box-decoration-break:clone; display:inline; font-weight:bold; font-size:clamp(14px,4vw,17px);">하루가 피부 위에 남긴 흔적일 수 있습니다.</span></p>
       </div>
     </div>
       <div class="s3-sq-wrap2">
@@ -2536,36 +2482,29 @@
           <div class="s3-sq-img-wrap2">
             <img src="images/s3-right.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
-          <p class="s3-sq-text2">오래 일하고, 많이 움직이고,<br>묵묵히 하루를 보낸 당신에게<br>필요했던 건 더 강한 향이 아닙니다.</p>
+          <p class="s3-sq-text2"><span style="background:#1a3a6b; color:white; padding:3px 8px; box-decoration-break:clone; -webkit-box-decoration-break:clone; display:inline; font-weight:bold; font-size:clamp(14px,4vw,17px);">오래 일하고, 많이 움직이고,</span><br><span style="background:#1a3a6b; color:white; padding:3px 8px; box-decoration-break:clone; -webkit-box-decoration-break:clone; display:inline; font-weight:bold; font-size:clamp(14px,4vw,17px);">묵묵히 하루를 보낸 당신에게</span><br><span style="background:#1a3a6b; color:white; padding:3px 8px; box-decoration-break:clone; -webkit-box-decoration-break:clone; display:inline; font-weight:bold; font-size:clamp(14px,4vw,17px);">필요했던 건 더 강한 향이 아닙니다.</span></p>
         </div>
       </div>
   </section>
 
   <!-- S4: 브랜드 스토리 -->
   <section class="s4-section">
-    <div class="s4-inner">
-      <div class="s4-dim-overlay"></div>
-      <p class="s4-main-title s4-fade-item">오르도레이어는</p>
-      <ul class="s4-numbered-list">
-        <li class="s4-fade-item"><span class="s4-num">1</span><span>피부 위에 남은 피지와 땀,</span></li>
-        <li class="s4-fade-item"><span class="s4-num">2</span><span>산화되어 무거워진 잔여감,</span></li>
-        <li class="s4-fade-item"><span class="s4-num">3</span><span>다시 올라오는 잔취까지</span></li>
-      </ul>
-      <p class="s4-closing s4-fade-item">하나하나 설계하였습니다.</p>
+    <div style="position:relative; width:100%;">
+      <img src="images/s4-main.jpg" style="width:100%; display:block;">
+      <div style="position:absolute; inset:0; background:rgba(0,0,0,0.35); z-index:0;"></div>
+      <div id="s4Overlay" style="position:absolute; top:0; left:0; right:0; bottom:0; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; z-index:1; padding-top:40px;">
+        <p class="s4-main-title s4-fade-item">오르도레이어는</p>
+        <ul class="s4-numbered-list">
+          <li class="s4-fade-item"><span class="s4-num">1</span><span>피부 위에 남은 피지와 땀,</span></li>
+          <li class="s4-fade-item"><span class="s4-num">2</span><span>산화되어 무거워진 잔여감,</span></li>
+          <li class="s4-fade-item"><span class="s4-num">3</span><span>다시 올라오는 잔취까지</span></li>
+        </ul>
+        <p class="s4-closing s4-fade-item">하나하나 설계하였습니다.</p>
+      </div>
     </div>
-    <div class="s4-products">
-      <div class="s4-product-block" id="s4Block1">
-        <video id="s4Vid1" autoplay loop muted playsinline poster="images/s4-products1.jpg" style="width:100%;height:auto;display:block;">
-          <source src="images/s4-bodywash.mp4" type="video/mp4" />
-        </video>
-        <img class="s4-fallback-img" id="s4Img1" src="images/s4-products1.jpg" alt="ORDO LAYER Body Wash" />
-      </div>
-      <div class="s4-product-block" id="s4Block2">
-        <video id="s4Vid2" autoplay loop muted playsinline poster="images/s4-products2.jpg" style="width:100%;height:auto;display:block;">
-          <source src="images/s4-bodyspray.mp4" type="video/mp4" />
-        </video>
-        <img class="s4-fallback-img" id="s4Img2" src="images/s4-products2.jpg" alt="ORDO LAYER Body Spray" />
-      </div>
+    <div style="display:flex; gap:4px; margin-top:0;">
+      <img src="images/s4-products1.jpg" style="width:50%; display:block;">
+      <img src="images/s4-products2.jpg" style="width:50%; display:block;">
     </div>
   </section>
     <!-- S5: 원인 분석 -->
@@ -3237,41 +3176,6 @@
 
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var pairs = [['s4Vid1','s4Img1'],['s4Vid2','s4Img2']];
-      pairs.forEach(function(pair) {
-        var v = document.getElementById(pair[0]);
-        var img = document.getElementById(pair[1]);
-        if (!v) return;
-        // 3초 후 재시작
-        v.addEventListener('timeupdate', function() {
-          if (v.currentTime >= 3) {
-            v.currentTime = 0;
-            v.play();
-          }
-        });
-        // 로드 실패 시 fallback img 표시
-        v.addEventListener('error', function() {
-          v.style.display = 'none';
-          if (img) img.style.display = 'block';
-        });
-        // source error
-        var src = v.querySelector('source');
-        if (src) {
-          src.addEventListener('error', function() {
-            v.style.display = 'none';
-            if (img) img.style.display = 'block';
-          });
-        }
-        // 5초 후에도 재생 안 되면 fallback
-        setTimeout(function() {
-          if (v.readyState === 0 && v.networkState !== 2) {
-            v.style.display = 'none';
-            if (img) img.style.display = 'block';
-          }
-        }, 5000);
-      });
-    });
   // S7/S8 순차 박스 강조 애니메이션
 (function(){
   function animateScrubWords(words) {
@@ -3465,9 +3369,9 @@
 
 // S4 텍스트 순차 페이드인 (IntersectionObserver)
 (function(){
-  var s4inner = document.querySelector('.s4-inner');
-  if(!s4inner) return;
-  var fadeItems = s4inner.querySelectorAll('.s4-fade-item');
+  var s4overlay = document.getElementById('s4Overlay');
+  if(!s4overlay) return;
+  var fadeItems = s4overlay.querySelectorAll('.s4-fade-item');
   if(!fadeItems.length) return;
   var triggered = false;
   var observer = new IntersectionObserver(function(entries) {
@@ -3483,7 +3387,7 @@
       }
     });
   }, {threshold: 0.25});
-  observer.observe(s4inner);
+  observer.observe(s4overlay);
 })();
 
             
