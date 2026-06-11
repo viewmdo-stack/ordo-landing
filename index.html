@@ -1149,8 +1149,8 @@
       height: 100%;
       background: #2867a8;
       border-radius: 999px;
-      width: 0 !important;
-      transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 0;
+      transition: width 1.2s ease;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -2172,28 +2172,28 @@
         <p class="s8-stat-headline">노화 채취(노네날) 원인<br><span class="s8-stat-num">66.7%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">2-Nonenal (2-노네날)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="66.7%"><span class="s8-bar-value">66.7%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="66.7%" style="width:0"><span class="s8-bar-value">66.7%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">담배, 땀냄새<br><span class="s8-stat-num">51.9%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Ammonia (암모니아)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="51.9%"><span class="s8-bar-value">51.9%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="51.9%" style="width:0"><span class="s8-bar-value">51.9%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">발, 겨드랑이 냄새<br><span class="s8-stat-num">65.6%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Iso-valeric acid (이소발레르산)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="65.6%"><span class="s8-bar-value">65.6%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="65.6%" style="width:0"><span class="s8-bar-value">65.6%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">구취/부패취<br><span class="s8-stat-num">68.6%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Methylmercaptan (메틸메르캅탄)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="68.6%"><span class="s8-bar-value">68.6%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="68.6%" style="width:0"><span class="s8-bar-value">68.6%</span></div></div>
         </div>
       </div>
     <div class="s8-compare-wrap">
@@ -2348,39 +2348,66 @@
     </div>
 
 <div class="s10-svg-chart1" style="width:100%;margin-bottom:12px;">
-      <svg viewBox="0 0 320 160" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg">
-        <!-- Y축 레이블 -->
-        <text x="32" y="12" font-size="9" fill="#666" text-anchor="end">1.0E+07</text>
-        <text x="32" y="40" font-size="9" fill="#666" text-anchor="end">1.0E+06</text>
-        <text x="32" y="68" font-size="9" fill="#666" text-anchor="end">1.0E+05</text>
-        <text x="32" y="96" font-size="9" fill="#666" text-anchor="end">1.0E+04</text>
-        <text x="32" y="124" font-size="9" fill="#666" text-anchor="end">1.0E+03</text>
-        <!-- X축 레이블 -->
-        <text x="45" y="148" font-size="9" fill="#666" text-anchor="middle">0</text>
-        <text x="90" y="148" font-size="9" fill="#666" text-anchor="middle">5</text>
-        <text x="135" y="148" font-size="9" fill="#666" text-anchor="middle">10</text>
-        <text x="180" y="148" font-size="9" fill="#666" text-anchor="middle">30</text>
-        <text x="225" y="148" font-size="9" fill="#666" text-anchor="middle">60</text>
-        <text x="270" y="148" font-size="9" fill="#666" text-anchor="middle">100</text>
-        <!-- X축 레이블 제목 -->
-        <text x="162" y="160" font-size="8" fill="#888" text-anchor="middle">Time (min)</text>
-        <!-- 격자선 -->
-        <line x1="40" y1="10" x2="40" y2="135" stroke="#ddd" stroke-width="1"/>
-        <line x1="40" y1="135" x2="285" y2="135" stroke="#ddd" stroke-width="1"/>
+      <svg viewBox="0 0 320 182" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Y축 레이블 (1.0E+00 ~ 1.0E+07) -->
+        <text x="34" y="16" font-size="8" fill="#666" text-anchor="end">1.0E+07</text>
+        <text x="34" y="35" font-size="8" fill="#666" text-anchor="end">1.0E+06</text>
+        <text x="34" y="55" font-size="8" fill="#666" text-anchor="end">1.0E+05</text>
+        <text x="34" y="74" font-size="8" fill="#666" text-anchor="end">1.0E+04</text>
+        <text x="34" y="93" font-size="8" fill="#666" text-anchor="end">1.0E+03</text>
+        <text x="34" y="112" font-size="8" fill="#666" text-anchor="end">1.0E+02</text>
+        <text x="34" y="132" font-size="8" fill="#666" text-anchor="end">1.0E+01</text>
+        <text x="34" y="151" font-size="8" fill="#666" text-anchor="end">1.0E+00</text>
         <!-- 수평 격자 -->
-        <line x1="40" y1="38" x2="285" y2="38" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
-        <line x1="40" y1="66" x2="285" y2="66" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
-        <line x1="40" y1="94" x2="285" y2="94" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
-        <line x1="40" y1="122" x2="285" y2="122" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
-        <!-- 일반 세정제 라인 (회색) -->
-        <polyline class="s10-line-control" points="45,20 90,22 135,24 180,28 225,30 270,32" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- dermosoft 라인 (블루, 좌→우 드로우 애니메이션) -->
-        <polyline class="s10-line-dermosoft" points="45,20 90,42 135,65 180,90 225,108 270,126" fill="none" stroke="#1a5fc8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+        <line x1="36" y1="12" x2="305" y2="12" stroke="#ddd" stroke-width="0.5"/>
+        <line x1="36" y1="31" x2="305" y2="31" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="36" y1="51" x2="305" y2="51" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="36" y1="70" x2="305" y2="70" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="36" y1="90" x2="305" y2="90" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="36" y1="109" x2="305" y2="109" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="36" y1="129" x2="305" y2="129" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="36" y1="148" x2="305" y2="148" stroke="#ddd" stroke-width="1"/>
+        <!-- 수직 격자 -->
+        <line x1="46" y1="12" x2="46" y2="148" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="97" y1="12" x2="97" y2="148" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="148" y1="12" x2="148" y2="148" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="199" y1="12" x2="199" y2="148" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="250" y1="12" x2="250" y2="148" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="300" y1="12" x2="300" y2="148" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <!-- Y축 선 -->
+        <line x1="36" y1="12" x2="36" y2="148" stroke="#ddd" stroke-width="1"/>
+        <!-- X축 레이블 (0, 3, 10, 30, 60, 120) -->
+        <text x="46" y="162" font-size="9" fill="#666" text-anchor="middle">0</text>
+        <text x="97" y="162" font-size="9" fill="#666" text-anchor="middle">3</text>
+        <text x="148" y="162" font-size="9" fill="#666" text-anchor="middle">10</text>
+        <text x="199" y="162" font-size="9" fill="#666" text-anchor="middle">30</text>
+        <text x="250" y="162" font-size="9" fill="#666" text-anchor="middle">60</text>
+        <text x="300" y="162" font-size="9" fill="#666" text-anchor="middle">120</text>
+        <!-- X축 레이블 제목 -->
+        <text x="173" y="175" font-size="8" fill="#888" text-anchor="middle">Time (min)</text>
+        <!-- 일반 세정제 라인 (회색, 거의 평탄) -->
+        <polyline class="s10-line-control" points="46,14 97,14 148,15 199,15 250,16 300,16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- 일반 세정제 원형 마커 -->
+        <circle cx="46" cy="14" r="3" fill="#999"/>
+        <circle cx="97" cy="14" r="3" fill="#999"/>
+        <circle cx="148" cy="15" r="3" fill="#999"/>
+        <circle cx="199" cy="15" r="3" fill="#999"/>
+        <circle cx="250" cy="16" r="3" fill="#999"/>
+        <circle cx="300" cy="16" r="3" fill="#999"/>
+        <!-- dermosoft 라인 (파란색 #2867a8, 좌→우 드로우 애니메이션) -->
+        <polyline class="s10-line-dermosoft" points="46,14 97,31 148,51 199,70 250,90 300,109" fill="none" stroke="#2867a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- dermosoft 원형 마커 -->
+        <circle cx="46" cy="14" r="3.5" fill="#2867a8"/>
+        <circle cx="97" cy="31" r="3.5" fill="#2867a8"/>
+        <circle cx="148" cy="51" r="3.5" fill="#2867a8"/>
+        <circle cx="199" cy="70" r="3.5" fill="#2867a8"/>
+        <circle cx="250" cy="90" r="3.5" fill="#2867a8"/>
+        <circle cx="300" cy="109" r="3.5" fill="#2867a8"/>
       </svg>
     </div>
     <p class="s10-graph-legend" style="font-size:11px; color:#555; line-height:1.8; margin-bottom:4px;">
       <span style="display:inline-block; width:24px; height:2px; background:#888; vertical-align:middle; margin-right:4px;"></span>일반 세정제<br>
-      <span style="display:inline-block; width:24px; height:2px; background:#1a5fc8; vertical-align:middle; margin-right:4px;"></span>0.3% dermosoft<sup>®</sup> G 3 CY MB 함유 세정제
+      <span style="display:inline-block; width:24px; height:2px; background:#2867a8; vertical-align:middle; margin-right:4px;"></span>0.3% dermosoft<sup>®</sup> G 3 CY MB 함유 세정제
     </p>
     <p class="s10-note">시험관 내 코리네박테리아 감소 평가 &#91; IN_VITRO TEST&#93;</p>
 
@@ -2390,32 +2417,35 @@
 
     <div class="s10-svg-chart2" style="width:100%;margin-bottom:16px;">
       <p style="font-size:11px;font-weight:700;color:#333;text-align:center;margin-bottom:8px;">제품을 사용하지 않은 부위 대비</p>
-      <svg viewBox="0 0 220 160" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg">
-        <!-- Y축 -->
-        <text x="22" y="20" font-size="9" fill="#666" text-anchor="middle">0%</text>
-        <text x="22" y="55" font-size="9" fill="#666" text-anchor="middle">-4%</text>
-        <text x="22" y="90" font-size="9" fill="#666" text-anchor="middle">-8%</text>
-        <text x="22" y="125" font-size="9" fill="#666" text-anchor="middle">-12%</text>
+      <svg viewBox="0 0 240 180" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Y축 레이블 (5% ~ -15%) -->
+        <text x="36" y="19" font-size="8" fill="#666" text-anchor="end">5%</text>
+        <text x="36" y="53" font-size="8" fill="#666" text-anchor="end">0%</text>
+        <text x="36" y="87" font-size="8" fill="#666" text-anchor="end">-5%</text>
+        <text x="36" y="121" font-size="8" fill="#666" text-anchor="end">-10%</text>
+        <text x="36" y="154" font-size="8" fill="#666" text-anchor="end">-15%</text>
         <!-- Y축 선 -->
-        <line x1="40" y1="12" x2="40" y2="138" stroke="#ccc" stroke-width="1"/>
-        <!-- 격자 -->
-        <line x1="40" y1="18" x2="200" y2="18" stroke="#eee" stroke-width="0.5"/>
-        <line x1="40" y1="53" x2="200" y2="53" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
-        <line x1="40" y1="88" x2="200" y2="88" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
-        <line x1="40" y1="123" x2="200" y2="123" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
-        <line x1="40" y1="138" x2="200" y2="138" stroke="#ccc" stroke-width="1"/>
-        <!-- 24시간 막대 (짙은 파랑, 위→아래 애니메이션) -->
-        <rect class="s10-bar2-a" x="65" y="18" width="45" data-y2="71" data-h2="53" height="0" fill="#1a5fc8" rx="2"/>
-        <text class="s10-bar2-label-a" x="87" y="13" font-size="9" fill="#1a5fc8" font-weight="700" text-anchor="middle">-4%</text>
-        <!-- 48시간 막대 (연한 파랑, 위→아래 애니메이션 지연) -->
-        <rect class="s10-bar2-b" x="130" y="18" width="45" data-y2="88" data-h2="120" height="0" fill="#4a8fe0" rx="2"/>
-        <text class="s10-bar2-label-b" x="152" y="13" font-size="9" fill="#4a8fe0" font-weight="700" text-anchor="middle">-12%</text>
-        <!-- X축 레이블 -->
-        <text x="87" y="150" font-size="10" fill="#333" font-weight="600" text-anchor="middle">24시간 후</text>
-        <text x="152" y="150" font-size="10" fill="#333" font-weight="600" text-anchor="middle">48시간 후</text>
+        <line x1="38" y1="15" x2="38" y2="150" stroke="#ddd" stroke-width="1"/>
+        <!-- 수평 격자 -->
+        <line x1="38" y1="15" x2="218" y2="15" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="38" y1="49" x2="218" y2="49" stroke="#bbb" stroke-width="1.5"/>
+        <line x1="38" y1="83" x2="218" y2="83" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="38" y1="117" x2="218" y2="117" stroke="#eee" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="38" y1="150" x2="218" y2="150" stroke="#ddd" stroke-width="1"/>
         <!-- 통계 기호 -->
-        <text x="87" y="9" font-size="7" fill="#666" text-anchor="middle">*</text>
-        <text x="152" y="9" font-size="7" fill="#666" text-anchor="middle">**</text>
+        <text x="91" y="46" font-size="8" fill="#888" text-anchor="middle">*</text>
+        <text x="161" y="46" font-size="8" fill="#888" text-anchor="middle">**</text>
+        <!-- 24시간 막대 (#2867a8, 0% 기준선에서 아래로 성장) -->
+        <rect class="s10-bar2-a" x="65" y="49" width="52" height="0" data-h="27" fill="#2867a8" rx="2"/>
+        <!-- 24시간 내부 흰색 텍스트 -->
+        <text class="s10-bar2-label-a" x="91" y="63" font-size="9" fill="white" font-weight="700" text-anchor="middle" opacity="0">-4%</text>
+        <!-- 48시간 막대 (#2867a8, 0% 기준선에서 아래로 성장) -->
+        <rect class="s10-bar2-b" x="135" y="49" width="52" height="0" data-h="81" fill="#2867a8" rx="2"/>
+        <!-- 48시간 내부 흰색 텍스트 -->
+        <text class="s10-bar2-label-b" x="161" y="90" font-size="9" fill="white" font-weight="700" text-anchor="middle" opacity="0">-12%</text>
+        <!-- X축 레이블 (굵게) -->
+        <text x="91" y="165" font-size="10" fill="#333" font-weight="700" text-anchor="middle">24시간 후</text>
+        <text x="161" y="165" font-size="10" fill="#333" font-weight="700" text-anchor="middle">48시간 후</text>
       </svg>
     </div>
 
@@ -2609,7 +2639,7 @@
   }
 })();
 
-// S8 bar chart 스크롤 애니메이션
+// S8 bar chart 스크롤 애니메이션 (S9와 동일한 방식)
 (function(){
   var bars = document.querySelectorAll('.s8-bar-fill[data-width]');
   if(!bars.length) return;
@@ -2623,8 +2653,9 @@
       animated = true;
       bars.forEach(function(bar, i) {
         setTimeout(function() {
+          bar.style.transition = 'width 1.2s ease';
           bar.style.width = bar.getAttribute('data-width');
-        }, i * 200);
+        }, i * 150);
       });
     }
   }
@@ -2658,26 +2689,38 @@
     check();
   }
   
-  // 막대 차트 (위→아래 성장)
+  // 막대 차트 (0% 기준선에서 아래로 성장, rAF 수동 스텝)
   function initBarChart() {
     var barA = document.querySelector('.s10-bar2-a');
     var barB = document.querySelector('.s10-bar2-b');
+    var labelA = document.querySelector('.s10-bar2-label-a');
+    var labelB = document.querySelector('.s10-bar2-label-b');
     if(!barA || !barB) return;
     var done = false;
+    function animateH(el, targetH, duration, onDone) {
+      var start = null;
+      function step(ts) {
+        if(!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var e = p < 0.5 ? 2*p*p : -1+(4-2*p)*p;
+        el.setAttribute('height', (e * targetH).toFixed(1));
+        if(p < 1) { requestAnimationFrame(step); } else { if(onDone) onDone(); }
+      }
+      requestAnimationFrame(step);
+    }
     function check() {
       if(done) return;
       var el = barA.closest('.s10-svg-chart2') || barA;
       var rect = el.getBoundingClientRect();
       if(rect.top < window.innerHeight * 0.9) {
         done = true;
-        // barA: y=18→71, h=53 (위→아래)
-        barA.style.transition = 'height 1.2s ease, y 1.2s ease';
-        barA.setAttribute('y', '71');
-        barA.setAttribute('height', '53');
-        // barB: 지연 후
+        animateH(barA, 27, 1200, function() {
+          if(labelA) { labelA.style.transition = 'opacity 0.4s ease'; labelA.setAttribute('opacity','1'); }
+        });
         setTimeout(function() {
-          barB.setAttribute('y', '18');
-          barB.setAttribute('height', '120');
+          animateH(barB, 81, 1200, function() {
+            if(labelB) { labelB.style.transition = 'opacity 0.4s ease'; labelB.setAttribute('opacity','1'); }
+          });
         }, 300);
       }
     }
