@@ -1917,7 +1917,9 @@
   <!-- S3: 제품 등장 -->
   <section class="s3-section">
     <div class="s3-img-wrap">
-      <div class="s3-img-placeholder" style="background:url('images/s3-hero.jpg') center/115% auto no-repeat;"></div>
+      <div class="s3-img-placeholder">
+      <video class="s3-4step-video" src="images/s3-4step.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+    </div>
       <div class="s3-copy-overlay">
         <p class="s3-copy">말하지 못했던 그 한마디,<br>오르도레이어가<br>대신 합니다.</p>
       </div>
@@ -1976,7 +1978,9 @@
       <div class="s5-img-item"><img src="images/s5-shirt.jpg" alt="셔츠" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     </div>
     <p class="s5-sub-copy">체취는 단순한 땀만의 문제는 아닙니다.<br>피지와 각질, 피부 표면에 남은 잔여물이<br>반복적으로 쌓이고,<br>이 지질 성분이 공기와 열, 마찰에 노출되면서<br><strong>기름지고 묵직한 잔취로 이어질 수 있습니다.</strong></p>
-    <div class="s5-video-wrap">3D 영상 플레이스홀더</div>
+    <div class="s5-video-wrap">
+      <video class="s5-video" src="images/pore_video_4sec_4x3.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+    </div>
     <div class="s5-desc-wrap">
       <p class="s5-desc-pre">이 과정에서 대표적으로<br>언급되는 체취 관련 성분이</p>
       <div class="s5-keyword-line">
@@ -2035,7 +2039,7 @@
         <text class="s6-lbl s6-lbl-l" x="60" y="274">COMFORT SHIELD</text>
       </svg>
     </div>
-    <div class="s6-video-wrap">3D 영상 플레이스홀더</div>
+    
   </section>
 
   <!-- S7: WASH OFF - 스크럽 -->
@@ -2061,8 +2065,10 @@
         <span class="s7-scrub-word s7-sw3">2종 스크럽</span>
       </div>
     </div>
-    <div class="s7-video-wrap">4:5 영상 플레이스홀더</div>
-    <div class="s7-wide-img">5:3 이미지 플레이스홀더</div>
+    <div class="s7-video-wrap">
+      <img src="images/s7-scrub-texture.jpg" alt="스크럽 텍스처" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    
     <div class="s7-desc-wrap">
       <p class="s7-desc-p">호두 껍질 스크럽의 큰 입자는<br>표면의 잔여물을 부드럽게 걷어내고,<br><br><strong>셀룰로오스의 고운 입자는 피부 결 사이<br>미세 노폐물까지 섬세하게 비워냅니다.</strong></p>
       <p class="s7-desc-p">서로 다른 입자가 피부에 다르게 닿아<br>부드럽게 탈착하고, 개운하게 마무리하는<br>저자극 스크럽 설계했습니다.</p>
@@ -2093,7 +2099,9 @@
     </div>
     <p class="s8-main-copy">피부 겉을 씻어냈다면,<br>이제 모공 주변의 묵은 산화피지를<br>비워낼 차례입니다.</p>
     <p class="s8-sub-copy">피부 표면의 피지와 각질을 걷어낸 뒤에도,<br>모공 입구와 주변에는<br>묵은 산화피지와 냄새 잔여물이 남기 쉽습니다.<br><br>이 잔여물은 다시 분비되는 피지와 겹치며<br>그 묵직한 기름 냄새가 납니다.</p>
-    <div class="s8-hero-img">모공 이미지 플레이스홀더</div>
+    <div class="s8-hero-img">
+      <video class="s8-hero-video" src="images/s3-4step.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+    </div>
     <!-- 솝넛 파트 -->
     <div class="s8-ingredient-wrap">
       <div class="s7-scrub-anim-wrap" style="font-size:28px; color:#111; margin-bottom:8px;">
@@ -2103,7 +2111,7 @@
       </div>
     </div>
     <div class="s8-img-row">
-      <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px;"><img src="images/s9-patent-jp.jpg" style="width:100%; height:auto; object-fit:contain;" /></div>
+      <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px;"><img src="images/s9-patent-kr.jpg" style="width:100%; height:auto; object-fit:contain;" /></div>
       <div class="s8-img-item" style="background:none;padding:0;overflow:hidden;"><img src="images/s8-soapnut.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     </div>
     <p class="s8-ingredient-desc">솝넛 껍질에 들어있는<br>풍부한 천연 사포닌과 활성 성분이<br>산화된 피지에서 나는 악취 원인인 <u>노네날을</u><br>분해하고 중화시킵니다.</p>
@@ -2702,4 +2710,31 @@
   checkCards();
 })();
 
-            </script>
+            
+// ===== 영상 스크롤 진입 재생 (video 태그) =====
+(function(){
+  var videoObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var v = entry.target;
+      if (entry.isIntersecting) {
+        v.play().catch(function(){});
+      } else {
+        v.pause();
+        v.currentTime = 0;
+      }
+    });
+  }, {threshold: 0.3});
+  
+  function observeVideos() {
+    document.querySelectorAll('video[autoplay]').forEach(function(v) {
+      videoObs.observe(v);
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeVideos);
+  } else {
+    observeVideos();
+  }
+})();
+</script>
