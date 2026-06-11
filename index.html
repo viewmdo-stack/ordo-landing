@@ -2289,12 +2289,16 @@
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: 9999;
   background: #e02020;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   text-decoration: none;
   box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
   -webkit-tap-highlight-color: transparent;
@@ -3068,9 +3072,9 @@
 </div>
 
 <!-- 하단 고정 사전예약 버튼 -->
-<a href="#preorder" class="fixed-preorder-btn" id="fixedPreorderBtn">
+<button type="button" class="fixed-preorder-btn" id="fixed-preorder-btn">
   <span>0원으로 사전 예약하기</span>
-</a>
+</button>
 
 <script>
 (function(){
@@ -3420,7 +3424,7 @@
 
 // 하단 고정 버튼 — #preorder 섹션 상단 도달 시 숨김
 (function(){
-  var btn = document.getElementById('fixedPreorderBtn');
+  var btn = document.getElementById('fixed-preorder-btn');
   var section = document.getElementById('preorder');
   if(!btn || !section) return;
 
@@ -3436,14 +3440,14 @@
   window.addEventListener('scroll', update, { passive: true });
   update();
 
-  function scrollToPreorder(e) {
+  btn.addEventListener('click', function(e) {
     e.preventDefault();
-    var top = section.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: top, behavior: 'smooth' });
-  }
-
-  btn.addEventListener('click', scrollToPreorder);
-  btn.addEventListener('touchend', scrollToPreorder);
+    e.stopPropagation();
+    var target = document.getElementById('preorder');
+    if(target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 })();
 
 
