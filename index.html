@@ -3194,23 +3194,23 @@
 })();
 
 
-// 하단 고정 버튼 — #preorder 뷰포트 진입 시 숨김
+// 하단 고정 버튼 — #preorder 섹션 상단 도달 시 숨김
 (function(){
   var btn = document.getElementById('fixedPreorderBtn');
   var section = document.getElementById('preorder');
   if(!btn || !section) return;
 
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if(entry.isIntersecting) {
-        btn.classList.add('hidden');
-      } else {
-        btn.classList.remove('hidden');
-      }
-    });
-  }, { threshold: 0 });
+  function update() {
+    var sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+    if(window.pageYOffset >= sectionTop) {
+      btn.classList.add('hidden');
+    } else {
+      btn.classList.remove('hidden');
+    }
+  }
 
-  observer.observe(section);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
 
   btn.addEventListener('click', function(e) {
     e.preventDefault();
