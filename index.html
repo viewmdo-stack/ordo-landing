@@ -3068,7 +3068,7 @@
 </div>
 
 <!-- 하단 고정 사전예약 버튼 -->
-<a href="reserve.html" class="fixed-preorder-btn" id="fixedPreorderBtn">
+<a href="#preorder" class="fixed-preorder-btn" id="fixedPreorderBtn">
   <span>0원으로 사전 예약하기</span>
 </a>
 
@@ -3435,5 +3435,21 @@
 
   window.addEventListener('scroll', update, { passive: true });
   update();
+
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    section.scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+
+
+// CTA 버튼 모바일 터치 네비게이션 보장
+(function(){
+  document.querySelectorAll('a.s13-cta-btn[href="reserve.html"]').forEach(function(el) {
+    el.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      location.href = 'reserve.html';
+    });
+  });
 })();
 </script>
