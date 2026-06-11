@@ -1917,9 +1917,7 @@
   <!-- S3: 제품 등장 -->
   <section class="s3-section">
     <div class="s3-img-wrap">
-      <div class="s3-img-placeholder s3-video-container" style="position:relative;width:100%;overflow:hidden;background:#000;aspect-ratio:16/9;">
-      <iframe class="autoplay-video" data-src="https://drive.google.com/file/d/1MXIkEWkRv4QYkzfN7oAWJyQVE0Q_E715/preview" src="" style="width:100%;height:100%;border:none;pointer-events:none;" allow="autoplay" allowfullscreen></iframe>
-    </div>
+      <div class="s3-img-placeholder" style="background:url('images/s3-hero.jpg') center/115% auto no-repeat;"></div>
       <div class="s3-copy-overlay">
         <p class="s3-copy">말하지 못했던 그 한마디,<br>오르도레이어가<br>대신 합니다.</p>
       </div>
@@ -1978,9 +1976,7 @@
       <div class="s5-img-item"><img src="images/s5-shirt.jpg" alt="셔츠" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     </div>
     <p class="s5-sub-copy">체취는 단순한 땀만의 문제는 아닙니다.<br>피지와 각질, 피부 표면에 남은 잔여물이<br>반복적으로 쌓이고,<br>이 지질 성분이 공기와 열, 마찰에 노출되면서<br><strong>기름지고 묵직한 잔취로 이어질 수 있습니다.</strong></p>
-    <div class="s5-video-wrap" style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#000;">
-      <iframe src="https://drive.google.com/file/d/17yhaYQs7IZd0mXrh2xt9gvWSX8UVPvE9/preview" style="width:100%;height:100%;border:none;pointer-events:none;" allow="autoplay" allowfullscreen></iframe>
-    </div>
+    <div class="s5-video-wrap">3D 영상 플레이스홀더</div>
     <div class="s5-desc-wrap">
       <p class="s5-desc-pre">이 과정에서 대표적으로<br>언급되는 체취 관련 성분이</p>
       <div class="s5-keyword-line">
@@ -2039,7 +2035,7 @@
         <text class="s6-lbl s6-lbl-l" x="60" y="274">COMFORT SHIELD</text>
       </svg>
     </div>
-    
+    <div class="s6-video-wrap">3D 영상 플레이스홀더</div>
   </section>
 
   <!-- S7: WASH OFF - 스크럽 -->
@@ -2065,10 +2061,8 @@
         <span class="s7-scrub-word s7-sw3">2종 스크럽</span>
       </div>
     </div>
-    <div class="s7-video-wrap" style="width:100%;aspect-ratio:4/5;overflow:hidden;background:#111;">
-      <img src="images/s7-scrub-texture.jpg" alt="스크럽 텍스처" style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-    
+    <div class="s7-video-wrap">4:5 영상 플레이스홀더</div>
+    <div class="s7-wide-img">5:3 이미지 플레이스홀더</div>
     <div class="s7-desc-wrap">
       <p class="s7-desc-p">호두 껍질 스크럽의 큰 입자는<br>표면의 잔여물을 부드럽게 걷어내고,<br><br><strong>셀룰로오스의 고운 입자는 피부 결 사이<br>미세 노폐물까지 섬세하게 비워냅니다.</strong></p>
       <p class="s7-desc-p">서로 다른 입자가 피부에 다르게 닿아<br>부드럽게 탈착하고, 개운하게 마무리하는<br>저자극 스크럽 설계했습니다.</p>
@@ -2708,56 +2702,4 @@
   checkCards();
 })();
 
-            
-// ===== 영상/애니메이션 스크롤 진입 시 재생 =====
-(function() {
-  // iframe(Drive 영상) - 스크롤 진입 시 src 로드
-  var iframeObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      var el = entry.target;
-      if (entry.isIntersecting) {
-        var dataSrc = el.getAttribute('data-src');
-        if (dataSrc && el.src !== dataSrc) {
-          el.src = dataSrc;
-        }
-      } else {
-        // 뷰포트 벗어나면 리셋 (반복 재생)
-        var dataSrc = el.getAttribute('data-src');
-        if (dataSrc && el.src === dataSrc) {
-          el.src = '';
-        }
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('iframe.autoplay-video, iframe[data-src]').forEach(function(iframe) {
-    iframeObserver.observe(iframe);
-  });
-
-  // video 태그 - 스크롤 진입 시 play
-  var videoObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      var vid = entry.target;
-      if (entry.isIntersecting) {
-        vid.play().catch(function(){});
-      } else {
-        vid.pause();
-        vid.currentTime = 0;
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('video').forEach(function(video) {
-    videoObserver.observe(video);
-  });
-
-  // S5 iframe (pore_video) - 진입 시 src 세팅
-  document.querySelectorAll('.s5-video-wrap iframe, .s7-wide-img iframe').forEach(function(iframe) {
-    if (!iframe.hasAttribute('data-src') && iframe.src) {
-      iframe.setAttribute('data-src', iframe.src);
-      iframe.src = '';
-      iframeObserver.observe(iframe);
-    }
-  });
-})();
-</script>
+            </script>
