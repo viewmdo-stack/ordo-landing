@@ -2294,13 +2294,11 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 8px rgba(0,0,0,0.08);
-  opacity: 0;
-  pointer-events: none;
   transition: opacity 0.3s ease;
 }
-.idx-fixed-header.show {
-  opacity: 1;
-  pointer-events: auto;
+.idx-fixed-header.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ===== 상단 썸네일 섹션 ===== */
@@ -2359,7 +2357,7 @@
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: none;
+  border: 1px solid rgba(0,0,0,0.15);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -3577,10 +3575,10 @@
   if(!header) return;
   var scrollTimer = null;
   window.addEventListener('scroll', function() {
-    header.classList.remove('show');
+    header.classList.add('hidden');
     clearTimeout(scrollTimer);
     scrollTimer = setTimeout(function() {
-      if(window.pageYOffset > 30) { header.classList.add('show'); }
+      header.classList.remove('hidden');
     }, 150);
   }, { passive: true });
 })();
