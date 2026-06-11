@@ -14,6 +14,7 @@
       display: flex;
       justify-content: center;
       min-height: 100vh;
+      padding-bottom: 56px;
     }
     .page-wrapper {
       width: 100%;
@@ -2066,6 +2067,29 @@
   word-break: keep-all;
 }
 
+/* ===== 하단 고정 사전예약 버튼 ===== */
+.fixed-preorder-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #e02020;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
+  -webkit-tap-highlight-color: transparent;
+}
+.fixed-preorder-btn span {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
 </style>
 </head>
 <body>
@@ -2710,7 +2734,7 @@
 
 
 <!-- S13: PRE-ORDER -->
-<section class="s13-section">
+<section class="s13-section" id="preorder">
 
   <!-- 상단 후킹 블록 -->
   <div class="s13-hook">
@@ -2812,6 +2836,11 @@
 </section>
 
 </div>
+
+<!-- 하단 고정 사전예약 버튼 -->
+<a href="#preorder" class="fixed-preorder-btn">
+  <span>0원으로 사전 예약하기</span>
+</a>
 
 <script>
 (function(){
