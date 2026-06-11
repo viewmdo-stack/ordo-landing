@@ -11,21 +11,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
-      - name: Download pore_video_4sec_4x3.mp4
+
+      - name: Download 4step.mp4
         run: |
-          curl -L "https://drive.usercontent.google.com/download?id=17yhaYQs7IZd0mXrh2xt9gvWSX8UVPvE9&export=download&authuser=0&confirm=t" -o images/pore_video_4sec_4x3.mp4
-          ls -la images/pore_video_4sec_4x3.mp4
-      
-      - name: Download s3-4step.mp4
-        run: |
-          curl -L "https://drive.usercontent.google.com/download?id=1MXIkEWkRv4QYkzfN7oAWJyQVE0Q_E715&export=download&authuser=0&confirm=t" -o images/s3-4step.mp4
-          ls -la images/s3-4step.mp4
-      
+          curl -L "https://drive.usercontent.google.com/download?id=1MAUk0KHZhYNyYtoY0zECsXK_mkJAcpsA&export=download&confirm=t" -o images/4step.mp4
+          ls -la images/4step.mp4
+
       - name: Commit videos
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add images/pore_video_4sec_4x3.mp4 images/s3-4step.mp4
-          git commit -m "Add: video files from Drive" || echo "No changes to commit"
+          git add images/4step.mp4
+          git commit -m "Add: 4step.mp4 video from Drive" || echo "No changes to commit"
           git push
