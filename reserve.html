@@ -14,6 +14,7 @@
       display: flex;
       justify-content: center;
       min-height: 100vh;
+      padding-bottom: 52px;
     }
     .page-wrapper {
       width: 100%;
@@ -24,18 +25,133 @@
       flex-direction: column;
     }
 
-    /* 브랜드 헤더 */
-    .reserve-header {
-      background: #1a3a6b;
-      padding: 18px 24px;
-      text-align: center;
+    /* 스크롤 고정 헤더 */
+    .res-fixed-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #fff;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
     }
-    .reserve-header-brand {
+    .res-fixed-header.show { transform: translateY(0); }
+    .res-header-brand {
       font-size: 14px;
       font-weight: 900;
-      color: #fff;
+      color: #111;
       letter-spacing: 0.2em;
     }
+
+    /* 썸네일 히어로 섹션 */
+    .res-hero {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 5 / 3;
+      background: #c4c4c4;
+      overflow: hidden;
+    }
+    .res-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.45) 100%);
+      z-index: 1;
+    }
+    .res-hero-text {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 20px;
+      z-index: 2;
+    }
+    .res-hero-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .res-hero-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .res-hero-title u { text-underline-offset: 5px; }
+
+    /* 제품 선택 칩 오버레이 */
+    .res-product-chip {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 52px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #111;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      z-index: 2;
+    }
+
+    /* 공유 버튼 */
+    .res-share-btn {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+      z-index: 2;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 하단 고정 2버튼 바 */
+    .res-fixed-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      width: 100%;
+      height: 52px;
+      display: flex;
+      z-index: 9999;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
+    }
+    .res-fixed-bar.hidden { display: none; }
+    .res-bar-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      letter-spacing: -0.3px;
+    }
+    .res-bar-left { background: #e8e8e8; color: #333; }
+    .res-bar-right { background: #2867a8; color: #fff; }
 
     /* 폼 영역 */
     .form-wrap {
@@ -259,12 +375,26 @@
   </style>
 </head>
 <body>
+
+<!-- 스크롤 고정 헤더 -->
+<header class="res-fixed-header" id="resFixedHeader">
+  <p class="res-header-brand">ORDO LAYER</p>
+</header>
+
 <div class="page-wrapper">
 
-  <!-- 브랜드 헤더 -->
-  <header class="reserve-header">
-    <p class="reserve-header-brand">ORDO LAYER</p>
-  </header>
+  <!-- 상단 썸네일 섹션 -->
+  <div class="res-hero">
+    <div class="res-hero-overlay"></div>
+    <div class="res-hero-text">
+      <p class="res-hero-sub">남성 체취 케어</p>
+      <p class="res-hero-title"><u>오르도레이어</u></p>
+    </div>
+    <div class="res-product-chip">오르도레이어 바디워시 &amp; 바디스프레이 사전 예약</div>
+    <button class="res-share-btn" id="resShareBtn" type="button" aria-label="공유">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+    </button>
+  </div>
 
   <!-- 폼 영역 -->
   <div class="form-wrap" id="formWrap">
@@ -350,6 +480,12 @@
 
 </div>
 
+<!-- 하단 고정 2버튼 바 -->
+<div class="res-fixed-bar" id="resFixedBar">
+  <a href="index.html" class="res-bar-btn res-bar-left">제품구성보기</a>
+  <button type="button" class="res-bar-btn res-bar-right" id="resBarRight">0원으로 사전 예약</button>
+</div>
+
 <script>
 (function(){
   // 전화번호 자동 하이픈
@@ -399,8 +535,46 @@
         doneWrap.style.display = 'flex';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+      var resBar = document.getElementById('resFixedBar');
+      if(resBar) resBar.classList.add('hidden');
     });
   }
+})();
+
+// 스크롤 고정 헤더 (내릴 때 표시, 올릴 때 숨김)
+(function(){
+  var header = document.getElementById('resFixedHeader');
+  if(!header) return;
+  var lastY = 0;
+  window.addEventListener('scroll', function() {
+    var y = window.pageYOffset;
+    if(y > lastY && y > 30) { header.classList.add('show'); }
+    else if(y < lastY) { header.classList.remove('show'); }
+    lastY = y;
+  }, { passive: true });
+})();
+
+// 공유 버튼
+(function(){
+  var btn = document.getElementById('resShareBtn');
+  if(!btn) return;
+  btn.addEventListener('click', function() {
+    if(navigator.share) {
+      navigator.share({ title: 'ORDO LAYER 사전예약', url: location.href });
+    } else if(navigator.clipboard) {
+      navigator.clipboard.writeText(location.href).then(function() { alert('링크가 복사되었습니다.'); });
+    }
+  });
+})();
+
+// 하단 오른쪽 버튼 → 폼으로 스크롤
+(function(){
+  var btn = document.getElementById('resBarRight');
+  if(!btn) return;
+  btn.addEventListener('click', function() {
+    var t = document.getElementById('formWrap');
+    if(t) { t.scrollIntoView({ behavior: 'smooth' }); }
+  });
 })();
 </script>
 </body>

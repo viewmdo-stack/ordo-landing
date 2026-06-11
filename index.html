@@ -14,7 +14,7 @@
       display: flex;
       justify-content: center;
       min-height: 100vh;
-      padding-bottom: 56px;
+      padding-bottom: 52px;
     }
     .page-wrapper {
       width: 100%;
@@ -2283,38 +2283,40 @@
   line-height: 1.7;
 }
 
-/* ===== 하단 고정 사전예약 버튼 ===== */
-.fixed-preorder-btn {
+/* ===== 하단 고정 2버튼 바 ===== */
+.fixed-bottom-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 9999;
-  background: #e02020;
-  height: 56px;
+  height: 52px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: none;
   box-shadow: 0 -4px 16px rgba(0,0,0,0.18);
-  -webkit-tap-highlight-color: transparent;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.fixed-preorder-btn.hidden {
+.fixed-bottom-bar.hidden {
   transform: translateY(100%);
   opacity: 0;
   pointer-events: none;
 }
-.fixed-preorder-btn span {
-  font-size: 18px;
-  font-weight: 800;
-  color: #fff;
+.fixed-bar-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
   letter-spacing: -0.3px;
 }
+.fixed-bar-left { background: #e8e8e8; color: #333; }
+.fixed-bar-right { background: #2867a8; color: #fff; }
 
 </style>
 </head>
@@ -3071,10 +3073,11 @@
 
 </div>
 
-<!-- 하단 고정 사전예약 버튼 -->
-<button type="button" class="fixed-preorder-btn" id="fixed-preorder-btn">
-  <span>0원으로 사전 예약하기</span>
-</button>
+<!-- 하단 고정 2버튼 바 -->
+<div class="fixed-bottom-bar" id="fixedBottomBar">
+  <button type="button" class="fixed-bar-btn fixed-bar-left" id="fixedBtnLeft">제품구성보기</button>
+  <button type="button" class="fixed-bar-btn fixed-bar-right" id="fixedBtnRight">0원으로 사전 예약</button>
+</div>
 
 <script>
 (function(){
@@ -3422,31 +3425,35 @@
 })();
 
 
-// 하단 고정 버튼 — #preorder 섹션 상단 도달 시 숨김
+// 하단 고정 2버튼 바 — #preorder 섹션 상단 도달 시 숨김
 (function(){
-  var btn = document.getElementById('fixed-preorder-btn');
+  var bar = document.getElementById('fixedBottomBar');
   var section = document.getElementById('preorder');
-  if(!btn || !section) return;
+  if(!bar || !section) return;
 
   function update() {
     var sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
     if(window.pageYOffset >= sectionTop) {
-      btn.classList.add('hidden');
+      bar.classList.add('hidden');
     } else {
-      btn.classList.remove('hidden');
+      bar.classList.remove('hidden');
     }
   }
 
   window.addEventListener('scroll', update, { passive: true });
   update();
 
-  btn.addEventListener('click', function(e) {
+  document.getElementById('fixedBtnLeft').addEventListener('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
     var target = document.getElementById('preorder');
-    if(target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    if(target) { target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+
+  document.getElementById('fixedBtnRight').addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    location.href = 'reserve.html';
   });
 })();
 
