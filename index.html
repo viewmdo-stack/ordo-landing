@@ -813,6 +813,11 @@
     .s7-scrub-word.active {
       border-color: #2867a8;
     }
+    @keyframes borderMove {
+      0% { border-color: #2867a8; box-shadow: 0 0 0 0 rgba(40,103,168,0.4); }
+      50% { border-color: #1a3a6b; box-shadow: 0 0 0 4px rgba(40,103,168,0); }
+      100% { border-color: #2867a8; box-shadow: 0 0 0 0 rgba(40,103,168,0.4); }
+    }
     .s7-scrub-wrap {
       text-align: center;
       margin-top: 7px;
@@ -1007,8 +1012,8 @@
     .s8-img-row {
       display: flex;
       gap: 6px;
-      margin-bottom: 28px;
-      padding: 0 16px;
+      margin-bottom: 14px;
+      padding: 0 8px;
     }
     .s8-img-item {
       flex: 1;
@@ -1120,7 +1125,7 @@
 
     /* S8 비교 이미지 */
     .s8-compare-wrap {
-      padding: 8px 8px 0;
+      padding: 8px 4px 0;
     }
     .s8-세정력-badge {
       display: block;
@@ -1331,7 +1336,7 @@
       border: none;
       border-radius: 30px;
       padding: 9px 20px;
-      font-size: clamp(15px, 4.8vw, 19px);
+      font-size: clamp(17px, 5.5vw, 22px);
       font-weight: 600;
       color: #fff;
       margin: 0 auto 24px;
@@ -2744,13 +2749,13 @@
       </div>
     <div class="s8-compare-wrap">
       <p class="s8-세정력-badge">세정력 비교</p>
-      <div class="s8-compare-label-row">
-        <span class="s8-compare-label">일반 세정제</span>
-        <span class="s8-compare-label">솝넛 추출파우더 1% 함유</span>
-      </div>
       <div class="s8-compare-grid">
         <div class="s8-compare-img-full" style="background:none;padding:0;overflow:hidden;"><img src="images/s8-pore2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="s8-compare-img-full" style="background:none;padding:0;overflow:hidden;"><img src="images/s8-pore1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+      <div class="s8-compare-label-row">
+        <span class="s8-compare-label">일반 세정제</span>
+        <span class="s8-compare-label">솔넷 추출파우더 1% 함유</span>
       </div>
 
     </div>
@@ -2762,15 +2767,15 @@
     <div class="page-wrapper">
 
       <!-- 타이틀 -->
-      <div class="s7-scrub-anim-wrap" style="margin:0 10px 16px; width:calc(100% - 20px); text-align:center;">
+      <div class="s7-scrub-anim-wrap" style="margin:0 10px 8px; width:calc(100% - 20px); text-align:center;">
         <span style="font-size:clamp(22px,6vw,28px); font-weight:bold; color:#2867a8;">모공 수축 및</span><br>
         <span style="font-size:clamp(22px,6vw,28px); font-weight:bold; color:#2867a8;">피지 조절에 특화된</span><br>
-        <span class="s7-scrub-word s7-sw3" style="display:block; font-size:clamp(22px,6vw,28px); white-space:nowrap; letter-spacing:-0.04em; border:3px solid #2867a8; width:calc(100% - 20px); margin:4px 10px; box-sizing:border-box;">새싹귀리 추출발효 특허 성분</span>
+        <span class="s7-scrub-word s7-sw3" style="display:block; font-size:clamp(22px,6vw,28px); white-space:nowrap; letter-spacing:-0.04em; border:3px solid #2867a8; animation:borderMove 2s ease-in-out infinite; width:calc(100% - 20px); margin:4px 10px; box-sizing:border-box;">새싹귀리 추출발효 특허 성분</span>
       </div>
 
       <!-- 특허증 + 열매 이미지 좌우 배치 -->
       <div class="s8-img-row">
-        <div class="s8-img-item" style="border:1px solid #ccc; overflow:hidden; background:#fff; padding:4px; display:flex; flex-direction:column; align-items:center;">
+        <div class="s8-img-item" style="border:1px solid #ccc; overflow:visible; background:#fff; padding:4px; display:flex; flex-direction:column; align-items:center;">
           <img src="images/s9-patent-kr.jpg" style="width:100%; height:auto; object-fit:contain; display:block;" />
           <p style="font-size: clamp(10px, 2.8vw, 11px);font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">특허 제 10-2731126호&nbsp;&nbsp;7일차 새싹귀리</p>
         </div>
@@ -2862,6 +2867,7 @@
         <span class="s9-antera-tag">Antera 3D를 이용한 피부 모공 분석</span>
         <div class="s9-antera-imgs">
           <div class="s9-antera-img" style="background:none;overflow:hidden;padding:0;"><img src="images/s9-antera-before.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="display:flex;align-items:center;justify-content:center;padding:0 4px;"><span style="font-size:28px;color:#2867a8;font-weight:bold;">&#8594;</span></div>
           <div class="s9-antera-img" style="background:none;overflow:hidden;padding:0;"><img src="images/s9-antera-after.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         </div>
         <p class="s9-antera-note">시험명: 새싹귀리 추출발효물의 피부 모공 크기 등의 일시적 축소 효과에 대한 인체적용시험<br>시험기관: SMCTC&nbsp;&nbsp;시험대상, 기간: 성인 피시험자 20명 / 4주&nbsp;&nbsp;평가항목: 모공 수 지표, 모공 면적, 모공 최대 깊이<br>*원료적 특성에 한함</p>
@@ -2883,13 +2889,16 @@
     <div style="width:100%; margin-top:24px;">
       <video src="images/step_3system.mp4"
         style="width:100%; display:block;"
-        autoplay loop muted playsinline>
+        autoplay loop muted playsinline
+        onloadedmetadata="this.playbackRate=1.5">
       </video>
     </div>
 
     <div class="s7-scrub-anim-wrap" style="margin:0 10px 16px; width:calc(100% - 20px); text-align:center;">
+      <span style="display:block; font-size:clamp(16px,5vw,20px); font-weight:700; color:#2867a8; margin-bottom:4px;">강력한 소취기능과 세정력을 가진</span>
       <span class="s7-scrub-word s7-sw1" style="white-space:nowrap; letter-spacing:-0.03em;">100% 식물 유래 물질</span><br>
-      <span class="s7-scrub-word s7-sw2" style="display:block; font-size:clamp(39px,12.35vw,52px); white-space:nowrap; letter-spacing:-0.04em; border:3px solid #2867a8; width:calc(100% - 20px); margin:4px 10px; box-sizing:border-box;">dermosoft<sup>®</sup> G 3 CY MB</span>
+      <span class="s7-scrub-word s7-sw2" style="display:block; font-size:clamp(32px,10vw,42px); font-weight:900; white-space:nowrap; letter-spacing:-0.04em; border:3px solid #2867a8; animation:borderMove 2s ease-in-out infinite; width:calc(100% - 20px); margin:4px 10px; box-sizing:border-box;">dermosoft<sup>®</sup> G 3 CY MB</span>
+      <span style="display:block; font-size:clamp(16px,5vw,20px); font-weight:700; color:#2867a8; margin-top:4px;">솔넷 분말 특허 성분</span>
     </div>
 
     <p class="s10-copy">냄새가 다시 시작되는 그 순간에 반응하는<br>온디맨드 데오 성분</p>
