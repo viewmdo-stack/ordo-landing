@@ -3,9 +3,9 @@ import re
 with open('index.html', 'r', encoding='utf-8') as f:
     html = f.read()
 
-# Remove s3-sub paragraph (duplicate text above s3-left)
-html = re.sub(r'<p\s+class="s3-sub">[\s\S]*?</p>', '', html)
-print('s3-sub removed')
+# Remove s3-sub paragraph exactly
+html = re.sub(r'<p class="s3-sub">[\s\S]*?</p>', '', html)
+print('s3-sub removed, new len:', len(html))
 
 new_left = (
     '<!-- s3-left: image right 65%, text overlay bottom -->\n'
