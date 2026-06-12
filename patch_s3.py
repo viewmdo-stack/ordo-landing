@@ -3,13 +3,9 @@ import re
 with open('index.html', 'r', encoding='utf-8') as f:
     html = f.read()
 
-# Remove duplicate text above s3-left comment (old p tag with same text)
-# The old text appears just before <!-- s3-left -->
-html = re.sub(
-    r'<p[^>]*>\s*[^<]*\uADF8 \uB0C4\uC0C8[^<]*</p>\s*(?=<!--\s*s3-left)',
-    '',
-    html, flags=re.DOTALL
-)
+# Remove s3-sub paragraph (duplicate text above s3-left)
+html = re.sub(r'<p\s+class="s3-sub">[\s\S]*?</p>', '', html)
+print('s3-sub removed')
 
 new_left = (
     '<!-- s3-left: image right 65%, text overlay bottom -->\n'
