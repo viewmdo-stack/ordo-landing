@@ -3,7 +3,14 @@ import re
 with open('index.html', 'r', encoding='utf-8') as f:
     html = f.read()
 
-# s3-left: text on top + image 65% right + blue overlay bottom
+# Remove duplicate text above s3-left comment (old p tag with same text)
+# The old text appears just before <!-- s3-left -->
+html = re.sub(
+    r'<p[^>]*>\s*[^<]*\uADF8 \uB0C4\uC0C8[^<]*</p>\s*(?=<!--\s*s3-left)',
+    '',
+    html, flags=re.DOTALL
+)
+
 new_left = (
     '<!-- s3-left: image right 65%, text overlay bottom -->\n'
     '    <div style="width:100%; margin-bottom:40px; position:relative; overflow:visible;">\n'
@@ -23,7 +30,6 @@ new_left = (
     '    </div>\n\n    '
 )
 
-# s3-right: image 65% left + blue overlay bottom
 new_right = (
     '<!-- s3-right: image left 65%, text overlay bottom -->\n'
     '    <div style="width:100%; margin-bottom:40px; position:relative; overflow:visible;">\n'
