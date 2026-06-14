@@ -2613,40 +2613,56 @@
     <p style="text-align:center;font-size:clamp(14px,4vw,17px);font-weight:600;color:#fff;margin:6px 0 0;letter-spacing:-0.3px;">오르도레이어 4단계 리셋 시스템</p>
     </div>
     <div class="s6-diagram-wrap">
-      <svg class="s6-svg" viewBox="0 0 380 460" xmlns="http://www.w3.org/2000/svg">
+      <svg class="s6-svg" viewBox="0 0 380 490" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="arr" markerWidth="20" markerHeight="16" refX="18" refY="8" orient="auto" markerUnits="userSpaceOnUse">
-            <polygon points="0 0, 20 8, 0 16" fill="#d0e3ff"/>
-          </marker>
+          <filter id="glow1" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="10" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <radialGradient id="grad1" cx="50%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#7b9fd4"/>
+            <stop offset="100%" stop-color="#334eac"/>
+          </radialGradient>
         </defs>
-        <!-- 화살표 (시계방향): 1→2→3→4→1 직선 -->
-        <line class="s6-arrow" x1="230" y1="128" x2="285" y2="188" marker-end="url(#arr)"/>
-        <line class="s6-arrow" x1="285" y1="272" x2="230" y2="332" marker-end="url(#arr)"/>
-        <line class="s6-arrow" x1="150" y1="332" x2="95" y2="272" marker-end="url(#arr)"/>
-        <line class="s6-arrow" x1="95" y1="188" x2="150" y2="128" marker-end="url(#arr)"/>
-        <!-- 원 1: 상단 중앙 -->
-        <circle class="s6-circle" cx="190" cy="85" r="58"/>
-        <text class="s6-num" x="190" y="53">1</text>
-        <text class="s6-txt" x="190" y="82">피부 표면의</text>
-        <text class="s6-txt" x="190" y="96">피지 제거</text>
-        <text class="s6-lbl" x="190" y="160">WASH OFF</text>
+
+        <!-- 연결 호 (시계방향): 1→2, 2→3, 3→4, 4→1 -->
+        <path class="s6-arrow" d="M 247 115 Q 320 135 305 185" fill="none"/>
+        <path class="s6-arrow" d="M 305 293 Q 320 355 255 375" fill="none"/>
+        <path class="s6-arrow" d="M 127 375 Q 58 360 75 295" fill="none"/>
+        <path class="s6-arrow" d="M 75 185 Q 58 130 143 110" fill="none"/>
+
+        <!-- 원 1: 상단 중앙 (큰 원 + 글로우) -->
+        <circle cx="190" cy="90" r="70" fill="rgba(255,255,255,0.15)" filter="url(#glow1)"/>
+        <circle class="s6-circle" cx="190" cy="90" r="65" fill="url(#grad1)" stroke="#c8deff" stroke-width="2.5"/>
+        <text class="s6-num" x="190" y="58">1</text>
+        <text class="s6-txt" x="190" y="88">피부 표면의</text>
+        <text class="s6-txt" x="190" y="104">피지 제거</text>
+        <text class="s6-lbl" x="190" y="172">WASH OFF</text>
+
         <!-- 원 2: 우측 -->
-        <circle class="s6-circle" cx="325" cy="230" r="58"/>
-        <text class="s6-num" x="325" y="198">2</text>
-        <text class="s6-txt" x="325" y="227">모공 속 냄새</text>
-        <text class="s6-txt" x="325" y="241">원인 환경 케어</text>
-        <text class="s6-lbl" x="325" y="305">DEEP CLEAR</text>
+        <circle class="s6-circle" cx="312" cy="240" r="62"/>
+        <text class="s6-num" x="312" y="206">2</text>
+        <text class="s6-txt" x="312" y="233">모공 속 냄새</text>
+        <text class="s6-txt" x="312" y="249">원인 환경 케어</text>
+        <text class="s6-lbl" x="344" y="315">DEEP</text>
+        <text class="s6-lbl" x="344" y="327">CLEAR</text>
+
         <!-- 원 3: 하단 중앙 -->
-        <circle class="s6-circle" cx="190" cy="375" r="58"/>
-        <text class="s6-num" x="190" y="343">3</text>
-        <text class="s6-txt" x="190" y="372">새로 분비되는</text>
-        <text class="s6-txt" x="190" y="386">피지 산화 지연</text>
-        <text class="s6-lbl" x="190" y="450">OXIDATION DELAY</text>
+        <circle class="s6-circle" cx="190" cy="390" r="62"/>
+        <text class="s6-num" x="190" y="356">3</text>
+        <text class="s6-txt" x="190" y="383">새로 분비되는</text>
+        <text class="s6-txt" x="190" y="399">피지 산화 지연</text>
+        <text class="s6-lbl" x="190" y="466">OXIDATION DELAY</text>
+
         <!-- 원 4: 좌측 -->
-        <circle class="s6-circle" cx="55" cy="230" r="58"/>
-        <text class="s6-num" x="55" y="198">4</text>
-        <text class="s6-txt" x="55" y="230">보습·진정·차단</text>
-        <text class="s6-lbl" x="55" y="305">COMFORT SHIELD</text>
+        <circle class="s6-circle" cx="68" cy="240" r="62"/>
+        <text class="s6-num" x="68" y="206">4</text>
+        <text class="s6-txt" x="68" y="240">보습·진정·차단</text>
+        <text class="s6-lbl" x="34" y="315">COMFORT</text>
+        <text class="s6-lbl" x="34" y="327">SHIELD</text>
       </svg>
     </div>
     
