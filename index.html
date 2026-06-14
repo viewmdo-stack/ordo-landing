@@ -60,29 +60,28 @@
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -2px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .s1-main-line2 {
-      display: block;
+      display: inline-block;
       color: #fff;
       background: #334eac;
       font-size: clamp(44px, 14vw, 60px);
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.15;
       letter-spacing: -2px;
-      padding: 4px 14px;
-      margin-bottom: 6px;
+      padding: 2px 12px 4px;
+      margin-bottom: 4px;
     }
     .s1-main-line3 {
-      display: block;
+      display: inline-block;
       color: #fff;
       background: #081f5c;
       font-size: clamp(44px, 14vw, 60px);
       font-weight: 900;
-      line-height: 1.2;
-      letter-spacing: -3px;
-      padding: 4px 14px;
-      white-space: nowrap;
+      line-height: 1.15;
+      letter-spacing: -2px;
+      padding: 2px 12px 4px;
     }
     .s1-desc {
       font-size: clamp(18px, 5.5vw, 24px);
@@ -2430,7 +2429,7 @@
     <div class="s1-hero">
       <p class="s1-main">
         <span class="s1-main-line1">남들은 먼저 느끼는데,</span>
-        <span class="s1-main-line2">정작 본인은</span>
+        <span class="s1-main-line2">정작 본인은</span><br>
         <span class="s1-main-line3">모르는 그 냄새.</span>
       </p>
       <p class="s1-desc"><strong>꺼내기 조심스럽고,<br>모른 척하기도 어려운 그 경험.<br><br>당신도 한번쯤<br>이런 경험을 해보셨나요?</strong></p>
@@ -2649,8 +2648,8 @@
     <div class="s6-diagram-wrap">
       <svg class="s6-svg" viewBox="0 0 380 490" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <filter id="glow1" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="10" result="blur"/>
+          <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="12" result="blur"/>
             <feMerge>
               <feMergeNode in="blur"/>
               <feMergeNode in="SourceGraphic"/>
@@ -2668,9 +2667,20 @@
         <path class="s6-arrow" d="M 127 375 Q 58 360 75 295" fill="none"/>
         <path class="s6-arrow" d="M 75 185 Q 58 130 143 110" fill="none"/>
 
-        <!-- 원 1: 상단 중앙 (큰 원 + 글로우) -->
-        <circle cx="190" cy="90" r="70" fill="rgba(255,255,255,0.15)" filter="url(#glow1)"/>
-        <circle class="s6-circle" cx="190" cy="90" r="65" fill="url(#grad1)" stroke="#c8deff" stroke-width="2.5"/>
+        <!-- glow rings: JS로 opacity 제어 -->
+        <circle class="s6-glow-ring" data-node="1" cx="190" cy="90" r="75" fill="rgba(255,255,255,0.18)" filter="url(#glow1)" opacity="0"/>
+        <circle class="s6-glow-ring" data-node="2" cx="312" cy="240" r="72" fill="rgba(255,255,255,0.18)" filter="url(#glow1)" opacity="0"/>
+        <circle class="s6-glow-ring" data-node="3" cx="190" cy="390" r="72" fill="rgba(255,255,255,0.18)" filter="url(#glow1)" opacity="0"/>
+        <circle class="s6-glow-ring" data-node="4" cx="68" cy="240" r="72" fill="rgba(255,255,255,0.18)" filter="url(#glow1)" opacity="0"/>
+
+        <!-- stroke rings for active circle border highlight -->
+        <circle class="s6-active-ring" data-node="1" cx="190" cy="90" r="68" fill="none" stroke="#c8deff" stroke-width="3" opacity="0"/>
+        <circle class="s6-active-ring" data-node="2" cx="312" cy="240" r="65" fill="none" stroke="#c8deff" stroke-width="3" opacity="0"/>
+        <circle class="s6-active-ring" data-node="3" cx="190" cy="390" r="65" fill="none" stroke="#c8deff" stroke-width="3" opacity="0"/>
+        <circle class="s6-active-ring" data-node="4" cx="68" cy="240" r="65" fill="none" stroke="#c8deff" stroke-width="3" opacity="0"/>
+
+        <!-- 원 1: 상단 중앙 -->
+        <circle class="s6-circle" cx="190" cy="90" r="65" fill="url(#grad1)"/>
         <text class="s6-num" x="190" y="58">1</text>
         <text class="s6-txt" x="190" y="88">피부 표면의</text>
         <text class="s6-txt" x="190" y="104">피지 제거</text>
@@ -3275,6 +3285,31 @@
     setTimeout(step, 700);
   }
   step();
+})();
+
+// S6 원 순차 글로우 애니메이션 (1→2→3→4→1 반복)
+(function(){
+  var glows = document.querySelectorAll('.s6-glow-ring');
+  var rings = document.querySelectorAll('.s6-active-ring');
+  if(!glows.length) return;
+  var current = 0;
+  var nodes = [1, 2, 3, 4];
+  function stepCircle() {
+    var activeNode = nodes[current];
+    glows.forEach(function(g) {
+      var node = parseInt(g.getAttribute('data-node'));
+      g.style.transition = 'opacity 0.5s ease';
+      g.style.opacity = (node === activeNode) ? '1' : '0';
+    });
+    rings.forEach(function(r) {
+      var node = parseInt(r.getAttribute('data-node'));
+      r.style.transition = 'opacity 0.5s ease';
+      r.style.opacity = (node === activeNode) ? '1' : '0';
+    });
+    current = (current + 1) % nodes.length;
+    setTimeout(stepCircle, 900);
+  }
+  stepCircle();
 })();
 
 (function(){
