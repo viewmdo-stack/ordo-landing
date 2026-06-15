@@ -745,8 +745,8 @@
       letter-spacing: 1.5px;
     }
     .s6-arrow {
-      stroke: #d0e3ff;
-      stroke-width: 14;
+      stroke: #c8deff;
+      stroke-width: 22;
       stroke-linecap: round;
       fill: none;
     }
@@ -2650,7 +2650,14 @@
       <svg class="s6-svg" viewBox="0 0 390 510" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="12" result="blur"/>
+            <feGaussianBlur stdDeviation="14" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <filter id="glow2" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
             <feMerge>
               <feMergeNode in="blur"/>
               <feMergeNode in="SourceGraphic"/>
@@ -2662,23 +2669,29 @@
           </radialGradient>
         </defs>
 
-        <!-- 연결 호 (시계방향): 1→2, 2→3, 3→4, 4→1 -->
-        <path class="s6-arrow" d="M 262 128 Q 340 148 322 205" fill="none"/>
-        <path class="s6-arrow" d="M 322 305 Q 340 370 268 398" fill="none"/>
-        <path class="s6-arrow" d="M 122 398 Q 52 372 68 305" fill="none"/>
-        <path class="s6-arrow" d="M 68 205 Q 50 140 130 122" fill="none"/>
+        <!-- 연결 호 (항상 보이는 base 라인) -->
+        <path class="s6-arrow s6-arc-base" d="M 262 128 Q 340 148 322 205" fill="none" opacity="0.3"/>
+        <path class="s6-arrow s6-arc-base" d="M 322 305 Q 340 370 268 398" fill="none" opacity="0.3"/>
+        <path class="s6-arrow s6-arc-base" d="M 122 398 Q 52 372 68 305" fill="none" opacity="0.3"/>
+        <path class="s6-arrow s6-arc-base" d="M 68 205 Q 50 140 130 122" fill="none" opacity="0.3"/>
+
+        <!-- 연결 호 (활성 라인 - JS 제어): 1→2, 2→3, 3→4, 4→1 -->
+        <path class="s6-arrow s6-arc-active" data-arc="1" d="M 262 128 Q 340 148 322 205" fill="none" opacity="0"/>
+        <path class="s6-arrow s6-arc-active" data-arc="2" d="M 322 305 Q 340 370 268 398" fill="none" opacity="0"/>
+        <path class="s6-arrow s6-arc-active" data-arc="3" d="M 122 398 Q 52 372 68 305" fill="none" opacity="0"/>
+        <path class="s6-arrow s6-arc-active" data-arc="4" d="M 68 205 Q 50 140 130 122" fill="none" opacity="0"/>
 
         <!-- glow rings: JS로 opacity 제어 -->
-        <circle class="s6-glow-ring" data-node="1" cx="195" cy="95" r="88" fill="rgba(255,255,255,0.18)" filter="url(#glow1)" opacity="0"/>
-        <circle class="s6-glow-ring" data-node="2" cx="320" cy="255" r="85" fill="rgba(255,255,255,0.18)" filter="url(#glow1)" opacity="0"/>
-        <circle class="s6-glow-ring" data-node="3" cx="195" cy="415" r="85" fill="rgba(255,255,255,0.18)" filter="url(#glow1)" opacity="0"/>
-        <circle class="s6-glow-ring" data-node="4" cx="70" cy="255" r="85" fill="rgba(255,255,255,0.18)" filter="url(#glow1)" opacity="0"/>
+        <circle class="s6-glow-ring" data-node="1" cx="195" cy="95" r="90" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="0"/>
+        <circle class="s6-glow-ring" data-node="2" cx="320" cy="255" r="87" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="0"/>
+        <circle class="s6-glow-ring" data-node="3" cx="195" cy="415" r="87" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="0"/>
+        <circle class="s6-glow-ring" data-node="4" cx="70" cy="255" r="87" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="0"/>
 
         <!-- stroke rings for active circle border highlight -->
-        <circle class="s6-active-ring" data-node="1" cx="195" cy="95" r="80" fill="none" stroke="#c8deff" stroke-width="3" opacity="0"/>
-        <circle class="s6-active-ring" data-node="2" cx="320" cy="255" r="77" fill="none" stroke="#c8deff" stroke-width="3" opacity="0"/>
-        <circle class="s6-active-ring" data-node="3" cx="195" cy="415" r="77" fill="none" stroke="#c8deff" stroke-width="3" opacity="0"/>
-        <circle class="s6-active-ring" data-node="4" cx="70" cy="255" r="77" fill="none" stroke="#c8deff" stroke-width="3" opacity="0"/>
+        <circle class="s6-active-ring" data-node="1" cx="195" cy="95" r="80" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="0"/>
+        <circle class="s6-active-ring" data-node="2" cx="320" cy="255" r="77" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="0"/>
+        <circle class="s6-active-ring" data-node="3" cx="195" cy="415" r="77" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="0"/>
+        <circle class="s6-active-ring" data-node="4" cx="70" cy="255" r="77" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="0"/>
 
         <!-- 원 1: 상단 중앙 -->
         <circle class="s6-circle" cx="195" cy="95" r="78" fill="url(#grad1)"/>
@@ -2854,7 +2867,7 @@
     <div class="page-wrapper">
 
       <!-- 타이틀 -->
-      <div class="s7-scrub-anim-wrap" style="font-size: clamp(21px, 6.5vw, 31px); margin-bottom:8px; line-height:1.3; text-align:center;">
+      <div class="s7-scrub-anim-wrap" style="font-size: clamp(23px, 7.5vw, 33px); margin-bottom:8px; line-height:1.3; text-align:center;">
         <span class="s7-scrub-word s7-sw1">모공 수축 및</span><br>
         <span class="s7-scrub-word s7-sw2">피지 조절에 특화된</span><br>
         <span class="s7-scrub-word s7-sw3">새싹귀리 추출발효 특허 성분</span>
@@ -2981,7 +2994,7 @@
       </video>
     </div>
 
-    <div class="s7-scrub-anim-wrap" style="margin:50px 8px 16px; line-height:1.3; text-align:center; font-size:clamp(31px,9vw,37px);">
+    <div class="s7-scrub-anim-wrap" style="margin:50px 8px 16px; line-height:1.3; text-align:center; font-size:clamp(30px,8.5vw,36px);">
         <span class="s7-scrub-word s7-sw1">100% 식물 유래 물질</span><br>
         <span class="s7-scrub-word s7-sw2">dermosoft<sup>®</sup> G 3 CY</span>
     </div>
@@ -3266,48 +3279,40 @@
 </div>
 
 <script>
-// S6 화살표 순차 점멸 애니메이션
-(function(){
-  var arrows = document.querySelectorAll('.s6-arrow');
-  if(!arrows.length) return;
-  var current = 0;
-  var BASE_OPACITY = 0.35;
-  arrows.forEach(function(a){ a.style.opacity = BASE_OPACITY; });
-  function step() {
-    arrows.forEach(function(a, i){
-      a.style.transition = 'opacity 0.4s ease';
-      a.style.opacity = (i === current) ? '1' : String(BASE_OPACITY);
-    });
-    current = (current + 1) % arrows.length;
-    setTimeout(step, 700);
-  }
-  step();
-})();
-
-// S6 원 순차 글로우 애니메이션 (1→2→3→4→1 반복)
+// S6 4단계 순차 애니메이션 (원 + 연결 라인 함께)
 (function(){
   var glows = document.querySelectorAll('.s6-glow-ring');
   var rings = document.querySelectorAll('.s6-active-ring');
+  var arcs = document.querySelectorAll('.s6-arc-active');
   if(!glows.length) return;
   var current = 0;
   var nodes = [1, 2, 3, 4];
+  // arc 연결: 단계 n에서 n→n+1 라인 활성 (arc data-arc="n")
   function stepCircle() {
     var activeNode = nodes[current];
+    // 원 glow
     glows.forEach(function(g) {
       var node = parseInt(g.getAttribute('data-node'));
       g.style.transition = 'opacity 0.5s ease';
       g.style.opacity = (node === activeNode) ? '1' : '0';
     });
+    // 원 테두리
     rings.forEach(function(r) {
       var node = parseInt(r.getAttribute('data-node'));
       r.style.transition = 'opacity 0.5s ease';
       r.style.opacity = (node === activeNode) ? '1' : '0';
     });
+    // 연결 라인: 활성 원에서 나가는 라인 (activeNode→activeNode%4+1)
+    arcs.forEach(function(a) {
+      var arc = parseInt(a.getAttribute('data-arc'));
+      a.style.transition = 'opacity 0.5s ease';
+      a.style.opacity = (arc === activeNode) ? '1' : '0';
+    });
     current = (current + 1) % nodes.length;
-    setTimeout(stepCircle, 900);
+    setTimeout(stepCircle, 1000);
   }
   stepCircle();
-})();
+})();;
 
 (function(){
   var track = document.querySelector('.s2-slider-track');
