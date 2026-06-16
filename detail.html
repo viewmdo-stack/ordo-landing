@@ -5,169 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ORDO LAYER BODY WASH</title>
   <style>
-
-  
-  /* ===== 스크롤 무빙 CSS 애니메이션 (JS 없이 작동) ===== */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-  @keyframes scaleIn {
-    from { opacity: 0; transform: scale(0.92); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-
-  /* S1 텍스트 */
-  .s1-section .s1-headline { animation: fadeInUp 0.8s ease 0.1s both !important; }
-  .s1-section .s1-sub      { animation: fadeInUp 0.8s ease 0.3s both !important; }
-
-  /* S3 이미지 */
-  .s3-img-wrap .s3-img-placeholder { animation: fadeIn 0.8s ease 0.2s both !important; }
-
-  /* S4 */
-  .s4-section .s4-fade-item { animation: fadeInUp 0.7s ease both !important; }
-  .s4-section .s4-fade-item:nth-child(1) { animation-delay: 0.1s !important; }
-  .s4-section .s4-fade-item:nth-child(2) { animation-delay: 0.2s !important; }
-  .s4-section .s4-fade-item:nth-child(3) { animation-delay: 0.3s !important; }
-  .s4-section .s4-fade-item:nth-child(4) { animation-delay: 0.4s !important; }
-  .s4-section .s4-fade-item:nth-child(5) { animation-delay: 0.5s !important; }
-
-  /* S5 */
-  .s5-section .s5-product-img { animation: scaleIn 0.9s ease 0.2s both !important; }
-
-  /* S6 */
-  .s6-section .s6-svg-wrap { animation: fadeIn 1s ease 0.3s both !important; }
-
-  /* S7~S11 */
-  .s7-step-wrap { animation: fadeInUp 0.7s ease both !important; }
-  .s8-section  { animation: fadeInUp 0.8s ease 0.1s both !important; }
-  .s9-section  { animation: fadeInUp 0.8s ease 0.1s both !important; }
-  .s10-section { animation: fadeInUp 0.8s ease 0.1s both !important; }
-  .s11-section { animation: fadeInUp 0.8s ease 0.1s both !important; }
-
-  /* S1 텍스트 (원본 유지) */
-  .s1-section .s1-sub      { animation: fadeInUp 0.8s ease 0.3s both; }
-
-  /* S3 슬라이드인 이미지 */
-  .s3-img-wrap .s3-img-placeholder { animation: fadeIn 0.8s ease 0.2s both; }
-
-  /* S4 텍스트 */
-  .s4-section .s4-title   { animation: fadeInUp 0.8s ease 0.1s both; }
-  .s4-section .s4-sub     { animation: fadeInUp 0.8s ease 0.3s both; }
-  .s4-section .s4-desc    { animation: fadeInUp 0.8s ease 0.4s both; }
-
-  /* S5 제품 이미지 */
-  .s5-section .s5-product-img { animation: scaleIn 0.9s ease 0.2s both; }
-
-  /* S6 다이어그램 */
-  .s6-section .s6-svg-wrap { animation: fadeIn 1s ease 0.3s both; }
-
-  /* S7 스텝 */
-  .s7-step-wrap { animation: fadeInUp 0.7s ease both; }
-  .s7-step-wrap:nth-child(1) { animation-delay: 0.1s; }
-  .s7-step-wrap:nth-child(2) { animation-delay: 0.25s; }
-  .s7-step-wrap:nth-child(3) { animation-delay: 0.4s; }
-  .s7-step-wrap:nth-child(4) { animation-delay: 0.55s; }
-
-  /* S8 ~ S11 섹션들 */
-  .s8-section  { animation: fadeInUp 0.8s ease 0.1s both; }
-  .s9-section  { animation: fadeInUp 0.8s ease 0.1s both; }
-  .s10-section { animation: fadeInUp 0.8s ease 0.1s both; }
-  .s11-section { animation: fadeInUp 0.8s ease 0.1s both; }
-
-  /* ===== PC 화면 대응: 430px 중앙 고정 ===== */
-  @media (min-width: 431px) {
-    .page-wrapper {
-      max-width: 430px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      width: 100% !important;
-    }
-  }
-  
-  @keyframes s2AutoScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  
-  /* S4 내부 padding 리셋 */
-  .s4-section > div {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .s4-section > div > * {
-    max-width: 100% !important;
-  }
-  
-  /* ===== 카페24 CSS 충돌 방지 리셋 ===== */
-  .page-wrapper, .page-wrapper * {
-    box-sizing: border-box !important;
-    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif !important;
-    line-height: inherit;
-  }
-  /* animation 보호 - 카페24 리셋이 덮지 않도록 */
-  .page-wrapper [class*="s1-"],
-  .page-wrapper [class*="s3-"],
-  .page-wrapper [class*="s4-"],
-  .page-wrapper [class*="s5-"],
-  .page-wrapper [class*="s6-"],
-  .page-wrapper [class*="s7-"],
-  .page-wrapper [class*="s8-"],
-  .page-wrapper [class*="s9-"],
-  .page-wrapper [class*="s10-"],
-  .page-wrapper [class*="s11-"] {
-    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif !important;
-  }
-  .page-wrapper img {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-    vertical-align: top !important;
-    display: block !important;
-  }
-  .page-wrapper .s3-img-placeholder img,
-  .page-wrapper .s5-product-img img,
-  .page-wrapper video {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-  .page-wrapper a {
-    color: inherit !important;
-    text-decoration: none !important;
-  }
-  .page-wrapper p, .page-wrapper h1, .page-wrapper h2, .page-wrapper h3 {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  /* 카페24 #wrap overflow:hidden 때문에 가로 스크롤 방지 */
-  .page-wrapper {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  
-
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
     
     :root {
       --base-width: 393px;
-      --max-width: 100%;
+      --max-width: 430px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; word-break: keep-all; }
     body {
@@ -178,12 +20,12 @@
       min-height: 100vh;
     }
     .page-wrapper {
-      width: 100% !important;
-      
+      width: 100%;
+      max-width: var(--max-width);
       background: #fff;
       margin: 0 auto;
       overflow-x: hidden;
-     margin-left: 0 !important; margin-right: 0 !important; overflow-x: hidden;}
+    }
 
     /* ===== S1: 문제 제기 ===== */
     .s1-hero {
@@ -470,15 +312,9 @@
       background: #3851a3;
     }
     .s2-slider-track {
-      animation: s2AutoScroll 20s linear infinite;
       display: flex;
       gap: 12px;
       width: max-content;
-      animation: s2scroll 30s linear infinite;
-    }
-    @keyframes s2scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
     
     .s2-slide {
@@ -520,7 +356,7 @@
     .s3-img-placeholder {
       width: 100%;
       aspect-ratio: 3 / 5.38;
-      background: transparent;
+      background: #d0ccc8;
       display: block;
       overflow: hidden;
     }
@@ -562,8 +398,9 @@
       flex-shrink: 0;
       width: 60%;
       aspect-ratio: 2 / 3;
-      transform: translateX(0);
-      opacity: 1;
+      transform: translateX(-100vw);
+      opacity: 0;
+      transition: transform 1.25s cubic-bezier(0.25,0.46,0.45,0.94), opacity 1.25s ease;
     }
     .s3-sq-img-wrap.in-view {
       transform: translateX(0);
@@ -583,7 +420,8 @@
       word-break: keep-all;
       padding: 0;
       margin: 0;
-      opacity: 1;
+      opacity: 0;
+      transition: opacity 0.75s ease 0.4s;
     }
     .s3-sq-text.in-view {
       opacity: 1;
@@ -603,8 +441,9 @@
       flex-shrink: 0;
       width: 60%;
       aspect-ratio: 2 / 3;
-      transform: translateX(0);
-      opacity: 1;
+      transform: translateX(100vw);
+      opacity: 0;
+      transition: transform 1.25s cubic-bezier(0.25,0.46,0.45,0.94), opacity 1.25s ease;
       margin-left: auto;
     }
     .s3-sq-img-wrap2.in-view2 {
@@ -625,7 +464,8 @@
       word-break: keep-all;
       padding: 0;
       margin: 0;
-      opacity: 1;
+      opacity: 0;
+      transition: opacity 1.25s ease 0.4s;
     }
     .s3-sq-text2.in-view2 {
       opacity: 1;
@@ -651,8 +491,9 @@
     }
     /* S4 텍스트 순차 페이드인 */
     .s4-fade-item {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 0;
+      transform: translateY(-24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
     .s4-fade-item.s4-visible {
       opacity: 1;
@@ -2053,12 +1894,31 @@
   line-height: 1.7;
 }
 
+
+  /* ===== 카페24 호환 CSS ===== */
+  body.theme01 { background: #ffffff !important; }
+  .xans-product-additional.section { padding: 0 !important; }
+  #prdDetail .productDetail { padding: 0 !important; }
+  
+  .page-wrapper img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  @media (min-width: 431px) {
+    .page-wrapper {
+      max-width: 430px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+  /* ========================= */
 </style>
 </head>
 <body>
 
 
-<div class="page-wrapper" style="background:#ffffff;width:100%;overflow-x:hidden;">
+<div class="page-wrapper">
 
 
   <!-- S1: 문제 제기 -->
@@ -2312,19 +2172,19 @@
         <path class="s6-arrow s6-arc-base" d="M 68 205 Q 50 140 130 122" fill="none" opacity="0.3"/>
 
         <!-- 연결 호 (활성 라인 - JS 제어): 1→2, 2→3, 3→4, 4→1 -->
-        <path class="s6-arrow s6-arc-active" data-arc="1" d="M 262 128 Q 340 148 322 205" fill="none" opacity="1"/>
+        <path class="s6-arrow s6-arc-active" data-arc="1" d="M 262 128 Q 340 148 322 205" fill="none" opacity="0"/>
         <path class="s6-arrow s6-arc-active" data-arc="2" d="M 322 305 Q 340 370 268 398" fill="none" opacity="0"/>
         <path class="s6-arrow s6-arc-active" data-arc="3" d="M 122 398 Q 52 372 68 305" fill="none" opacity="0"/>
         <path class="s6-arrow s6-arc-active" data-arc="4" d="M 68 205 Q 50 140 130 122" fill="none" opacity="0"/>
 
         <!-- glow rings: JS로 opacity 제어 -->
-        <circle class="s6-glow-ring" data-node="1" cx="195" cy="95" r="90" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="1"/>
+        <circle class="s6-glow-ring" data-node="1" cx="195" cy="95" r="90" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="0"/>
         <circle class="s6-glow-ring" data-node="2" cx="320" cy="255" r="87" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="0"/>
         <circle class="s6-glow-ring" data-node="3" cx="195" cy="415" r="87" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="0"/>
         <circle class="s6-glow-ring" data-node="4" cx="70" cy="255" r="87" fill="rgba(200,222,255,0.20)" filter="url(#glow1)" opacity="0"/>
 
         <!-- stroke rings for active circle border highlight -->
-        <circle class="s6-active-ring" data-node="1" cx="195" cy="95" r="80" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="1"/>
+        <circle class="s6-active-ring" data-node="1" cx="195" cy="95" r="80" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="0"/>
         <circle class="s6-active-ring" data-node="2" cx="320" cy="255" r="77" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="0"/>
         <circle class="s6-active-ring" data-node="3" cx="195" cy="415" r="77" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="0"/>
         <circle class="s6-active-ring" data-node="4" cx="70" cy="255" r="77" fill="none" stroke="#c8deff" stroke-width="3.5" opacity="0"/>
@@ -2459,28 +2319,28 @@
         <p class="s8-stat-headline">노화 채취(노네날) 원인<br><span class="s8-stat-num">66.7%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">2-Nonenal (2-노네날)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="66.7%" style="width:66.7%"><span class="s8-bar-value">66.7%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="66.7%" style="width:0"><span class="s8-bar-value">66.7%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">담배, 땀냄새<br><span class="s8-stat-num">51.9%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Ammonia (암모니아)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="51.9%" style="width:51.9%"><span class="s8-bar-value">51.9%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="51.9%" style="width:0"><span class="s8-bar-value">51.9%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">발, 겨드랑이 냄새<br><span class="s8-stat-num">65.6%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Iso-valeric acid (이소발레르산)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="65.6%" style="width:65.6%"><span class="s8-bar-value">65.6%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="65.6%" style="width:0"><span class="s8-bar-value">65.6%</span></div></div>
         </div>
       </div>
       <div class="s8-stat-item">
         <p class="s8-stat-headline">구취/부패취<br><span class="s8-stat-num">68.6%</span> 감소</p>
         <div class="s8-bar-wrap">
           <p class="s8-bar-label">Methylmercaptan (메틸메르캅탄)</p>
-          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="68.6%" style="width:68.6%"><span class="s8-bar-value">68.6%</span></div></div>
+          <div class="s8-bar-track"><div class="s8-bar-fill" data-width="68.6%" style="width:0"><span class="s8-bar-value">68.6%</span></div></div>
         </div>
       </div>
     <div class="s8-compare-wrap">
@@ -2553,12 +2413,12 @@
           <div class="s9-bar-group">
             <div class="s9-bar-row">
               <span class="s9-bar-label">2주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="94.9%" style="width:94.9%"><span class="s9-bar-val">191,500개</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="94.9%" style="width:0"><span class="s9-bar-val">191,500개</span></div></div>
               <span class="s9-bar-max">201,800개</span>
             </div>
             <div class="s9-bar-row">
               <span class="s9-bar-label">4주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="83.3%" style="width:83.3%"><span class="s9-bar-val">168,100개</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="83.3%" style="width:0"><span class="s9-bar-val">168,100개</span></div></div>
               <span class="s9-bar-max">201,800개</span>
             </div>
           </div>
@@ -2570,12 +2430,12 @@
           <div class="s9-bar-group">
             <div class="s9-bar-row">
               <span class="s9-bar-label">2주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="92.3%" style="width:92.3%"><span class="s9-bar-val">38.985mm²</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="92.3%" style="width:0"><span class="s9-bar-val">38.985mm²</span></div></div>
               <span class="s9-bar-max">42.254mm²</span>
             </div>
             <div class="s9-bar-row">
               <span class="s9-bar-label">4주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="73.4%" style="width:73.4%"><span class="s9-bar-val">32.994mm²</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="73.4%" style="width:0"><span class="s9-bar-val">32.994mm²</span></div></div>
               <span class="s9-bar-max">201.800mm²</span>
             </div>
           </div>
@@ -2587,12 +2447,12 @@
           <div class="s9-bar-group">
             <div class="s9-bar-row">
               <span class="s9-bar-label">2주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="97.1%" style="width:97.1%"><span class="s9-bar-val">0.034mm</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="97.1%" style="width:0"><span class="s9-bar-val">0.034mm</span></div></div>
               <span class="s9-bar-max">0.035mm</span>
             </div>
             <div class="s9-bar-row">
               <span class="s9-bar-label">4주후</span>
-              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="85.7%" style="width:85.7%"><span class="s9-bar-val">0.030mm</span></div></div>
+              <div class="s9-bar-track"><div class="s9-bar-fill" data-width="85.7%" style="width:0"><span class="s9-bar-val">0.030mm</span></div></div>
               <span class="s9-bar-max">0.035mm</span>
             </div>
           </div>
@@ -2732,13 +2592,13 @@
         <text x="91" y="46" font-size="8" fill="#888" text-anchor="middle">*</text>
         <text x="161" y="46" font-size="8" fill="#888" text-anchor="middle">**</text>
         <!-- 24시간 막대 (#334eac, 0% 기준선에서 아래로 성장) -->
-        <rect class="s10-bar2-a" x="65" y="49" width="52" height="27" data-h="27" fill="#334eac" rx="2"/>
+        <rect class="s10-bar2-a" x="65" y="49" width="52" height="0" data-h="27" fill="#334eac" rx="2"/>
         <!-- 24시간 내부 흰색 텍스트 -->
-        <text class="s10-bar2-label-a" x="91" y="63" font-size="12" fill="white" font-weight="700" text-anchor="middle" opacity="1">-4%</text>
+        <text class="s10-bar2-label-a" x="91" y="63" font-size="12" fill="white" font-weight="700" text-anchor="middle" opacity="0" style="animation:blinkText 1s ease-in-out infinite;">-4%</text>
         <!-- 48시간 막대 (#334eac, 0% 기준선에서 아래로 성장) -->
-        <rect class="s10-bar2-b" x="135" y="49" width="52" height="81" data-h="81" fill="#334eac" rx="2"/>
+        <rect class="s10-bar2-b" x="135" y="49" width="52" height="0" data-h="81" fill="#334eac" rx="2"/>
         <!-- 48시간 내부 흰색 텍스트 -->
-        <text class="s10-bar2-label-b" x="161" y="90" font-size="12" fill="white" font-weight="700" text-anchor="middle" opacity="1">-12%</text>
+        <text class="s10-bar2-label-b" x="161" y="90" font-size="12" fill="white" font-weight="700" text-anchor="middle" opacity="0" style="animation:blinkText 1s ease-in-out infinite;">-12%</text>
         <!-- X축 레이블 (굵게) -->
         <text x="91" y="165" font-size="10" fill="#333" font-weight="700" text-anchor="middle">24시간 후</text>
         <text x="161" y="165" font-size="10" fill="#333" font-weight="700" text-anchor="middle">48시간 후</text>
@@ -2800,7 +2660,359 @@
 
 
 
+<script>
+// S6 4단계 순차 애니메이션 (원 + 연결 라인 함께)
+(function(){
+  var glows = document.querySelectorAll('.s6-glow-ring');
+  var rings = document.querySelectorAll('.s6-active-ring');
+  var arcs = document.querySelectorAll('.s6-arc-active');
+  if(!glows.length) return;
+  var current = 0;
+  var nodes = [1, 2, 3, 4];
+  // arc 연결: 단계 n에서 n→n+1 라인 활성 (arc data-arc="n")
+  function stepCircle() {
+    var activeNode = nodes[current];
+    // 원 glow
+    glows.forEach(function(g) {
+      var node = parseInt(g.getAttribute('data-node'));
+      g.style.transition = 'opacity 0.5s ease';
+      g.style.opacity = (node === activeNode) ? '1' : '0';
+    });
+    // 원 테두리
+    rings.forEach(function(r) {
+      var node = parseInt(r.getAttribute('data-node'));
+      r.style.transition = 'opacity 0.5s ease';
+      r.style.opacity = (node === activeNode) ? '1' : '0';
+    });
+    // 연결 라인: 활성 원에서 나가는 라인 (activeNode→activeNode%4+1)
+    arcs.forEach(function(a) {
+      var arc = parseInt(a.getAttribute('data-arc'));
+      a.style.transition = 'opacity 0.5s ease';
+      a.style.opacity = (arc === activeNode) ? '1' : '0';
+    });
+    current = (current + 1) % nodes.length;
+    setTimeout(stepCircle, 1000);
+  }
+  stepCircle();
+})();;
 
-
-
+(function(){
+  var track = document.querySelector('.s2-slider-track');
+  if(!track) return;
+  var speed = 1.5; // px per frame
+  var offset = 0;
   
+  // 트랙의 실제 너비의 절반(복제본이 있으므로)
+  function getHalfWidth() {
+    return track.scrollWidth / 2;
+  }
+  
+  function tick() {
+    offset += speed;
+    var half = getHalfWidth();
+    if(offset >= half) offset -= half;
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    requestAnimationFrame(tick);
+  }
+  
+  requestAnimationFrame(tick);
+})();
+
+// S3 정사각형 이미지 슬라이드인 - rAF 폴링 방식
+(function(){
+  var container = document.querySelector('.s3-sq-wrap');
+  var imgWrap = document.querySelector('.s3-sq-img-wrap');
+  var txtWrap = document.querySelector('.s3-sq-text');
+  if(!container || !imgWrap) return;
+  var done = false;
+  function checkLoop() {
+    if(done) return;
+    var rect = container.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.88 && rect.bottom > 0) {
+      imgWrap.classList.add('in-view');
+      if(txtWrap) txtWrap.classList.add('in-view');
+      done = true;
+      return;
+    }
+    requestAnimationFrame(checkLoop);
+  }
+  requestAnimationFrame(checkLoop);
+})();
+// S3 두 번째 블록 (오른쪽→왼쪽) rAF 폴링
+(function(){
+  var container2 = document.querySelector('.s3-sq-wrap2');
+      if(container2) container2.style.position = 'relative';
+  var imgWrap2 = document.querySelector('.s3-sq-img-wrap2');
+  var txtWrap2 = document.querySelector('.s3-sq-text2');
+  if(!container2 || !imgWrap2) return;
+  var done2 = false;
+  function checkLoop2() {
+    if(done2) return;
+    var rect = container2.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.88 && rect.bottom > 0) {
+      imgWrap2.classList.add('in-view2');
+      if(txtWrap2) txtWrap2.classList.add('in-view2');
+      done2 = true;
+      return;
+    }
+    requestAnimationFrame(checkLoop2);
+  }
+  requestAnimationFrame(checkLoop2);
+})();
+</script>
+
+
+  <script>
+  // S7/S8 순차 박스 강조 애니메이션
+(function(){
+  function animateScrubWords(words) {
+    if (!words || words.length === 0) return;
+    let idx = 0;
+    function next() {
+      words.forEach(w => w.classList.remove('active'));
+      words[idx].classList.add('active');
+      idx = (idx + 1) % words.length;
+      setTimeout(next, 800);
+    }
+    next();
+  }
+  
+  // S7 scrub words
+  var sw = document.querySelectorAll('.s7-sw1, .s7-sw2, .s7-sw3');
+  if (sw.length > 0) {
+    var groups = {};
+    sw.forEach(function(w) {
+      var p = w.parentElement;
+      if (!groups.has) {
+        groups = [];
+      }
+      // 같은 부모 그룹별로 처리
+    });
+    // 모든 s7-scrub-word 그룹 찾기
+    var wraps = document.querySelectorAll('.s7-scrub-anim-wrap');
+    wraps.forEach(function(wrap) {
+      var words = wrap.querySelectorAll('.s7-scrub-word');
+      if (words.length > 0) animateScrubWords(Array.from(words));
+    });
+  }
+})();
+
+// S8 bar chart 스크롤 애니메이션 (S9와 동일한 방식)
+(function(){
+  var bars = document.querySelectorAll('.s8-bar-fill[data-width]');
+  if(!bars.length) return;
+  var animated = false;
+  function checkBars() {
+    if(animated) return;
+    var section = document.querySelector('.s8-stats-wrap');
+    if(!section) return;
+    var rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.9) {
+      animated = true;
+      bars.forEach(function(bar, i) {
+        setTimeout(function() {
+          bar.style.transition = 'width 1.2s ease';
+          bar.style.width = bar.getAttribute('data-width');
+        }, i * 150);
+      });
+    }
+  }
+  window.addEventListener('scroll', checkBars, {passive:true});
+  checkBars();
+})();
+
+
+// S10 SVG 차트 애니메이션
+(function(){
+  // 라인 차트 (좌→우 드로우)
+  function initLineChart() {
+    var line = document.querySelector('.s10-line-dermosoft');
+    if(!line) return;
+    var len = line.getTotalLength ? line.getTotalLength() : 200;
+    line.style.strokeDasharray = len;
+    line.style.strokeDashoffset = len;
+    line.style.transition = 'none';
+    var done = false;
+    function check() {
+      if(done) return;
+      var el = line.closest('.s10-svg-chart1') || line;
+      var rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight * 0.9) {
+        done = true;
+        line.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1)';
+        line.style.strokeDashoffset = '0';
+      }
+    }
+    window.addEventListener('scroll', check, {passive:true});
+    check();
+  }
+  
+  // 막대 차트 (0% 기준선에서 아래로 성장, rAF 수동 스텝)
+  function initBarChart() {
+    var barA = document.querySelector('.s10-bar2-a');
+    var barB = document.querySelector('.s10-bar2-b');
+    var labelA = document.querySelector('.s10-bar2-label-a');
+    var labelB = document.querySelector('.s10-bar2-label-b');
+    if(!barA || !barB) return;
+    var done = false;
+    function animateH(el, targetH, duration, onDone) {
+      var start = null;
+      function step(ts) {
+        if(!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var e = p < 0.5 ? 2*p*p : -1+(4-2*p)*p;
+        el.setAttribute('height', (e * targetH).toFixed(1));
+        if(p < 1) { requestAnimationFrame(step); } else { if(onDone) onDone(); }
+      }
+      requestAnimationFrame(step);
+    }
+    function check() {
+      if(done) return;
+      var el = barA.closest('.s10-svg-chart2') || barA;
+      var rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight * 0.9) {
+        done = true;
+        animateH(barA, 27, 1200, function() {
+          if(labelA) { labelA.style.transition = 'opacity 0.4s ease'; labelA.setAttribute('opacity','1'); }
+        });
+        setTimeout(function() {
+          animateH(barB, 81, 1200, function() {
+            if(labelB) { labelB.style.transition = 'opacity 0.4s ease'; labelB.setAttribute('opacity','1'); }
+          });
+        }, 300);
+      }
+    }
+    window.addEventListener('scroll', check, {passive:true});
+    check();
+  }
+  
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { initLineChart(); initBarChart(); });
+  } else {
+    initLineChart();
+    initBarChart();
+  }
+})();
+
+
+// S9 막대 그래프 스크롤 애니메이션
+(function(){
+  var bars9 = document.querySelectorAll('.s9-bar-fill[data-width]');
+  if(!bars9.length) return;
+  var animated9 = false;
+  function checkBars9() {
+    if(animated9) return;
+    var section = document.querySelector('.s9-stats-wrap');
+    if(!section) return;
+    var rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.9) {
+      animated9 = true;
+      bars9.forEach(function(bar, i) {
+        setTimeout(function() {
+          bar.style.transition = 'width 1.2s ease';
+          bar.style.width = bar.getAttribute('data-width');
+        }, i * 150);
+      });
+    }
+  }
+  window.addEventListener('scroll', checkBars9, {passive:true});
+  checkBars9();
+})();
+
+
+// S1 카드 텍스트 깜빡 애니메이션 (IntersectionObserver, 2번, 텍스트만)
+(function(){
+  var cards = document.querySelectorAll('.s1-card');
+  if(!cards.length) return;
+
+  function blinkCardText(card) {
+    var content = card.querySelector('.s1-card-content');
+    if(!content) return;
+    var count = 0;
+    var total = 4; // 2번 깜빡 = on/off × 2
+    var interval = setInterval(function() {
+      content.style.opacity = (count % 2 === 0) ? '0.1' : '1';
+      count++;
+      if(count >= total) {
+        clearInterval(interval);
+        content.style.opacity = '1';
+      }
+    }, 120);
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if(entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        blinkCardText(entry.target);
+      }
+    });
+  }, {threshold: 0.5});
+
+  cards.forEach(function(card) {
+    observer.observe(card);
+  });
+})();
+
+// S4 텍스트 순차 페이드인 (IntersectionObserver)
+(function(){
+  var s4overlay = document.getElementById('s4Overlay');
+  if(!s4overlay) return;
+  var fadeItems = s4overlay.querySelectorAll('.s4-fade-item');
+  if(!fadeItems.length) return;
+  var triggered = false;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if(entry.isIntersecting && !triggered) {
+        triggered = true;
+        observer.disconnect();
+        fadeItems.forEach(function(item, i) {
+          setTimeout(function() {
+            item.classList.add('s4-visible');
+          }, i * 320);
+        });
+      }
+    });
+  }, {threshold: 0.25});
+  observer.observe(s4overlay);
+})();
+
+            
+// ===== 영상 스크롤 진입 재생 (video 태그) =====
+(function(){
+  var videoObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var v = entry.target;
+      if (entry.isIntersecting) {
+        v.play().catch(function(){});
+      } else {
+        v.pause();
+        v.currentTime = 0;
+      }
+    });
+  }, {threshold: 0.3});
+  
+  function observeVideos() {
+    document.querySelectorAll('video[autoplay]').forEach(function(v) {
+      videoObs.observe(v);
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeVideos);
+  } else {
+    observeVideos();
+  }
+})();
+
+
+
+// 영상 재생속도 제어
+document.addEventListener('DOMContentLoaded', function() {
+  const poreVideo = document.querySelector('video[src*="pore_video"]');
+  if (poreVideo) poreVideo.playbackRate = 2.0;
+  const stepVideo = document.querySelector('video[src*="4step"]');
+  if (stepVideo) stepVideo.playbackRate = 1.3;
+});
+
+</script>
