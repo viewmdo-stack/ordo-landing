@@ -30,7 +30,34 @@
   }
 
   /* S1 텍스트 */
-  .s1-section .s1-headline { animation: fadeInUp 0.8s ease 0.1s both; }
+  .s1-section .s1-headline { animation: fadeInUp 0.8s ease 0.1s both !important; }
+  .s1-section .s1-sub      { animation: fadeInUp 0.8s ease 0.3s both !important; }
+
+  /* S3 이미지 */
+  .s3-img-wrap .s3-img-placeholder { animation: fadeIn 0.8s ease 0.2s both !important; }
+
+  /* S4 */
+  .s4-section .s4-fade-item { animation: fadeInUp 0.7s ease both !important; }
+  .s4-section .s4-fade-item:nth-child(1) { animation-delay: 0.1s !important; }
+  .s4-section .s4-fade-item:nth-child(2) { animation-delay: 0.2s !important; }
+  .s4-section .s4-fade-item:nth-child(3) { animation-delay: 0.3s !important; }
+  .s4-section .s4-fade-item:nth-child(4) { animation-delay: 0.4s !important; }
+  .s4-section .s4-fade-item:nth-child(5) { animation-delay: 0.5s !important; }
+
+  /* S5 */
+  .s5-section .s5-product-img { animation: scaleIn 0.9s ease 0.2s both !important; }
+
+  /* S6 */
+  .s6-section .s6-svg-wrap { animation: fadeIn 1s ease 0.3s both !important; }
+
+  /* S7~S11 */
+  .s7-step-wrap { animation: fadeInUp 0.7s ease both !important; }
+  .s8-section  { animation: fadeInUp 0.8s ease 0.1s both !important; }
+  .s9-section  { animation: fadeInUp 0.8s ease 0.1s both !important; }
+  .s10-section { animation: fadeInUp 0.8s ease 0.1s both !important; }
+  .s11-section { animation: fadeInUp 0.8s ease 0.1s both !important; }
+
+  /* S1 텍스트 (원본 유지) */
   .s1-section .s1-sub      { animation: fadeInUp 0.8s ease 0.3s both; }
 
   /* S3 슬라이드인 이미지 */
@@ -74,18 +101,51 @@
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+  
+  /* S4 내부 padding 리셋 */
+  .s4-section > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .s4-section > div > * {
+    max-width: 100% !important;
+  }
+  
   /* ===== 카페24 CSS 충돌 방지 리셋 ===== */
   .page-wrapper, .page-wrapper * {
     box-sizing: border-box !important;
     font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif !important;
     line-height: inherit;
   }
+  /* animation 보호 - 카페24 리셋이 덮지 않도록 */
+  .page-wrapper [class*="s1-"],
+  .page-wrapper [class*="s3-"],
+  .page-wrapper [class*="s4-"],
+  .page-wrapper [class*="s5-"],
+  .page-wrapper [class*="s6-"],
+  .page-wrapper [class*="s7-"],
+  .page-wrapper [class*="s8-"],
+  .page-wrapper [class*="s9-"],
+  .page-wrapper [class*="s10-"],
+  .page-wrapper [class*="s11-"] {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif !important;
+  }
   .page-wrapper img {
     max-width: 100% !important;
-    width: auto !important;
+    width: 100% !important;
     height: auto !important;
     vertical-align: top !important;
     display: block !important;
+  }
+  .page-wrapper .s3-img-placeholder img,
+  .page-wrapper .s5-product-img img,
+  .page-wrapper video {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
   .page-wrapper a {
     color: inherit !important;
@@ -460,7 +520,7 @@
     .s3-img-placeholder {
       width: 100%;
       aspect-ratio: 3 / 5.38;
-      background: #d0ccc8;
+      background: transparent;
       display: block;
       overflow: hidden;
     }
