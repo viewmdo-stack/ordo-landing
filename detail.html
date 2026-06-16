@@ -1302,8 +1302,8 @@
     /* ===== S9: 새싹귀리 특허 성분 ===== */
     .s9-section {
       background: #fff;
-      padding: 50px 0 40px;
-      margin-top: 40px;
+      padding: 33px 0 40px;
+      margin-top: 27px;
     }
     .s9-main-copy {
       font-size: clamp(22px, 7.5vw, 30px);
@@ -2259,11 +2259,11 @@
 </style>
 <div class="s7-img-row" style="margin-top:0;">
       <div class="s7-img-col">
-        <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;"><img src="https://viewmdo-stack.github.io/ordo-landing/images/s7-walnut.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;aspect-ratio:4/6;"><img src="https://viewmdo-stack.github.io/ordo-landing/images/s7-walnut.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <p class="s7-img-cap">호두 껍질 파우더</p>
       </div>
       <div class="s7-img-col">
-        <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;"><img src="https://viewmdo-stack.github.io/ordo-landing/images/s7-microscope.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;aspect-ratio:4/6;"><img src="https://viewmdo-stack.github.io/ordo-landing/images/s7-microscope.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <p class="s7-img-cap">셀룰로오스 확대</p>
       </div>
     </div>
@@ -2344,11 +2344,11 @@
       </div>
     <div class="s8-compare-wrap">
       <p class="s8-세정력-badge">세정력 비교</p>
-      <div class="s8-compare-grid">
+      <div class="s8-compare-grid" style="margin-bottom:4px;">
         <div class="s8-compare-img-full" style="background:none;padding:0;overflow:hidden;"><img src="https://viewmdo-stack.github.io/ordo-landing/images/s8-pore2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="s8-compare-img-full" style="background:none;padding:0;overflow:hidden;"><img src="https://viewmdo-stack.github.io/ordo-landing/images/s8-pore1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       </div>
-      <div class="s8-compare-label-row">
+      <div class="s8-compare-label-row" style="margin-top:2px;margin-bottom:4px;">
         <span class="s8-compare-label">일반 세정제</span>
         <span class="s8-compare-label">솝넛 추출파우더 1% 함유</span>
       </div>
@@ -2369,12 +2369,19 @@
       </div>
 
       <!-- 특허증 + 열매 이미지 좌우 배치 -->
-      <div class="s8-img-row">
-        <div class="s8-img-item" style="border:1px solid #ccc; overflow:visible; background:#fff; padding:4px; display:flex; flex-direction:column; align-items:center;">
-          <img src="https://viewmdo-stack.github.io/ordo-landing/images/s9-patent-kr.jpg" style="width:100%; height:auto; object-fit:contain; display:block;" />
-          <p style="font-size: clamp(10px, 2.8vw, 11px);font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">특허 제 10-2731126호&nbsp;&nbsp;7일차 새싹귀리</p>
+      <div class="s8-img-row" style="align-items:flex-start;">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+          <div style="width:100%;aspect-ratio:3/4;border:1px solid #ccc;overflow:hidden;background:#fff;padding:4px;display:flex;align-items:center;justify-content:center;">
+            <img src="https://viewmdo-stack.github.io/ordo-landing/images/s9-patent-kr.jpg" style="width:100%;height:100%;object-fit:contain;display:block;" />
+          </div>
+          <p style="font-size:clamp(10px,2.8vw,11px);font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">특허 제 10-2731126호</p>
         </div>
-        <div class="s8-img-item" style="background:none;padding:0;overflow:hidden;"><img src="https://viewmdo-stack.github.io/ordo-landing/images/s9-oat-sprout.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+          <div style="width:100%;aspect-ratio:3/4;overflow:hidden;background:none;">
+            <img src="https://viewmdo-stack.github.io/ordo-landing/images/s9-oat-sprout.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <p style="font-size:clamp(10px,2.8vw,11px);font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">7일차 새싹귀리</p>
+        </div>
       </div>
 
       <!-- 설명 카피 -->
@@ -2495,7 +2502,7 @@
         <span class="s7-scrub-word s7-sw2">dermosoft<sup>®</sup> G 3 CY</span>
     </div>
 
-    <p class="s10-copy">냄새가 다시 생기기 쉬운 순간, 원인균의 효소 반응을 낮춰<br>잔취가 다시 올라오는 흐름을 케어합니다.</p>
+    <p class="s10-copy">냄새가 다시 생기기 쉬운 순간,<br>원인균의 효소 반응을 낮춰<br>잔취가 다시 올라오는 흐름을 케어합니다.</p>
 
     <div class="s10-effect-box">
       <p class="s10-effect-title">체취 관련 미생물 감소 효과</p>
