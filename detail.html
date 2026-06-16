@@ -6,6 +6,74 @@
   <title>ORDO LAYER BODY WASH</title>
   <style>
 
+  
+  /* ===== 스크롤 무빙 CSS 애니메이션 (JS 없이 작동) ===== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  /* S1 텍스트 */
+  .s1-section .s1-headline { animation: fadeInUp 0.8s ease 0.1s both; }
+  .s1-section .s1-sub      { animation: fadeInUp 0.8s ease 0.3s both; }
+
+  /* S3 슬라이드인 이미지 */
+  .s3-img-wrap .s3-img-placeholder { animation: fadeIn 0.8s ease 0.2s both; }
+
+  /* S4 텍스트 */
+  .s4-section .s4-title   { animation: fadeInUp 0.8s ease 0.1s both; }
+  .s4-section .s4-sub     { animation: fadeInUp 0.8s ease 0.3s both; }
+  .s4-section .s4-desc    { animation: fadeInUp 0.8s ease 0.4s both; }
+
+  /* S5 제품 이미지 */
+  .s5-section .s5-product-img { animation: scaleIn 0.9s ease 0.2s both; }
+
+  /* S6 다이어그램 */
+  .s6-section .s6-svg-wrap { animation: fadeIn 1s ease 0.3s both; }
+
+  /* S7 스텝 */
+  .s7-step-wrap { animation: fadeInUp 0.7s ease both; }
+  .s7-step-wrap:nth-child(1) { animation-delay: 0.1s; }
+  .s7-step-wrap:nth-child(2) { animation-delay: 0.25s; }
+  .s7-step-wrap:nth-child(3) { animation-delay: 0.4s; }
+  .s7-step-wrap:nth-child(4) { animation-delay: 0.55s; }
+
+  /* S8 ~ S11 섹션들 */
+  .s8-section  { animation: fadeInUp 0.8s ease 0.1s both; }
+  .s9-section  { animation: fadeInUp 0.8s ease 0.1s both; }
+  .s10-section { animation: fadeInUp 0.8s ease 0.1s both; }
+  .s11-section { animation: fadeInUp 0.8s ease 0.1s both; }
+
+  /* ===== PC 화면 대응: 430px 중앙 고정 ===== */
+  @media (min-width: 431px) {
+    .page-wrapper {
+      max-width: 430px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      width: 100% !important;
+    }
+  }
+  
+  @keyframes s2AutoScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
   /* ===== 카페24 CSS 충돌 방지 리셋 ===== */
   .page-wrapper, .page-wrapper * {
     box-sizing: border-box !important;
@@ -13,8 +81,11 @@
     line-height: inherit;
   }
   .page-wrapper img {
-    max-width: none !important;
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
     vertical-align: top !important;
+    display: block !important;
   }
   .page-wrapper a {
     color: inherit !important;
@@ -339,6 +410,7 @@
       background: #3851a3;
     }
     .s2-slider-track {
+      animation: s2AutoScroll 20s linear infinite;
       display: flex;
       gap: 12px;
       width: max-content;
