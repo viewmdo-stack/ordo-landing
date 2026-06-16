@@ -1907,7 +1907,7 @@
 
   @media (min-width: 431px) {
     .page-wrapper {
-      max-width: 430px !important;
+      max-width: 860px !important;
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -2255,9 +2255,9 @@
       </div>
     <style>
   .s7-img-cap { font-size: clamp(11px, 3vw, 12px); font-weight:600; color:#555; text-align:center; padding-top:6px; }
-  .s7-img-col { flex:1; display:flex; flex-direction:column; }
+  .s7-img-col { flex:1; display:flex; flex-direction:column; align-items:stretch; }
 </style>
-<div class="s7-img-row" style="margin-top:0;">
+<div class="s7-img-row" style="margin-top:0;align-items:stretch;">
       <div class="s7-img-col">
         <div class="s7-img-item" style="background:none;padding:0;overflow:hidden;aspect-ratio:4/6;"><img src="https://viewmdo-stack.github.io/ordo-landing/images/s7-walnut.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <p class="s7-img-cap">호두 껍질 파우더</p>
@@ -2369,15 +2369,15 @@
       </div>
 
       <!-- 특허증 + 열매 이미지 좌우 배치 -->
-      <div class="s8-img-row" style="align-items:flex-start;">
+      <div style="display:flex;gap:6px;padding:0 8px;align-items:flex-start;">
         <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
-          <div style="width:100%;aspect-ratio:3/4;border:1px solid #ccc;overflow:hidden;background:#fff;padding:4px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:100%;aspect-ratio:3/4;border:1px solid #ccc;overflow:hidden;background:#fff;padding:4px;box-sizing:border-box;">
             <img src="https://viewmdo-stack.github.io/ordo-landing/images/s9-patent-kr.jpg" style="width:100%;height:100%;object-fit:contain;display:block;" />
           </div>
           <p style="font-size:clamp(10px,2.8vw,11px);font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">특허 제 10-2731126호</p>
         </div>
         <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
-          <div style="width:100%;aspect-ratio:3/4;overflow:hidden;background:none;">
+          <div style="width:100%;aspect-ratio:3/4;overflow:hidden;background:none;box-sizing:border-box;">
             <img src="https://viewmdo-stack.github.io/ordo-landing/images/s9-oat-sprout.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <p style="font-size:clamp(10px,2.8vw,11px);font-weight:600;color:#444;text-align:center;margin:6px 0 0;padding:0 4px;line-height:1.5;">7일차 새싹귀리</p>
