@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ORDO LAYER BODY WASH</title>
   <style>
+
+  /* ===== 카페24 CSS 충돌 방지 리셋 ===== */
+  .page-wrapper, .page-wrapper * {
+    box-sizing: border-box !important;
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif !important;
+    line-height: inherit;
+  }
+  .page-wrapper img {
+    max-width: none !important;
+    vertical-align: top !important;
+  }
+  .page-wrapper a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  .page-wrapper p, .page-wrapper h1, .page-wrapper h2, .page-wrapper h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* 카페24 #wrap overflow:hidden 때문에 가로 스크롤 방지 */
+  .page-wrapper {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
     
     :root {
@@ -20,12 +47,12 @@
       min-height: 100vh;
     }
     .page-wrapper {
-      width: 100vw;
+      width: 100% !important;
       
       background: #fff;
       margin: 0 auto;
       overflow-x: hidden;
-     margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); overflow-x: hidden;}
+     margin-left: 0 !important; margin-right: 0 !important; overflow-x: hidden;}
 
     /* ===== S1: 문제 제기 ===== */
     .s1-hero {
@@ -1899,7 +1926,7 @@
 <body>
 
 
-<div class="page-wrapper">
+<div class="page-wrapper" style="background:#ffffff;width:100%;overflow-x:hidden;">
 
 
   <!-- S1: 문제 제기 -->
