@@ -1,4 +1,16 @@
 <style>
+    /* ===== 숫자 전용 폰트 강제 지정 (카페24 덮어쓰기 방지) ===== */
+    @font-face {
+      font-family: 'NotoSansKR-Num';
+      src: url('https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgms3VYcOA-vvnIzzuoyeLTq8H4hfeE.woff2') format('woff2');
+      unicode-range: U+0030-0039;
+    }
+    .page-wrapper,
+    .page-wrapper * {
+      font-family: 'NotoSansKR-Num', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif !important;
+    }
+    /* ========================================================== */
+
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
     
     :root {
