@@ -1811,6 +1811,17 @@
   position: relative;
   overflow: hidden;
 }
+.s12-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+}
+.s12-section > * {
+  position: relative;
+  z-index: 1;
+}
 .s12-tag {
   display: inline-block;
   border: 1.5px solid #fff;
