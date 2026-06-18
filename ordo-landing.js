@@ -355,9 +355,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = document.createElement('style');
   s.textContent = '#review,#QnA,.s13-section{display:none!important}'
     + '.xans-product-headcategory{display:none!important}'
-    + '.xans-product-detail{padding-top:0!important}'
-    + '.imgArea{width:100vw!important;margin-left:calc(-1*(50vw - 50%))!important;margin-bottom:0!important;overflow:hidden!important}'
-    + '.imgArea .prdImg img,.imgArea img{width:100vw!important;max-width:100vw!important;display:block!important}'
+    + '.xans-product-detail{padding:0!important}'
+    + '.imgArea{width:100vw!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;margin-bottom:0!important;overflow:hidden!important}'
+    + '.imgArea img{width:100%!important;max-width:100%!important;display:block!important}'
     + '#ordo-kakao-btn{position:fixed;bottom:80px;right:12px;z-index:9999;background:#FEE500;border:none;border-radius:50px;padding:10px 16px;display:flex;align-items:center;gap:6px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);font-size:13px;font-weight:700;color:#191919;line-height:1;white-space:nowrap}'
     + '#ordo-kakao-btn svg{width:20px;height:20px;flex-shrink:0}';
   (document.head||document.documentElement).appendChild(s);
@@ -442,17 +442,6 @@ document.addEventListener('DOMContentLoaded', function() {
     parent.appendChild(frag);
     parent.dataset.reordered = '1';
   }
-
-    // 카카오 로그인 버튼 추가
-    if(!document.getElementById('ordo-kakao-btn')){
-      var kakaoBtn = document.createElement('button');
-      kakaoBtn.id = 'ordo-kakao-btn';
-      kakaoBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C7.03 3 3 6.36 3 10.5c0 2.67 1.63 5.01 4.1 6.39l-1.04 3.85 4.45-2.93c.47.07.96.1 1.49.1 4.97 0 9-3.36 9-7.5S16.97 3 12 3z" fill="#191919"/></svg>카카오 로그인';
-      kakaoBtn.onclick = function(){
-        window.location.href = '/member/login.html';
-      };
-      document.body.appendChild(kakaoBtn);
-    }
 
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', setupFolds);
