@@ -350,3 +350,41 @@ document.addEventListener('DOMContentLoaded', function() {
   if (stepVideo) stepVideo.playbackRate = 1.3;
 });
 
+
+
+(function(){
+function hideFolds(){
+var folds=document.querySelectorAll('.info_fold');
+folds.forEach(function(el){el.style.display='none';});
+}
+if(document.readyState==='loading'){
+document.addEventListener('DOMContentLoaded',hideFolds);
+} else {
+hideFolds();
+}
+var obs=new MutationObserver(function(){hideFolds();});
+obs.observe(document.body,{childList:true,subtree:true});
+setTimeout(hideFolds,500);
+setTimeout(hideFolds,1500);
+})();
+
+(function(){
+function initS13(){
+var hds=document.querySelectorAll('.s13-accordion-header');
+if(!hds.length)return;
+hds.forEach(function(h){
+h.addEventListener('click',function(){
+var item=this.parentElement;
+var isOpen=item.classList.contains('open');
+document.querySelectorAll('.s13-accordion-item').forEach(function(el){el.classList.remove('open');});
+if(!isOpen)item.classList.add('open');
+});
+});
+}
+if(document.readyState==='loading'){
+document.addEventListener('DOMContentLoaded',initS13);
+} else {
+initS13();
+}
+setTimeout(initS13,800);
+})();
