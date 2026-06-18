@@ -1,6 +1,12 @@
 (function(){
   var style = document.createElement('style');
-  style.textContent = '#pay_Info,#review,#QnA,.s13-section{display:none!important}';
+  style.textContent = '#review,.s13-section{display:none!important}'
+    + '.xans-product-headcategory{display:none!important}'
+    + '.xans-product-detail{padding:0!important}'
+    + '.imgArea{width:100vw!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;margin-bottom:0!important;overflow:hidden!important}'
+    + '.imgArea img{width:100%!important;max-width:100%!important;display:block!important}'
+    + '#ordo-kakao-btn{position:fixed;bottom:80px;right:12px;z-index:9999;background:#FEE500;border:none;border-radius:50px;padding:10px 16px;display:flex;align-items:center;gap:6px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);font-size:13px;font-weight:700;color:#191919;line-height:1;white-space:nowrap}'
+    + '#ordo-kakao-btn svg{width:20px;height:20px;flex-shrink:0}';
   (document.head || document.documentElement).appendChild(style);
 })();
 
@@ -352,15 +358,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const poreVideo = doc
 (function(){
-  var s = document.createElement('style');
-  s.textContent = '#review,#QnA,.s13-section{display:none!important}'
-    + '.xans-product-headcategory{display:none!important}'
-    + '.xans-product-detail{padding:0!important}'
-    + '.imgArea{width:100vw!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;margin-bottom:0!important;overflow:hidden!important}'
-    + '.imgArea img{width:100%!important;max-width:100%!important;display:block!important}'
-    + '#ordo-kakao-btn{position:fixed;bottom:80px;right:12px;z-index:9999;background:#FEE500;border:none;border-radius:50px;padding:10px 16px;display:flex;align-items:center;gap:6px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);font-size:13px;font-weight:700;color:#191919;line-height:1;white-space:nowrap}'
-    + '#ordo-kakao-btn svg{width:20px;height:20px;flex-shrink:0}';
-  (document.head||document.documentElement).appendChild(s);
 })();
 
 (function(){
@@ -441,6 +438,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if(review) frag.appendChild(review);
     parent.appendChild(frag);
     parent.dataset.reordered = '1';
+    // 카카오 1초 로그인 버튼
+    if(!document.getElementById('ordo-kakao-btn')){
+      var btn = document.createElement('a');
+      btn.id = 'ordo-kakao-btn';
+      btn.href = '/member/login.html';
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C7.03 3 3 6.36 3 10.5c0 2.7 1.74 5.07 4.35 6.42L6.3 20.1c-.09.27.18.51.42.36l4.08-2.73c.39.06.78.09 1.2.09 4.97 0 9-3.36 9-7.5S16.97 3 12 3z" fill="#191919"/></svg>1초 로그인';
+      document.body.appendChild(btn);
+    }
   }
 
   if(document.readyState === 'loading'){
