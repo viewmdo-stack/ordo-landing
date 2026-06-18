@@ -1938,6 +1938,34 @@
     }
   }
   /* ============================================================= */
+
+    /* 카페24 에디터 fr-video 래퍼 대응 - 검정/그레이 라인 제거 */
+    .page-wrapper .fr-video {
+      display: block !important;
+      width: 100% !important;
+      line-height: 0 !important;
+      font-size: 0 !important;
+    }
+    .page-wrapper .fr-video video {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+    }
+    .page-wrapper .s5-video-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .page-wrapper .s5-video-wrap .fr-video {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .page-wrapper .s5-video-wrap .fr-video video {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
 </style>
 
 
