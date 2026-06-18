@@ -427,6 +427,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // 순서 재배치: 1.상품정보고시 2.상품결제정보 3.배송안내 4.교환반품 5.문의사항
     var svcEl = document.getElementById('service_Info');
     var parent = svcEl && svcEl.parentElement;
+
+    // 카카오 1초 로그인 버튼
+    if(!document.getElementById('ordo-kakao-btn')){
+      var btn = document.createElement('a');
+      btn.id = 'ordo-kakao-btn';
+      btn.href = '/member/login.html';
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C7.03 3 3 6.36 3 10.5c0 2.7 1.74 5.07 4.35 6.42L6.3 20.1c-.09.27.18.51.42.36l4.08-2.73c.39.06.78.09 1.2.09 4.97 0 9-3.36 9-7.5S16.97 3 12 3z" fill="#191919"/></svg>1초 로그인';
+      document.body.appendChild(btn);
+    }
     if(!parent || parent.dataset.reordered) return;
     var order = ['service_Info','pay_Info','delivery_Info','exchange_Info','QnA'];
     var allPresent = order.every(function(id){ return !!document.getElementById(id); });
@@ -438,14 +447,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if(review) frag.appendChild(review);
     parent.appendChild(frag);
     parent.dataset.reordered = '1';
-    // 카카오 1초 로그인 버튼
-    if(!document.getElementById('ordo-kakao-btn')){
-      var btn = document.createElement('a');
-      btn.id = 'ordo-kakao-btn';
-      btn.href = '/member/login.html';
-      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C7.03 3 3 6.36 3 10.5c0 2.7 1.74 5.07 4.35 6.42L6.3 20.1c-.09.27.18.51.42.36l4.08-2.73c.39.06.78.09 1.2.09 4.97 0 9-3.36 9-7.5S16.97 3 12 3z" fill="#191919"/></svg>1초 로그인';
-      document.body.appendChild(btn);
-    }
   }
 
   if(document.readyState === 'loading'){
