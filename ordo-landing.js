@@ -350,15 +350,12 @@
 
 // 영상 재생속도 제어
 document.addEventListener('DOMContentLoaded', function() {
-  const poreVideo = document.querySelector('video[src*="pore_video"]');
-  if (poreVideo) poreVideo.playbackRate = 2.0;
-  const stepVideo = document.querySelector('video[src*="4step"]');
-  if (stepVideo) stepVideo.playbackRate = 1.3;
-});
-
-
-
-
+  const poreVideo = doc
+(function(){
+  var s = document.createElement('style');
+  s.textContent = '#review,#QnA,.s13-section{display:none!important}';
+  (document.head||document.documentElement).appendChild(s);
+})();
 
 (function(){
   var PRODUCT_INFO_HTML = '<table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.6">'
@@ -383,49 +380,72 @@ document.addEventListener('DOMContentLoaded', function() {
     + '<li>눈에 들어갔을 때에는 물로 씨어내고, 이상이 있는 경우에는 전문의 등과 상담할 것</li>'
     + '<li>만 3세 이하 어린이에게는 사용하지 말 것</li>'
     + '<li>대량을 광범위한 부위에 적용하거나 장기간 사용하는 경우 부작용이 나타나기 쉽으므로 주의해서 사용할 것</li>'
-    + '<li>살리실산에 과민증이 있거나 당놨병, 혁액순환장애 등의 질환이 있는 분은 사용 전 의사도우미와 상담할 것</li>'
+    + '<li>살리실산에 과민증이 있거나 당놨병, 혁액순환장애 등의 직환이 있는 분은 사용 전 의사도우미와 상담할 것</li>'
     + '</ol>'
     + '<p style="margin:8px 0 0;color:#888;font-size:12px">사용 전에 반드시 사용법 및 사용 시의 주의사항을 숙지하신 후 사용하십시오.</p>'
     + '</td></tr>'
     + '</table>';
 
   function setupFolds(){
-    // 숨길 항목
-    ['pay_Info','review','QnA'].forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.style.display='none';
+    // review 숨김 유지
+    var review = document.getElementById('review');
+    if(review) review.style.display = 'none';
+
+    // s13-section 숨기기
+    document.querySelectorAll('.s13-section').forEach(function(el){
+      el.style.display = 'none';
     });
 
-    // service_Info 제목/내용 교체 -> 상품 정보 제공 고시
+    // pay_Info 표시 보장
+    var pay = document.getElementById('pay_Info');
+    if(pay) pay.style.display = '';
+
+    // service_Info -> 상품 정보 제공 고시
     var svc = document.getElementById('service_Info');
     if(svc && !svc.dataset.replaced){
       var titleEl = svc.querySelector('.info_title');
       var contentEl = svc.querySelector('.info_content');
-      if(titleEl){
-        titleEl.innerHTML = '상품 정보 제공 고시<i aria-hidden="true" class="icon icoPlus">+</i>';
-      }
-      if(contentEl){
-        contentEl.innerHTML = PRODUCT_INFO_HTML;
-        contentEl.style.padding = '0';
-      }
+      if(titleEl) titleEl.innerHTML = '상품 정보 제공 고시<i aria-hidden="true" class="icon icoPlus">+</i>';
+      if(contentEl){ contentEl.innerHTML = PRODUCT_INFO_HTML; contentEl.style.padding = '0'; }
       svc.dataset.replaced = '1';
     }
 
-    // s13-section 숨기기
-    document.querySelectorAll('.s13-section').forEach(function(el){
-      el.style.display='none';
+    // QnA -> 문의사항
+    var qna = document.getElementById('QnA');
+    if(qna){
+      qna.style.removeProperty('display');
+      var qnaTitle = qna.querySelector('.info_title');
+      if(qnaTitle && !qna.dataset.retitled){
+        qnaTitle.innerHTML = '문의사항<i aria-hidden="true" class="icon icoPlus">+</i>';
+        qna.dataset.retitled = '1';
+      }
+    }
+
+    // 순서 재배치: 1.상품정보고시 2.상품결제정보 3.배송안내 4.교환반품 5.문의사항
+    var svcEl = document.getElementById('service_Info');
+    var parent = svcEl && svcEl.parentElement;
+    if(!parent || parent.dataset.reordered) return;
+    var order = ['service_Info','pay_Info','delivery_Info','exchange_Info','QnA'];
+    var allPresent = order.every(function(id){ return !!document.getElementById(id); });
+    if(!allPresent) return;
+    var frag = document.createDocumentFragment();
+    order.forEach(function(id){
+      frag.appendChild(document.getElementById(id));
     });
+    if(review) frag.appendChild(review);
+    parent.appendChild(frag);
+    parent.dataset.reordered = '1';
   }
 
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',setupFolds);
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', setupFolds);
   } else {
     setupFolds();
   }
   var obs = new MutationObserver(function(){
-    setupFolds();
+    if(!document.body.dataset.foldsReady) setupFolds();
   });
-  obs.observe(document.body,{childList:true,subtree:true});
-  setTimeout(setupFolds,500);
-  setTimeout(setupFolds,1500);
+  obs.observe(document.body, {childList:true, subtree:true});
+  setTimeout(setupFolds, 300);
+  setTimeout(setupFolds, 1000);
 })();
