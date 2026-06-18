@@ -1,3 +1,9 @@
+(function(){
+  var style = document.createElement('style');
+  style.textContent = '#pay_Info,#review,#QnA,.s13-section{display:none!important}';
+  (document.head || document.documentElement).appendChild(style);
+})();
+
 // S6 4단계 순차 애니메이션 (원 + 연결 라인 함께)
 (function(){
   var glows = document.querySelectorAll('.s6-glow-ring');
