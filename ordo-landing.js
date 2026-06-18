@@ -1,3 +1,18 @@
+/* ordo-landing.js v313 - self-versioning */
+(function(){
+  var CURRENT_VER = 313;
+  var scripts = document.querySelectorAll('script[src*="ordo-landing.js"]');
+  for(var i=0; i<scripts.length; i++){
+    var src = scripts[i].src;
+    if(src.indexOf('v='+CURRENT_VER) === -1){
+      var newSrc = src.split('?')[0] + '?v=' + CURRENT_VER;
+      var s = document.createElement('script');
+      s.src = newSrc;
+      document.head.appendChild(s);
+      return;
+    }
+  }
+})();
 (function(){
   var style = document.createElement('style');
   style.textContent = '#review,.s13-section{display:none!important}'
