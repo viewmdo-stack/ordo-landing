@@ -2,9 +2,10 @@
   var style = document.createElement('style');
   style.textContent = '#review,.s13-section{display:none!important}'
     + '.xans-product-headcategory{display:none!important}'
-    + '.xans-product-detail{padding:0!important}'
-    + '.imgArea{width:100vw!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;margin-bottom:0!important;overflow:hidden!important}'
-    + '.imgArea img{width:100%!important;max-width:100%!important;display:block!important}'
+    + '.xans-product-detail{padding:0!important;padding-top:0!important}'
+    + '.xans-product-detail.section{padding:0!important;padding-top:0!important}'
+    + '.xans-product-detail .imgArea{width:100vw!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;margin:0!important;margin-top:0!important;padding:0!important;overflow:hidden!important;display:block!important}'
+    + '.xans-product-detail .imgArea img{width:100%!important;max-width:100%!important;display:block!important}'
     + '#ordo-kakao-btn{position:fixed;bottom:80px;right:12px;z-index:9999;background:#FEE500;border:none;border-radius:50px;padding:10px 16px;display:flex;align-items:center;gap:6px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);font-size:13px;font-weight:700;color:#191919;line-height:1;white-space:nowrap}'
     + '#ordo-kakao-btn svg{width:20px;height:20px;flex-shrink:0}';
   (document.head || document.documentElement).appendChild(style);
