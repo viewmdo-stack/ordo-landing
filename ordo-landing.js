@@ -352,39 +352,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-(function(){
-function hideFolds(){
-var folds=document.querySelectorAll('.info_fold');
-folds.forEach(function(el){el.style.display='none';});
-}
-if(document.readyState==='loading'){
-document.addEventListener('DOMContentLoaded',hideFolds);
-} else {
-hideFolds();
-}
-var obs=new MutationObserver(function(){hideFolds();});
-obs.observe(document.body,{childList:true,subtree:true});
-setTimeout(hideFolds,500);
-setTimeout(hideFolds,1500);
-})();
+
 
 (function(){
-function initS13(){
-var hds=document.querySelectorAll('.s13-accordion-header');
-if(!hds.length)return;
-hds.forEach(function(h){
-h.addEventListener('click',function(){
-var item=this.parentElement;
-var isOpen=item.classList.contains('open');
-document.querySelectorAll('.s13-accordion-item').forEach(function(el){el.classList.remove('open');});
-if(!isOpen)item.classList.add('open');
-});
-});
-}
-if(document.readyState==='loading'){
-document.addEventListener('DOMContentLoaded',initS13);
-} else {
-initS13();
-}
-setTimeout(initS13,800);
+  var PRODUCT_INFO_HTML = '<table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.6">'
+    + '<colgroup><col style="width:35%"><col style="width:65%"></colgroup>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">품명 및 모델명</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">오르도 레이어 어반 스트레스 쉰드 바디워시</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">용량</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">400ml</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">제품 주요사항</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">모든 피부용</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">사용기한</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">개끵 전 36개월, 개끵 후 12개월</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">사용방법</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">적당량을 취해 피부에 사용한 후 물로 깨끗이 씨어냅니다.</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">화장품제조업자</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">제품별도표기</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">화장품체임판매업자</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">제품별도표기</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">제조국</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">대한민국</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">기능성화장품 심사 유무</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">해당없음</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">소비자상담 전화번호</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">1:1 문의 접수</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">품질보증기준</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top">본 제품에 이상이 있을 경우 공정거래위원회 고시 소비자분쟁해결 기준에 의해 보상해드립니다.</td></tr>'
+    + '<tr><td style="padding:10px 8px;border-bottom:1px solid #eee;color:#888;vertical-align:top">전성분</td><td style="padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top;word-break:break-all">정제수, 글리세린, 나이아신아마이드, 코카미도프로필베타인, 소듘C14-16올레핀설포네이트, 아크릴레이트코폴리머, 라우릴글루코사이드, 소듘클로라이드, 다이소듘코코암포다이아세테이트, 베타인, 향료, 판테놀, 1,2-헥산다이올, 살리실릭애씨, 하이드록시아세토페놌, 부틸렌글라이콜, 소듘하이드록사이드, 알란토인, 시트릭애씨, 다이소듘이디티에이, 에틸헥슬글리세린, 헥실렌글라이콜, 삼나무잎추출물, 연꽃잎추출물, 효모발효물, 맥아추출물, 글루코노락톤, 황련듵리추출물, 라벤더꽃추출물, 편백잎추출물, 콘미트잎추출물, 드럼스틱씨추출물, 잏나무숨추출물, 구주소나무솔방울추출물, 로즈마리잎추출물, 타임잎추출물, 애플민트잎추출물, 스피어미트잎추출물, 밤부사불가리스추출물, 소나무잎추출물, 측백나무추출물</td></tr>'
+    + '<tr><td style="padding:10px 8px;color:#888;vertical-align:top">사용할 때 주의사항</td><td style="padding:10px 8px;vertical-align:top">'
+    + '<ol style="margin:0;padding-left:16px;line-height:1.8">'
+    + '<li>화장품 사용 시 또는 사용 후 직사광선에 의하여 사용부위가 붉은 반점, 부어오름 또는 가려움증 등의 이상 증상이나 부작용이 있는 경우 전문의 등과 상담할 것</li>'
+    + '<li>상잘가 있는 부위 등에는 사용을 자제할 것</li>'
+    + '<li>보관 및 취급 시의 주의사항: (①) 어린이의 손이 닿지 않는 곳에 보관할 것 (②) 직사광선을 피해서 보관할 것</li>'
+    + '<li>눈에 들어갔을 때에는 물로 씨어내고, 이상이 있는 경우에는 전문의 등과 상담할 것</li>'
+    + '<li>만 3세 이하 어린이에게는 사용하지 말 것</li>'
+    + '<li>대량을 광범위한 부위에 적용하거나 장기간 사용하는 경우 부작용이 나타나기 쉽으므로 주의해서 사용할 것</li>'
+    + '<li>살리실산에 과민증이 있거나 당놨병, 혁액순환장애 등의 질환이 있는 분은 사용 전 의사도우미와 상담할 것</li>'
+    + '</ol>'
+    + '<p style="margin:8px 0 0;color:#888;font-size:12px">사용 전에 반드시 사용법 및 사용 시의 주의사항을 숙지하신 후 사용하십시오.</p>'
+    + '</td></tr>'
+    + '</table>';
+
+  function setupFolds(){
+    // 숨길 항목
+    ['pay_Info','review','QnA'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display='none';
+    });
+
+    // service_Info 제목/내용 교체 -> 상품 정보 제공 고시
+    var svc = document.getElementById('service_Info');
+    if(svc && !svc.dataset.replaced){
+      var titleEl = svc.querySelector('.info_title');
+      var contentEl = svc.querySelector('.info_content');
+      if(titleEl){
+        titleEl.innerHTML = '상품 정보 제공 고시<i aria-hidden="true" class="icon icoPlus">+</i>';
+      }
+      if(contentEl){
+        contentEl.innerHTML = PRODUCT_INFO_HTML;
+        contentEl.style.padding = '0';
+      }
+      svc.dataset.replaced = '1';
+    }
+
+    // s13-section 숨기기
+    document.querySelectorAll('.s13-section').forEach(function(el){
+      el.style.display='none';
+    });
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',setupFolds);
+  } else {
+    setupFolds();
+  }
+  var obs = new MutationObserver(function(){
+    setupFolds();
+  });
+  obs.observe(document.body,{childList:true,subtree:true});
+  setTimeout(setupFolds,500);
+  setTimeout(setupFolds,1500);
 })();
