@@ -889,7 +889,7 @@ document.addEventListener('DOMContentLoaded', function() {
                               if (window.location.pathname.indexOf('/member/login') === -1) return;
                               function doLogin() {
                                     if (document.getElementById('ordo-login-custom')) return;
-                                    var wrap = document.querySelector('.xans-member-login');
+                                                                                fieldset.insertBefore(snsWrap, fieldset.firstChild);
                                     if (!wrap) return;
                                     // CSS
                                 var s = document.createElement('style');
