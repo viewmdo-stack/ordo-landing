@@ -848,5 +848,35 @@ document.addEventListener('DOMContentLoaded', function() {
               window.location.replace('/product/detail.html?product_no=11');
         }
     })();
+
+    // ===== 상세보기/리뷰/상품정보 탭 메뉴 =====
+    (function() {
+        if (!document.querySelector('#prdDetail')) return;
+        // CSS
+        var tabStyle = document.createElement('style');
+        tabStyle.textContent = '#ordo-tab-menu{display:flex;border-bottom:1px solid #e0e0e0;margin:0;background:#fff;position:sticky;top:0;z-index:100;}'
+          + '#ordo-tab-menu button{flex:1;padding:14px 0;font-size:13px;font-weight:500;color:#888;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;letter-spacing:0.03em;}'
+          + '#ordo-tab-menu button.active{color:#111;border-bottom:2px solid #111;font-weight:700;}';
+        document.head.appendChild(tabStyle);
+        // HTML
+        var tabEl = document.createElement('div');
+        tabEl.id = 'ordo-tab-menu';
+        tabEl.innerHTML = '<button class="active" data-target="prdDetail">상세보기</button>'
+          + '<button data-target="review">리뷰</button>'
+          + '<button data-target="service_Info">상품정보</button>';
+        // prdDetail 앞에 삽입
+        var prdDetail = document.getElementById('prdDetail');
+        prdDetail.parentNode.insertBefore(tabEl, prdDetail);
+        // 클릭 이벤트
+        tabEl.querySelectorAll('button').forEach(function(btn) {
+              btn.addEventListener('click', function() {
+                      tabEl.querySelectorAll('button').forEach(function(b){b.classList.remove('active');});
+                      this.classList.add('active');
+                      var target = document.getElementById(this.dataset.target);
+                      if (target) { var top = target.getBoundingClientRect().top + window.scrollY - 50; window.scrollTo({top:top, behavior:'smooth'}); }
+              });
+        });
+        document.addEventListener('DOMContentLoaded', function(){});
+    })();
   }
 })();
