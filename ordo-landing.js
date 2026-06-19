@@ -1,6 +1,6 @@
-/* ordo-landing.js v314 - self-versioning */
+/* ordo-landing.js v315 - self-versioning */
 (function(){
-  var CURRENT_VER = 314;
+  var CURRENT_VER = 315;
   var scripts = document.querySelectorAll('script[src*="ordo-landing.js"]');
   for(var i=0; i<scripts.length; i++){
     var src = scripts[i].src;
