@@ -1,6 +1,6 @@
-/* ordo-landing.js v313 - self-versioning */
+/* ordo-landing.js v314 - self-versioning */
 (function(){
-  var CURRENT_VER = 313;
+  var CURRENT_VER = 314;
   var scripts = document.querySelectorAll('script[src*="ordo-landing.js"]');
   for(var i=0; i<scripts.length; i++){
     var src = scripts[i].src;
@@ -840,7 +840,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('DOMContentLoaded', run);
   } else {
     run();
-
+  }
     // 홈(/) 접속 시 상품 상세페이지로 리다이렉트
     (function(){
         var path = window.location.pathname;
