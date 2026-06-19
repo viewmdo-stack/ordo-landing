@@ -882,3 +882,41 @@ document.addEventListener('DOMContentLoaded', function() {
                                     doTab();
                               }
                           })();
+
+
+                          // ===== 로그인 페이지 레이아웃 커스텀 =====
+                          (function() {
+                              if (window.location.pathname.indexOf('/member/login') === -1) return;
+                              function doLogin() {
+                                    if (document.getElementById('ordo-login-custom')) return;
+                                    var wrap = document.querySelector('.xans-member-login');
+                                    if (!wrap) return;
+                                    // CSS
+                                var s = document.createElement('style');
+                                    s.id = 'ordo-login-custom';
+                                    s.textContent = '#ordo-sns-wrap{margin-bottom:0}'
+                                      + '#ordo-kakao-btn2{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;background:#FEE500;border:none;border-radius:6px;font-size:15px;font-weight:700;color:#191919;cursor:pointer;text-decoration:none;margin-bottom:10px;box-sizing:border-box}'
+                                      + '#ordo-naver-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;background:#03C75A;border:none;border-radius:6px;font-size:15px;font-weight:700;color:#fff;cursor:pointer;text-decoration:none;box-sizing:border-box}'
+                                      + '#ordo-or{display:flex;align-items:center;gap:12px;margin:20px 0;color:#999;font-size:13px}'
+                                      + '#ordo-or::before,#ordo-or::after{content:"";flex:1;height:1px;background:#e0e0e0}'
+                                      + '.xans-member-snslogin{display:none!important}'
+                                      + 'a.kakaoLogin,a[class*="kakao"]{display:none!important}';
+                                    document.head.appendChild(s);
+                                    // SNS 블록 삽입
+                                var snsWrap = document.createElement('div');
+                                    snsWrap.id = 'ordo-sns-wrap';
+                                    snsWrap.innerHTML = '<a id="ordo-kakao-btn2" href="/exec/front/Member/snsLogin/?sns_type=kakao">'
+                                      + '<svg width="22" height="22" viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.48 3 2 6.92 2 11.7c0 3.02 1.78 5.68 4.47 7.3L5.5 22l4.68-3.12c.59.09 1.2.14 1.82.14 5.52 0 10-3.7 10-8.3C22 6.92 17.52 3 12 3z"/></svg>'
+                                      + '카카오톡 간편 로그인/회원가입</a>'
+                                      + '<a id="ordo-naver-btn" href="#">'
+                                      + '<svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/></svg>'
+                                      + '네이버 간편 로그인/회원가입</a>'
+                                      + '<div id="ordo-or">또는</div>';
+                                    wrap.insertBefore(snsWrap, wrap.firstChild);
+                              }
+                              if (document.readyState === 'loading') {
+                                    document.addEventListener('DOMContentLoaded', doLogin);
+                              } else {
+                                    doLogin();
+                              }
+                          })();
