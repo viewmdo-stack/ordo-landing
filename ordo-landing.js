@@ -840,5 +840,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('DOMContentLoaded', run);
   } else {
     run();
+
+    // 홈(/) 접속 시 상품 상세페이지로 리다이렉트
+    (function(){
+        var path = window.location.pathname;
+        if (path === '/' || path === '/index.html') {
+              window.location.replace('/product/detail.html?product_no=11');
+        }
+    })();
   }
 })();
