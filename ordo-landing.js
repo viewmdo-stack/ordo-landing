@@ -913,3 +913,10 @@ document.addEventListener('DOMContentLoaded', function() {
     fixLogoutLinks();
   }
 })();
+
+                          // ===== 햄버거 메뉴 CSS 강제 적용 =====
+                          (function() {
+                              var s = document.createElement('style');
+                              s.textContent = '#header .inner .top_nav_box .top_mypage a.eNavFold{display:flex!important;align-items:center!important}';
+                              (document.head || document.documentElement).appendChild(s);
+                          })();
