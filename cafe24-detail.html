@@ -11,7 +11,7 @@
     }
     /* ========================================================== */
 
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');h
     
     :root {
       --base-width: 393px;
@@ -3079,5 +3079,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+      <style>
+          /* review/QnA default open */
+          #review.info_fold .info_content,
+          #QnA.info_fold .info_content {
+              display: block !important;
+      }
+      #review .info_title .icon::after,
+          #QnA .info_title .icon::after {
+              transform: rotate(90deg);
+      }
+  </style>
 (function(){var hds=document.querySelectorAll('.s13-accordion-header');hds.forEach(function(h){h.addEventListener('click',function(){var item=this.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.s13-accordion-item').forEach(function(el){el.classList.remove('open');});if(!isOpen)item.classList.add('open');});});})();
 </script>
