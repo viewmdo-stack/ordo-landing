@@ -851,7 +851,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== 상세보기/리뷰/상품정보 탭 메뉴 =====
     (function() {
-        if (!document.querySelector('#prdDetail')) return;
+                function doTab() {
         // CSS
         var tabStyle = document.createElement('style');
         tabStyle.textContent = '#ordo-tab-menu{display:flex;border-bottom:1px solid #e0e0e0;margin:0;background:#fff;position:sticky;top:0;z-index:100;}'
@@ -876,7 +876,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       if (target) { var top = target.getBoundingClientRect().top + window.scrollY - 50; window.scrollTo({top:top, behavior:'smooth'}); }
               });
         });
-        document.addEventListener('DOMContentLoaded', function(){});
+                } if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',doTab);}else{doTab();}
     })();
   }
 })();
