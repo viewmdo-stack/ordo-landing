@@ -126,40 +126,12 @@
 	<!--@css(/layout/basic/css/add_theme01.css)-->
 	<!--@css(/layout/basic/css/add_theme02.css)-->
 	<!--@css(/layout/basic/css/add_layout.css)-->
-	<style>.bottom-nav{display:none!important}.eNavFold{display:none!important}.eMypage{display:none!important}</style>
+	<style>
+		.bottom-nav{display:none!important}
+		.eNavFold{display:none!important}
+		.eMypage{display:none!important}
+	</style>
 <script>
-// 햄버거 메뉴 열기/닫기
-(function() {
-  function fixNavFold() {
-    var el = document.querySelector('.top_mypage .eNavFold');
-    if (el) {
-      el.style.setProperty('display', 'flex', 'important');
-      el.style.setProperty('align-items', 'center', 'important');
-      el.style.setProperty('min-height', '24px', 'important');
-      el.style.setProperty('width', 'auto', 'important');
-      el.addEventListener('click', function() {
-        document.body.classList.add('expand');
-      });
-    }
-    var btnClose = document.querySelector('#aside .btnClose');
-    if (btnClose) {
-      btnClose.addEventListener('click', function() {
-        document.body.classList.remove('expand');
-      });
-    }
-    var dimmed = document.querySelector('#layoutDimmed');
-    if (dimmed) {
-      dimmed.addEventListener('click', function() {
-        document.body.classList.remove('expand');
-      });
-    }
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', fixNavFold);
-  } else {
-    fixNavFold();
-  }
-})();
 // 로그인/로그아웃 리다이렉트
 (function() {
   var TARGET = '/product/detail.html?product_no=11';
