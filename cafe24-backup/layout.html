@@ -51,13 +51,14 @@
 .bottom-nav{display:none!important}
 .eNavFold{display:none!important}
 .eMypage{display:none!important}
-/* 장바구니 버튼만 숨기기 */
+/* 장바구니만 숨기기 */
 .actionCart{display:none!important}
-/* productAction(중복) 숨기기 */
-.productAction{display:none!important}
-/* 하단 고정바(gFixed) 표시 */
+/* 상세페이지 내 버튼 50:50 */
+.action_button{display:flex!important}
+.action_button>a.btnNormal{flex:1!important}
+.action_button>a.btnSubmit{flex:1!important}
+/* 하단 고정바 표시 + 50:50 */
 .ec-base-button.gFixed{display:block!important}
-/* gColumn 50:50 (장바구니 제외) */
 .ec-base-button.gColumn{display:flex!important}
 .ec-base-button.gColumn>a.btnNormal{flex:1!important}
 .ec-base-button.gColumn>a.btnSubmit{flex:1!important}
@@ -89,7 +90,7 @@
 <!--@css(/layout/basic/css/add_layout.css)-->
 <script>
 (function(){
-var hide=['.eNavFold','.eMypage','.actionCart','.productAction'];
+var hide=['.eNavFold','.eMypage','.actionCart'];
 function h(){hide.forEach(function(q){document.querySelectorAll(q).forEach(function(e){e.style.cssText='display:none!important';});});}
 h();
 document.addEventListener('DOMContentLoaded',h);
