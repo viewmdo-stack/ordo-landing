@@ -1,4 +1,4 @@
-/* ordo-landing.js v318 - self-versioning */
+/* ordo-landing.js v319 - self-versioning */
 (function(){
   var CURRENT_VER = 318;
 
@@ -7,7 +7,7 @@
   function _ordoHide(){
     var s=document.createElement('style');
     s.id='ordo-hide-ui';
-    s.textContent='.eNavFold{display:none!important}.eMypage{display:none!important}';
+    s.textContent='.eNavFold{display:none!important}.eMypage{display:none!important}.action_button .actionCart{display:none!important}.ec-base-button.gColumn .actionCart{display:none!important}.action_button{display:flex!important}.action_button>a.btnNormal{flex:1!important;width:50%!important}.action_button>a.btnSubmit{flex:1!important;width:50%!important}.ec-base-button.gColumn{display:flex!important}.ec-base-button.gColumn>a.btnNormal{flex:1!important;width:50%!important}.ec-base-button.gColumn>a.btnSubmit{flex:1!important;width:50%!important}';
     (document.head||document.documentElement).appendChild(s);
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',_ordoHide);}else{_ordoHide();}
