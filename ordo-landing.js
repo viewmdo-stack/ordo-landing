@@ -1,14 +1,17 @@
-/* ordo-landing.js v317 - self-versioning */
+/* ordo-landing.js v318 - self-versioning */
 (function(){
-  var CURRENT_VER = 317;
+  var CURRENT_VER = 318;
 
 // 햄버거 메뉴 + 사람아이콘 숨기기 (비회원 구매 전용)
 (function(){
-  var s = document.createElement('style');
-  s.textContent = '.eNavFold{display:none!important} .eMypage{display:none!important}';
-  document.head ? document.head.appendChild(s) : document.addEventListener('DOMContentLoaded',function(){ document.head.appendChild(s); });
+  function _ordoHide(){
+    var s=document.createElement('style');
+    s.id='ordo-hide-ui';
+    s.textContent='.eNavFold{display:none!important}.eMypage{display:none!important}';
+    (document.head||document.documentElement).appendChild(s);
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',_ordoHide);}else{_ordoHide();}
 })();
-
   var scripts = document.querySelectorAll('script[src*="ordo-landing.js"]');
   for(var i=0; i<scripts.length; i++){
     var src = scripts[i].src;
