@@ -53,10 +53,10 @@
 .eMypage{display:none!important}
 /* 장바구니 버튼 숨기기 */
 .actionCart{display:none!important}
-/* detailArea 내 중복 버튼 영역 전체 숨기기 */
-.detailArea .action_button{display:none!important}
-.detailArea .ec-base-button{display:none!important}
-/* productAction 영역만 후기/구매하기 50:50 */
+/* 하단 고정바 + 내부 중복 gColumn 숨기기 */
+.ec-base-button.gFixed{display:none!important}
+.ec-base-button.gColumn{display:none!important}
+/* productAction 영역 후기/구매하기 50:50 */
 .productAction .action_button{display:flex!important}
 .productAction .action_button>a.btnNormal{flex:1!important}
 .productAction .action_button>a.btnSubmit{flex:1!important}
@@ -88,7 +88,7 @@
 <!--@css(/layout/basic/css/add_layout.css)-->
 <script>
 (function(){
-var s=['.eNavFold','.eMypage','.actionCart','.detailArea .action_button','.detailArea .ec-base-button'];
+var s=['.eNavFold','.eMypage','.actionCart','.ec-base-button.gFixed','.ec-base-button.gColumn'];
 function h(){s.forEach(function(q){document.querySelectorAll(q).forEach(function(e){e.style.cssText='display:none!important';});});}
 h();
 document.addEventListener('DOMContentLoaded',h);
