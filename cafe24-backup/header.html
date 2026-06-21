@@ -1,0 +1,35 @@
+<div class="top_nav_box" id="top_nav_box" data-ez="module-0sq3qlf-1">
+
+    <style>
+    @media (max-width: 1024px) {
+        #top_nav_box { position:relative; display:flex; align-items:center; height:56px; padding:0 16px; box-sizing:border-box }
+        #top_nav_box .top_logo { position:absolute; left:50%; transform:translateX(-50%); margin:0; z-index:1 }
+        #top_nav_box .top_logo img { height:22px; width:auto }
+        #top_nav_box .top_mypage { display:flex !important; align-items:center; width:100%; justify-content:space-between }
+        #top_nav_box .top_mypage > a { display:none !important }
+        #top_nav_box .top_mypage > div { display:none !important }
+        #top_nav_box .top_mypage > a.eMypage { display:flex !important; align-items:center }
+        #top_nav_box .top_category { display:none !important }
+    }
+    </style>
+
+    <div class="top_logo" module="Layout_LogoTop">
+        <a href="/product/detail.html?product_no=11"><img src="{$logo}" alt="{$mall_name}" loading="lazy" ez-prevent="img"></a>
+    </div>
+
+    <div class="top_mypage">
+        <a href="javascript:;" class="eNavFold"><i aria-hidden="true" class="icon icoNav"></i></a>
+        <a href="/myshop/index.html" class="eMypage"><!--@import(/svg/icon-user.html)--></a>
+        <a href="/order/basket.html" module="Layout_orderBasketcount"><!--@import(/svg/icon-cart.html)--><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+        <a href="javascript:;" class="eSearch"><!--@import(/svg/icon-search.html)--></a>
+    </div>
+
+    <div data-ez-module="menu-main/1" data-ez-mode="manual">
+        <div class="xans-element- xans-layout xans-layout-category top_category">
+            <ul><li><a href="/product/detail.html?product_no=11">[런칭]BODY WASH &amp; SPRAY</a></li></ul>
+        </div>
+    </div>
+
+</div>
+
+<!--#ez="1/1"-->
