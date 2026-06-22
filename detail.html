@@ -3329,14 +3329,32 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('옵션을 선택해 주세요.');
       return;
     }
-    // GET 방식으로 바로구매 시도
-    var url = 'https://carryting.cafe24.com/exec/front/order/basket'
-      + '?product_no=11'
-      + '&product_cd=' + selectedOptionCode
-      + '&quantity=' + qty
-      + '&basket_type=A0000'
-      + '&delvtype=A';
-    window.location.href = url;
+    // 장바구니 담기(AJAX) 후 바로 주문서로 이동
+    var formData = new FormData();
+    formData.append('product_no', '11');
+    formData.append('product_cd', selectedOptionCode);
+    formData.append('quantity', String(qty));
+    formData.append('basket_type', 'A0000');
+    formData.append('delvtype', 'A');
+
+    fetch('https://carryting.cafe24.com/exec/front/order/basket', {
+      method: 'POST',
+      body: formData,
+      credentials: 'include'
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.result === 0) {
+        // 성공 - 바로 주문서로 이동
+        window.location.href = 'https://carryting.cafe24.com/order/orderform.html?basket_type=A0000&delvtype=A';
+      } else {
+        alert('오류가 발생했습니다: ' + decodeURIComponent(data.alertMSG || ''));
+      }
+    })
+    .catch(function() {
+      // CORS 오류 시 폼 방식으로 fallback
+      window.location.href = 'https://carryting.cafe24.com/exec/front/order/basket?product_no=11&product_cd=' + selectedOptionCode + '&quantity=' + qty + '&basket_type=A0000&delvtype=A';
+    });
   };
 })();
 </script>
