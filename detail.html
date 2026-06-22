@@ -3337,12 +3337,17 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   window.goCheckout = function() {
     if (!selectedOptionCode) {
-      alert('옵션을 선택해 주세요.');
-      return;
+        alert('옵션을 먼저 선택해주세요.');
+        return;
     }
-    document.getElementById('form-product-cd').value = selectedOptionCode;
-    document.getElementById('form-quantity').value = String(qty);
-    document.getElementById('direct-order-form').submit();
-  };
+    var cdMap = {
+        'P000000L000A': 'set',
+        'P000000L000B': 'wash',
+        'P000000L000C': 'spray'
+    };
+    var cd = cdMap[selectedOptionCode] || selectedOptionCode;
+    var url = 'https://carryting.cafe24.com/order-bridge.html?cd=' + cd + '&qty=' + qty;
+    window.location.href = url;
+};
 })();
 </script>
