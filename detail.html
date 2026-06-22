@@ -3237,3 +3237,90 @@ document.addEventListener('DOMContentLoaded', function() {
     })();
 
 </script>
+
+
+<!-- ===== 하단 고정 구매 버튼 ===== -->
+<div id="buy-bar" style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:1000;background:#fff;padding:12px 16px 20px;box-shadow:0 -2px 12px rgba(0,0,0,0.12);box-sizing:border-box;">
+  <button onclick="openBottomSheet()" style="width:100%;padding:16px;background:#1a1a1a;color:#fff;font-size:17px;font-weight:700;border:none;border-radius:10px;cursor:pointer;letter-spacing:-0.5px;">구매하기</button>
+</div>
+
+<!-- ===== 오버레이 ===== -->
+<div id="sheet-overlay" onclick="closeBottomSheet()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1001;"></div>
+
+<!-- ===== 바텀시트 ===== -->
+<div id="bottom-sheet" style="display:none;position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:#fff;border-radius:20px 20px 0 0;z-index:1002;box-sizing:border-box;padding:20px 20px 40px;">
+  <div style="width:40px;height:4px;background:#ddd;border-radius:2px;margin:0 auto 20px;"></div>
+
+  <p style="font-size:13px;color:#888;margin-bottom:8px;">옵션 선택</p>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
+    <button class="opt-btn" onclick="selectOption(this,'바디워시',0)" style="padding:14px 16px;border:1.5px solid #ddd;border-radius:10px;background:#fff;font-size:14px;text-align:left;cursor:pointer;">바디워시</button>
+    <button class="opt-btn" onclick="selectOption(this,'바디스프레이',4000)" style="padding:14px 16px;border:1.5px solid #ddd;border-radius:10px;background:#fff;font-size:14px;text-align:left;cursor:pointer;">바디스프레이 <span style="color:#888;font-size:13px;">(+4,000원)</span></button>
+    <button class="opt-btn" onclick="selectOption(this,'세트',25800)" style="padding:14px 16px;border:1.5px solid #ddd;border-radius:10px;background:#fff;font-size:14px;text-align:left;cursor:pointer;">세트 <span style="color:#888;font-size:13px;">(+25,800원)</span></button>
+  </div>
+
+  <p style="font-size:13px;color:#888;margin-bottom:8px;">수량</p>
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+    <button onclick="changeQty(-1)" style="width:36px;height:36px;border:1.5px solid #ddd;border-radius:8px;background:#fff;font-size:20px;cursor:pointer;">−</button>
+    <span id="qty-display" style="font-size:16px;font-weight:700;min-width:20px;text-align:center;">1</span>
+    <button onclick="changeQty(1)" style="width:36px;height:36px;border:1.5px solid #ddd;border-radius:8px;background:#fff;font-size:20px;cursor:pointer;">+</button>
+    <span id="price-display" style="margin-left:auto;font-size:18px;font-weight:800;color:#1a1a1a;">옵션을 선택하세요</span>
+  </div>
+
+  <hr style="border:none;border-top:1px solid #f0f0f0;margin-bottom:20px;">
+
+  <p style="font-size:13px;color:#888;margin-bottom:10px;">결제수단 선택</p>
+  <div style="display:flex;gap:8px;margin-bottom:10px;">
+    <button onclick="goCheckout('kakao')" style="flex:1;padding:14px 0;background:#FEE500;border:none;border-radius:10px;font-size:14px;font-weight:700;color:#3C1E1E;cursor:pointer;">카카오페이</button>
+    <button onclick="alert('네이버페이는 준비 중입니다.')" style="flex:1;padding:14px 0;background:#03C75A;border:none;border-radius:10px;font-size:14px;font-weight:700;color:#fff;cursor:pointer;">네이버페이</button>
+  </div>
+  <button onclick="goCheckout('card')" style="width:100%;padding:15px;background:#1a1a1a;color:#fff;font-size:15px;font-weight:700;border:none;border-radius:10px;cursor:pointer;">신용카드 결제</button>
+</div>
+
+<script>
+(function() {
+  var BASE_PRICE = 29800;
+  var selectedOptionName = '';
+  var selectedOptionExtra = 0;
+  var qty = 1;
+
+  window.openBottomSheet = function() {
+    document.getElementById('sheet-overlay').style.display = 'block';
+    document.getElementById('bottom-sheet').style.display = 'block';
+  };
+  window.closeBottomSheet = function() {
+    document.getElementById('sheet-overlay').style.display = 'none';
+    document.getElementById('bottom-sheet').style.display = 'none';
+  };
+  window.selectOption = function(el, name, extra) {
+    document.querySelectorAll('.opt-btn').forEach(function(b) {
+      b.style.border = '1.5px solid #ddd';
+      b.style.background = '#fff';
+      b.style.fontWeight = 'normal';
+    });
+    el.style.border = '1.5px solid #1a1a1a';
+    el.style.background = '#f9f9f9';
+    el.style.fontWeight = '700';
+    selectedOptionName = name;
+    selectedOptionExtra = extra;
+    updatePrice();
+  };
+  window.changeQty = function(delta) {
+    qty = Math.max(1, qty + delta);
+    document.getElementById('qty-display').textContent = qty;
+    updatePrice();
+  };
+  function updatePrice() {
+    if (!selectedOptionName) return;
+    var total = (BASE_PRICE + selectedOptionExtra) * qty;
+    document.getElementById('price-display').textContent = total.toLocaleString() + '원';
+  }
+  window.goCheckout = function(method) {
+    if (!selectedOptionName) {
+      alert('옵션을 선택해 주세요.');
+      return;
+    }
+    var url = 'https://carryting.cafe24.com/order/basket.html?product_no=11&quantity=' + qty;
+    window.location.href = url;
+  };
+})();
+</script>
