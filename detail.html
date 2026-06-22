@@ -3272,11 +3272,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <p style="font-size:13px;color:#888;margin-bottom:10px;">결제수단 선택</p>
   <div style="display:flex;gap:8px;margin-bottom:10px;">
-    <button onclick="goCheckout('kakao')" style="flex:1;padding:14px 0;background:#FEE500;border:none;border-radius:10px;font-size:14px;font-weight:700;color:#3C1E1E;cursor:pointer;">카카오페이</button>
+    <button onclick="goCheckout()" style="flex:1;padding:14px 0;background:#FEE500;border:none;border-radius:10px;font-size:14px;font-weight:700;color:#3C1E1E;cursor:pointer;">카카오페이</button>
     <button onclick="alert('네이버페이는 준비 중입니다.')" style="flex:1;padding:14px 0;background:#03C75A;border:none;border-radius:10px;font-size:14px;font-weight:700;color:#fff;cursor:pointer;">네이버페이</button>
   </div>
-  <button onclick="goCheckout('card')" style="width:100%;padding:15px;background:#1a1a1a;color:#fff;font-size:15px;font-weight:700;border:none;border-radius:10px;cursor:pointer;">신용카드 결제</button>
+  <button onclick="goCheckout()" style="width:100%;padding:15px;background:#1a1a1a;color:#fff;font-size:15px;font-weight:700;border:none;border-radius:10px;cursor:pointer;">신용카드 결제</button>
 </div>
+
+<!-- 바로구매 폼 (카페24 POST 방식) -->
+<form id="direct-order-form" method="post" action="https://carryting.cafe24.com/exec/front/order/directorder" style="display:none;">
+  <input type="hidden" name="product_no" value="11">
+  <input type="hidden" name="product_cd" id="form-product-cd" value="">
+  <input type="hidden" name="quantity" id="form-quantity" value="1">
+  <input type="hidden" name="direct_order_yn" value="T">
+</form>
 
 <script>
 (function() {
@@ -3318,17 +3326,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var total = (BASE_PRICE + selectedOptionExtra) * qty;
     document.getElementById('price-display').textContent = total.toLocaleString() + '원';
   }
-  window.goCheckout = function(method) {
+  window.goCheckout = function() {
     if (!selectedOptionCode) {
       alert('옵션을 선택해 주세요.');
       return;
     }
-    // 바로 주문서로 이동 (장바구니 건너뜀)
-    var url = 'https://carryting.cafe24.com/order/order.html'
-      + '?product_no=11'
-      + '&quantity=' + qty
-      + '&option_code=' + selectedOptionCode;
-    window.location.href = url;
+    // 카페24 바로구매 POST 방식으로 주문서 이동
+    document.getElementById('form-product-cd').value = selectedOptionCode;
+    document.getElementById('form-quantity').value = qty;
+    document.getElementById('direct-order-form').submit();
   };
 })();
 </script>
