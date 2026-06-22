@@ -3280,13 +3280,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <button onclick="goCheckout()" style="width:100%;padding:15px;background:#1a1a1a;color:#fff;font-size:15px;font-weight:700;border:none;border-radius:10px;cursor:pointer;">신용카드 결제</button>
 </div>
 
-<!-- 카페24 바로구매 폼 -->
+<!-- 카페24 바로구매 폼 (장바구니 담기 → 즉시 주문서 이동) -->
 <form id="direct-order-form" method="post" action="https://carryting.cafe24.com/exec/front/order/basket" style="display:none;">
   <input type="hidden" name="product_no[]" value="11">
   <input type="hidden" name="product_cd[]" id="form-product-cd" value="">
   <input type="hidden" name="quantity[]" id="form-quantity" value="1">
-  <input type="hidden" name="direct_order_yn" value="T">
-  <input type="hidden" name="mode" value="direct_order">
+  <input type="hidden" name="basket_type" value="A0000">
+  <input type="hidden" name="delvtype" value="A">
 </form>
 
 <script>
