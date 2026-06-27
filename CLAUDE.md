@@ -199,3 +199,5 @@ document.querySelectorAll('a.btnNormal.document.querySelectorAll('a.btnNormal.si
 3. 응급처치 코드 금지 — 실제 판매 사이트. 처음부터 안전하게 작성
 4. 설명은 간결하게 — 불필요한 장황한 설명 없이 핵심만
 5. 한 번에 하나씩 — 여러 문제 동시 수정 금지
+
+6. 작업 완료 후 반드시 라이브 페이지 직접 확인 후 결과 보고 — 확인 없이 "완료" 보고 금지
