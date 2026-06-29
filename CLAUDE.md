@@ -231,4 +231,48 @@ var params = [
                                                                                                     5. **한 번에 하나씩** — 여러 문제 동시 수정 금지
                                                                                                     6. **작업 완료 후 라이브 확인 필수** — 확인 없이 "완료" 보고 금지
                                                                                                     7. **get_page_text로 전체 읽기** — 스크롤 캡처·일부만 보고 판단 금지
-                                                                                                    8. **질문 먼저 답변** — 작업 전 질문 답변 우선
+                                                            
+                                                            
+                                                            ---
+                                                            
+                                                            ## 2026-06-29 작업: 리뷰 카드형 변환 (ec-base-table -> 카드 UI)
+                                                            
+                                                            ### 배경
+                                                            breview 위젯(iframe)이 스태프 리뷰를 카드형으로 보여주고, 일반 사용자 리뷰는 ec-base-table 테이블형으로 표시되어 시각적 불일치 발생.
+                                                            ec-base-table을 CSS grid로 카드형으로 변환.
+                                                            
+                                                            ### TD 순서 (절대 준수)
+                                                            
+                                                            | nth-child | className | 내용 | grid 배치 |
+                                                            |---|---|---|---|
+                                                            | 1 | RW | 번호 | 숨김 |
+                                                            | 2 | subject left txtBreak | 제목/내용(a링크) | row2, col 1/5 |
+                                                            | 3 | (없음) | 작성자명 | row1, col 2 |
+                                                            | 4 | (없음) | 작성일 | row1, col 3 |
+                                                            | 5 | (없음) | 조회수 | 숨김 |
+                                                            | 6 | (없음) | 별점 img | row1, col 1 |
+                                                            
+                                                            **주의: 별점은 6번째 td이지만 grid col 1에 배치됨. nth-child 순서와 grid 배치 순서가 다름.**
+                                                            
+                                                            ---
+                                                            
+                                                            ### 신규 실수 패턴 (2026-06-29)
+                                                            
+                                                            **실수 A: showReviews 함수 정의 후 호출 코드 누락**
+                                                            함수를 정의만 하고 실행(호출) 코드를 빠뜨림 -> 화면 변화 없음.
+                                                            해결: 함수 정의 직후 즉시호출 + setTimeout 4회 추가 필수
+                                                            
+                                                            **실수 B: tbody 너비를 CSS width:100%로만 해결 시도**
+                                                            display:block 전환 후 table 레이아웃에서 보서지면 CSS width:100% 무효 (335px 고정).
+                                                            해결: JS에서 t.offsetWidth로 px값 직접 설정 필수
+                                                            
+                                                            **실수 C: t.offsetWidth = 0 타이밍 미대비**
+                                                            breview iframe이 비동기 로딩되므로 즉시 실행 시 offsetWidth=0 반환.
+                                                            해결: t.offsetWidth || t.parentElement.offsetWidth + if(w > 0) 조건 추가할
+                                                            **실수 D: setTimeout 횟수 부족**
+                                                            breview 비동기 로딩이 ec-base-table을 나중에 다시 숨기는 타이밍 존재.
+                                                            해결: 즉시 + 300ms + 800ms + 1500ms 총 4회 실행 필수
+                                                            
+                                                            **실수 E: td nth-child 순서와 grid 배치 혼동**
+                                                            별점은 DOM 6번째 td이지만 grid에서는 col 1로 배치.
+                                                            해결: 작업 전 document.querySelectorAll('td')로 실제 DOM 순서 재확인                                        8. **질문 먼저 답변** — 작업 전 질문 답변 우선
